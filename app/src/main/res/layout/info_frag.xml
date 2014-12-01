@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress.. x%"
+        android:id="@+id/textView2"
+        android:layout_centerInParent="true" />
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/circleButton1"
+            android:layout_width="64dip"
+            android:layout_height="64dip"
+            android:src="@drawable/ic_action_right"
+            app:cb_color="@color/button_blue"
+            app:cb_pressedRingWidth="8dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/circleButton2"
+            android:layout_width="64dip"
+            android:layout_height="64dip"
+            android:src="@drawable/ic_action_left"
+            app:cb_color="@color/button_blue"
+            app:cb_pressedRingWidth="8dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
+
+        <com.triggertrap.seekarc.SeekArc
+            android:id="@+id/seekArc"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:padding="70dp"
+            seekarc:arcColor="@color/button_blue"
+            seekarc:clockwise="true"
+            seekarc:max="150"
+            seekarc:progressColor="@color/button_blue"
+            seekarc:rotation="180"
+            seekarc:startAngle="50"
+            seekarc:sweepAngle="260"
+            seekarc:thumb="@drawable/custom_seek_arc_control_selector"
+            seekarc:touchInside="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="false"
+            android:layout_toRightOf="@+id/circleButton2"
+            android:layout_toLeftOf="@+id/circleButton1" />
+        <!--seekarc:arcWidth="10dp"-->
+    </RelativeLayout>
+
+</RelativeLayout>

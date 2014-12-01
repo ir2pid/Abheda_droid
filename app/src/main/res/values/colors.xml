@@ -3,4 +3,14 @@
     <color name="frame">#b4b4b4</color>
     <color name="frame_solid">#eee</color>
     <color name="frame_background">#bcbcbc</color>
+    <color name="button_green">#99CC00</color>
+    <color name="button_red">#e05539</color>
+    <color name="button_blue">#3988e0</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_green_dark">#ff669900</color>
+    <color name="red">#ffe2231a</color>
+    <color name="dark_red">#ff510209</color>
+    <color name="button_gray">#A1A1A1</color>
+    <color name="button_light_gray">#F7F7F7</color>
+
 </resources>

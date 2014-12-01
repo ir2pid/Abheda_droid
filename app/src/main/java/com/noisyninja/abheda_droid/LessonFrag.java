@@ -35,6 +35,12 @@ public class LessonFrag extends ListFragment {
         mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.lessons), getString(R.string.lessons)));
         mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.quiz), getString(R.string.quiz)));
         mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.info), getString(R.string.info)));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.lessons), getString(R.string.lessons)));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.quiz), getString(R.string.quiz)));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.info), getString(R.string.info)));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.lessons), getString(R.string.lessons)));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.quiz), getString(R.string.quiz)));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.imageholder), getString(R.string.info), getString(R.string.info)));
 
         // initialize and set the list adapter
         setListAdapter(new ListAdapter(getActivity(), mItems));

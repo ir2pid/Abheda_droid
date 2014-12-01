@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -49,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setCurrentItem(1);
 
     }
 
@@ -60,19 +62,19 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    @Override
+
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_about:
+                Toast.makeText(this,"About",Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
 
@@ -92,10 +94,10 @@ public class MainActivity extends ActionBarActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch(position)
             {
-                case 1: return new LessonFrag();
+                case 0: return new LessonFrag();
+                case 1: return new InfoFrag();
                 case 2: return new QuizFrag();
-                case 3: return new InfoFrag();
-                default: return new LessonFrag();
+                default: return new InfoFrag();
             }
 
         }
@@ -103,7 +105,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return Constants.TAB_COUNT;
         }
 
         @Override
@@ -113,9 +115,9 @@ public class MainActivity extends ActionBarActivity {
                 case 0:
                     return getString(R.string.lessons).toUpperCase(l);
                 case 1:
-                    return getString(R.string.quiz).toUpperCase(l);
-                case 2:
                     return getString(R.string.info).toUpperCase(l);
+                case 2:
+                    return getString(R.string.quiz).toUpperCase(l);
             }
             return null;
         }
