@@ -1,4 +1,4 @@
-package com.noisyninja.abheda_droid;
+package com.noisyninja.abheda_droid.util;
 
 /**
  * Created by ir2pi on 11/30/2014.

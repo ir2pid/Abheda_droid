@@ -1,4 +1,4 @@
-package com.noisyninja.abheda_droid.controls;
+package com.noisyninja.abheda_droid.control;
 
 import android.graphics.drawable.Drawable;
 

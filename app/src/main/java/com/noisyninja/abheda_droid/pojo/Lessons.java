@@ -7,13 +7,13 @@ import java.util.ArrayList;
  */
 public class Lessons extends BasePojo{
 
-    ArrayList<Lesson> arrayList;
+    ArrayList<Lesson> lessons;
 
-    public ArrayList<Lesson> getArrayList() {
-        return arrayList;
+    public ArrayList<Lesson> getLessons() {
+        return lessons;
     }
 
-    public void setArrayList(ArrayList<Lesson> arrayList) {
-        this.arrayList = arrayList;
+    public void setLessons(ArrayList<Lesson> lessons) {
+        this.lessons = lessons;
     }
 }

@@ -11,7 +11,9 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_gravity="center_horizontal">
+        android:background="@drawable/background"
+        android:gravity="center"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -20,7 +22,9 @@
             android:id="@+id/textView3"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_margin="30dp" />
+            android:layout_margin="30dp"
+            android:background="@drawable/rounded_rectangle"
+            android:padding="10dp" />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -28,7 +32,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_rectangle"
+            android:padding="10dp">
 
             <RadioGroup
                 android:layout_width="fill_parent"
@@ -74,7 +80,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout1"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@drawable/rounded_rectangle"
+            android:padding="10dp">
 
             <at.markushi.ui.CircleButton
                 android:id="@+id/circleButton1"

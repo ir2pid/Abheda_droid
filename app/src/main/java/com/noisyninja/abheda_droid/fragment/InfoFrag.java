@@ -1,4 +1,4 @@
-package com.noisyninja.abheda_droid;
+package com.noisyninja.abheda_droid.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.noisyninja.abheda_droid.R;
 
 /**
  * Created by ir2pi on 11/30/2014.

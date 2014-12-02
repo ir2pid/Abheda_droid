@@ -1,23 +1,24 @@
-package com.noisyninja.abheda_droid;
+package com.noisyninja.abheda_droid.activity;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.fragment.InfoFrag;
+import com.noisyninja.abheda_droid.fragment.LessonFrag;
+import com.noisyninja.abheda_droid.fragment.QuizFrag;
+import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.util.Utils;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -66,12 +67,16 @@ public class MainActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.action_settings: {
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                Utils.startActivity(this, Settings.class);
                 return true;
-            case R.id.action_about:
-                Toast.makeText(this,"About",Toast.LENGTH_SHORT).show();
+            }
+            case R.id.action_about: {
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                Utils.startActivity(this, About.class);
                 return true;
+            }
             default:
                 return super.onOptionsItemSelected(item);
         }

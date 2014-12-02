@@ -1,13 +1,13 @@
-package com.noisyninja.abheda_droid.controls;
+package com.noisyninja.abheda_droid.control;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.noisyninja.abheda_droid.Constants;
-import com.noisyninja.abheda_droid.InfoFrag;
-import com.noisyninja.abheda_droid.LessonFrag;
-import com.noisyninja.abheda_droid.QuizFrag;
+import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.fragment.InfoFrag;
+import com.noisyninja.abheda_droid.fragment.LessonFrag;
+import com.noisyninja.abheda_droid.fragment.QuizFrag;
 
 /**
  * Created by ir2pi on 11/30/2014.
