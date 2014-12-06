@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.content.Intent;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.util.Constants;
 
 /**
  * Created by ir2pi on 12/5/2014.
@@ -19,7 +17,6 @@ import com.noisyninja.abheda_droid.R;
 public class SplashActivity extends Activity {
 
     private static String TAG = SplashActivity.class.getName();
-    private static long SLEEP_TIME = 2000;    // Sleep for some time
     /**
      * The thread to process splash screen events
      */
@@ -52,7 +49,7 @@ public class SplashActivity extends Activity {
                 try {
                     synchronized(this){
                         // Wait given period of time or exit on touch
-                        wait(SLEEP_TIME);
+                        wait(Constants.SLEEP_TIME_2000);
                     }
                 }
                 catch(InterruptedException ex){

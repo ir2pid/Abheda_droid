@@ -2,6 +2,7 @@ package com.noisyninja.abheda_droid.activity;
 
 import java.util.Locale;
 
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -36,12 +37,11 @@ public class MainActivity extends ActionBarActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
-
+    InfoFrag infoFrag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -99,11 +99,10 @@ public class MainActivity extends ActionBarActivity {
             switch(position)
             {
                 case 0: return new ModuleGridFrag();
-                case 1: return new InfoFrag();
+                case 1: return  new InfoFrag();
                 case 2: return new QuizFrag();
                 default: return new InfoFrag();
             }
-
         }
 
         @Override
@@ -126,5 +125,6 @@ public class MainActivity extends ActionBarActivity {
             return null;
         }
     }
+
 
 }

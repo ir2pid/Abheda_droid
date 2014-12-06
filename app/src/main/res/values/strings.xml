@@ -10,5 +10,5 @@
     <string name="info">Info</string>
     <string name="list_item_image">list_item_image</string>
     <string name="answer">Answer</string>
-
+    <string name="progress">Progress.. </string>
 </resources>

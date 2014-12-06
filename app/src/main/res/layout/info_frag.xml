@@ -10,8 +10,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Progress.. x%"
-        android:id="@+id/textView2"
+        android:text=""
+        android:id="@+id/progressText"
         android:layout_centerInParent="true" />
 
     <RelativeLayout
@@ -45,7 +45,7 @@
             android:layout_centerVertical="true" />
 
 
-        <com.triggertrap.seekarc.SeekArc
+        <com.noisyninja.abheda_droid.control.SeekArc
             android:id="@+id/seekArc"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -59,7 +59,7 @@
             seekarc:startAngle="50"
             seekarc:sweepAngle="260"
             seekarc:thumb="@drawable/custom_seek_arc_control_selector"
-            seekarc:touchInside="false"
+            seekarc:roundEdges="true"
             android:layout_alignParentTop="false"
             android:layout_centerInParent="true"
             android:layout_alignParentEnd="false"

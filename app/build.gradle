@@ -30,5 +30,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.github.markushi:circlebutton:1.1'
     //compile 'com.f2prateek.progressbutton:progressbutton:2.0.0@aar'
-    compile "com.github.semoncat.seekarc:library:+"
+    //compile "com.github.semoncat.seekarc:library:+"
 }

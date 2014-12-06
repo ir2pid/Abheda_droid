@@ -15,4 +15,8 @@ public class Constants {
 
     public static int TAB_COUNT = 3;
     public static int PROGRESS = 31;
+    public static long SLEEP_TIME_2000 = 2000;    // Sleep for some time
+    public static long SLEEP_TIME_20 = 20;    // Sleep for some time
+    public static String PROGRESS_TEXT = "Progress.. ";
+    public static String PROGRESS_PERCENT = "%";
 }
