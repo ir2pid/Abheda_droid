@@ -14,4 +14,5 @@ package com.noisyninja.abheda_droid.util;
 public class Constants {
 
     public static int TAB_COUNT = 3;
+    public static int PROGRESS = 31;
 }

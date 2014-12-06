@@ -12,5 +12,5 @@
     <color name="dark_red">#ff510209</color>
     <color name="button_gray">#A1A1A1</color>
     <color name="button_light_gray">#F7F7F7</color>
-
+    <color name="translucent_black">#00000000</color>
 </resources>
