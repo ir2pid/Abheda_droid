@@ -2,6 +2,7 @@ package com.noisyninja.abheda_droid.activity;
 
 import java.util.Locale;
 
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,9 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.noisyninja.abheda_droid.fragment.ModuleGridFrag;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.fragment.InfoFrag;
-import com.noisyninja.abheda_droid.fragment.LessonFrag;
 import com.noisyninja.abheda_droid.fragment.QuizFrag;
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.util.Utils;
@@ -97,8 +98,8 @@ public class MainActivity extends ActionBarActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch(position)
             {
-                case 0: return new LessonFrag();
-                case 1: return new InfoFrag();
+                case 0: return new ModuleGridFrag();
+                case 1: return  new InfoFrag();
                 case 2: return new QuizFrag();
                 default: return new InfoFrag();
             }

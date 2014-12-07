@@ -12,24 +12,37 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name" >
+            android:name=".activity.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Transparent">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.Settings"
-            android:label="@string/app_name" >
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
+        <activity
+        android:name=".activity.Settings"
+        android:label="@string/app_name" >
+    </activity>
         <activity
             android:name=".activity.About"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".activity.LessonsList"
+            android:name=".activity.LessonsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.LessonDetailActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

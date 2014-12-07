@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
@@ -36,7 +37,6 @@ public class InfoFrag extends Fragment implements ISyncFrag{
                              Bundle savedInstanceState) {
 
         View windows = inflater.inflate(R.layout.info_frag, container, false);
-
         seekArc = ((SeekArc)windows.findViewById(R.id.seekArc));
         progressText = ((TextView)windows.findViewById(R.id.progressText));
         seekArc.setTouchable(false);
@@ -101,5 +101,4 @@ public class InfoFrag extends Fragment implements ISyncFrag{
             });
         }
     }
-
 }
