@@ -2,7 +2,8 @@ package com.noisyninja.abheda_droid.activity;
 
 import java.util.Locale;
 
-import android.os.AsyncTask;
+import android.app.Dialog;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,12 +12,14 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.fragment.ModuleGridFrag;
+import com.noisyninja.abheda_droid.fragment.QuizDetailFrag;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.fragment.InfoFrag;
-import com.noisyninja.abheda_droid.fragment.QuizFrag;
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.util.Utils;
 
@@ -37,12 +40,13 @@ public class MainActivity extends ActionBarActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
+    Context context;
     InfoFrag infoFrag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        context = this;
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -51,6 +55,7 @@ public class MainActivity extends ActionBarActivity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(1);
+
 
     }
 
@@ -81,6 +86,11 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    public void switchTab(int tabId) {
+
+        mViewPager.setCurrentItem(tabId, true);
+    }
+
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -100,7 +110,7 @@ public class MainActivity extends ActionBarActivity {
             {
                 case 0: return new ModuleGridFrag();
                 case 1: return  new InfoFrag();
-                case 2: return new QuizFrag();
+                case 2: return new ModuleGridFrag();
                 default: return new InfoFrag();
             }
         }

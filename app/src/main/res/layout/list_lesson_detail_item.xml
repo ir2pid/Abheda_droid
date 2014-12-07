@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:gravity="center_vertical"
-    android:background="@color/frame_background"
+    android:background="@color/button_transparent"
     android:padding="5dp" >
 
     <!-- the innner view - provides the white rectangle -->
     <RelativeLayout android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/frame" >
+        android:background="@drawable/rounded_rectangle" >
 
         <!-- the icon view -->
         <ImageView android:id="@+id/ivIcon"

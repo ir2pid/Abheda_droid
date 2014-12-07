@@ -1,18 +1,17 @@
 package com.noisyninja.abheda_droid.fragment;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.control.ListAdapter;
-import com.noisyninja.abheda_droid.control.ListViewItem;
+import com.noisyninja.abheda_droid.control.ListLessonAdapter;
+import com.noisyninja.abheda_droid.control.ListLessonItem;
 import com.noisyninja.abheda_droid.pojo.DummyContent;
+import com.noisyninja.abheda_droid.util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,10 +71,6 @@ public class LessonListFrag extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1, DummyContent.ITEMS));
     }
 
     @Override
@@ -88,6 +83,38 @@ public class LessonListFrag extends ListFragment {
             setActivatedPosition(savedInstanceState
                     .getInt(STATE_ACTIVATED_POSITION));
         }
+
+        List<ListLessonItem> items = new ArrayList<ListLessonItem>();
+        ListLessonItem listLessonItem1 = new ListLessonItem(
+                getResources().getDrawable(R.drawable.ic_disclosure2),
+                Constants.itemTypes[0],
+                Constants.itemTypes2[0]);
+        ListLessonItem listLessonItem2 = new ListLessonItem(
+                getResources().getDrawable(R.drawable.ic_disclosure2),
+                Constants.itemTypes[1],
+                Constants.itemTypes2[1]);
+        ListLessonItem listLessonItem3 = new ListLessonItem(
+                getResources().getDrawable(R.drawable.ic_disclosure2),
+                Constants.itemTypes[2],
+                Constants.itemTypes2[2]);
+
+        items.add(listLessonItem1);
+        items.add(listLessonItem2);
+        items.add(listLessonItem3);
+        items.add(listLessonItem1);
+        items.add(listLessonItem2);
+        items.add(listLessonItem3);
+        items.add(listLessonItem1);
+        items.add(listLessonItem2);
+        items.add(listLessonItem3);
+        items.add(listLessonItem1);
+        items.add(listLessonItem2);
+        items.add(listLessonItem3);
+        items.add(listLessonItem1);
+        items.add(listLessonItem2);
+        items.add(listLessonItem3);
+        // TODO: replace with a real list adapter.
+        setListAdapter(new ListLessonAdapter(getActivity(), items));
     }
 
     @Override

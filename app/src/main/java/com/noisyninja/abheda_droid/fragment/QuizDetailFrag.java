@@ -5,22 +5,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.SeekBar;
-import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import com.noisyninja.abheda_droid.R;
 
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class QuizFrag extends Fragment {
+public class QuizDetailFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View ios = inflater.inflate(R.layout.quiz_frag, container, false);
+        View ios = inflater.inflate(R.layout.quiz_detail_frag, container, false);
         //((TextView)ios.findViewById(R.id.textView)).setText("iOS");
         return ios;
     }
@@ -28,7 +23,7 @@ public class QuizFrag extends Fragment {
    /* public void onCreate(LayoutInflater inflater, ViewGroup container,
                          Bundle savedInstanceState) {
 
-        View quizFrag = inflater.inflate(R.layout.quiz_frag, container, false);
+        View quizFrag = inflater.inflate(R.layout.quiz_detail_frag, container, false);
 
         final ProgressButton progressButton1 = (ProgressButton) quizFrag.findViewById(R.id.pin_progress_1);
         final ProgressButton progressButton2 = (ProgressButton) quizFrag.findViewById(R.id.pin_progress_2);

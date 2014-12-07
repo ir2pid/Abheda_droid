@@ -20,7 +20,7 @@
         <item name="android:shadowRadius">0.2</item>
         <item name="android:textSize">16dip</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:background">@drawable/button</item>
+        <item name="android:background">@drawable/button_blue</item>
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
     </style>
@@ -55,4 +55,16 @@
         <item name="arcColor">@color/progress_gray</item>
     </style>
 
+    <style name="dialog_animation_right_left">
+        <item name="android:windowEnterAnimation">@anim/push_right_in</item>
+        <item name="android:windowExitAnimation">@anim/push_left_out</item>
+    </style>
+    <style name="dialog_animation_left_right">
+        <item name="android:windowEnterAnimation">@anim/push_left_in</item>
+        <item name="android:windowExitAnimation">@anim/push_right_out</item>
+    </style>
+    <style name="dialogAnimation_up_down">
+        <item name="android:windowEnterAnimation">@anim/push_up</item>
+        <item name="android:windowExitAnimation">@anim/push_down</item>
+    </style>
 </resources>

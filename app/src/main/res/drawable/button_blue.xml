@@ -13,5 +13,5 @@
         android:drawable="@drawable/button_focused" />
     <item
         android:state_enabled="true"
-        android:drawable="@drawable/button_enabled" />
+        android:drawable="@drawable/button_blue_enabled" />
 </selector>

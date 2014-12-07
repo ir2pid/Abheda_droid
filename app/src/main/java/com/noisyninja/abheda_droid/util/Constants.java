@@ -1,5 +1,7 @@
 package com.noisyninja.abheda_droid.util;
 
+import com.noisyninja.abheda_droid.R;
+
 /**
  * Created by ir2pi on 11/30/2014.
  *
@@ -10,6 +12,9 @@ package com.noisyninja.abheda_droid.util;
  * MIT libraries
  * SeekArc https://github.com/TriggerTrap/SeekArc
  *         https://github.com/SemonCat/SeekArc
+ *
+ * swipelistview
+ *         https://github.com/47deg/android-swipelistview#license
  */
 public class Constants {
 
@@ -19,4 +24,28 @@ public class Constants {
     public static long SLEEP_TIME_20 = 20;    // Sleep for some time
     public static String PROGRESS_TEXT = "Progress.. ";
     public static String PROGRESS_PERCENT = "%";
+
+    // Array of strings storing country names
+    public static String[] itemTypes = new String[] {
+            "Tick",
+            "Cross",
+            "Left",
+            "Right"
+    };
+
+    // Array of integers points to images stored in /res/drawable/
+    public static int[] flags = new int[]{
+            R.drawable.ic_action_tick,
+            R.drawable.ic_action_cross,
+            R.drawable.ic_action_left,
+            R.drawable.ic_action_right
+    };
+
+    // Array of strings to store currencies
+    public static String[] itemTypes2 = new String[]{
+            "ic_action_tick",
+            "ic_action_cross",
+            "ic_action_left",
+            "ic_action_right"
+    };
 }

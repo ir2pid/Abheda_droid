@@ -24,10 +24,10 @@ public class DummyContent {
 
     static {
         // Add 3 sample items.
-        addItem(new DummyItem("1", "cross", R.drawable.ic_action_cross));
-        addItem(new DummyItem("2", "left", R.drawable.ic_action_left));
-        addItem(new DummyItem("3", "right", R.drawable.ic_action_right));
-        addItem(new DummyItem("4", "tick", R.drawable.ic_action_tick));
+        addItem(new DummyItem("ic_action_cross", "cross", R.drawable.imageholder));
+        addItem(new DummyItem("ic_action_left", "left", R.drawable.imageholder));
+        addItem(new DummyItem("ic_action_right", "right", R.drawable.imageholder));
+        addItem(new DummyItem("ic_action_tick", "tick", R.drawable.imageholder));
     }
 
     private static void addItem(DummyItem item) {

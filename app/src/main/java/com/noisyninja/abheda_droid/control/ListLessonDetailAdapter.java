@@ -15,10 +15,10 @@ import java.util.List;
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class ListAdapter extends ArrayAdapter<ListViewItem> {
+public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> {
 
-    public ListAdapter(Context context, List<ListViewItem> items) {
-        super(context, R.layout.listview_item, items);
+    public ListLessonDetailAdapter(Context context, List<ListLessonDetailItem> items) {
+        super(context, R.layout.list_lesson_detail_item, items);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class ListAdapter extends ArrayAdapter<ListViewItem> {
         if(convertView == null) {
             // inflate the GridView item layout
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.listview_item, parent, false);
+            convertView = inflater.inflate(R.layout.list_lesson_detail_item, parent, false);
 
             // initialize the view holder
             viewHolder = new ViewHolder();
@@ -42,7 +42,7 @@ public class ListAdapter extends ArrayAdapter<ListViewItem> {
         }
 
         // update the item view
-        ListViewItem item = getItem(position);
+        ListLessonDetailItem item = getItem(position);
         viewHolder.ivIcon.setImageDrawable(item.icon);
         viewHolder.tvTitle.setText(item.title);
         viewHolder.tvDescription.setText(item.description);

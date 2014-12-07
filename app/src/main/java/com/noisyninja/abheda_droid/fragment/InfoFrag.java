@@ -1,17 +1,15 @@
 package com.noisyninja.abheda_droid.fragment;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.app.Dialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.DragEvent;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SeekBar;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,18 +18,20 @@ import com.noisyninja.abheda_droid.activity.MainActivity;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.control.SeekArc;
 
-import java.util.TimerTask;
+import at.markushi.ui.CircleButton;
 
 /**
  * Created by ir2pi on 11/30/2014.
  */
 public class InfoFrag extends Fragment implements ISyncFrag{
 
-
     int progress;
     SeekArc seekArc;
     TextView progressText;
     Activity activity;
+    CircleButton circleButton1;
+    CircleButton circleButton2;
+    Button continueButton;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,10 +40,68 @@ public class InfoFrag extends Fragment implements ISyncFrag{
         seekArc = ((SeekArc)windows.findViewById(R.id.seekArc));
         progressText = ((TextView)windows.findViewById(R.id.progressText));
         seekArc.setTouchable(false);
+        circleButton1 = (CircleButton)windows.findViewById(R.id.circleButton1);
+        circleButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.switchTab(2);
+            }
+        });
+        circleButton2 = (CircleButton)windows.findViewById(R.id.circleButton2);
+        circleButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.switchTab(0);
+            }
+        });
+        continueButton = (Button)windows.findViewById(R.id.button3);
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getLessonKind();
+            }
+        });
         return windows;
     }
 
+    public void getLessonKind()
+    {
+        // custom dialog
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_course_type);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_up_down;
+        //dialog.setTitle("Select course type...");
+
+        // set the custom dialog components - button
+        Button buttonModule = (Button) dialog.findViewById(R.id.button1);
+        buttonModule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.switchTab(0);
+                dialog.dismiss();
+            }
+        });
+        Button buttonRandom = (Button) dialog.findViewById(R.id.button2);
+        buttonRandom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Random selected", Toast.LENGTH_SHORT).show();
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.switchTab(2);
+                dialog.dismiss();
+            }
+        });
+
+
+        dialog.show();
+    }
     @Override
     public void onAttach(Activity activity)
     {
