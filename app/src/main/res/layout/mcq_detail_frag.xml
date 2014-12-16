@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/background_gradient8">
 
 
     <ScrollView
@@ -45,6 +46,7 @@
                 <RadioGroup
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/radioGroup"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="30dp"
                     android:layout_below="@+id/textView3"
@@ -55,6 +57,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="option 1"
+                        android:tag="1"
                         android:id="@+id/radioButton"
                         android:layout_below="@+id/textView3"
                         android:layout_centerHorizontal="true" />
@@ -63,18 +66,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="option 2"
+                        android:tag="2"
                         android:id="@+id/radioButton2" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="option 3"
+                        android:tag="3"
                         android:id="@+id/radioButton3" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="option 4"
+                        android:tag="4"
                         android:id="@+id/radioButton4" />
                 </RadioGroup>
             </LinearLayout>
@@ -91,41 +97,15 @@
                 android:padding="5dp"
                 android:layout_margin="5dp">
 
-                <at.markushi.ui.CircleButton
-                    android:id="@+id/circleButton1"
-                    android:layout_width="64dip"
-                    android:layout_height="64dip"
-                    android:src="@drawable/ic_action_tick"
-                    app:cb_color="@color/button_blue"
-                    app:cb_pressedRingWidth="8dip"
-                    android:layout_alignParentLeft="false"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="center" />
-
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/answer"
                     android:id="@+id/button"
-                    android:layout_toEndOf="@+id/circleButton2"
-                    android:layout_toStartOf="@+id/circleButton1"
                     android:layout_gravity="center"
                     android:background="@drawable/button_blue"
                     android:padding="20dp" />
 
-                <at.markushi.ui.CircleButton
-                    android:id="@+id/circleButton2"
-                    android:layout_width="64dip"
-                    android:layout_height="64dip"
-                    android:src="@drawable/ic_action_cross"
-                    app:cb_color="@color/button_red"
-                    app:cb_pressedRingWidth="8dip"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="false"
-                    android:layout_gravity="center" />
             </LinearLayout>
 
         </RelativeLayout>

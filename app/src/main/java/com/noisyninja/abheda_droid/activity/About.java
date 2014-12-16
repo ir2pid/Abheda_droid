@@ -8,7 +8,7 @@ import com.noisyninja.abheda_droid.pojo.Course;
 import com.noisyninja.abheda_droid.pojo.Courses;
 import com.noisyninja.abheda_droid.pojo.Lesson;
 import com.noisyninja.abheda_droid.pojo.Lessons;
-import com.noisyninja.abheda_droid.pojo.Quiz;
+import com.noisyninja.abheda_droid.pojo.MCQQuiz;
 import com.noisyninja.abheda_droid.pojo.Quizzes;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class About extends Activity{
     public Quizzes getQuizzes()
     {
         Quizzes quizzes = new Quizzes();
-        ArrayList<Quiz> quizzesList = new ArrayList<Quiz>();
+        ArrayList<MCQQuiz> quizzesList = new ArrayList<MCQQuiz>();
 
         return quizzes;
     }

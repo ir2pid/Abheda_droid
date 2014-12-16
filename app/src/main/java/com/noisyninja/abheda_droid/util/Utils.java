@@ -2,6 +2,11 @@ package com.noisyninja.abheda_droid.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
+import android.media.MediaPlayer;
+import android.widget.Toast;
+
+import com.noisyninja.abheda_droid.R;
 
 import junit.framework.Assert;
 
@@ -35,4 +40,31 @@ public class Utils {
         context.startActivity(intent);
     }
 
+    public static void makeToast(Context context, String text)
+    {
+        Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
+    }
+    public static void playSound(Context context, Constants.Sound sound)
+    {
+        MediaPlayer mp;
+        switch (sound) {
+            case RIGHT: mp = MediaPlayer.create(context, R.raw.tethys);break;
+            case WRONG: mp = MediaPlayer.create(context, R.raw.iapetus);break;
+            case CLICK: mp = MediaPlayer.create(context, R.raw.unlock);break;
+            default: mp = MediaPlayer.create(context, R.raw.elara);break;
+        }
+        mp.start();
+    }
+
+    public static void setBgGradient()
+    {
+        //View layout = findViewById(R.id.mainlayout);
+
+        GradientDrawable gd = new GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                new int[] {0xFF616261,0xFF131313});
+        gd.setCornerRadius(0f);
+
+        //layout.setBackgroundDrawable(gd);
+    }
 }

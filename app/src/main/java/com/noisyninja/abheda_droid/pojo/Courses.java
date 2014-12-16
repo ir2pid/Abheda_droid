@@ -5,15 +5,15 @@ import java.util.ArrayList;
 /**
  * Created by ir2pi on 12/2/2014.
  */
-public class Courses {
+public class Courses extends BasePojo {
 
-    ArrayList<Lesson> courses;
+    ArrayList<Course> courses;
 
-    public ArrayList<Lesson> getCourses() {
+    public ArrayList<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(ArrayList<Lesson> courses) {
+    public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }
 }

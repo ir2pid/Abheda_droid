@@ -15,9 +15,16 @@ import com.noisyninja.abheda_droid.R;
  *
  * swipelistview
  *         https://github.com/47deg/android-swipelistview#license
+ * DraggableGridView
+ *         https://github.com/thquinn/DraggableGridView
  */
 public class Constants {
 
+    public enum Sound {
+        CLICK,
+        RIGHT,
+        WRONG
+    }
     public static int TAB_COUNT = 3;
     public static int PROGRESS = 31;
     public static long SLEEP_TIME_2000 = 2000;    // Sleep for some time

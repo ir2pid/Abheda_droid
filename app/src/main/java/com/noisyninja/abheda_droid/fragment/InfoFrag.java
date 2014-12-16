@@ -17,6 +17,7 @@ import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.activity.MainActivity;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.control.SeekArc;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import at.markushi.ui.CircleButton;
 
@@ -40,11 +41,12 @@ public class InfoFrag extends Fragment implements ISyncFrag{
         seekArc = ((SeekArc)windows.findViewById(R.id.seekArc));
         progressText = ((TextView)windows.findViewById(R.id.progressText));
         seekArc.setTouchable(false);
-        circleButton1 = (CircleButton)windows.findViewById(R.id.circleButton1);
+        /*circleButton1 = (CircleButton)windows.findViewById(R.id.circleButton1);
         circleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.switchTab(2);
             }
@@ -54,14 +56,17 @@ public class InfoFrag extends Fragment implements ISyncFrag{
             @Override
             public void onClick(View view) {
 
+                Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.switchTab(0);
             }
-        });
+        });*/
         continueButton = (Button)windows.findViewById(R.id.button3);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 getLessonKind();
             }
         });
@@ -71,8 +76,9 @@ public class InfoFrag extends Fragment implements ISyncFrag{
     public void getLessonKind()
     {
         // custom dialog
-        final Dialog dialog = new Dialog(getActivity());
+        final Dialog dialog = new Dialog(getActivity(), R.style.TransparentDialog);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCanceledOnTouchOutside(true);
         dialog.setContentView(R.layout.dialog_course_type);
         dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_up_down;
         //dialog.setTitle("Select course type...");
@@ -82,6 +88,7 @@ public class InfoFrag extends Fragment implements ISyncFrag{
         buttonModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.switchTab(0);
@@ -92,6 +99,7 @@ public class InfoFrag extends Fragment implements ISyncFrag{
         buttonRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Random selected", Toast.LENGTH_SHORT).show();
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.switchTab(2);
@@ -116,7 +124,6 @@ public class InfoFrag extends Fragment implements ISyncFrag{
         if(seekArc!=null)
         seekArc.setProgress(value);
     }
-
 
     private class ProgressTask extends AsyncTask<Activity, Integer, String> {
         Activity activity;

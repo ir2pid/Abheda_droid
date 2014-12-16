@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.activity.LessonsActivity;
+import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 /**
@@ -47,6 +48,7 @@ public class ModuleGridFrag extends Fragment {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
+                Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(),
                         ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
 

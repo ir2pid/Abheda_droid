@@ -12,6 +12,7 @@ import com.noisyninja.abheda_droid.control.ListLessonAdapter;
 import com.noisyninja.abheda_droid.control.ListLessonItem;
 import com.noisyninja.abheda_droid.pojo.DummyContent;
 import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -142,7 +143,6 @@ public class LessonListFrag extends ListFragment {
     public void onListItemClick(ListView listView, View view, int position,
                                 long id) {
         super.onListItemClick(listView, view, position, id);
-
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
         mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);

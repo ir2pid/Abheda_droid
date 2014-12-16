@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.activity.LessonDetailActivity;
 import com.noisyninja.abheda_droid.activity.QuizDetailActivity;
+import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.List;
@@ -51,6 +52,7 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
         viewHolder.quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Utils.playSound(getContext(), Constants.Sound.CLICK);
                 Toast.makeText(getContext(),"quiz selected",Toast.LENGTH_SHORT).show();
                 Utils.startActivity(getContext(), QuizDetailActivity.class);
 
@@ -59,6 +61,7 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
         viewHolder.learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Utils.playSound(getContext(), Constants.Sound.CLICK);
                 Toast.makeText(getContext(),"learn selected",Toast.LENGTH_SHORT).show();
                 Utils.startActivity(getContext(), LessonDetailActivity.class);
             }

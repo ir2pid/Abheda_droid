@@ -2,7 +2,6 @@ package com.noisyninja.abheda_droid.activity;
 
 import java.util.Locale;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
@@ -10,14 +9,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.fragment.ModuleGridFrag;
-import com.noisyninja.abheda_droid.fragment.QuizDetailFrag;
+import com.noisyninja.abheda_droid.fragment.MotherModuleFrag;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.fragment.InfoFrag;
 import com.noisyninja.abheda_droid.R;
@@ -91,6 +89,18 @@ public class MainActivity extends ActionBarActivity {
         mViewPager.setCurrentItem(tabId, true);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch(keyCode){
+            case KeyEvent.KEYCODE_BACK:
+                if(mViewPager.getCurrentItem()!=1)
+                {
+                    mViewPager.setCurrentItem(1, true);
+                    return true;
+                }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -109,9 +119,9 @@ public class MainActivity extends ActionBarActivity {
             switch(position)
             {
                 case 0: return new ModuleGridFrag();
-                case 1: return  new InfoFrag();
+                case 1: return  new MotherModuleFrag();
                 case 2: return new ModuleGridFrag();
-                default: return new InfoFrag();
+                default: return new MotherModuleFrag();
             }
         }
 

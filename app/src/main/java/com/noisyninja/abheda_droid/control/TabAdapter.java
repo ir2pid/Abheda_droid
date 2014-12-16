@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
-import com.noisyninja.abheda_droid.fragment.QuizDetailFrag;
+import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.fragment.InfoFrag;
 
@@ -26,7 +26,7 @@ public class TabAdapter extends FragmentStatePagerAdapter {
                     return new LessonDetailFrag();
                 case 1:
                     //Fragment for Ios Tab
-                    return new QuizDetailFrag();
+                    return new MCQDetailFrag();
                 case 2:
                     //Fragment for Windows Tab
                     return new InfoFrag();

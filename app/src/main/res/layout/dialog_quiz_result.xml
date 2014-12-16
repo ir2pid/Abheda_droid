@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:gravity="center"
+    android:visibility="visible"
+    android:background="@drawable/button_disabled">
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/circleButton1"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:src="@drawable/ic_action_tick"
+        app:cb_color="@color/button_green"
+        app:cb_pressedRingWidth="8dip"
+        android:visibility="visible"
+        android:layout_centerInParent="true" />
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/circleButton2"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:src="@drawable/ic_action_cross"
+        app:cb_color="@color/button_red"
+        app:cb_pressedRingWidth="8dip"
+        android:visibility="invisible"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

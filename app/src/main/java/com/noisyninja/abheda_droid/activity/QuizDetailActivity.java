@@ -5,7 +5,9 @@ import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
-import com.noisyninja.abheda_droid.fragment.QuizDetailFrag;
+import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
+import com.noisyninja.abheda_droid.fragment.MatchGameDetailFrag;
+import com.noisyninja.abheda_droid.fragment.OrderGameDetailFrag;
 
 /**
  * Created by ir2pi on 12/7/2014.
@@ -23,10 +25,27 @@ public class QuizDetailActivity extends FragmentActivity {
             Bundle arguments = new Bundle();
             arguments.putString(LessonDetailFrag.ARG_ITEM_ID, getIntent()
                     .getStringExtra(LessonDetailFrag.ARG_ITEM_ID));
-            QuizDetailFrag fragment = new QuizDetailFrag();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.quiz_detail_container, fragment).commit();
+
+            if(Math.random() > 0.3) {
+                MCQDetailFrag fragment = new MCQDetailFrag();
+                fragment.setArguments(arguments);
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.quiz_detail_container, fragment).commit();
+            }
+            else  if(Math.random() > 0.3 && Math.random() < 0.6)
+            {
+                OrderGameDetailFrag fragment = new OrderGameDetailFrag();
+                fragment.setArguments(arguments);
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.quiz_detail_container, fragment).commit();
+            }
+            else
+            {
+                MatchGameDetailFrag fragment = new MatchGameDetailFrag();
+                fragment.setArguments(arguments);
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.quiz_detail_container, fragment).commit();
+            }
         }
     }
 }

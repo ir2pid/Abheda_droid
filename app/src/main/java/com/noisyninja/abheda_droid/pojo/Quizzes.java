@@ -7,13 +7,22 @@ import java.util.ArrayList;
  */
 public class Quizzes extends BasePojo{
 
-    ArrayList<Lesson> quizzes;
+    ArrayList<MCQQuiz> mcqQuizs;
+    ArrayList<OrderGameQuiz> orderGameQuizs;
 
-    public ArrayList<Lesson> getQuizzes() {
-        return quizzes;
+    public ArrayList<MCQQuiz> getMcqQuizs() {
+        return mcqQuizs;
     }
 
-    public void setQuizzes(ArrayList<Lesson> quizzes) {
-        this.quizzes = quizzes;
+    public void setMcqQuizs(ArrayList<MCQQuiz> mcqQuizs) {
+        this.mcqQuizs = mcqQuizs;
+    }
+
+    public ArrayList<OrderGameQuiz> getOrderGameQuizs() {
+        return orderGameQuizs;
+    }
+
+    public void setOrderGameQuizs(ArrayList<OrderGameQuiz> orderGameQuizs) {
+        this.orderGameQuizs = orderGameQuizs;
     }
 }

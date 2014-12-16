@@ -3,7 +3,7 @@ package com.noisyninja.abheda_droid.pojo;
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class Quiz extends BasePojo{
+public class MCQQuiz extends BasePojo{
 
     String name;
     String description;

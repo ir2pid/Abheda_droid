@@ -10,6 +10,8 @@ import android.support.v4.app.FragmentTransaction;
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
 import com.noisyninja.abheda_droid.fragment.LessonListFrag;
+import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.Utils;
 
 /**
  * Created by ir2pi on 12/3/2014.
@@ -50,6 +52,8 @@ public class LessonsActivity extends FragmentActivity implements
      */
     @Override
     public void onItemSelected(String id) {
+
+        Utils.playSound(this, Constants.Sound.CLICK);
         if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a

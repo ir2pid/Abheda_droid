@@ -41,6 +41,19 @@
         <item name="android:windowAnimationStyle">@style/Animations.SplashScreen</item>
     </style>
 
+    <style name="TransparentDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
     <style name="Animations" parent="@android:Animation" />
     <style name="Animations.SplashScreen">
         <item name="android:windowEnterAnimation">@anim/appear</item>
@@ -66,5 +79,13 @@
     <style name="dialogAnimation_up_down">
         <item name="android:windowEnterAnimation">@anim/push_up</item>
         <item name="android:windowExitAnimation">@anim/push_down</item>
+    </style>
+    <style name="dialogAnimation_down_up">
+        <item name="android:windowEnterAnimation">@anim/press_down</item>
+        <item name="android:windowExitAnimation">@anim/press_up</item>
+    </style>
+    <style name="dialogAnimation_grow_shrink">
+        <item name="android:windowEnterAnimation">@anim/grow_middle</item>
+        <item name="android:windowExitAnimation">@anim/shrink_middle</item>
     </style>
 </resources>

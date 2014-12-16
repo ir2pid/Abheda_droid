@@ -3,7 +3,7 @@ package com.noisyninja.abheda_droid.pojo;
 /**
  * Created by ir2pi on 12/2/2014.
  */
-public class Course {
+public class Course extends BasePojo {
 
     String name;
     String description;
