@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Module extends BasePojo {
 
     String name;
+    String description;
     int level;
     Courses courses;
 
@@ -17,6 +18,14 @@ public class Module extends BasePojo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getLevel() {

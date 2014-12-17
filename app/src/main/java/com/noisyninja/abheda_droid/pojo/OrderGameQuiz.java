@@ -1,19 +1,20 @@
 package com.noisyninja.abheda_droid.pojo;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by ir2pi on 12/13/2014.
  */
 public class OrderGameQuiz extends BasePojo {
 
-    ArrayList<String> words;
+    Map<Integer,String> words;
 
-    public ArrayList<String> getWords() {
+    public Map<Integer, String> getWords() {
         return words;
     }
 
-    public void setWords(ArrayList<String> words) {
+    public void setWords(Map<Integer, String> words) {
         this.words = words;
     }
 }

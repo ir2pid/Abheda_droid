@@ -33,6 +33,7 @@ dependencies {
     compile ('com.fortysevendeg.swipelistview:swipelistview:1.0-SNAPSHOT@aar') {
         transitive = true
     }
+
     //compile 'com.f2prateek.progressbutton:progressbutton:2.0.0@aar'
     //compile "com.github.semoncat.seekarc:library:+"
 }

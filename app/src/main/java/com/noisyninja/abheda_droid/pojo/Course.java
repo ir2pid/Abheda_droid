@@ -7,8 +7,11 @@ public class Course extends BasePojo {
 
     String name;
     String description;
+    String desc;
+    String instruction;
     Lessons lessons;
     Quizzes quizzes;
+    int level;
 
     public String getName() {
         return name;
@@ -26,6 +29,22 @@ public class Course extends BasePojo {
         this.description = description;
     }
 
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+
     public Lessons getLessons() {
         return lessons;
     }
@@ -40,5 +59,13 @@ public class Course extends BasePojo {
 
     public void setQuizzes(Quizzes quizzes) {
         this.quizzes = quizzes;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

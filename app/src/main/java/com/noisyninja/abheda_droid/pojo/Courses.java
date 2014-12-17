@@ -16,4 +16,5 @@ public class Courses extends BasePojo {
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }
+
 }
