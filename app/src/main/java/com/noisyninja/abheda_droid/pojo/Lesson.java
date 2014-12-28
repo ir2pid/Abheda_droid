@@ -10,6 +10,7 @@ public class Lesson extends BasePojo{
     String description;
     String image;
     String text;
+    boolean isFlashCard;
 
     public String getName() {
         return name;
@@ -43,4 +44,11 @@ public class Lesson extends BasePojo{
         this.text = text;
     }
 
+    public boolean isFlashCard() {
+        return isFlashCard;
+    }
+
+    public void setFlashCard(boolean isFlashCard) {
+        this.isFlashCard = isFlashCard;
+    }
 }

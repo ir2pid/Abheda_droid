@@ -2,12 +2,18 @@ package com.noisyninja.abheda_droid.util;
 
 import com.noisyninja.abheda_droid.pojo.Course;
 import com.noisyninja.abheda_droid.pojo.Courses;
+import com.noisyninja.abheda_droid.pojo.Lesson;
 import com.noisyninja.abheda_droid.pojo.Lessons;
+import com.noisyninja.abheda_droid.pojo.MCQQuiz;
 import com.noisyninja.abheda_droid.pojo.Module;
 import com.noisyninja.abheda_droid.pojo.Modules;
+import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
+import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.pojo.Quizzes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by ir2pi on 12/13/2014.
@@ -85,7 +91,34 @@ public class MockGen {
     public Lessons getBCPLessons()
     {
         Lessons lessons = new Lessons();
+        ArrayList<Lesson> lessonArrayList = new ArrayList<Lesson>();
 
+        Lesson lesson0 = new Lesson();
+        lesson0.setName("BCPlesson Name0");
+        lesson0.setDescription("BCPlesson description0");
+        lesson0.setText("BCPlesson text0");
+        lesson0.setImage("BCPlessonx0.jpg");
+        lesson0.setFlashCard(false);
+
+        Lesson lesson1 = new Lesson();
+        lesson1.setName("BCPlesson Name1");
+        lesson1.setDescription("BCPlesson description1");
+        lesson1.setText("BCPlesson text1");
+        lesson1.setImage("BCPlessonBCPx1.jpg");
+        lesson1.setFlashCard(true);
+
+        Lesson lesson2 = new Lesson();
+        lesson2.setName("BCPlesson Name2");
+        lesson2.setDescription("BCPlesson description2");
+        lesson2.setText("BCPlesson text2");
+        lesson2.setImage("BCPlessonBCPx2.jpg");
+        lesson2.setFlashCard(false);
+
+        lessonArrayList.add(lesson0);
+        lessonArrayList.add(lesson1);
+        lessonArrayList.add(lesson2);
+
+        lessons.setLessons(lessonArrayList);
 
         return lessons;
     }
@@ -94,6 +127,34 @@ public class MockGen {
     {
         Lessons lessons = new Lessons();
 
+        ArrayList<Lesson> lessonArrayList = new ArrayList<Lesson>();
+
+        Lesson lesson0 = new Lesson();
+        lesson0.setName("BCGlesson Name0");
+        lesson0.setDescription("BCGlesson description0");
+        lesson0.setText("BCGlesson text0");
+        lesson0.setImage("BCGlessonx0.jpg");
+        lesson0.setFlashCard(false);
+
+        Lesson lesson1 = new Lesson();
+        lesson1.setName("BCGlesson Name1");
+        lesson1.setDescription("BCGlesson description1");
+        lesson1.setText("BCGlesson text1");
+        lesson1.setImage("BCGlessonBCPx1.jpg");
+        lesson1.setFlashCard(false);
+
+        Lesson lesson2 = new Lesson();
+        lesson2.setName("BCGlesson Name2");
+        lesson2.setDescription("BCGlesson description2");
+        lesson2.setText("BCGlesson text2");
+        lesson2.setImage("BCGlessonx2.jpg");
+        lesson2.setFlashCard(true);
+
+        lessonArrayList.add(lesson0);
+        lessonArrayList.add(lesson1);
+        lessonArrayList.add(lesson2);
+
+        lessons.setLessons(lessonArrayList);
 
         return lessons;
     }
@@ -102,6 +163,34 @@ public class MockGen {
     {
         Lessons lessons = new Lessons();
 
+        ArrayList<Lesson> lessonArrayList = new ArrayList<Lesson>();
+
+        Lesson lesson0 = new Lesson();
+        lesson0.setName("BVAlesson Name0");
+        lesson0.setDescription("BVAlesson description0");
+        lesson0.setText("BVAlesson text0");
+        lesson0.setImage("BVAlessonx0.jpg");
+        lesson0.setFlashCard(true);
+
+        Lesson lesson1 = new Lesson();
+        lesson1.setName("BVAlesson Name1");
+        lesson1.setDescription("BVAlesson description1");
+        lesson1.setText("BVAlesson text1");
+        lesson1.setImage("BVAlessonBCPx1.jpg");
+        lesson1.setFlashCard(true);
+
+        Lesson lesson2 = new Lesson();
+        lesson2.setName("BVAlesson Name2");
+        lesson2.setDescription("BVAlesson description2");
+        lesson2.setText("BVAlesson text2");
+        lesson2.setImage("BVAlessonx2.jpg");
+        lesson2.setFlashCard(true);
+
+        lessonArrayList.add(lesson0);
+        lessonArrayList.add(lesson1);
+        lessonArrayList.add(lesson2);
+
+        lessons.setLessons(lessonArrayList);
 
         return lessons;
     }
@@ -110,14 +199,122 @@ public class MockGen {
     {
         Quizzes quizzes = new Quizzes();
 
+        ArrayList<MCQQuiz> mcqQuizs = new ArrayList<MCQQuiz>();
+        ArrayList<OrderGameQuiz> orderGameQuizs = new ArrayList<OrderGameQuiz>();
+        ArrayList<PictureMatchQuiz> pictureMatchQuiz = new ArrayList<PictureMatchQuiz>();
 
+        MCQQuiz mcqQuiz0 = new MCQQuiz();
+        mcqQuiz0.setName("BCPname0");
+        mcqQuiz0.setDescription("BCPdescription0");
+        mcqQuiz0.setOption1("BCPoption1");
+        mcqQuiz0.setOption2("BCPoption2");
+        mcqQuiz0.setOption3("BCPoption3");
+        mcqQuiz0.setOption4("BCPoption4");
+        mcqQuiz0.setCorrect(3);
+        mcqQuizs.add(mcqQuiz0);
+
+        MCQQuiz mcqQuiz1 = new MCQQuiz();
+        mcqQuiz1.setName("BCPname1");
+        mcqQuiz1.setDescription("BCPdescription1");
+        mcqQuiz1.setOption1("BCPoption1");
+        mcqQuiz1.setOption2("BCPoption2");
+        mcqQuiz1.setOption3("BCPoption3");
+        mcqQuiz1.setOption4("BCPoption4");
+        mcqQuiz1.setCorrect(3);
+        mcqQuizs.add(mcqQuiz1);
+
+        OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
+        Map<Integer,String> words0 = new HashMap<Integer, String>();
+        words0.put(1, "BCPword1");
+        words0.put(2, "BCPword2");
+        words0.put(3, "BCPword3");
+        words0.put(4, "BCPword4");
+        orderGameQuiz0.setWords(words0);
+        orderGameQuizs.add(orderGameQuiz0);
+
+        OrderGameQuiz orderGameQuiz1 = new OrderGameQuiz();
+        Map<Integer,String> words1 = new HashMap<Integer, String>();
+        words1.put(1, "BCPword1");
+        words1.put(2, "BCPword2");
+        words1.put(3, "BCPword3");
+        words1.put(4, "BCPword4");
+        orderGameQuiz1.setWords(words1);
+        orderGameQuizs.add(orderGameQuiz1);
+
+        PictureMatchQuiz pictureMatchQuiz1 = new PictureMatchQuiz();
+        Map<String,String> words3 = new HashMap<String, String>();
+        words3.put("BCPimagePictureMatchQuizx1.jpg","option1");
+        words3.put("BCPimagePictureMatchQuizx2.jpg","option2");
+        words3.put("BCPimagePictureMatchQuizx3.jpg","option3");
+        words3.put("BCPimagePictureMatchQuizx4.jpg","option4");
+        pictureMatchQuiz1.setWords(words3);
+        pictureMatchQuiz.add(pictureMatchQuiz1);
+
+        quizzes.setMcqQuizs(mcqQuizs);
+        quizzes.setOrderGameQuizs(orderGameQuizs);
+        quizzes.setPictureMatchQuiz(pictureMatchQuiz);
         return quizzes;
     }
 
     public Quizzes getBCGQuizzes()
     {
+
         Quizzes quizzes = new Quizzes();
 
+        ArrayList<MCQQuiz> mcqQuizs = new ArrayList<MCQQuiz>();
+        ArrayList<OrderGameQuiz> orderGameQuizs = new ArrayList<OrderGameQuiz>();
+        ArrayList<PictureMatchQuiz> pictureMatchQuiz = new ArrayList<PictureMatchQuiz>();
+
+        MCQQuiz mcqQuiz0 = new MCQQuiz();
+        mcqQuiz0.setName("BCGname0");
+        mcqQuiz0.setDescription("BCGdescription0");
+        mcqQuiz0.setOption1("BCGoption1");
+        mcqQuiz0.setOption2("BCGoption2");
+        mcqQuiz0.setOption3("BCGoption3");
+        mcqQuiz0.setOption4("BCGoption4");
+        mcqQuiz0.setCorrect(3);
+        mcqQuizs.add(mcqQuiz0);
+
+        MCQQuiz mcqQuiz1 = new MCQQuiz();
+        mcqQuiz1.setName("BCGname1");
+        mcqQuiz1.setDescription("BCGdescription1");
+        mcqQuiz1.setOption1("BCGoption1");
+        mcqQuiz1.setOption2("BCGoption2");
+        mcqQuiz1.setOption3("BCGoption3");
+        mcqQuiz1.setOption4("BCGoption4");
+        mcqQuiz1.setCorrect(3);
+        mcqQuizs.add(mcqQuiz1);
+
+        OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
+        Map<Integer,String> words0 = new HashMap<Integer, String>();
+        words0.put(1, "BCGword1");
+        words0.put(2, "BCGword2");
+        words0.put(3, "BCGword3");
+        words0.put(4, "BCGword4");
+        orderGameQuiz0.setWords(words0);
+        orderGameQuizs.add(orderGameQuiz0);
+
+        OrderGameQuiz orderGameQuiz1 = new OrderGameQuiz();
+        Map<Integer,String> words1 = new HashMap<Integer, String>();
+        words1.put(1, "BCGword1");
+        words1.put(2, "BCGword2");
+        words1.put(3, "BCGword3");
+        words1.put(4, "BCGword4");
+        orderGameQuiz1.setWords(words1);
+        orderGameQuizs.add(orderGameQuiz1);
+
+        PictureMatchQuiz pictureMatchQuiz1 = new PictureMatchQuiz();
+        Map<String,String> words3 = new HashMap<String, String>();
+        words3.put("BCGimagePictureMatchQuizx1.jpg","option1");
+        words3.put("BCGimagePictureMatchQuizx2.jpg","option2");
+        words3.put("BCGimagePictureMatchQuizx3.jpg","option3");
+        words3.put("BCGimagePictureMatchQuizx4.jpg","option4");
+        pictureMatchQuiz1.setWords(words3);
+        pictureMatchQuiz.add(pictureMatchQuiz1);
+
+        quizzes.setMcqQuizs(mcqQuizs);
+        quizzes.setOrderGameQuizs(orderGameQuizs);
+        quizzes.setPictureMatchQuiz(pictureMatchQuiz);
 
         return quizzes;
     }
@@ -126,6 +323,60 @@ public class MockGen {
     {
         Quizzes quizzes = new Quizzes();
 
+        ArrayList<MCQQuiz> mcqQuizs = new ArrayList<MCQQuiz>();
+        ArrayList<OrderGameQuiz> orderGameQuizs = new ArrayList<OrderGameQuiz>();
+        ArrayList<PictureMatchQuiz> pictureMatchQuiz = new ArrayList<PictureMatchQuiz>();
+
+        MCQQuiz mcqQuiz0 = new MCQQuiz();
+        mcqQuiz0.setName("BVAname0");
+        mcqQuiz0.setDescription("BVAdescription0");
+        mcqQuiz0.setOption1("BVAoption1");
+        mcqQuiz0.setOption2("BVAoption2");
+        mcqQuiz0.setOption3("BVAoption3");
+        mcqQuiz0.setOption4("BVAoption4");
+        mcqQuiz0.setCorrect(3);
+        mcqQuizs.add(mcqQuiz0);
+
+        MCQQuiz mcqQuiz1 = new MCQQuiz();
+        mcqQuiz1.setName("BVAname1");
+        mcqQuiz1.setDescription("BVAdescription1");
+        mcqQuiz1.setOption1("BVAoption1");
+        mcqQuiz1.setOption2("BVAoption2");
+        mcqQuiz1.setOption3("BVAoption3");
+        mcqQuiz1.setOption4("BVAoption4");
+        mcqQuiz1.setCorrect(3);
+        mcqQuizs.add(mcqQuiz1);
+
+        OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
+        Map<Integer,String> words0 = new HashMap<Integer, String>();
+        words0.put(1, "BVAword1");
+        words0.put(2, "BVAword2");
+        words0.put(3, "BVAword3");
+        words0.put(4, "BVAword4");
+        orderGameQuiz0.setWords(words0);
+        orderGameQuizs.add(orderGameQuiz0);
+
+        OrderGameQuiz orderGameQuiz1 = new OrderGameQuiz();
+        Map<Integer,String> words1 = new HashMap<Integer, String>();
+        words1.put(1, "BVAword1");
+        words1.put(2, "BVAword2");
+        words1.put(3, "BVAword3");
+        words1.put(4, "BVAword4");
+        orderGameQuiz1.setWords(words1);
+        orderGameQuizs.add(orderGameQuiz1);
+
+        PictureMatchQuiz pictureMatchQuiz1 = new PictureMatchQuiz();
+        Map<String,String> words3 = new HashMap<String, String>();
+        words3.put("BVAimagePictureMatchQuizx1.jpg","option1");
+        words3.put("BVAimagePictureMatchQuizx2.jpg","option2");
+        words3.put("BVAimagePictureMatchQuizx3.jpg","option3");
+        words3.put("BVAimagePictureMatchQuizx4.jpg","option4");
+        pictureMatchQuiz1.setWords(words3);
+        pictureMatchQuiz.add(pictureMatchQuiz1);
+
+        quizzes.setMcqQuizs(mcqQuizs);
+        quizzes.setOrderGameQuizs(orderGameQuizs);
+        quizzes.setPictureMatchQuiz(pictureMatchQuiz);
 
         return quizzes;
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="frame">#b4b4b4</color>
     <color name="frame_solid">#eee</color>
     <color name="frame_background">#bcbcbc</color>
@@ -7,6 +8,7 @@
     <color name="button_green_dark">#ff669900</color>
     <color name="button_red">#fff09988</color>
     <color name="button_blue">#3988e0</color>
+    <color name="button_cyan">#00afa0</color>
     <color name="button_off_white">#ffffff</color>
     <color name="button_transparent_white">#77ffffff</color>
     <color name="button_transparent">#00ffffff</color>

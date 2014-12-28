@@ -1,14 +1,19 @@
 package com.noisyninja.abheda_droid.util;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
+import android.view.View;
+import android.view.Window;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
 
 import junit.framework.Assert;
+
+import at.markushi.ui.CircleButton;
 
 /**
  * Created by ir2pi on 12/2/2014.
@@ -66,5 +71,34 @@ public class Utils {
         gd.setCornerRadius(0f);
 
         //layout.setBackgroundDrawable(gd);
+    }
+
+    public static void showResult(Context context, boolean value)
+    {
+        // custom dialog
+        final Dialog dialog = new Dialog(context);//, R.style.TransparentDialog
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.setContentView(R.layout.dialog_quiz_result);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_down_up;
+
+        // set the custom dialog components - button
+        CircleButton buttonModule1 = (CircleButton) dialog.findViewById(R.id.circleButton1);
+        CircleButton buttonModule2 = (CircleButton) dialog.findViewById(R.id.circleButton2);
+
+        if(value)
+        {
+            Utils.playSound(context, Constants.Sound.RIGHT);
+            buttonModule1.setVisibility(View.VISIBLE);
+            buttonModule2.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            Utils.playSound(context, Constants.Sound.WRONG);
+            buttonModule1.setVisibility(View.INVISIBLE);
+            buttonModule2.setVisibility(View.VISIBLE);
+        }
+
+        dialog.show();
     }
 }

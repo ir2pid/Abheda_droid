@@ -9,6 +9,7 @@ public class Quizzes extends BasePojo{
 
     ArrayList<MCQQuiz> mcqQuizs;
     ArrayList<OrderGameQuiz> orderGameQuizs;
+    ArrayList<PictureMatchQuiz> pictureMatchQuiz;
 
     public ArrayList<MCQQuiz> getMcqQuizs() {
         return mcqQuizs;
@@ -24,5 +25,13 @@ public class Quizzes extends BasePojo{
 
     public void setOrderGameQuizs(ArrayList<OrderGameQuiz> orderGameQuizs) {
         this.orderGameQuizs = orderGameQuizs;
+    }
+
+    public ArrayList<PictureMatchQuiz> getPictureMatchQuiz() {
+        return pictureMatchQuiz;
+    }
+
+    public void setPictureMatchQuiz(ArrayList<PictureMatchQuiz> pictureMatchQuiz) {
+        this.pictureMatchQuiz = pictureMatchQuiz;
     }
 }

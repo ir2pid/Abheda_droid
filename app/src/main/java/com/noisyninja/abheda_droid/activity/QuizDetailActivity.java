@@ -26,7 +26,7 @@ public class QuizDetailActivity extends FragmentActivity {
             arguments.putString(LessonDetailFrag.ARG_ITEM_ID, getIntent()
                     .getStringExtra(LessonDetailFrag.ARG_ITEM_ID));
 
-            if(Math.random() > 0.3) {
+            /*if(Math.random() > 0.3) {
                 MCQDetailFrag fragment = new MCQDetailFrag();
                 fragment.setArguments(arguments);
                 getSupportFragmentManager().beginTransaction()
@@ -40,12 +40,12 @@ public class QuizDetailActivity extends FragmentActivity {
                         .add(R.id.quiz_detail_container, fragment).commit();
             }
             else
-            {
+            {*/
                 MatchGameDetailFrag fragment = new MatchGameDetailFrag();
                 fragment.setArguments(arguments);
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.quiz_detail_container, fragment).commit();
-            }
+            //}
         }
     }
 }

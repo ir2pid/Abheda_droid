@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient9">
@@ -60,66 +61,151 @@
             android:gravity="center"
             android:weightSum="4">
 
-            <LinearLayout
+            <FrameLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/frameLayout1"
                 android:gravity="center">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView1"
-                    android:background="@drawable/background"
+                    android:background="@drawable/button_white"
                     android:src="@drawable/imageholder"
                     android:layout_margin="10dp" />
-            </LinearLayout>
-            <LinearLayout
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton11"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_tick"
+                    app:cb_color="@color/button_green"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton12"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_cross"
+                    app:cb_color="@color/button_red"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+            <FrameLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/frameLayout2"
                 android:gravity="center">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView2"
-                    android:background="@drawable/background"
+                    android:background="@drawable/button_white"
                     android:src="@drawable/imageholder"
                     android:layout_margin="10dp" />
-            </LinearLayout>
-            <LinearLayout
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton21"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_tick"
+                    app:cb_color="@color/button_green"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton22"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_cross"
+                    app:cb_color="@color/button_red"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+            <FrameLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/frameLayout3"
                 android:gravity="center">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView3"
-                    android:background="@drawable/background"
+                    android:background="@drawable/button_white"
                     android:src="@drawable/imageholder"
                     android:layout_margin="10dp" />
-            </LinearLayout>
-            <LinearLayout
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton31"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_tick"
+                    app:cb_color="@color/button_green"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton32"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_cross"
+                    app:cb_color="@color/button_red"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+            <FrameLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/frameLayout4"
                 android:gravity="center">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView4"
-                    android:background="@drawable/background"
+                    android:background="@drawable/button_white"
                     android:src="@drawable/imageholder"
                     android:layout_margin="10dp" />
-            </LinearLayout>
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton41"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_tick"
+                    app:cb_color="@color/button_green"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/circleButton42"
+                    android:layout_width="64dip"
+                    android:layout_height="64dip"
+                    android:src="@drawable/ic_action_cross"
+                    app:cb_color="@color/button_red"
+                    app:cb_pressedRingWidth="8dip"
+                    android:visibility="invisible"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
 
         </LinearLayout>

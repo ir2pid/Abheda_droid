@@ -9,14 +9,25 @@ import com.noisyninja.abheda_droid.R;
  * android-circlebutton https://github.com/markushi/android-circlebutton
  * android-HoloCircularProgressBar https://github.com/passsy/android-HoloCircularProgressBar
  * progressbutton https://github.com/f2prateek/progressbutton
+ * CircleProgress https://github.com/lzyzsd/CircleProgress
+ *
+ *
  * MIT libraries
+ * AndroidImageSlider
+ * https://github.com/daimajia/AndroidImageSlider
  * SeekArc https://github.com/TriggerTrap/SeekArc
  *         https://github.com/SemonCat/SeekArc
- *
  * swipelistview
  *         https://github.com/47deg/android-swipelistview#license
  * DraggableGridView
  *         https://github.com/thquinn/DraggableGridView
+ * NumberProgressBar
+ *         https://github.com/daimajia/NumberProgressBar
+ * LoadIndicators
+ *         https://github.com/adrian110288/LoadIndicators
+ * AndroidViewAnimations
+ *         https://github.com/daimajia/AndroidViewAnimations
+ *
  */
 public class Constants {
 
