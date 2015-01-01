@@ -7,14 +7,49 @@ import java.util.ArrayList;
  */
 public class Courses extends BasePojo {
 
-    ArrayList<Course> courses;
+    ArrayList<Module> modules;
+    int completion;
+    int marks;
+    String courseName;
+    String courseDescription;
 
-    public ArrayList<Course> getCourses() {
-        return courses;
+    public ArrayList<Module> getModules() {
+        return modules;
     }
 
-    public void setCourses(ArrayList<Course> courses) {
-        this.courses = courses;
+    public void setModules(ArrayList<Module> modules) {
+        this.modules = modules;
     }
 
+    public int getCompletion() {
+        return completion;
+    }
+
+    public void setCompletion(int completion) {
+        this.completion = completion;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getCourseDescription() {
+        return courseDescription;
+    }
+
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
+    }
 }

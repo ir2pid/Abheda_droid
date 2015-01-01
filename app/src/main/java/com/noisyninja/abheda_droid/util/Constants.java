@@ -10,6 +10,7 @@ import com.noisyninja.abheda_droid.R;
  * android-HoloCircularProgressBar https://github.com/passsy/android-HoloCircularProgressBar
  * progressbutton https://github.com/f2prateek/progressbutton
  * CircleProgress https://github.com/lzyzsd/CircleProgress
+ *https://github.com/idunnololz/AnimatedExpandableListView
  *
  *
  * MIT libraries
@@ -27,7 +28,6 @@ import com.noisyninja.abheda_droid.R;
  *         https://github.com/adrian110288/LoadIndicators
  * AndroidViewAnimations
  *         https://github.com/daimajia/AndroidViewAnimations
- *
  */
 public class Constants {
 

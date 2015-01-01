@@ -1,7 +1,5 @@
 package com.noisyninja.abheda_droid.pojo;
 
-import com.google.gson.Gson;
-
 /**
  * Created by ir2pi on 11/30/2014.
  */
@@ -10,7 +8,6 @@ public class Lesson extends BasePojo{
     String description;
     String image;
     String text;
-    boolean isFlashCard;
 
     public String getName() {
         return name;
@@ -44,11 +41,4 @@ public class Lesson extends BasePojo{
         this.text = text;
     }
 
-    public boolean isFlashCard() {
-        return isFlashCard;
-    }
-
-    public void setFlashCard(boolean isFlashCard) {
-        this.isFlashCard = isFlashCard;
-    }
 }

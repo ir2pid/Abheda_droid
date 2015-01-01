@@ -1,16 +1,18 @@
 package com.noisyninja.abheda_droid.pojo;
 
-import java.util.ArrayList;
-
 /**
- * Created by ir2pi on 12/13/2014.
+ * Created by ir2pi on 12/2/2014.
  */
 public class Module extends BasePojo {
 
     String name;
     String description;
+    String desc;
+    String instruction;
+    Lessons lessons;
+    Quizzes quizzes;
     int level;
-    Courses courses;
+    int daysToComplete;
 
     public String getName() {
         return name;
@@ -28,6 +30,38 @@ public class Module extends BasePojo {
         this.description = description;
     }
 
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+
+    public Lessons getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(Lessons lessons) {
+        this.lessons = lessons;
+    }
+
+    public Quizzes getQuizzes() {
+        return quizzes;
+    }
+
+    public void setQuizzes(Quizzes quizzes) {
+        this.quizzes = quizzes;
+    }
+
     public int getLevel() {
         return level;
     }
@@ -36,11 +70,11 @@ public class Module extends BasePojo {
         this.level = level;
     }
 
-    public Courses getCourses() {
-        return courses;
+    public int getDaysToComplete() {
+        return daysToComplete;
     }
 
-    public void setCourses(Courses courses) {
-        this.courses = courses;
+    public void setDaysToComplete(int daysToComplete) {
+        this.daysToComplete = daysToComplete;
     }
 }

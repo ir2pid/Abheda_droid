@@ -8,6 +8,15 @@ import java.util.ArrayList;
 public class Lessons extends BasePojo{
 
     ArrayList<Lesson> lessons;
+    boolean isFlashCard;
+
+    public boolean isFlashCard() {
+        return isFlashCard;
+    }
+
+    public void setFlashCard(boolean isFlashCard) {
+        this.isFlashCard = isFlashCard;
+    }
 
     public ArrayList<Lesson> getLessons() {
         return lessons;

@@ -1,12 +1,12 @@
 package com.noisyninja.abheda_droid.util;
 
-import com.noisyninja.abheda_droid.pojo.Course;
+import com.noisyninja.abheda_droid.pojo.Module;
 import com.noisyninja.abheda_droid.pojo.Courses;
 import com.noisyninja.abheda_droid.pojo.Lesson;
 import com.noisyninja.abheda_droid.pojo.Lessons;
 import com.noisyninja.abheda_droid.pojo.MCQQuiz;
-import com.noisyninja.abheda_droid.pojo.Module;
-import com.noisyninja.abheda_droid.pojo.Modules;
+import com.noisyninja.abheda_droid.pojo.Topic;
+import com.noisyninja.abheda_droid.pojo.Topics;
 import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.pojo.Quizzes;
@@ -20,48 +20,88 @@ import java.util.Map;
  */
 public class MockGen {
 
-    public Modules getMock()
+    public Topics getMock()
     {
-        Modules modules = new Modules();
-        ArrayList<Module> moduleArrayList = new ArrayList<Module>();
-        moduleArrayList.add(getModule());
-        modules.setModules(moduleArrayList);
+        Topics topics = new Topics();
+        ArrayList<Topic> topicsArrayList = new ArrayList<Topic>();
+        topicsArrayList.add(getTopic());
+        topics.setTopics(topicsArrayList);
 
-        return modules;
+        return topics;
     }
 
-    public Module getModule()
+    public Topic getTopic()
     {
-        Module module = new Module();
-        module.setName("English");
-        module.setDescription("English fundamentals");
-        module.setLevel(0);
-        module.setCourses(getCourses());
-        return module;
+        Topic topic = new Topic();
+        topic.setName("English");
+        topic.setDescription("English fundamentals");
+        topic.setMarks(0);
+        topic.setCompletion(0);
+        topic.setLevel(0);
+        topic.setCoursesList(getCoursesList());
+        return topic;
     }
-    public Courses getCourses()
+    public ArrayList<Courses> getCoursesList()
+    {
+        ArrayList<Courses> coursesList = new ArrayList<Courses>();
+        coursesList.add(getCoursesBCP());
+        coursesList.add(getCoursesBCG());
+        return coursesList;
+    }
+
+    public Courses getCoursesBCP()
     {
         Courses courses = new Courses();
-        ArrayList<Course> courseArrayList = new ArrayList<Course>();
-        courseArrayList.add(getCourse1());
-        courseArrayList.add(getCourse2());
-        courseArrayList.add(getCourse3());
-        courses.setCourses(courseArrayList);
+        courses.setCompletion(0);
+        courses.setCourseName("BCP");
+        courses.setCourseDescription("BCP Description");
+        courses.setMarks(0);
+        ArrayList<Module> moduleArrayList = new ArrayList<Module>();
+        moduleArrayList.add(getBCPCourse1());
+        moduleArrayList.add(getBCPCourse2());
+        courses.setModules(moduleArrayList);
         return courses;
     }
 
-    public Course getCourse1()
+    public Courses getCoursesBCG()
     {
-        Course course = new Course();
-        course.setName("B C P");
-        course.setDescription("English fundamental sentences and questions with am/is/are, has/have, shall/will, basic pronouns, adjectives, prepositions and  very basic conjugation patterns");
-        course.setDesc("Basic Sentences");
-        course.setInstruction("এই অনুশীলনীগুলি ইংরিজি ভাষার ভিত্তিস্বরূপ । অত্যন্ত সরল বাক্যের সাহায্যে তোমাদের ভিত তৈরী করা হচ্ছে । এগুলি শেষ করতে যা সময় তোমার লাগবে, তা নাও । সাধারণ ভুল যেগুলি ছাত্ররা করে, সেগুলিকে মাথায় রেখে ব্যাখ্যাগুলি দেওয়া হয়েছে আর কুইজগুলি তৈরী করা হয়েছে । সবকটা কুইজে ১০০% পেলে তবেই অন্য/পরের অনুশীলনীর কথা ভাববে, কারণ এই অনুশীলনীগুলির বাক্যগুলি এতই মৌলিক যে এগুলো কম বা ভুল শিখলে পরের অনুশীলনীগুলি শিখতে অসুবিধে হবে ।");
-        course.setLevel(0);
-        course.setLessons(getBCPLessons());
-        course.setQuizzes(getBCPQuizzes());
-        return course;
+        Courses courses = new Courses();
+        courses.setCompletion(0);
+        courses.setCourseName("BCG");
+        courses.setCourseDescription("BCG Description");
+        courses.setMarks(0);
+        return courses;
     }
+
+    public Module getBCPCourse1()
+    {
+        Module module = new Module();
+        module.setName("B C P 1");
+        module.setDescription("B C P 1 description");
+        module.setDesc("B C P 1 short description");
+        module.setInstruction("B C P 1 instruction ");
+        module.setLevel(0);
+        module.setDaysToComplete(5);
+        module.setLessons(getBCP1Lessons());
+        module.setQuizzes(getBCP1Quizzes());
+        return module;
+    }
+
+    public Module getBCPCourse2()
+    {
+        Module module = new Module();
+        module.setName("B C P 2");
+        module.setDescription("B C P 2 description");
+        module.setDesc("B C P 2 short description");
+        module.setInstruction("B C P 2 instruction ");
+        module.setLevel(0);
+        module.setDaysToComplete(2);
+        module.setLessons(getBCP2Lessons());
+        module.setQuizzes(getBCP2Quizzes());
+        return module;
+    }
+
+/*
     public Course getCourse2()
     {
         Course course = new Course();
@@ -86,11 +126,12 @@ public class MockGen {
         course.setLessons(getBVALessons());
         course.setQuizzes(getBVAQuizzes());
         return course;
-    }
+    }*/
 
-    public Lessons getBCPLessons()
+    public Lessons getBCP1Lessons()
     {
         Lessons lessons = new Lessons();
+        lessons.setFlashCard(false);
         ArrayList<Lesson> lessonArrayList = new ArrayList<Lesson>();
 
         Lesson lesson0 = new Lesson();
@@ -98,31 +139,48 @@ public class MockGen {
         lesson0.setDescription("BCPlesson description0");
         lesson0.setText("BCPlesson text0");
         lesson0.setImage("BCPlessonx0.jpg");
-        lesson0.setFlashCard(false);
 
         Lesson lesson1 = new Lesson();
         lesson1.setName("BCPlesson Name1");
         lesson1.setDescription("BCPlesson description1");
         lesson1.setText("BCPlesson text1");
         lesson1.setImage("BCPlessonBCPx1.jpg");
-        lesson1.setFlashCard(true);
-
-        Lesson lesson2 = new Lesson();
-        lesson2.setName("BCPlesson Name2");
-        lesson2.setDescription("BCPlesson description2");
-        lesson2.setText("BCPlesson text2");
-        lesson2.setImage("BCPlessonBCPx2.jpg");
-        lesson2.setFlashCard(false);
 
         lessonArrayList.add(lesson0);
         lessonArrayList.add(lesson1);
-        lessonArrayList.add(lesson2);
 
         lessons.setLessons(lessonArrayList);
 
         return lessons;
     }
 
+
+    public Lessons getBCP2Lessons()
+    {
+        Lessons lessons = new Lessons();
+        lessons.setFlashCard(true);
+        ArrayList<Lesson> lessonArrayList = new ArrayList<Lesson>();
+
+        Lesson lesson0 = new Lesson();
+        lesson0.setName("BCP2lesson Name0");
+        lesson0.setDescription("BCP2lesson description0");
+        lesson0.setText("BCP2lesson text0");
+        lesson0.setImage("BCP2lessonx0.jpg");
+
+        Lesson lesson1 = new Lesson();
+        lesson1.setName("BCP2lesson Name1");
+        lesson1.setDescription("BCP2lesson description1");
+        lesson1.setText("BCP2lesson text1");
+        lesson1.setImage("BCP2lessonBCPx1.jpg");
+
+        lessonArrayList.add(lesson0);
+        lessonArrayList.add(lesson1);
+
+        lessons.setLessons(lessonArrayList);
+
+        return lessons;
+    }
+/*
     public Lessons getBCGLessons()
     {
         Lessons lessons = new Lessons();
@@ -193,9 +251,9 @@ public class MockGen {
         lessons.setLessons(lessonArrayList);
 
         return lessons;
-    }
+    }*/
 
-    public Quizzes getBCPQuizzes()
+    public Quizzes getBCP1Quizzes()
     {
         Quizzes quizzes = new Quizzes();
 
@@ -204,8 +262,8 @@ public class MockGen {
         ArrayList<PictureMatchQuiz> pictureMatchQuiz = new ArrayList<PictureMatchQuiz>();
 
         MCQQuiz mcqQuiz0 = new MCQQuiz();
-        mcqQuiz0.setName("BCPname0");
-        mcqQuiz0.setDescription("BCPdescription0");
+        mcqQuiz0.setName("BCP1name0");
+        mcqQuiz0.setDescription("BCP1description0");
         mcqQuiz0.setOption1("BCPoption1");
         mcqQuiz0.setOption2("BCPoption2");
         mcqQuiz0.setOption3("BCPoption3");
@@ -214,8 +272,8 @@ public class MockGen {
         mcqQuizs.add(mcqQuiz0);
 
         MCQQuiz mcqQuiz1 = new MCQQuiz();
-        mcqQuiz1.setName("BCPname1");
-        mcqQuiz1.setDescription("BCPdescription1");
+        mcqQuiz1.setName("BCP1name1");
+        mcqQuiz1.setDescription("BCP1description1");
         mcqQuiz1.setOption1("BCPoption1");
         mcqQuiz1.setOption2("BCPoption2");
         mcqQuiz1.setOption3("BCPoption3");
@@ -243,10 +301,10 @@ public class MockGen {
 
         PictureMatchQuiz pictureMatchQuiz1 = new PictureMatchQuiz();
         Map<String,String> words3 = new HashMap<String, String>();
-        words3.put("BCPimagePictureMatchQuizx1.jpg","option1");
-        words3.put("BCPimagePictureMatchQuizx2.jpg","option2");
-        words3.put("BCPimagePictureMatchQuizx3.jpg","option3");
-        words3.put("BCPimagePictureMatchQuizx4.jpg","option4");
+        words3.put("BCP1imagePictureMatchQuizx1.jpg","option1");
+        words3.put("BCP1imagePictureMatchQuizx2.jpg","option2");
+        words3.put("BCP1imagePictureMatchQuizx3.jpg","option3");
+        words3.put("BCP1imagePictureMatchQuizx4.jpg","option4");
         pictureMatchQuiz1.setWords(words3);
         pictureMatchQuiz.add(pictureMatchQuiz1);
 
@@ -256,6 +314,69 @@ public class MockGen {
         return quizzes;
     }
 
+
+
+    public Quizzes getBCP2Quizzes()
+    {
+        Quizzes quizzes = new Quizzes();
+
+        ArrayList<MCQQuiz> mcqQuizs = new ArrayList<MCQQuiz>();
+        ArrayList<OrderGameQuiz> orderGameQuizs = new ArrayList<OrderGameQuiz>();
+        ArrayList<PictureMatchQuiz> pictureMatchQuiz = new ArrayList<PictureMatchQuiz>();
+
+        MCQQuiz mcqQuiz0 = new MCQQuiz();
+        mcqQuiz0.setName("BCP2 quiz name0");
+        mcqQuiz0.setDescription("BCP2 quiz description0");
+        mcqQuiz0.setOption1("BCPoption1");
+        mcqQuiz0.setOption2("BCPoption2");
+        mcqQuiz0.setOption3("BCPoption3");
+        mcqQuiz0.setOption4("BCPoption4");
+        mcqQuiz0.setCorrect(3);
+        mcqQuizs.add(mcqQuiz0);
+
+        MCQQuiz mcqQuiz1 = new MCQQuiz();
+        mcqQuiz1.setName("BCP2 quiz name1");
+        mcqQuiz1.setDescription("BCP2 quiz description1");
+        mcqQuiz1.setOption1("BCPoption1");
+        mcqQuiz1.setOption2("BCPoption2");
+        mcqQuiz1.setOption3("BCPoption3");
+        mcqQuiz1.setOption4("BCPoption4");
+        mcqQuiz1.setCorrect(3);
+        mcqQuizs.add(mcqQuiz1);
+
+        OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
+        Map<Integer,String> words0 = new HashMap<Integer, String>();
+        words0.put(1, "BCPword1");
+        words0.put(2, "BCPword2");
+        words0.put(3, "BCPword3");
+        words0.put(4, "BCPword4");
+        orderGameQuiz0.setWords(words0);
+        orderGameQuizs.add(orderGameQuiz0);
+
+        OrderGameQuiz orderGameQuiz1 = new OrderGameQuiz();
+        Map<Integer,String> words1 = new HashMap<Integer, String>();
+        words1.put(1, "BCPword1");
+        words1.put(2, "BCPword2");
+        words1.put(3, "BCPword3");
+        words1.put(4, "BCPword4");
+        orderGameQuiz1.setWords(words1);
+        orderGameQuizs.add(orderGameQuiz1);
+
+        PictureMatchQuiz pictureMatchQuiz1 = new PictureMatchQuiz();
+        Map<String,String> words3 = new HashMap<String, String>();
+        words3.put("BCP2imagePictureMatchQuizx1.jpg","option1");
+        words3.put("BCP2imagePictureMatchQuizx2.jpg","option2");
+        words3.put("BCP2imagePictureMatchQuizx3.jpg","option3");
+        words3.put("BCP2imagePictureMatchQuizx4.jpg","option4");
+        pictureMatchQuiz1.setWords(words3);
+        pictureMatchQuiz.add(pictureMatchQuiz1);
+
+        quizzes.setMcqQuizs(mcqQuizs);
+        quizzes.setOrderGameQuizs(orderGameQuizs);
+        quizzes.setPictureMatchQuiz(pictureMatchQuiz);
+        return quizzes;
+    }
+/*
     public Quizzes getBCGQuizzes()
     {
 
@@ -379,6 +500,6 @@ public class MockGen {
         quizzes.setPictureMatchQuiz(pictureMatchQuiz);
 
         return quizzes;
-    }
+    }*/
 
 }

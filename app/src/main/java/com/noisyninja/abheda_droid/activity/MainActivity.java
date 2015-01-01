@@ -1,29 +1,28 @@
 package com.noisyninja.abheda_droid.activity;
 
-import java.util.Locale;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.fragment.InfoFrag;
 import com.noisyninja.abheda_droid.fragment.ModuleGridFrag;
 import com.noisyninja.abheda_droid.fragment.MotherModuleFrag;
 import com.noisyninja.abheda_droid.util.Constants;
-import com.noisyninja.abheda_droid.fragment.InfoFrag;
-import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.util.MockGen;
 import com.noisyninja.abheda_droid.util.Utils;
+
+import java.util.Locale;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -59,14 +58,14 @@ public class MainActivity extends ActionBarActivity {
         mViewPager.setCurrentItem(1);
 
 
-        /*MockGen mockGen = new MockGen();
+        MockGen mockGen = new MockGen();
         //Log.i("MainActivity",);
 
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto", "ir2pid@gmail.com", null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "schema");
         emailIntent.putExtra(Intent.EXTRA_TEXT, mockGen.getMock().toString());
-        startActivity(Intent.createChooser(emailIntent, "Send email..."));*/
+        startActivity(Intent.createChooser(emailIntent, "Send email..."));
     }
 
 
@@ -131,7 +130,7 @@ public class MainActivity extends ActionBarActivity {
             switch(position)
             {
                 case 0: return new ModuleGridFrag();
-                case 1: return  new MotherModuleFrag();
+                case 1: return  new InfoFrag();
                 case 2: return new ModuleGridFrag();
                 default: return new MotherModuleFrag();
             }
