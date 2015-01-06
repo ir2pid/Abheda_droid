@@ -10,7 +10,7 @@ import com.noisyninja.abheda_droid.R;
  * android-HoloCircularProgressBar https://github.com/passsy/android-HoloCircularProgressBar
  * progressbutton https://github.com/f2prateek/progressbutton
  * CircleProgress https://github.com/lzyzsd/CircleProgress
- *https://github.com/idunnololz/AnimatedExpandableListView
+ * https://github.com/idunnololz/AnimatedExpandableListView
  *
  *
  * MIT libraries
@@ -31,15 +31,26 @@ import com.noisyninja.abheda_droid.R;
  */
 public class Constants {
 
+    public static String DATA_FILE = "data.json";
+
     public enum Sound {
         CLICK,
         RIGHT,
         WRONG
     }
+    public enum MODULE_TYPE {
+        LESSON,
+        FLASHCARD,
+        MCQ,
+        MATCH,
+        ORDER
+    }
+
     public static int TAB_COUNT = 3;
     public static int PROGRESS = 31;
     public static long SLEEP_TIME_2000 = 2000;    // Sleep for some time
     public static long SLEEP_TIME_20 = 20;    // Sleep for some time
+    public static long ANIMATION_TIME_700 = 700;    // Sleep for some time
     public static String PROGRESS_TEXT = "Progress.. ";
     public static String PROGRESS_PERCENT = "%";
 

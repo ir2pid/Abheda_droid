@@ -1,0 +1,186 @@
+{
+   "topics": [
+      {
+         "name": "English",
+         "description": "English fundamentals description English fundamentals description English fundamentals description",
+         "level": 0,
+         "marks": 50,
+         "completion": 10,
+         "coursesList": [
+            {
+               "courseDescription": "BCP Description",
+               "courseName": "BCP",
+               "completion": 40,
+               "marks": 30,
+               "modules": [
+                  {
+                     "name": "B C P 1",
+                     "level": 0,
+                     "daysToComplete": 5,
+                     "marks": 20,
+                     "desc": "B C P 1 short description",
+                     "description": "B C P 1 description",
+                     "instruction": "B C P 1 instruction ",
+                     "lessons": {
+                        "isFlashCard": false,
+                        "lessons": [
+                           {
+                              "description": "BCPlesson description0",
+                              "image": "BCPlessonx0.jpg",
+                              "name": "BCPlesson Name0",
+                              "text": "BCPlesson text0"
+                           },
+                           {
+                              "description": "BCPlesson description1",
+                              "image": "BCPlessonBCPx1.jpg",
+                              "name": "BCPlesson Name1",
+                              "text": "BCPlesson text1"
+                           }
+                        ]
+                     },
+                     "quizzes": {
+                        "mcqQuizs": [
+                           {
+                              "description": "BCP1description0",
+                              "name": "BCP1name0",
+                              "option1": "BCPoption1",
+                              "option2": "BCPoption2",
+                              "option3": "BCPoption3",
+                              "option4": "BCPoption4",
+                              "correct": 3
+                           },
+                           {
+                              "description": "BCP1description1",
+                              "name": "BCP1name1",
+                              "option1": "BCPoption1",
+                              "option2": "BCPoption2",
+                              "option3": "BCPoption3",
+                              "option4": "BCPoption4",
+                              "correct": 3
+                           }
+                        ],
+                        "orderGameQuizs": [
+                           {
+                              "words": {
+                                 "4": "BCPword4",
+                                 "1": "BCPword1",
+                                 "2": "BCPword2",
+                                 "3": "BCPword3"
+                              }
+                           },
+                           {
+                              "words": {
+                                 "4": "BCPword4",
+                                 "1": "BCPword1",
+                                 "2": "BCPword2",
+                                 "3": "BCPword3"
+                              }
+                           }
+                        ],
+                        "pictureMatchQuiz": [
+                           {
+                              "words": {
+                                 "BCP1imagePictureMatchQuizx1.jpg": "option1",
+                                 "BCP1imagePictureMatchQuizx4.jpg": "option4",
+                                 "BCP1imagePictureMatchQuizx3.jpg": "option3",
+                                 "BCP1imagePictureMatchQuizx2.jpg": "option2"
+                              }
+                           }
+                        ]
+                     }
+                  },
+                  {
+                     "name": "B C P 2",
+                     "description": "B C P 2 description",
+                     "desc": "B C P 2 short description",
+                     "instruction": "B C P 2 instruction ",
+                     "level": 0,
+                     "marks": 10,
+                     "daysToComplete": 2,
+                     "lessons": {
+                        "isFlashCard": true,
+                        "lessons": [
+                           {
+                              "description": "BCP2lesson description0",
+                              "image": "BCP2lessonx0.jpg",
+                              "name": "BCP2lesson Name0",
+                              "text": "BCP2lesson text0"
+                           },
+                           {
+                              "description": "BCP2lesson description1",
+                              "image": "BCP2lessonBCPx1.jpg",
+                              "name": "BCP2lesson Name1",
+                              "text": "BCP2lesson text1"
+                           }
+                        ]
+                     },
+                     "quizzes": {
+                        "mcqQuizs": [
+                           {
+                              "description": "BCP2 quiz description0",
+                              "name": "BCP2 quiz name0",
+                              "option1": "BCPoption1",
+                              "option2": "BCPoption2",
+                              "option3": "BCPoption3",
+                              "option4": "BCPoption4",
+                              "correct": 3
+                           },
+                           {
+                              "description": "BCP2 quiz description1",
+                              "name": "BCP2 quiz name1",
+                              "option1": "BCPoption1",
+                              "option2": "BCPoption2",
+                              "option3": "BCPoption3",
+                              "option4": "BCPoption4",
+                              "correct": 3
+                           }
+                        ],
+                        "orderGameQuizs": [
+                           {
+                              "words": {
+                                 "4": "BCPword4",
+                                 "1": "BCPword1",
+                                 "2": "BCPword2",
+                                 "3": "BCPword3"
+                              }
+                           },
+                           {
+                              "words": {
+                                 "4": "BCPword4",
+                                 "1": "BCPword1",
+                                 "2": "BCPword2",
+                                 "3": "BCPword3"
+                              }
+                           }
+                        ],
+                        "pictureMatchQuiz": [
+                           {
+                              "words": {
+                                 "BCP2imagePictureMatchQuizx1.jpg": "option1",
+                                 "BCP2imagePictureMatchQuizx2.jpg": "option2",
+                                 "BCP2imagePictureMatchQuizx4.jpg": "option4",
+                                 "BCP2imagePictureMatchQuizx3.jpg": "option3"
+                              }
+                           }
+                        ]
+                     }
+                  }
+               ]
+            },
+            {
+               "courseDescription": "BCG Description",
+               "courseName": "BCG",
+               "completion": 15,
+               "marks": 20
+            }
+         ]
+      },
+       {
+               "name": "Maths",
+               "description": "Maths fundamentals description",
+               "level": 0,
+               "marks": 100,
+               "completion": 0
+       }
+   ]
+}

@@ -11,7 +11,7 @@
         android:right="7dp"
         android:bottom="7dp" />
     <stroke
-        android:width="1dip"
+        android:width="5dip"
         android:color="@color/button_green_dark" />
     <corners android:radius= "25dp" />
 </shape>

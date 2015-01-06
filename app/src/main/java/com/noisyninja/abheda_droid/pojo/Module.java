@@ -12,6 +12,7 @@ public class Module extends BasePojo {
     Lessons lessons;
     Quizzes quizzes;
     int level;
+    int marks;
     int daysToComplete;
 
     public String getName() {
@@ -76,5 +77,13 @@ public class Module extends BasePojo {
 
     public void setDaysToComplete(int daysToComplete) {
         this.daysToComplete = daysToComplete;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+
+    public void setMarks(int marks) {
+        this.marks = marks;
     }
 }

@@ -9,15 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.activity.MainActivity;
-import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.control.AnimatedButton;
 import com.noisyninja.abheda_droid.control.SeekArc;
-import com.noisyninja.abheda_droid.util.Utils;
+import com.noisyninja.abheda_droid.util.Constants;
 
 import at.markushi.ui.CircleButton;
 
@@ -32,7 +31,7 @@ public class InfoFrag extends Fragment implements ISyncFrag{
     Activity activity;
     CircleButton circleButton1;
     CircleButton circleButton2;
-    Button continueButton;
+    AnimatedButton continueButton;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,12 +60,11 @@ public class InfoFrag extends Fragment implements ISyncFrag{
                 mainActivity.switchTab(0);
             }
         });*/
-        continueButton = (Button)windows.findViewById(R.id.button3);
+        continueButton = (AnimatedButton)windows.findViewById(R.id.button3);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 getLessonKind();
             }
         });
@@ -84,29 +82,29 @@ public class InfoFrag extends Fragment implements ISyncFrag{
         //dialog.setTitle("Select course type...");
 
         // set the custom dialog components - button
-        Button buttonModule = (Button) dialog.findViewById(R.id.button1);
+        AnimatedButton buttonModule = (AnimatedButton) dialog.findViewById(R.id.button1);
         buttonModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Utils.playSound(getActivity(), Constants.Sound.CLICK);
+                //Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.switchTab(0);
                 dialog.dismiss();
             }
         });
-        Button buttonRandom = (Button) dialog.findViewById(R.id.button2);
+
+        AnimatedButton buttonRandom = (AnimatedButton) dialog.findViewById(R.id.button2);
         buttonRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Utils.playSound(getActivity(), Constants.Sound.CLICK);
+                //Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Random selected", Toast.LENGTH_SHORT).show();
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.switchTab(2);
                 dialog.dismiss();
             }
         });
-
 
         dialog.show();
     }

@@ -71,7 +71,7 @@
         android:layout_centerInParent="true"
         android:textColor="@color/button_off_white" />
 
-    <Button
+    <com.noisyninja.abheda_droid.control.AnimatedButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue"

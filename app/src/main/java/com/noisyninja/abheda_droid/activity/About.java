@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.pojo.Course;
+import com.noisyninja.abheda_droid.pojo.Module;
 import com.noisyninja.abheda_droid.pojo.Courses;
 import com.noisyninja.abheda_droid.pojo.Lesson;
 import com.noisyninja.abheda_droid.pojo.Lessons;
@@ -24,9 +24,9 @@ public class About extends Activity{
         setContentView(R.layout.about);
 
         Courses courses = new Courses();
-        ArrayList<Course> courseList = new ArrayList<Course>();
+        ArrayList<Module> moduleList = new ArrayList<Module>();
 
-        Course course = new Course();
+        Module module = new Module();
     }
 
     public Lessons getLessons()

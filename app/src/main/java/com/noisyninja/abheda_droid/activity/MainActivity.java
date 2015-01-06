@@ -1,8 +1,6 @@
 package com.noisyninja.abheda_droid.activity;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,11 +13,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.fragment.CourseTree;
 import com.noisyninja.abheda_droid.fragment.InfoFrag;
-import com.noisyninja.abheda_droid.fragment.ModuleGridFrag;
+import com.noisyninja.abheda_droid.fragment.TopicsGridFrag;
 import com.noisyninja.abheda_droid.fragment.MotherModuleFrag;
 import com.noisyninja.abheda_droid.util.Constants;
-import com.noisyninja.abheda_droid.util.MockGen;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.Locale;
@@ -58,14 +56,15 @@ public class MainActivity extends ActionBarActivity {
         mViewPager.setCurrentItem(1);
 
 
-        MockGen mockGen = new MockGen();
+        //MockGen mockGen = new MockGen();
+        //Topics topics = Utils.getTopics(context);
         //Log.i("MainActivity",);
 
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+        /*Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto", "ir2pid@gmail.com", null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "schema");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, mockGen.getMock().toString());
-        startActivity(Intent.createChooser(emailIntent, "Send email..."));
+        emailIntent.putExtra(Intent.EXTRA_TEXT, topics.toString()+"\n--------\n\n\n\n-------\n"+mockGen.getMock().toString());
+        startActivity(Intent.createChooser(emailIntent, "Send email..."));*/
     }
 
 
@@ -129,9 +128,9 @@ public class MainActivity extends ActionBarActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch(position)
             {
-                case 0: return new ModuleGridFrag();
-                case 1: return  new InfoFrag();
-                case 2: return new ModuleGridFrag();
+                case 0: return new CourseTree();
+                case 1: return new TopicsGridFrag();
+                case 2: return  new InfoFrag();
                 default: return new MotherModuleFrag();
             }
         }
