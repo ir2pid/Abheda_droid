@@ -2,27 +2,42 @@ package com.noisyninja.abheda_droid.util;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.github.lzyzsd.circleprogress.ArcProgress;
 import com.github.lzyzsd.circleprogress.CircleProgress;
 import com.github.lzyzsd.circleprogress.DonutProgress;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.control.FlipAnimation;
 import com.noisyninja.abheda_droid.control.quickaction.ActionItem;
 import com.noisyninja.abheda_droid.control.quickaction.QuickAction;
+import com.noisyninja.abheda_droid.util.Constants.PROGRESS_STYLE;
 
 import junit.framework.Assert;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -35,6 +50,7 @@ import at.markushi.ui.CircleButton;
 public class Utils {
 
     private static String TAG = Utils.class.getSimpleName();
+    private static ProgressDialog mProgressDialog;
 
     public static int getDrawable(Context context, String name) {
         // use -> image.setImageResource(getDrawable(this,"image"));
@@ -186,6 +202,75 @@ public class Utils {
         quickAction.show(view);
     }
 
+    public static void handleError(Context context, Exception e){
+
+        Log.e(Utils.class.getCanonicalName(), Constants.ERROR + e.getMessage());
+        Toast.makeText(context, Constants.ERROR + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+    }
+
+    public static void handleError(Context context, String e){
+
+        Log.e(Utils.class.getCanonicalName(), Constants.ERROR + e);
+        Toast.makeText(context, Constants.ERROR + e, Toast.LENGTH_SHORT).show();
+
+    }
+
+    public static void handleInfo(Context context, String e){
+
+        Log.i(Utils.class.getCanonicalName(), Constants.INFO + e);
+        Toast.makeText(context, Constants.INFO + e, Toast.LENGTH_SHORT).show();
+
+    }
+
+    public static void write(Context context, String data){
+        write(context, Constants.LOCAL_STORE,  data);
+    }
+
+    public static void write(Context context, String fileName, String data){
+        try {
+            FileOutputStream fOut = context.openFileOutput(fileName, Context.MODE_WORLD_READABLE);
+            fOut.write(data.getBytes());
+            fOut.close();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            Utils.handleError(context, e);
+            e.printStackTrace();
+        }
+    }
+
+    public static String read(Context context)
+    {
+        return read(context, Constants.LOCAL_STORE);
+    }
+
+    public static String read(Context context, String fileName){
+        StringBuilder temp = new StringBuilder();
+        FileInputStream fin = null;
+        try{
+            fin =  new FileInputStream (new File(fileName));
+            int c;
+
+            while( (c = fin.read()) != -1){
+                temp = temp.append(Character.toString((char)c));
+            }
+            return temp.toString();
+        }catch(Exception e){
+            Utils.handleError(context, e);
+        }
+        finally {
+                try {
+                   if (fin != null) {
+                       fin.close();
+                   }
+                } catch (IOException e) {
+                    Log.e(TAG, "Error closing asset " + fileName);
+                }
+            }
+        return null;
+    }
+
     public static String getStringFromAsset(Context context, String fileName) {
         BufferedReader in = null;
         try {
@@ -254,5 +339,98 @@ public class Utils {
         arcProgress.setTextColor(context.getResources().getColor(R.color.button_off_white));
         arcProgress.setStrokeWidth(15);
         arcProgress.setUnfinishedStrokeColor(context.getResources().getColor(R.color.button_transparent_white));
+    }
+
+    public static void showProgress(Context context, PROGRESS_STYLE progress_style)
+    {
+        mProgressDialog = new ProgressDialog(context);
+        int style = (progress_style == PROGRESS_STYLE.INDETERMINATE)?ProgressDialog.STYLE_SPINNER:ProgressDialog.STYLE_HORIZONTAL;
+
+        mProgressDialog.setMessage(Constants.DOWNLOAD_TEXT);
+        mProgressDialog.setProgressStyle(style);
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_down_up;
+        mProgressDialog.show();
+    }
+
+    public static void updateProgressDeterminate(int value)
+    {
+        mProgressDialog.setProgress(value);
+    }
+
+    public static void hideProgress()
+    {
+        mProgressDialog.dismiss();
+    }
+
+
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    public static void setPreference(Context context, String key, String value)
+    {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    public static String getPreference(Context context, String key)
+    {
+        return getPreference(context, key, null);
+    }
+
+    public static String getPreference(Context context, String key, String defaultValue)
+    {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String value = preferences.getString(key, defaultValue);
+        return value;
+    }
+
+    public static Object getFromJson(String data, Class clazz)
+    {
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        Gson gson = gsonBuilder.create();
+        return gson.fromJson(data, clazz);
+    }
+
+    public static void lazyload(Context context, ImageView fromview, ImageView toview, String url)
+    {
+        Glide.with(context)
+                .load(url)
+                .fitCenter()
+                .placeholder(R.drawable.loading)
+                .crossFade()
+                .animate(new FlipAnimation(fromview, toview))
+                .into(toview);
+    }
+
+    public static void lazyload(Context context, ImageView view, String url)
+    {
+        Glide.with(context)
+                .load(url)
+                .fitCenter()
+                .placeholder(R.drawable.loading)
+                .crossFade()
+                .animate(new FlipAnimation(view, view))
+                .into(view);
+    }
+
+    public static void mail(Context context, String data)
+    {
+        mail(context, "ir2pid@gmail.com", data);
+    }
+
+    public static void mail(Context context, String to, String data)
+    {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", to, null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "schema");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, data+"\n--------\n\n\n\n-------\n");
+        context.startActivity(Intent.createChooser(emailIntent, "Send email..."));
     }
 }

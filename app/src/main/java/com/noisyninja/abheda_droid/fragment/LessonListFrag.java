@@ -3,16 +3,25 @@ package com.noisyninja.abheda_droid.fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.control.ListLessonAdapter;
 import com.noisyninja.abheda_droid.control.ListLessonItem;
-import com.noisyninja.abheda_droid.pojo.DummyContent;
+import com.noisyninja.abheda_droid.pojo.BaseLesson;
+import com.noisyninja.abheda_droid.pojo.Lesson;
+import com.noisyninja.abheda_droid.pojo.Lessons;
+import com.noisyninja.abheda_droid.pojo.MCQQuiz;
+import com.noisyninja.abheda_droid.pojo.Module;
+import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
+import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
+import com.noisyninja.abheda_droid.pojo.Quizzes;
 import com.noisyninja.abheda_droid.util.Constants;
-import com.noisyninja.abheda_droid.util.Utils;
+import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
+import com.noisyninja.abheda_droid.util.DataStore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +30,9 @@ import java.util.List;
  * Created by ir2pi on 12/5/2014.
  */
 public class LessonListFrag extends ListFragment {
+
+    View window;
+    List baseLessons;
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -48,7 +60,7 @@ public class LessonListFrag extends ListFragment {
         /**
          * Callback for when an item has been selected.
          */
-        public void onItemSelected(String id);
+        public void onItemSelected(MODULE_TYPE module_type, String data);
     }
 
     /**
@@ -57,7 +69,7 @@ public class LessonListFrag extends ListFragment {
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(MODULE_TYPE module_type, String data) {
         }
     };
 
@@ -75,6 +87,13 @@ public class LessonListFrag extends ListFragment {
     }
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        window = inflater.inflate(R.layout.lesson_list_frag, container, false);
+        return window;
+    }
+
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -84,36 +103,74 @@ public class LessonListFrag extends ListFragment {
             setActivatedPosition(savedInstanceState
                     .getInt(STATE_ACTIVATED_POSITION));
         }
+        baseLessons = new ArrayList();
 
         List<ListLessonItem> items = new ArrayList<ListLessonItem>();
-        ListLessonItem listLessonItem1 = new ListLessonItem(
+
+        Module module = DataStore.getInstance(getActivity()).getModule();
+        Lessons lessons = module.getLessons();
+        Quizzes quizzes = module.getQuizzes();
+
+        int quizNo=0;
+
+        for(Lesson lesson:lessons.getLessons())
+        {
+            baseLessons.add(lesson);
+
+            MODULE_TYPE module_type = lesson.isFlashCard()?MODULE_TYPE.FLASHCARD:MODULE_TYPE.LESSON;
+            lesson.setModule_type(module_type);
+
+            ListLessonItem listLessonItem = new ListLessonItem(
+                    lesson.getName(),
+                    lesson.getDescription(), module_type);
+
+            items.add(listLessonItem);
+        }
+
+        for(MCQQuiz mcqQuiz:quizzes.getMcqQuizs())
+        {
+            quizNo++;
+            baseLessons.add(mcqQuiz);
+            MODULE_TYPE module_type = MODULE_TYPE.MCQ_QUIZ;
+
+            ListLessonItem listLessonItem = new ListLessonItem(
+                    "Quiz "+quizNo,
+                    "Quiz", module_type);
+
+            items.add(listLessonItem);
+        }
+        for(OrderGameQuiz orderGameQuiz:quizzes.getOrderGameQuizs())
+        {
+            quizNo++;
+            baseLessons.add(orderGameQuiz);
+            MODULE_TYPE module_type = MODULE_TYPE.ORDER_GAME_QUIZ;
+
+            ListLessonItem listLessonItem = new ListLessonItem(
+                    "Quiz "+quizNo,
+                    "Order Game Quiz", module_type);
+
+            items.add(listLessonItem);
+        }
+        for(PictureMatchQuiz pictureMatchQuiz:quizzes.getPictureMatchQuiz())
+        {
+            quizNo++;
+            baseLessons.add(pictureMatchQuiz);
+            MODULE_TYPE module_type = MODULE_TYPE.PICTURE_MATCH_QUIZ;
+
+            ListLessonItem listLessonItem = new ListLessonItem(
+                    "Quiz "+quizNo,
+                    "Picture Match Quiz", module_type);
+
+            items.add(listLessonItem);
+        }
+
+
+        /*ListLessonItem listLessonItem1 = new ListLessonItem(
                 getResources().getDrawable(R.drawable.ic_disclosure2),
                 Constants.itemTypes[0],
                 Constants.itemTypes2[0]);
-        ListLessonItem listLessonItem2 = new ListLessonItem(
-                getResources().getDrawable(R.drawable.ic_disclosure2),
-                Constants.itemTypes[1],
-                Constants.itemTypes2[1]);
-        ListLessonItem listLessonItem3 = new ListLessonItem(
-                getResources().getDrawable(R.drawable.ic_disclosure2),
-                Constants.itemTypes[2],
-                Constants.itemTypes2[2]);
 
-        items.add(listLessonItem1);
-        items.add(listLessonItem2);
-        items.add(listLessonItem3);
-        items.add(listLessonItem1);
-        items.add(listLessonItem2);
-        items.add(listLessonItem3);
-        items.add(listLessonItem1);
-        items.add(listLessonItem2);
-        items.add(listLessonItem3);
-        items.add(listLessonItem1);
-        items.add(listLessonItem2);
-        items.add(listLessonItem3);
-        items.add(listLessonItem1);
-        items.add(listLessonItem2);
-        items.add(listLessonItem3);
+        items.add(listLessonItem1);*/
         // TODO: replace with a real list adapter.
         setListAdapter(new ListLessonAdapter(getActivity(), items));
     }
@@ -145,7 +202,9 @@ public class LessonListFrag extends ListFragment {
         super.onListItemClick(listView, view, position, id);
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        Constants.LESSON_QUIZ_ID = position;
+        BaseLesson baseLesson = (BaseLesson)baseLessons.get(position);
+        mCallbacks.onItemSelected(baseLesson.getModule_type(), baseLesson.toString());
     }
 
     @Override

@@ -1,9 +1,11 @@
 package com.noisyninja.abheda_droid.pojo;
 
+import com.noisyninja.abheda_droid.util.Constants;
+
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class MCQQuiz extends BasePojo{
+public class MCQQuiz extends BaseLesson{
 
     String name;
     String description;
@@ -13,6 +15,13 @@ public class MCQQuiz extends BasePojo{
     String option3;
     String option4;
     int correct; //override default
+    boolean isPicture; //options are pictures not text
+
+
+    public MCQQuiz()
+    {
+        module_type = Constants.MODULE_TYPE.MCQ_QUIZ;
+    }
 
     public String getName() {
         return name;
@@ -76,5 +85,13 @@ public class MCQQuiz extends BasePojo{
 
     public void setCorrect(int correct) {
         this.correct = correct;
+    }
+
+    public boolean isPicture() {
+        return isPicture;
+    }
+
+    public void setPicture(boolean isPicture) {
+        this.isPicture = isPicture;
     }
 }

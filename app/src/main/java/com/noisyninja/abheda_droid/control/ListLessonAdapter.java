@@ -5,15 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.activity.LessonDetailActivity;
-import com.noisyninja.abheda_droid.activity.QuizDetailActivity;
-import com.noisyninja.abheda_droid.util.Constants;
-import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.List;
 
@@ -37,9 +32,11 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
 
             // initialize the view holder
             viewHolder = new ViewHolder();
-            viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.ivIcon);
+            viewHolder.name = (TextView) convertView.findViewById(R.id.textView1);
+            viewHolder.description = (TextView) convertView.findViewById(R.id.textView1);
+            /*viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.ivIcon);
             viewHolder.quiz = (Button) convertView.findViewById(R.id.button1);
-            viewHolder.learn = (Button) convertView.findViewById(R.id.button2);
+            viewHolder.learn = (Button) convertView.findViewById(R.id.button2);*/
             convertView.setTag(viewHolder);
         } else {
             // recycle the already inflated view
@@ -48,8 +45,32 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
 
         // update the item view
         ListLessonItem item = getItem(position);
-        viewHolder.ivIcon.setImageDrawable(item.icon);
-        viewHolder.quiz.setOnClickListener(new View.OnClickListener() {
+
+        viewHolder.name.setText(item.title);
+        viewHolder.description.setText(item.description);
+
+        RelativeLayout relativeLayout = (RelativeLayout) convertView.findViewById(R.id.relativeLayout1);
+        switch (item.module_type)
+        {
+            case LESSON:
+                relativeLayout.setBackgroundResource(R.drawable.background_shape_green);
+                break;
+            case FLASHCARD:
+                relativeLayout.setBackgroundResource(R.drawable.background_shape_purple);
+                break;
+            case MCQ_QUIZ:
+                relativeLayout.setBackgroundResource(R.drawable.background_shape_red);
+                break;
+            case PICTURE_MATCH_QUIZ:
+                relativeLayout.setBackgroundResource(R.drawable.background_shape_red);
+                break;
+            case ORDER_GAME_QUIZ:
+                relativeLayout.setBackgroundResource(R.drawable.background_shape_red);
+                break;
+        }
+        /*viewHolder.ivIcon.setImageDrawable(item.icon);
+
+        /*viewHolder.quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Utils.playSound(getContext(), Constants.Sound.CLICK);
@@ -65,7 +86,7 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
                 Toast.makeText(getContext(),"learn selected",Toast.LENGTH_SHORT).show();
                 Utils.startActivity(getContext(), LessonDetailActivity.class);
             }
-        });
+        });*/
 
         return convertView;
     }
@@ -77,8 +98,11 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
      * @see http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder
      */
     private static class ViewHolder {
-        ImageView ivIcon;
-        Button quiz;
-        Button learn;
+        //ImageView ivIcon;
+        //Button quiz;
+        //Button learn;
+        TextView name;
+        TextView description;
+        //MODULE_TYPE module_type;
     }
 }

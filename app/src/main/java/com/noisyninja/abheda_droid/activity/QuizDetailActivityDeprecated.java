@@ -4,15 +4,13 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
-import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
-import com.noisyninja.abheda_droid.fragment.MatchGameDetailFrag;
-import com.noisyninja.abheda_droid.fragment.OrderGameDetailFrag;
+import com.noisyninja.abheda_droid.fragment.PictureMatchDetailFrag;
+import com.noisyninja.abheda_droid.util.Constants;
 
 /**
  * Created by ir2pi on 12/7/2014.
  */
-public class QuizDetailActivity extends FragmentActivity {
+public class QuizDetailActivityDeprecated extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +21,8 @@ public class QuizDetailActivity extends FragmentActivity {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(LessonDetailFrag.ARG_ITEM_ID, getIntent()
-                    .getStringExtra(LessonDetailFrag.ARG_ITEM_ID));
+            arguments.putString(Constants.FRAGMENT_DATA, getIntent()
+                    .getStringExtra(Constants.FRAGMENT_DATA));
 
             /*if(Math.random() > 0.3) {
                 MCQDetailFrag fragment = new MCQDetailFrag();
@@ -41,7 +39,7 @@ public class QuizDetailActivity extends FragmentActivity {
             }
             else
             {*/
-                MatchGameDetailFrag fragment = new MatchGameDetailFrag();
+                PictureMatchDetailFrag fragment = new PictureMatchDetailFrag();
                 fragment.setArguments(arguments);
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.quiz_detail_container, fragment).commit();

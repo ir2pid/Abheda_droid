@@ -5,10 +5,13 @@ import android.app.Dialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,7 @@ import com.noisyninja.abheda_droid.activity.MainActivity;
 import com.noisyninja.abheda_droid.control.AnimatedButton;
 import com.noisyninja.abheda_droid.control.SeekArc;
 import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import at.markushi.ui.CircleButton;
 
@@ -28,6 +32,7 @@ public class InfoFrag extends Fragment implements ISyncFrag{
     int progress;
     SeekArc seekArc;
     TextView progressText;
+    EditText urlText;
     Activity activity;
     CircleButton circleButton1;
     CircleButton circleButton2;
@@ -40,6 +45,7 @@ public class InfoFrag extends Fragment implements ISyncFrag{
         seekArc = ((SeekArc)windows.findViewById(R.id.seekArc));
         progressText = ((TextView)windows.findViewById(R.id.progressText));
         seekArc.setTouchable(false);
+        urlText = ((EditText)windows.findViewById(R.id.urlEdit));
         /*circleButton1 = (CircleButton)windows.findViewById(R.id.circleButton1);
         circleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,12 +66,25 @@ public class InfoFrag extends Fragment implements ISyncFrag{
                 mainActivity.switchTab(0);
             }
         });*/
+        urlText.setText(Utils.getPreference(getActivity(), Constants.URL_STORE_KEY));
+        urlText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    Utils.handleInfo(getActivity(), urlText.getText().toString());
+                    Utils.setPreference(getActivity(), Constants.URL_STORE_KEY, urlText.getText().toString());
+                    return true;
+                }
+                return false;
+            }
+        });
         continueButton = (AnimatedButton)windows.findViewById(R.id.button3);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                getLessonKind();
+                Utils.handleInfo(getActivity(), urlText.getText().toString());
+                Utils.setPreference(getActivity(), Constants.URL_STORE_KEY, urlText.getText().toString());
+                //getLessonKind();
             }
         });
         return windows;

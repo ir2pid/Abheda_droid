@@ -15,18 +15,20 @@
 
         <!-- the icon view -->
         <ImageView android:id="@+id/ivIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
             android:padding="5dp"
             android:contentDescription="@string/list_item_image"
             android:scaleType="fitXY"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true" />
 
         <!-- the container view for the title and description -->
-        <RelativeLayout android:layout_width="wrap_content"
+        <RelativeLayout android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivIcon"
-            android:layout_centerVertical="true" >
+            android:layout_below="@+id/ivIcon"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true">
 
             <!-- the title view -->
             <TextView android:id="@+id/tvTitle"

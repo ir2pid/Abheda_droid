@@ -1,186 +1,285 @@
 {
-   "topics": [
-      {
-         "name": "English",
-         "description": "English fundamentals description English fundamentals description English fundamentals description",
-         "level": 0,
-         "marks": 50,
-         "completion": 10,
-         "coursesList": [
+  "topics": [
+    {
+      "name": "English",
+      "description": "English fundamentals",
+      "level": 0,
+      "marks": 0,
+      "completion": 0,
+      "coursesList": [
+        {
+          "modules": [
             {
-               "courseDescription": "BCP Description",
-               "courseName": "BCP",
-               "completion": 40,
-               "marks": 30,
-               "modules": [
+              "quizzes": {
+                "mcqQuizs": [
                   {
-                     "name": "B C P 1",
-                     "level": 0,
-                     "daysToComplete": 5,
-                     "marks": 20,
-                     "desc": "B C P 1 short description",
-                     "description": "B C P 1 description",
-                     "instruction": "B C P 1 instruction ",
-                     "lessons": {
-                        "isFlashCard": false,
-                        "lessons": [
-                           {
-                              "description": "BCPlesson description0",
-                              "image": "BCPlessonx0.jpg",
-                              "name": "BCPlesson Name0",
-                              "text": "BCPlesson text0"
-                           },
-                           {
-                              "description": "BCPlesson description1",
-                              "image": "BCPlessonBCPx1.jpg",
-                              "name": "BCPlesson Name1",
-                              "text": "BCPlesson text1"
-                           }
-                        ]
-                     },
-                     "quizzes": {
-                        "mcqQuizs": [
-                           {
-                              "description": "BCP1description0",
-                              "name": "BCP1name0",
-                              "option1": "BCPoption1",
-                              "option2": "BCPoption2",
-                              "option3": "BCPoption3",
-                              "option4": "BCPoption4",
-                              "correct": 3
-                           },
-                           {
-                              "description": "BCP1description1",
-                              "name": "BCP1name1",
-                              "option1": "BCPoption1",
-                              "option2": "BCPoption2",
-                              "option3": "BCPoption3",
-                              "option4": "BCPoption4",
-                              "correct": 3
-                           }
-                        ],
-                        "orderGameQuizs": [
-                           {
-                              "words": {
-                                 "4": "BCPword4",
-                                 "1": "BCPword1",
-                                 "2": "BCPword2",
-                                 "3": "BCPword3"
-                              }
-                           },
-                           {
-                              "words": {
-                                 "4": "BCPword4",
-                                 "1": "BCPword1",
-                                 "2": "BCPword2",
-                                 "3": "BCPword3"
-                              }
-                           }
-                        ],
-                        "pictureMatchQuiz": [
-                           {
-                              "words": {
-                                 "BCP1imagePictureMatchQuizx1.jpg": "option1",
-                                 "BCP1imagePictureMatchQuizx4.jpg": "option4",
-                                 "BCP1imagePictureMatchQuizx3.jpg": "option3",
-                                 "BCP1imagePictureMatchQuizx2.jpg": "option2"
-                              }
-                           }
-                        ]
-                     }
+                    "description": "BCP1description0",
+                    "option4": "BCPoption4",
+                    "name": "BCP1name0",
+                    "option1": "BCPoption1",
+                    "option2": "BCPoption2",
+                    "option3": "BCPoption3",
+                    "isPicture": false,
+                    "correct": 3
                   },
                   {
-                     "name": "B C P 2",
-                     "description": "B C P 2 description",
-                     "desc": "B C P 2 short description",
-                     "instruction": "B C P 2 instruction ",
-                     "level": 0,
-                     "marks": 10,
-                     "daysToComplete": 2,
-                     "lessons": {
-                        "isFlashCard": true,
-                        "lessons": [
-                           {
-                              "description": "BCP2lesson description0",
-                              "image": "BCP2lessonx0.jpg",
-                              "name": "BCP2lesson Name0",
-                              "text": "BCP2lesson text0"
-                           },
-                           {
-                              "description": "BCP2lesson description1",
-                              "image": "BCP2lessonBCPx1.jpg",
-                              "name": "BCP2lesson Name1",
-                              "text": "BCP2lesson text1"
-                           }
-                        ]
-                     },
-                     "quizzes": {
-                        "mcqQuizs": [
-                           {
-                              "description": "BCP2 quiz description0",
-                              "name": "BCP2 quiz name0",
-                              "option1": "BCPoption1",
-                              "option2": "BCPoption2",
-                              "option3": "BCPoption3",
-                              "option4": "BCPoption4",
-                              "correct": 3
-                           },
-                           {
-                              "description": "BCP2 quiz description1",
-                              "name": "BCP2 quiz name1",
-                              "option1": "BCPoption1",
-                              "option2": "BCPoption2",
-                              "option3": "BCPoption3",
-                              "option4": "BCPoption4",
-                              "correct": 3
-                           }
-                        ],
-                        "orderGameQuizs": [
-                           {
-                              "words": {
-                                 "4": "BCPword4",
-                                 "1": "BCPword1",
-                                 "2": "BCPword2",
-                                 "3": "BCPword3"
-                              }
-                           },
-                           {
-                              "words": {
-                                 "4": "BCPword4",
-                                 "1": "BCPword1",
-                                 "2": "BCPword2",
-                                 "3": "BCPword3"
-                              }
-                           }
-                        ],
-                        "pictureMatchQuiz": [
-                           {
-                              "words": {
-                                 "BCP2imagePictureMatchQuizx1.jpg": "option1",
-                                 "BCP2imagePictureMatchQuizx2.jpg": "option2",
-                                 "BCP2imagePictureMatchQuizx4.jpg": "option4",
-                                 "BCP2imagePictureMatchQuizx3.jpg": "option3"
-                              }
-                           }
-                        ]
-                     }
+                    "description": "BCP1description1",
+                    "option4": "BCPoption4",
+                    "name": "BCP1name1",
+                    "option1": "BCPoption1",
+                    "option2": "BCPoption2",
+                    "option3": "BCPoption3",
+                    "isPicture": false,
+                    "correct": 3
                   }
-               ]
+                ],
+                "orderGameQuizs": [
+                  {
+                    "words": {
+                      "4": "BCPword4",
+                      "1": "BCPword1",
+                      "2": "BCPword2",
+                      "3": "BCPword3"
+                    }
+                  },
+                  {
+                    "words": {
+                      "4": "BCPword4",
+                      "1": "BCPword1",
+                      "2": "BCPword2",
+                      "3": "BCPword3"
+                    }
+                  }
+                ],
+                "pictureMatchQuiz": [
+                  {
+                    "words": {
+                      "htg5NDg": "option1",
+                      "k9OMFVLOXg5NDg": "option4",
+                      "htLOXg5NDg": "option3",
+                      "LOXg5NDg": "option2"
+                    }
+                  }
+                ]
+              },
+              "desc": "B C P 1 short description",
+              "description": "B C P 1 description",
+              "instruction": "B C P 1 instruction ",
+              "lessons": {
+                "lessons": [
+                  {
+                    "chapters": [
+                      {
+                        "description": "BCP1.1 description chapter1",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP1.1 Name chapter1",
+                        "text1": "BCP1.1 text chapter1"
+                      },
+                      {
+                        "description": "BCP1.1 description chapter2",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP1.1 Name chapter2",
+                        "text1": "BCP1.1 text chapter2"
+                      }
+                    ],
+                    "description": "BCP1.1  lesson description0",
+                    "image": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                    "name": "BCP1.1  lesson Name0",
+                    "isFlashCard": false
+                  },
+                  {
+                    "chapters": [
+                      {
+                        "description": "BCP1.2 description chapter1",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP1.2 Name chapter1",
+                        "text1": "BCP1.2 text chapter1"
+                      },
+                      {
+                        "description": "BCP1.2 description chapter2",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP1.2 Name chapter2",
+                        "text1": "BCP1.2 text chapter2"
+                      }
+                    ],
+                    "description": "BCP1.2  lesson description0",
+                    "image": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                    "name": "BCP1.2  lesson Name0",
+                    "isFlashCard": false
+                  },
+                  {
+                    "chapters": [
+                      {
+                        "description": "BCP1.3flashcarddescription chapter1",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "image2": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP1.3flashcardName chapter1",
+                        "text1": "BCP1.3flashcardtext1 chapter1",
+                        "text2": "BCP1.3flashcardtext2 chapter1"
+                      },
+                      {
+                        "description": "BCP1.3flashcarddescription chapter2",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "image2": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP1.3flashcardName chapter2",
+                        "text1": "BCP1.3flashcardtext1 chapter2",
+                        "text2": "BCP1.3flashcardtext2 chapter1"
+                      }
+                    ],
+                    "description": "BCP1.3flashcard lesson description0",
+                    "image": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                    "name": "BCP1.3flashcard lesson Name0",
+                    "isFlashCard": true
+                  }
+                ]
+              },
+              "name": "B C P 1",
+              "marks": 0,
+              "level": 0,
+              "daysToComplete": 5
             },
             {
-               "courseDescription": "BCG Description",
-               "courseName": "BCG",
-               "completion": 15,
-               "marks": 20
+              "quizzes": {
+                "mcqQuizs": [
+                  {
+                    "description": "BCP2 quiz description0",
+                    "option4": "BCPoption4",
+                    "name": "BCP2 quiz name0",
+                    "option1": "BCPoption1",
+                    "option2": "BCPoption2",
+                    "option3": "BCPoption3",
+                    "isPicture": false,
+                    "correct": 3
+                  },
+                  {
+                    "description": "BCP2 quiz description1",
+                    "option4": "BCPoption4",
+                    "name": "BCP2 quiz name1",
+                    "option1": "BCPoption1",
+                    "option2": "BCPoption2",
+                    "option3": "BCPoption3",
+                    "isPicture": false,
+                    "correct": 3
+                  }
+                ],
+                "orderGameQuizs": [
+                  {
+                    "words": {
+                      "4": "BCPword4",
+                      "1": "BCPword1",
+                      "2": "BCPword2",
+                      "3": "BCPword3"
+                    }
+                  },
+                  {
+                    "words": {
+                      "4": "BCPword4",
+                      "1": "BCPword1",
+                      "2": "BCPword2",
+                      "3": "BCPword3"
+                    }
+                  }
+                ],
+                "pictureMatchQuiz": [
+                  {
+                    "words": {
+                      "dWk9OMFVLOXg5NDg": "option1",
+                      "7dWk9OMFVLOXg5NDg": "option2",
+                      "qXENqs7dWk9OMFVLOXg5NDg": "option4",
+                      "LOXg5NDg": "option3"
+                    }
+                  }
+                ]
+              },
+              "desc": "B C P 2 short description",
+              "description": "B C P 2 description",
+              "instruction": "B C P 2 instruction ",
+              "lessons": {
+                "lessons": [
+                  {
+                    "chapters": [
+                      {
+                        "description": "BCP2.1 description chapter1",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP2.1 Name chapter1",
+                        "text1": "BCP2.1 text chapter1"
+                      },
+                      {
+                        "description": "BCP2.1 description chapter2",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP2.1 Name chapter2",
+                        "text1": "BCP2.1 text chapter2"
+                      }
+                    ],
+                    "description": "BCP2.1  lesson description0",
+                    "image": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                    "name": "BCP2.1  lesson Name0",
+                    "isFlashCard": false
+                  },
+                  {
+                    "chapters": [
+                      {
+                        "description": "BCP2.2 description chapter1",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP2.2 Name chapter1",
+                        "text1": "BCP2.2 text chapter1"
+                      },
+                      {
+                        "description": "BCP2.2 description chapter2",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP2.2 Name chapter2",
+                        "text1": "BCP2.2 text chapter2"
+                      }
+                    ],
+                    "description": "BCP2.2  lesson description0",
+                    "image": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                    "name": "BCP2.2  lesson Name0",
+                    "isFlashCard": false
+                  },
+                  {
+                    "chapters": [
+                      {
+                        "description": "BCP2.3flashcarddescription chapter1",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "image2": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP2.3flashcardName chapter1",
+                        "text1": "BCP2.3flashcardtext1 chapter1",
+                        "text2": "BCP2.3flashcardtext2 chapter1"
+                      },
+                      {
+                        "description": "BCP2.3flashcarddescription chapter2",
+                        "image1": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "image2": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                        "name": "BCP2.3flashcardName chapter2",
+                        "text1": "BCP2.3flashcardtext1 chapter2",
+                        "text2": "BCP2.3flashcardtext2 chapter1"
+                      }
+                    ],
+                    "description": "BCP2.3flashcard lesson description0",
+                    "image": "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWk9OMFVLOXg5NDg",
+                    "name": "BCP2.3flashcard lesson Name0",
+                    "isFlashCard": true
+                  }
+                ]
+              },
+              "name": "B C P 2",
+              "marks": 0,
+              "level": 0,
+              "daysToComplete": 2
             }
-         ]
-      },
-       {
-               "name": "Maths",
-               "description": "Maths fundamentals description",
-               "level": 0,
-               "marks": 100,
-               "completion": 0
-       }
-   ]
+          ],
+          "courseDescription": "BCP Description",
+          "courseName": "BCP",
+          "marks": 0,
+          "completion": 0
+        },
+        {
+          "courseDescription": "BCG Description",
+          "courseName": "BCG",
+          "marks": 0,
+          "completion": 0
+        }
+      ]
+    }
+  ]
 }

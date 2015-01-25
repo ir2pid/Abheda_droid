@@ -1,16 +1,15 @@
 package com.noisyninja.abheda_droid.activity;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
 import com.noisyninja.abheda_droid.fragment.LessonListFrag;
 import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 import com.noisyninja.abheda_droid.util.Utils;
 
 /**
@@ -24,12 +23,12 @@ public class LessonsActivity extends FragmentActivity implements
      * device.
      */
     private boolean mTwoPane;
-
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lessons);
-
+        context = this;
         if (findViewById(R.id.lesson_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-large and
@@ -51,15 +50,16 @@ public class LessonsActivity extends FragmentActivity implements
      * the item with the given ID was selected.
      */
     @Override
-    public void onItemSelected(String id) {
+    public void onItemSelected(MODULE_TYPE module_type, String data) {
 
         Utils.playSound(this, Constants.Sound.CLICK);
         if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
+
             Bundle arguments = new Bundle();
-            arguments.putString(LessonDetailFrag.ARG_ITEM_ID, id);
+            arguments.putString(Constants.FRAGMENT_DATA, data);
             LessonDetailFrag fragment = new LessonDetailFrag();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
@@ -69,8 +69,24 @@ public class LessonsActivity extends FragmentActivity implements
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
             Intent detailIntent = new Intent(this, LessonDetailActivity.class);
-            detailIntent.putExtra(LessonDetailFrag.ARG_ITEM_ID, id);
+            detailIntent.putExtra(Constants.FRAGMENT_DATA, data);
+            detailIntent.putExtra(Constants.FRAGMENT_TYPE, module_type.toString());
             startActivity(detailIntent);
+           /* switch(module_type)
+            {
+                case LESSON:{
+
+                    break;
+                }
+                case MCQ_QUIZ:{
+                    Intent detailIntent = new Intent(this, LessonDetailActivity.class);
+                    detailIntent.putExtra(Constants.FRAGMENT_DATA, data);
+                    detailIntent.putExtra(Constants.FRAGMENT_TYPE, module_type);
+                    startActivity(detailIntent);
+                }
+                default:Utils.handleInfo(context, Constants.INFO_NO_LESSON);
+            }*/
+
         }
     }
 }

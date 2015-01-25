@@ -4,7 +4,13 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.fragment.FlashcardDetailFrag;
 import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
+import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
+import com.noisyninja.abheda_droid.fragment.PictureMatchDetailFrag;
+import com.noisyninja.abheda_droid.fragment.OrderGameDetailFrag;
+import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 
 /**
  * Created by ir2pi on 12/6/2014.
@@ -32,13 +38,47 @@ public class LessonDetailActivity extends FragmentActivity {
         if (savedInstanceState == null) {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
+            String data = getIntent().getStringExtra(Constants.FRAGMENT_DATA);
+            MODULE_TYPE module_type = MODULE_TYPE.valueOf(getIntent().getStringExtra(Constants.FRAGMENT_TYPE));
             Bundle arguments = new Bundle();
-            arguments.putString(LessonDetailFrag.ARG_ITEM_ID, getIntent()
-                    .getStringExtra(LessonDetailFrag.ARG_ITEM_ID));
-            LessonDetailFrag fragment = new LessonDetailFrag();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.lesson_detail_container, fragment).commit();
+            arguments.putString(Constants.FRAGMENT_DATA, data);
+
+            switch (module_type){
+
+                case LESSON: {
+                    LessonDetailFrag fragment = new LessonDetailFrag();
+                    fragment.setArguments(arguments);
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.lesson_detail_container, fragment).commit();
+                    break;
+                }case FLASHCARD: {
+                    FlashcardDetailFrag fragment = new FlashcardDetailFrag();
+                    fragment.setArguments(arguments);
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.lesson_detail_container, fragment).commit();
+                    break;
+                }case MCQ_QUIZ: {
+                    MCQDetailFrag fragment = new MCQDetailFrag();
+                    fragment.setArguments(arguments);
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.lesson_detail_container, fragment).commit();
+                    break;
+                }case ORDER_GAME_QUIZ: {
+                    OrderGameDetailFrag fragment = new OrderGameDetailFrag();
+                    fragment.setArguments(arguments);
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.lesson_detail_container, fragment).commit();
+                    break;
+                }case PICTURE_MATCH_QUIZ: {
+                    PictureMatchDetailFrag fragment = new PictureMatchDetailFrag();
+                    fragment.setArguments(arguments);
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.lesson_detail_container, fragment).commit();
+                    break;
+                }
+
+            }
+
         }
     }
 /*

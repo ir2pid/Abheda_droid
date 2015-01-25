@@ -60,6 +60,18 @@
             android:layout_alignParentEnd="false"
             android:layout_toRightOf="@+id/circleButton2"
             android:layout_toLeftOf="@+id/circleButton1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="url"
+            android:id="@+id/urlEdit"
+            android:layout_alignParentTop="true"
+            android:editable="true"
+            android:background="@drawable/background_shape_grey"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true"
+            android:gravity="center" />
         <!--seekarc:arcWidth="10dp"-->
     </RelativeLayout>
 
@@ -74,7 +86,7 @@
     <com.noisyninja.abheda_droid.control.AnimatedButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continue"
+        android:text="@string/save_url"
         android:id="@+id/button3"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

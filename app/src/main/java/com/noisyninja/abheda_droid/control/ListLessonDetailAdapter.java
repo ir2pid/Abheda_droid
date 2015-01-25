@@ -8,7 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.List;
 
@@ -17,8 +19,11 @@ import java.util.List;
  */
 public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> {
 
+    Context context;
     public ListLessonDetailAdapter(Context context, List<ListLessonDetailItem> items) {
         super(context, R.layout.list_lesson_detail_item, items);
+
+        this.context = context;
     }
 
     @Override
@@ -43,7 +48,14 @@ public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> 
 
         // update the item view
         ListLessonDetailItem item = getItem(position);
-        viewHolder.ivIcon.setImageDrawable(item.icon);
+        /*Picasso.with(context)
+                .load(item.icon)
+                .placeholder(R.drawable.imageholder)
+                .error(R.drawable.user_placeholder_error)
+                .into(imageView);*/
+        //String img = "http://www.gambarphoto.com/wp-content/uploads/2014/05/android-wallpaper-640x480awesome-10-android-960x800-pixels-640x480-pixels-wallpapers-bbrdqbl1.jpg";
+
+        Utils.lazyload(context, viewHolder.ivIcon, item.icon);
         viewHolder.tvTitle.setText(item.title);
         viewHolder.tvDescription.setText(item.description);
 

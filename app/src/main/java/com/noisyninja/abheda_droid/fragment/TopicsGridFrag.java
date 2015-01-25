@@ -24,6 +24,8 @@ import com.noisyninja.abheda_droid.pojo.Topic;
 import com.noisyninja.abheda_droid.pojo.Topics;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.DataStore;
+import com.noisyninja.abheda_droid.util.DownloadFileAsync;
+import com.noisyninja.abheda_droid.util.IDownloadFileAsync;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
@@ -31,18 +33,23 @@ import java.util.ArrayList;
 /**
  * Created by ir2pi on 12/5/2014.
  */
-public class TopicsGridFrag extends Fragment {
+public class TopicsGridFrag extends Fragment implements View.OnClickListener, IDownloadFileAsync{
 
     ArrayList<Topic> topicArrayList;
     GridView gridView;
     ArcProgress arcProgress;
-    //private CustomAdapter adapter;
+
+    AnimatedButton animatedButton1;
+    private CustomAdapter adapter;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View windows = inflater.inflate(R.layout.topics_grid_frag, container, false);
+        animatedButton1 = (AnimatedButton) windows.findViewById(R.id.button1);
+        animatedButton1.setOnClickListener(this);
+
         gridView = (GridView) windows.findViewById(R.id.gridview1);
         arcProgress = (ArcProgress) windows.findViewById(R.id.arc_progress_total);
         arcProgress.setProgress(15);
@@ -50,13 +57,53 @@ public class TopicsGridFrag extends Fragment {
         Topics topics = DataStore.getInstance(getActivity()).getTopics();
         topicArrayList = topics.getTopics();
 
-        CustomAdapter adapter = new CustomAdapter(getActivity(),topicArrayList);
+        adapter = new CustomAdapter(getActivity(),topicArrayList);
 
         gridView.setAdapter(adapter);
 
         return windows;
     }
 
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button1: {
+                String url = Utils.getPreference(getActivity(), Constants.URL_STORE_KEY, Constants.URL_STORE);
+
+                Utils.handleInfo(getActivity(), Constants.DOWNLOAD_TEXT +" "+url);
+                String[] params = {url, Constants.LOCAL_STORE};
+                new DownloadFileAsync(this, getActivity()).execute(params);
+
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void start() {
+
+    }
+
+    @Override
+    public void end() {
+
+        DataStore.init(getActivity());
+        Topics topics = DataStore.getInstance(getActivity()).getTopics();
+        topicArrayList = topics.getTopics();
+
+        adapter = new CustomAdapter(getActivity(),topicArrayList);
+        gridView.invalidateViews();
+        gridView.setAdapter(adapter);
+
+        Utils.handleInfo(getActivity(), Constants.INFO_SUCCESS_DOWNLOAD);
+
+    }
 
     public class CustomAdapter extends BaseAdapter {
 
@@ -128,6 +175,7 @@ public class TopicsGridFrag extends Fragment {
                 public void onClick(View v) {
                     // TODO Auto-generated method stub
                     //Toast.makeText(context, "You Clicked "+position, Toast.LENGTH_LONG).show();
+                    Constants.TOPIC_ID = position;
                     Utils.playSound(getActivity(), Constants.Sound.CLICK);
                     getLessonKind();
                 }

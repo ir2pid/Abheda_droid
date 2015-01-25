@@ -1,13 +1,31 @@
 package com.noisyninja.abheda_droid.pojo;
 
+import com.noisyninja.abheda_droid.util.Constants;
+
+import java.util.ArrayList;
+
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class Lesson extends BasePojo{
+public class Lesson extends BaseLesson{
     String name;
     String description;
     String image;
-    String text;
+    ArrayList<Chapter> chapters;
+    boolean isFlashCard;
+
+    public Lesson()
+    {
+        module_type = Constants.MODULE_TYPE.LESSON;
+    }
+
+    public boolean isFlashCard() {
+        return isFlashCard;
+    }
+
+    public void setFlashCard(boolean isFlashCard) {
+        this.isFlashCard = isFlashCard;
+    }
 
     public String getName() {
         return name;
@@ -33,12 +51,11 @@ public class Lesson extends BasePojo{
         this.image = image;
     }
 
-    public String getText() {
-        return text;
+    public ArrayList<Chapter> getChapters() {
+        return chapters;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setChapters(ArrayList<Chapter> chapters) {
+        this.chapters = chapters;
     }
-
 }

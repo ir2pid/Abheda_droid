@@ -11,11 +11,13 @@ import android.widget.TextView;
 
 import com.github.lzyzsd.circleprogress.ArcProgress;
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.activity.LessonsActivity;
 import com.noisyninja.abheda_droid.control.AnimatedExpandableListView;
 import com.noisyninja.abheda_droid.pojo.Courses;
 import com.noisyninja.abheda_droid.pojo.Module;
 import com.noisyninja.abheda_droid.pojo.Topic;
 import com.noisyninja.abheda_droid.pojo.Topics;
+import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.DataStore;
 import com.noisyninja.abheda_droid.util.Utils;
 
@@ -96,7 +98,10 @@ public class CourseTree extends Fragment {
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i2, long l) {
 
                 //Utils.showQuickAction(getActivity(), view);
-                Utils.showResult(getActivity(),true);
+                //Utils.handleInfo(getActivity(), "value i "+i+" value i2 "+i2+" value l "+l);
+                Constants.COURSE_ID = i;
+                Constants.MODULE_ID = i2;
+                Utils.startActivity(getActivity(), LessonsActivity.class);
                 return false;
             }
         });

@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.pojo.MCQQuiz;
+import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 /**
@@ -18,11 +20,40 @@ import com.noisyninja.abheda_droid.util.Utils;
 public class MCQDetailFrag extends Fragment {
 
     View window;
+    MCQQuiz mcqQuiz;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
+            // Load the dummy content specified by the fragment
+            // arguments. In a real-world scenario, use a Loader
+            // to load content from a content provider.
+            /*mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
+                    ARG_ITEM_ID));*/
+            String data = getArguments().getString(Constants.FRAGMENT_DATA);
+
+            mcqQuiz = new MCQQuiz();
+            mcqQuiz = (MCQQuiz)Utils.getFromJson(data, MCQQuiz.class);
+
+            Utils.handleInfo(getActivity(), mcqQuiz.toString());
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         window = inflater.inflate(R.layout.mcq_detail_frag, container, false);
+
+        RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
+        radioButton1.setText(mcqQuiz.getOption1());
+        RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
+        radioButton2.setText(mcqQuiz.getOption2());
+        RadioButton radioButton3 = ((RadioButton) window.findViewById(R.id.radioButton3));
+        radioButton3.setText(mcqQuiz.getOption3());
+        RadioButton radioButton4 = ((RadioButton) window.findViewById(R.id.radioButton4));
+        radioButton4.setText(mcqQuiz.getOption4());
 
         Button button = ((Button) window.findViewById(R.id.button));
         button.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +65,7 @@ public class MCQDetailFrag extends Fragment {
                 RadioButton radioButton = (RadioButton) window.findViewById(selectedId);
                 //Utils.makeToast(getActivity(), String.valueOf(idx));
 
-                if(radioButton != null && radioButton.getTag().toString().compareTo("1") == 0)
+                if(radioButton != null && Integer.valueOf(radioButton.getTag().toString()) == mcqQuiz.getCorrect())
                 {
                     Utils.showResult(getActivity(), true);
                 }

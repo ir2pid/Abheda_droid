@@ -17,23 +17,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ir2pi on 11/30/2014.
+ * Created by ir2pi on 1/26/2015.
  */
+public class FlashcardDetailFrag extends ListFragment {
 
-public class LessonDetailFrag extends ListFragment {
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
      */
     //public static final String ARG_ITEM_ID = "item_id";
     Lesson lesson;
+    /**
+     * The dummy content this fragment is presenting.
+     */
 
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public LessonDetailFrag() {
+    public FlashcardDetailFrag() {
     }
 
     @Override
@@ -41,11 +44,15 @@ public class LessonDetailFrag extends ListFragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
-
+            // Load the dummy content specified by the fragment
+            // arguments. In a real-world scenario, use a Loader
+            // to load content from a content provider.
+            /*mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
+                    ARG_ITEM_ID));*/
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
 
             lesson = new Lesson();
-            lesson = (Lesson)Utils.getFromJson(data, Lesson.class);
+            lesson = (Lesson) Utils.getFromJson(data, Lesson.class);
 
             Utils.handleInfo(getActivity(), lesson.toString());
         }
@@ -62,7 +69,8 @@ public class LessonDetailFrag extends ListFragment {
         for(Chapter chapter : lesson.getChapters())
         {
             //String icon = getResources().getDrawable(R.drawable.imageholder);
-            items.add(new ListLessonDetailItem(chapter.getImage1(), chapter.getName(), chapter.getDescription()));
+            items.add(new ListLessonDetailItem(chapter.getImage1(), chapter.getText1(), chapter.getDescription()));
+            items.add(new ListLessonDetailItem(chapter.getImage2(), chapter.getText2(), chapter.getDescription()));
         }
 
         ListLessonDetailAdapter adapter = new ListLessonDetailAdapter(getActivity().getBaseContext(), items);
@@ -71,5 +79,4 @@ public class LessonDetailFrag extends ListFragment {
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }
-
 }

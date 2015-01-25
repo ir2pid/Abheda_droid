@@ -58,7 +58,7 @@
                         android:layout_height="wrap_content"
                         android:text="option 1"
                         android:tag="1"
-                        android:id="@+id/radioButton"
+                        android:id="@+id/radioButton1"
                         android:layout_below="@+id/textView3"
                         android:layout_centerHorizontal="true" />
 

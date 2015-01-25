@@ -4,22 +4,19 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
+import java.util.Map.Entry;
 
 import at.markushi.ui.CircleButton;
 
@@ -33,6 +30,26 @@ public class OrderGameDetailFrag extends Fragment {
     ArrayList<Button> buttons;
     LinearLayout linearLayout1;
     LinearLayout linearLayout2;
+    OrderGameQuiz orderGameQuiz;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
+            // Load the dummy content specified by the fragment
+            // arguments. In a real-world scenario, use a Loader
+            // to load content from a content provider.
+            /*mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
+                    ARG_ITEM_ID));*/
+            String data = getArguments().getString(Constants.FRAGMENT_DATA);
+
+            orderGameQuiz = new OrderGameQuiz();
+            orderGameQuiz = (OrderGameQuiz)Utils.getFromJson(data, OrderGameQuiz.class);
+
+            Utils.handleInfo(getActivity(), orderGameQuiz.toString());
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,11 +121,14 @@ public class OrderGameDetailFrag extends Fragment {
     public ArrayList<String> getWords()
     {
         words = new ArrayList<String>();
-        words.add("HELLO");
-        words.add("THIS");
-        words.add("IS");
-        words.add("A");
-        words.add("TEST");
+        for(Entry<Integer, String> entry : orderGameQuiz.getWords().entrySet()) {
+            int key = entry.getKey();
+            String value = entry.getValue();
+            words.add(value);
+            // do what you have to do here
+            // In your case, an other loop.
+        }
+
         return words;
     }
 

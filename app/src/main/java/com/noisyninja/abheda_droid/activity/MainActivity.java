@@ -15,8 +15,8 @@ import android.widget.Toast;
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.CourseTree;
 import com.noisyninja.abheda_droid.fragment.InfoFrag;
-import com.noisyninja.abheda_droid.fragment.TopicsGridFrag;
 import com.noisyninja.abheda_droid.fragment.MotherModuleFrag;
+import com.noisyninja.abheda_droid.fragment.TopicsGridFrag;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
@@ -56,14 +56,10 @@ public class MainActivity extends ActionBarActivity {
         mViewPager.setCurrentItem(1);
 
 
-        //MockGen mockGen = new MockGen();
-        //Topics topics = Utils.getTopics(context);
-        //Log.i("MainActivity",);
-
         /*Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto", "ir2pid@gmail.com", null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "schema");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, topics.toString()+"\n--------\n\n\n\n-------\n"+mockGen.getMock().toString());
+        emailIntent.putExtra(Intent.EXTRA_TEXT, DataStore.getInstance(context).getMockTopics().toString()+"\n--------\n\n\n\n-------\n");
         startActivity(Intent.createChooser(emailIntent, "Send email..."));*/
     }
 
