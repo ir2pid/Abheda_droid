@@ -4,13 +4,9 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.fragment.FlashcardDetailFrag;
-import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
-import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
-import com.noisyninja.abheda_droid.fragment.PictureMatchDetailFrag;
-import com.noisyninja.abheda_droid.fragment.OrderGameDetailFrag;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
+import com.noisyninja.abheda_droid.util.Utils;
 
 /**
  * Created by ir2pi on 12/6/2014.
@@ -40,7 +36,9 @@ public class LessonDetailActivity extends FragmentActivity {
             // using a fragment transaction.
             String data = getIntent().getStringExtra(Constants.FRAGMENT_DATA);
             MODULE_TYPE module_type = MODULE_TYPE.valueOf(getIntent().getStringExtra(Constants.FRAGMENT_TYPE));
-            Bundle arguments = new Bundle();
+
+            Utils.courseFacade(this, data, module_type);
+            /*Bundle arguments = new Bundle();
             arguments.putString(Constants.FRAGMENT_DATA, data);
 
             switch (module_type){
@@ -77,7 +75,7 @@ public class LessonDetailActivity extends FragmentActivity {
                     break;
                 }
 
-            }
+            }*/
 
         }
     }

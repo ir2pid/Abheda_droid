@@ -1,6 +1,7 @@
 package com.noisyninja.abheda_droid.fragment;
 
 import android.content.ClipData;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.DragEvent;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
@@ -28,14 +30,18 @@ import java.util.Map;
 public class PictureMatchDetailFrag extends Fragment implements View.OnTouchListener, View.OnDragListener  {
 
     View window;
+    Context context;
     Button button1;
     Button button2;
     Button button3;
     Button button4;
+    Button buttonNext;
+    TextView textViewQuestionNo;
     ImageView imageView1;
     ImageView imageView2;
     ImageView imageView3;
     ImageView imageView4;
+    int progress;
 
     ArrayList<Button> buttonArrayList;
     ArrayList<ImageView> imageViewArrayList;
@@ -45,13 +51,10 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        context = getActivity();
+        progress = 0;
         if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
-            // Load the dummy content specified by the fragment
-            // arguments. In a real-world scenario, use a Loader
-            // to load content from a content provider.
-            /*mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
-                    ARG_ITEM_ID));*/
+
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
 
             pictureMatchQuiz = new PictureMatchQuiz();
@@ -64,7 +67,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        window = inflater.inflate(R.layout.picture_match_detail_frag, container, false);
+        window = inflater.inflate(R.layout.frag_picture_match_detail, container, false);
         map = new HashMap<String, String>();
         for(int i=0;i<4;i++)
         {
@@ -106,16 +109,39 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         imageView3.setOnDragListener(this);
         imageView4.setOnDragListener(this);
 
+        textViewQuestionNo  = ((TextView) window.findViewById(R.id.textView));
+
+        buttonNext  = ((Button) window.findViewById(R.id.button5));
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(progress < pictureMatchQuiz.getPictureMatchQuestions().size()-1)
+                {
+                    progress++;
+                }
+                else
+                {
+                    Utils.backPress(getActivity());
+                }
+                loadQuestions();
+            }
+        });
+        loadQuestions();
+
+        return window;
+    }
+
+    void loadQuestions()
+    {
+        textViewQuestionNo.setText("Q: "+progress+"/"+pictureMatchQuiz.getPictureMatchQuestions().size());
         int i = 0;
-        for(Map.Entry<String, String> entry : pictureMatchQuiz.getWords().entrySet()) {
+        for(Map.Entry<String, String> entry : pictureMatchQuiz.getPictureMatchQuestions().get(progress).getWords().entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
             buttonArrayList.get(i).setText(value);
             Utils.lazyload(getActivity(), imageViewArrayList.get(i), key);
             i++;
         }
-
-        return window;
     }
 
     @Override

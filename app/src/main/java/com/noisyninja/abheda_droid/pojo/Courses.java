@@ -11,7 +11,9 @@ public class Courses extends BasePojo {
     int completion;
     int marks;
     String courseName;
-    String courseDescription;
+    String courseLongDescription;
+    String courseShortDescription;
+    String courseInstruction;
 
     public ArrayList<Module> getModules() {
         return modules;
@@ -45,11 +47,27 @@ public class Courses extends BasePojo {
         this.courseName = courseName;
     }
 
-    public String getCourseDescription() {
-        return courseDescription;
+    public String getCourseLongDescription() {
+        return courseLongDescription;
     }
 
-    public void setCourseDescription(String courseDescription) {
-        this.courseDescription = courseDescription;
+    public void setCourseLongDescription(String courseLongDescription) {
+        this.courseLongDescription = courseLongDescription;
+    }
+
+    public String getCourseShortDescription() {
+        return courseShortDescription;
+    }
+
+    public void setCourseShortDescription(String courseShortDescription) {
+        this.courseShortDescription = courseShortDescription;
+    }
+
+    public String getCourseInstruction() {
+        return courseInstruction;
+    }
+
+    public void setCourseInstruction(String courseInstruction) {
+        this.courseInstruction = courseInstruction;
     }
 }

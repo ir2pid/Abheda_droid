@@ -9,6 +9,7 @@
     <string name="lessons">Lessons</string>
     <string name="quiz">Quiz</string>
     <string name="info">Info</string>
+    <string name="next">Next</string>
     <string name="list_item_image">list_item_image</string>
     <string name="answer">Answer</string>
     <string name="progress">Progress</string>
@@ -22,5 +23,9 @@
     <string name="suffix">suffix</string>
     <string name="bottom">bottom</string>
     <string name="arc_text">arc_text</string>
+    <string name="page_no">Page:</string>
+    <string name="ranklabel">"Rank : "</string>
+    <string name="countrylabel">"Country : "</string>
+    <string name="populationlabel">"Population : "</string>
 
 </resources>

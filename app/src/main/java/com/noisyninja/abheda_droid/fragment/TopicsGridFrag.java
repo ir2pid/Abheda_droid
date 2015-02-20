@@ -2,9 +2,9 @@ package com.noisyninja.abheda_droid.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.github.lzyzsd.circleprogress.ArcProgress;
 import com.github.lzyzsd.circleprogress.DonutProgress;
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.activity.MainActivity;
+import com.noisyninja.abheda_droid.activity.LessonsActivity;
 import com.noisyninja.abheda_droid.control.AnimatedButton;
 import com.noisyninja.abheda_droid.pojo.Topic;
 import com.noisyninja.abheda_droid.pojo.Topics;
@@ -46,7 +46,7 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View windows = inflater.inflate(R.layout.topics_grid_frag, container, false);
+        View windows = inflater.inflate(R.layout.frag_topics_grid, container, false);
         animatedButton1 = (AnimatedButton) windows.findViewById(R.id.button1);
         animatedButton1.setOnClickListener(this);
 
@@ -204,8 +204,9 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
             public void onClick(View view) {
                 //Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.switchTab(0);
+                Utils.startActivity(getActivity(), LessonsActivity.class);
+                //MainActivity mainActivity = (MainActivity) getActivity();
+                //mainActivity.switchTab(0);
                 dialog.dismiss();
             }
         });
@@ -215,9 +216,9 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
             @Override
             public void onClick(View view) {
                 //Utils.playSound(getActivity(), Constants.Sound.CLICK);
-                Toast.makeText(getActivity(), "Random selected", Toast.LENGTH_SHORT).show();
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.switchTab(2);
+                Toast.makeText(getActivity(), "Coming soon", Toast.LENGTH_SHORT).show();
+                //MainActivity mainActivity = (MainActivity) getActivity();
+                //mainActivity.switchTab(2);
                 dialog.dismiss();
             }
         });

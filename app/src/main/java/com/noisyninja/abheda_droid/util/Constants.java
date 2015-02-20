@@ -28,6 +28,8 @@ import com.noisyninja.abheda_droid.R;
  *         https://github.com/adrian110288/LoadIndicators
  * AndroidViewAnimations
  *         https://github.com/daimajia/AndroidViewAnimations
+ *
+ *         Free for personal and commercial use with attribution to 1001FreeDownloads.com
  */
 public class Constants {
 

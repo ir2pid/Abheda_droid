@@ -4,13 +4,16 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.noisyninja.abheda_droid.pojo.Chapter;
 import com.noisyninja.abheda_droid.pojo.Courses;
 import com.noisyninja.abheda_droid.pojo.Lesson;
 import com.noisyninja.abheda_droid.pojo.Lessons;
+import com.noisyninja.abheda_droid.pojo.MCQQuestion;
 import com.noisyninja.abheda_droid.pojo.MCQQuiz;
 import com.noisyninja.abheda_droid.pojo.Module;
+import com.noisyninja.abheda_droid.pojo.OrderGameQuestion;
 import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
+import com.noisyninja.abheda_droid.pojo.Page;
+import com.noisyninja.abheda_droid.pojo.PictureMatchQuestion;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.pojo.Quizzes;
 import com.noisyninja.abheda_droid.pojo.Topic;
@@ -64,30 +67,17 @@ public class DataStore {
                 .getModules().get(Constants.MODULE_ID);
     }
 
-   /* public Lesson getLesson()
+    public Lesson getLesson(Context context, String fileName)
     {
-        ArrayList<Lesson> lessons = topics.getTopics()
-                .get(Constants.TOPIC_ID)
-                .getCoursesList().get(Constants.COURSE_ID)
-                .getModules().get(Constants.MODULE_ID)
-                .getLessons().getLessons();
-        if(lessons.size() < Constants.LESSON_QUIZ_ID)
-        {
-            return lessons.get(Constants.LESSON_QUIZ_ID);
-        }
-        else return null;
+        Lesson lesson = (Lesson)Utils.getObject(context,fileName, Lesson.class);
+        return lesson;
     }
 
-    public Quizzes getQuiz()
+    public Quizzes getQuiz(Context context, String fileName)
     {
-        return topics.getTopics()
-                .get(Constants.TOPIC_ID)
-                .getCoursesList().get(Constants.COURSE_ID)
-                .getModules().get(Constants.MODULE_ID)
-                .getLessons().getLessons().get(Constants.LESSON_QUIZ_ID);
-    }*/
-
-
+        Quizzes quizzes = (Quizzes)Utils.getObject(context,fileName, Quizzes.class);
+        return quizzes;
+    }
 
     public static void init(Context context)
     {
@@ -109,6 +99,8 @@ public class DataStore {
         }
         topics = temp;
     }
+
+
 
     public Topics getMockTopics()
     {
@@ -142,7 +134,9 @@ public class DataStore {
         Courses courses = new Courses();
         courses.setCompletion(0);
         courses.setCourseName("BCP");
-        courses.setCourseDescription("BCP Description");
+        courses.setCourseLongDescription("BCP Long Description");
+        courses.setCourseShortDescription("BCP Short Description");
+        courses.setCourseInstruction("BCP Instruction");
         courses.setMarks(0);
         ArrayList<Module> moduleArrayList = new ArrayList<Module>();
         moduleArrayList.add(getBCPCourse1());
@@ -156,7 +150,7 @@ public class DataStore {
         Courses courses = new Courses();
         courses.setCompletion(0);
         courses.setCourseName("BCG");
-        courses.setCourseDescription("BCG Description");
+        courses.setCourseLongDescription("BCG Description");
         courses.setMarks(0);
         return courses;
     }
@@ -170,6 +164,7 @@ public class DataStore {
         module.setInstruction("B C P 1 instruction ");
         module.setLevel(0);
         module.setDaysToComplete(5);
+        module.setPassMarks(100);
         module.setLessons(getBCP1Lessons());
         module.setQuizzes(getBCP1Quizzes());
         return module;
@@ -184,8 +179,8 @@ public class DataStore {
         module.setInstruction("B C P 2 instruction ");
         module.setLevel(0);
         module.setDaysToComplete(2);
+        module.setPassMarks(120);
         module.setLessons(getBCP2Lessons());
-        module.setQuizzes(getBCP2Quizzes());
         return module;
     }
 
@@ -253,7 +248,8 @@ public class DataStore {
         lesson.setDescription(prefix+" lesson description0");
         lesson.setFlashCard(false);
         lesson.setImage(prefix+"lesson.jpg");
-        lesson.setChapters(getLessonChapter(prefix));
+        lesson.setPages(prefix+".json");
+        //lesson.setPages(getLessonChapter(prefix));
         return lesson;
     }
 
@@ -264,56 +260,57 @@ public class DataStore {
         lesson.setDescription(prefix+" lesson description0");
         lesson.setFlashCard(true);
         lesson.setImage(prefix+"lesson.jpg");
-        lesson.setChapters(getFalshcardChapter(prefix));
+        lesson.setPages(prefix+".json");
+        //lesson.setPages(getFalshcardChapter(prefix));
         return lesson;
     }
 
-    private ArrayList<Chapter> getLessonChapter(String prefix)
+    private ArrayList<Page> getLessonChapter(String prefix)
     {
-        ArrayList<Chapter> chapters = new ArrayList<Chapter>();
+        ArrayList<Page> pages = new ArrayList<Page>();
 
-        Chapter chapter1 = new Chapter();
-        chapter1.setDescription(prefix+"description chapter1");
-        chapter1.setName(prefix+"Name chapter1");
-        chapter1.setImage1(prefix+"image chapter1");
-        chapter1.setText1(prefix+"text chapter1");
+        Page page1 = new Page();
+        page1.setDescription(prefix+"description chapter1");
+        page1.setName(prefix+"Name chapter1");
+        page1.setImage1(prefix+"image chapter1");
+        page1.setText1(prefix+"text chapter1");
 
-        Chapter chapter2 = new Chapter();
-        chapter2.setDescription(prefix+"description chapter2");
-        chapter2.setName(prefix+"Name chapter2");
-        chapter2.setImage1(prefix+"image chapter2");
-        chapter2.setText1(prefix+"text chapter2");
+        Page page2 = new Page();
+        page2.setDescription(prefix+"description chapter2");
+        page2.setName(prefix+"Name chapter2");
+        page2.setImage1(prefix+"image chapter2");
+        page2.setText1(prefix+"text chapter2");
 
-        chapters.add(chapter1);
-        chapters.add(chapter2);
+        pages.add(page1);
+        pages.add(page2);
 
-        return chapters;
+        return pages;
     }
 
-    private ArrayList<Chapter> getFalshcardChapter(String prefix)
+    private ArrayList<Page> getFalshcardChapter(String prefix)
     {
-        ArrayList<Chapter> chapters = new ArrayList<Chapter>();
+        ArrayList<Page> pages = new ArrayList<Page>();
 
-        Chapter chapter1 = new Chapter();
-        chapter1.setDescription(prefix+"description chapter1");
-        chapter1.setName(prefix+"Name chapter1");
-        chapter1.setImage1(prefix+"image1 chapter1");
-        chapter1.setText1(prefix+"text1 chapter1");
-        chapter1.setImage2(prefix+"image2 chapter1");
-        chapter1.setText2(prefix+"text2 chapter1");
+        Page page1 = new Page();
+        page1.setDescription(prefix+"description chapter1");
+        page1.setName(prefix+"Name chapter1");
+        page1.setImage1(prefix+"image1 chapter1");
+        page1.setText1(prefix+"text1 chapter1");
+        page1.setImage2(prefix+"image2 chapter1");
+        page1.setText2(prefix+"text2 chapter1");
 
-        Chapter chapter2 = new Chapter();
-        chapter2.setDescription(prefix+"description chapter2");
-        chapter2.setName(prefix+"Name chapter2");
-        chapter2.setImage1(prefix+"image1 chapter2");
-        chapter2.setText1(prefix+"text1 chapter2");
-        chapter2.setImage2(prefix+"image2 chapter1");
-        chapter2.setText2(prefix+"text2 chapter1");
+        Page page2 = new Page();
+        page2.setDescription(prefix+"description chapter2");
+        page2.setName(prefix+"Name chapter2");
+        page2.setImage1(prefix+"image1 chapter2");
+        page2.setText1(prefix+"text1 chapter2");
+        page2.setImage2(prefix+"image2 chapter1");
+        page2.setText2(prefix+"text2 chapter1");
 
-        chapters.add(chapter1);
-        chapters.add(chapter2);
+        pages.add(page1);
+        pages.add(page2);
 
-        return chapters;
+        return pages;
     }
 
 /*
@@ -398,115 +395,99 @@ public class DataStore {
         ArrayList<PictureMatchQuiz> pictureMatchQuiz = new ArrayList<PictureMatchQuiz>();
 
         MCQQuiz mcqQuiz0 = new MCQQuiz();
-        mcqQuiz0.setName("BCP1name0");
-        mcqQuiz0.setDescription("BCP1description0");
-        mcqQuiz0.setOption1("BCPoption1");
-        mcqQuiz0.setOption2("BCPoption2");
-        mcqQuiz0.setOption3("BCPoption3");
-        mcqQuiz0.setOption4("BCPoption4");
-        mcqQuiz0.setCorrect(3);
-        mcqQuizs.add(mcqQuiz0);
+        mcqQuiz0.setName("BCP1name0 mcqQuiz0");
+        mcqQuiz0.setDescription("BCP1 mcqQuiz0 description0");
+        ArrayList<MCQQuestion> mcqQuestions = new ArrayList<>();
+        MCQQuestion mcqQuestion1 = new MCQQuestion();
+        mcqQuestion1.setQuestion("BCP question1");
+        mcqQuestion1.setOption1("BCPoption1");
+        mcqQuestion1.setOption2("BCPoption2");
+        mcqQuestion1.setOption3("BCPoption3");
+        mcqQuestion1.setOption4("BCPoption4");
+        mcqQuestion1.setCorrect(3);
+
+        MCQQuestion mcqQuestion2 = new MCQQuestion();
+        mcqQuestion2.setQuestion("BCP question2");
+        mcqQuestion2.setOption1("BCPoption1");
+        mcqQuestion2.setOption2("BCPoption2");
+        mcqQuestion2.setOption3("BCPoption3");
+        mcqQuestion2.setOption4("BCPoption4");
+        mcqQuestion2.setCorrect(3);
+        mcqQuestions.add(mcqQuestion1);
+        mcqQuestions.add(mcqQuestion2);
+        mcqQuiz0.setMcqQuestions(mcqQuestions);
 
         MCQQuiz mcqQuiz1 = new MCQQuiz();
-        mcqQuiz1.setName("BCP1name1");
-        mcqQuiz1.setDescription("BCP1description1");
-        mcqQuiz1.setOption1("BCPoption1");
-        mcqQuiz1.setOption2("BCPoption2");
-        mcqQuiz1.setOption3("BCPoption3");
-        mcqQuiz1.setOption4("BCPoption4");
-        mcqQuiz1.setCorrect(3);
+        mcqQuiz1.setName("BCP1name1 mcqQuiz1");
+        mcqQuiz1.setDescription("BCP1 mcqQuiz1 description1");
+        ArrayList<MCQQuestion> mcqQuestions2 = new ArrayList<>();
+        MCQQuestion mcqQuestion21 = new MCQQuestion();
+        mcqQuestion21.setQuestion("BCP question1");
+        mcqQuestion21.setOption1("BCPoption1");
+        mcqQuestion21.setOption2("BCPoption2");
+        mcqQuestion21.setOption3("BCPoption3");
+        mcqQuestion21.setOption4("BCPoption4");
+        mcqQuestion21.setCorrect(3);
+        mcqQuestions2.add(mcqQuestion21);
+        mcqQuiz1.setMcqQuestions(mcqQuestions2);
+
+        mcqQuizs.add(mcqQuiz0);
         mcqQuizs.add(mcqQuiz1);
 
         OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
+        orderGameQuiz0.setDescription("orderGameQuiz0 Description");
+        orderGameQuiz0.setName("orderGameQuiz0 Name");
+
+        ArrayList<OrderGameQuestion> orderGameQuestions = new ArrayList<>();
+        OrderGameQuestion orderGameQuestion1 = new OrderGameQuestion();
         Map<Integer,String> words0 = new HashMap<Integer, String>();
         words0.put(1, "BCPword1");
         words0.put(2, "BCPword2");
         words0.put(3, "BCPword3");
         words0.put(4, "BCPword4");
-        orderGameQuiz0.setWords(words0);
-        orderGameQuizs.add(orderGameQuiz0);
+        orderGameQuestion1.setWords(words0);
 
-        OrderGameQuiz orderGameQuiz1 = new OrderGameQuiz();
+        OrderGameQuestion orderGameQuestion2 = new OrderGameQuestion();
         Map<Integer,String> words1 = new HashMap<Integer, String>();
         words1.put(1, "BCPword1");
         words1.put(2, "BCPword2");
         words1.put(3, "BCPword3");
         words1.put(4, "BCPword4");
-        orderGameQuiz1.setWords(words1);
-        orderGameQuizs.add(orderGameQuiz1);
+        orderGameQuestion2.setWords(words1);
 
-        PictureMatchQuiz pictureMatchQuiz1 = new PictureMatchQuiz();
+        orderGameQuestions.add(orderGameQuestion1);
+        orderGameQuestions.add(orderGameQuestion2);
+
+        orderGameQuiz0.setOrderGameQuestions(orderGameQuestions);
+        orderGameQuizs.add(orderGameQuiz0);
+
+        PictureMatchQuiz pictureMatchQuiz0 = new PictureMatchQuiz();
+        pictureMatchQuiz0.setName("pictureMatchQuiz0 Name");
+        pictureMatchQuiz0.setDescription("pictureMatchQuiz0 Description");
+
+        ArrayList<PictureMatchQuestion> pictureMatchQuestions = new ArrayList<>();
+
+        PictureMatchQuestion pictureMatchQuestion1 = new PictureMatchQuestion();
         Map<String,String> words3 = new HashMap<String, String>();
         words3.put("BCP1imagePictureMatchQuizx1.jpg","option1");
         words3.put("BCP1imagePictureMatchQuizx2.jpg","option2");
         words3.put("BCP1imagePictureMatchQuizx3.jpg","option3");
         words3.put("BCP1imagePictureMatchQuizx4.jpg","option4");
-        pictureMatchQuiz1.setWords(words3);
-        pictureMatchQuiz.add(pictureMatchQuiz1);
+        pictureMatchQuestion1.setWords(words3);
 
-        quizzes.setMcqQuizs(mcqQuizs);
-        quizzes.setOrderGameQuizs(orderGameQuizs);
-        quizzes.setPictureMatchQuiz(pictureMatchQuiz);
-        return quizzes;
-    }
+        PictureMatchQuestion pictureMatchQuestion2 = new PictureMatchQuestion();
+        Map<String,String> words4 = new HashMap<String, String>();
+        words4.put("BCP1imagePictureMatchQuizx1.jpg","option1");
+        words4.put("BCP1imagePictureMatchQuizx2.jpg","option2");
+        words4.put("BCP1imagePictureMatchQuizx3.jpg","option3");
+        words4.put("BCP1imagePictureMatchQuizx4.jpg","option4");
+        pictureMatchQuestion2.setWords(words4);
 
+        pictureMatchQuestions.add(pictureMatchQuestion1);
+        pictureMatchQuestions.add(pictureMatchQuestion2);
 
-
-
-    private Quizzes getBCP2Quizzes()
-    {
-        Quizzes quizzes = new Quizzes();
-
-        ArrayList<MCQQuiz> mcqQuizs = new ArrayList<MCQQuiz>();
-        ArrayList<OrderGameQuiz> orderGameQuizs = new ArrayList<OrderGameQuiz>();
-        ArrayList<PictureMatchQuiz> pictureMatchQuiz = new ArrayList<PictureMatchQuiz>();
-
-        MCQQuiz mcqQuiz0 = new MCQQuiz();
-        mcqQuiz0.setName("BCP2 quiz name0");
-        mcqQuiz0.setDescription("BCP2 quiz description0");
-        mcqQuiz0.setOption1("BCPoption1");
-        mcqQuiz0.setOption2("BCPoption2");
-        mcqQuiz0.setOption3("BCPoption3");
-        mcqQuiz0.setOption4("BCPoption4");
-        mcqQuiz0.setCorrect(3);
-        mcqQuizs.add(mcqQuiz0);
-
-        MCQQuiz mcqQuiz1 = new MCQQuiz();
-        mcqQuiz1.setName("BCP2 quiz name1");
-        mcqQuiz1.setDescription("BCP2 quiz description1");
-        mcqQuiz1.setOption1("BCPoption1");
-        mcqQuiz1.setOption2("BCPoption2");
-        mcqQuiz1.setOption3("BCPoption3");
-        mcqQuiz1.setOption4("BCPoption4");
-        mcqQuiz1.setCorrect(3);
-        mcqQuizs.add(mcqQuiz1);
-
-        OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
-        Map<Integer,String> words0 = new HashMap<Integer, String>();
-        words0.put(1, "BCPword1");
-        words0.put(2, "BCPword2");
-        words0.put(3, "BCPword3");
-        words0.put(4, "BCPword4");
-        orderGameQuiz0.setWords(words0);
-        orderGameQuizs.add(orderGameQuiz0);
-
-        OrderGameQuiz orderGameQuiz1 = new OrderGameQuiz();
-        Map<Integer,String> words1 = new HashMap<Integer, String>();
-        words1.put(1, "BCPword1");
-        words1.put(2, "BCPword2");
-        words1.put(3, "BCPword3");
-        words1.put(4, "BCPword4");
-        orderGameQuiz1.setWords(words1);
-        orderGameQuizs.add(orderGameQuiz1);
-
-        PictureMatchQuiz pictureMatchQuiz1 = new PictureMatchQuiz();
-        Map<String,String> words3 = new HashMap<String, String>();
-        words3.put("BCP2imagePictureMatchQuizx1.jpg","option1");
-        words3.put("BCP2imagePictureMatchQuizx2.jpg","option2");
-        words3.put("BCP2imagePictureMatchQuizx3.jpg","option3");
-        words3.put("BCP2imagePictureMatchQuizx4.jpg","option4");
-        pictureMatchQuiz1.setWords(words3);
-        pictureMatchQuiz.add(pictureMatchQuiz1);
+        pictureMatchQuiz0.setPictureMatchQuestions(pictureMatchQuestions);
+        pictureMatchQuiz.add(pictureMatchQuiz0);
 
         quizzes.setMcqQuizs(mcqQuizs);
         quizzes.setOrderGameQuizs(orderGameQuizs);

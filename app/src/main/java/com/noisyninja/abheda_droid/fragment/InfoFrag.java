@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.activity.MainActivity;
 import com.noisyninja.abheda_droid.control.AnimatedButton;
 import com.noisyninja.abheda_droid.control.SeekArc;
 import com.noisyninja.abheda_droid.util.Constants;
@@ -41,7 +40,7 @@ public class InfoFrag extends Fragment implements ISyncFrag{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View windows = inflater.inflate(R.layout.info_frag, container, false);
+        View windows = inflater.inflate(R.layout.frag_info, container, false);
         seekArc = ((SeekArc)windows.findViewById(R.id.seekArc));
         progressText = ((TextView)windows.findViewById(R.id.progressText));
         seekArc.setTouchable(false);
@@ -107,8 +106,8 @@ public class InfoFrag extends Fragment implements ISyncFrag{
             public void onClick(View view) {
                 //Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.switchTab(0);
+                //MainActivity mainActivity = (MainActivity) getActivity();
+                //mainActivity.switchTab(0);
                 dialog.dismiss();
             }
         });
@@ -119,8 +118,8 @@ public class InfoFrag extends Fragment implements ISyncFrag{
             public void onClick(View view) {
                 //Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Random selected", Toast.LENGTH_SHORT).show();
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.switchTab(2);
+                //MainActivity mainActivity = (MainActivity) getActivity();
+                //mainActivity.switchTab(2);
                 dialog.dismiss();
             }
         });

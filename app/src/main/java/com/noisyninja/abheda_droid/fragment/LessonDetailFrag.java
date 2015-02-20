@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 
 import com.noisyninja.abheda_droid.control.ListLessonDetailAdapter;
 import com.noisyninja.abheda_droid.control.ListLessonDetailItem;
-import com.noisyninja.abheda_droid.pojo.Chapter;
 import com.noisyninja.abheda_droid.pojo.Lesson;
+import com.noisyninja.abheda_droid.pojo.Page;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,7 +28,6 @@ public class LessonDetailFrag extends ListFragment {
      */
     //public static final String ARG_ITEM_ID = "item_id";
     Lesson lesson;
-
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -55,14 +55,17 @@ public class LessonDetailFrag extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Instantiating an adapter to store each items
-        // R.layout.listview_layout defines the layout of each item
         List<ListLessonDetailItem> items = new ArrayList<ListLessonDetailItem>();
 
-        for(Chapter chapter : lesson.getChapters())
+        // Instantiating an adapter to store each items
+        // R.layout.listview_layout defines the layout of each item
+
+        List<Page> pageList = Arrays.asList((Page[])  Utils.getObject(getActivity(),
+                lesson.getPages(), Page[].class));
+
+        for(Page page : pageList)
         {
-            //String icon = getResources().getDrawable(R.drawable.imageholder);
-            items.add(new ListLessonDetailItem(chapter.getImage1(), chapter.getName(), chapter.getDescription()));
+            items.add(new ListLessonDetailItem(page.getImage1(), page.getName(), page.getDescription()));
         }
 
         ListLessonDetailAdapter adapter = new ListLessonDetailAdapter(getActivity().getBaseContext(), items);

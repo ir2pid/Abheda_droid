@@ -1,0 +1,19 @@
+[
+
+                      {
+                        "description": "BCP1.3flashcarddescription chapter1",
+                        "image1": "BCP1.3flashcardimage1 chapter1",
+                        "image2": "BCP1.3flashcardimage2 chapter1",
+                        "name": "BCP1.3flashcardName chapter1",
+                        "text1": "BCP1.3flashcardtext1 chapter1",
+                        "text2": "BCP1.3flashcardtext2 chapter1"
+                      },
+                      {
+                        "description": "BCP1.3flashcarddescription chapter2",
+                        "image1": "BCP1.3flashcardimage1 chapter2",
+                        "image2": "BCP1.3flashcardimage2 chapter1",
+                        "name": "BCP1.3flashcardName chapter2",
+                        "text1": "BCP1.3flashcardtext1 chapter2",
+                        "text2": "BCP1.3flashcardtext2 chapter1"
+                      }
+]

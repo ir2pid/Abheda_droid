@@ -11,7 +11,9 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -30,6 +32,12 @@ import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.control.FlipAnimation;
 import com.noisyninja.abheda_droid.control.quickaction.ActionItem;
 import com.noisyninja.abheda_droid.control.quickaction.QuickAction;
+import com.noisyninja.abheda_droid.fragment.FlashcardDetailFrag;
+import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
+import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
+import com.noisyninja.abheda_droid.fragment.OrderGameDetailFrag;
+import com.noisyninja.abheda_droid.fragment.PictureMatchDetailFrag;
+import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 import com.noisyninja.abheda_droid.util.Constants.PROGRESS_STYLE;
 
 import junit.framework.Assert;
@@ -240,6 +248,24 @@ public class Utils {
         }
     }
 
+    public static Object getObject(Context context, String fileName, Class clazz)
+    {
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        //gsonBuilder.setDateFormat("M/d/yy hh:mm a");
+        Gson gson = gsonBuilder.create();
+
+        /*
+        List<Post> posts = new ArrayList<Post>();
+        posts = Arrays.asList(gson.fromJson(reader, Post[].class));
+        */
+        String json = Utils.read(context, fileName);
+        if(json == null)
+        {
+            json = Utils.getStringFromAsset(context, fileName);
+        }
+        return gson.fromJson(json, clazz);
+    }
+
     public static String read(Context context)
     {
         return read(context, Constants.LOCAL_STORE);
@@ -248,6 +274,10 @@ public class Utils {
     public static String read(Context context, String fileName){
         StringBuilder temp = new StringBuilder();
         FileInputStream fin = null;
+
+        if(fileName == null)
+            fileName = Constants.LOCAL_STORE;
+
         try{
             fin =  new FileInputStream (new File(fileName));
             int c;
@@ -432,5 +462,54 @@ public class Utils {
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "schema");
         emailIntent.putExtra(Intent.EXTRA_TEXT, data+"\n--------\n\n\n\n-------\n");
         context.startActivity(Intent.createChooser(emailIntent, "Send email..."));
+    }
+
+    public static void backPress(Activity activity)
+    {
+        activity.onBackPressed();
+    }
+
+    public static void courseFacade(FragmentActivity activity, String data, MODULE_TYPE module_type)
+    {
+        //String data = activity.getIntent().getStringExtra(Constants.FRAGMENT_DATA);
+        //Constants.MODULE_TYPE module_type = Constants.MODULE_TYPE.valueOf(activity.getIntent().getStringExtra(Constants.FRAGMENT_TYPE));
+        Bundle arguments = new Bundle();
+        arguments.putString(Constants.FRAGMENT_DATA, data);
+
+        switch (module_type){
+
+            case LESSON: {
+                LessonDetailFrag fragment = new LessonDetailFrag();
+                fragment.setArguments(arguments);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .add(R.id.lesson_detail_container, fragment).commit();
+                break;
+            }case FLASHCARD: {
+                FlashcardDetailFrag fragment = new FlashcardDetailFrag();
+                fragment.setArguments(arguments);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .add(R.id.lesson_detail_container, fragment).commit();
+                break;
+            }case MCQ_QUIZ: {
+                MCQDetailFrag fragment = new MCQDetailFrag();
+                fragment.setArguments(arguments);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .add(R.id.lesson_detail_container, fragment).commit();
+                break;
+            }case ORDER_GAME_QUIZ: {
+                OrderGameDetailFrag fragment = new OrderGameDetailFrag();
+                fragment.setArguments(arguments);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .add(R.id.lesson_detail_container, fragment).commit();
+                break;
+            }case PICTURE_MATCH_QUIZ: {
+                PictureMatchDetailFrag fragment = new PictureMatchDetailFrag();
+                fragment.setArguments(arguments);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .add(R.id.lesson_detail_container, fragment).commit();
+                break;
+            }
+
+        }
     }
 }

@@ -89,7 +89,7 @@ public class LessonListFrag extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        window = inflater.inflate(R.layout.lesson_list_frag, container, false);
+        window = inflater.inflate(R.layout.frag_lesson_list, container, false);
         return window;
     }
 

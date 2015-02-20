@@ -2,8 +2,6 @@ package com.noisyninja.abheda_droid.pojo;
 
 import com.noisyninja.abheda_droid.util.Constants;
 
-import java.util.ArrayList;
-
 /**
  * Created by ir2pi on 11/30/2014.
  */
@@ -11,7 +9,7 @@ public class Lesson extends BaseLesson{
     String name;
     String description;
     String image;
-    ArrayList<Chapter> chapters;
+    String pages;
     boolean isFlashCard;
 
     public Lesson()
@@ -25,6 +23,7 @@ public class Lesson extends BaseLesson{
 
     public void setFlashCard(boolean isFlashCard) {
         this.isFlashCard = isFlashCard;
+        module_type = isFlashCard == true? Constants.MODULE_TYPE.FLASHCARD:Constants.MODULE_TYPE.LESSON;
     }
 
     public String getName() {
@@ -51,11 +50,12 @@ public class Lesson extends BaseLesson{
         this.image = image;
     }
 
-    public ArrayList<Chapter> getChapters() {
-        return chapters;
+    public String getPages() {
+        return pages;
     }
 
-    public void setChapters(ArrayList<Chapter> chapters) {
-        this.chapters = chapters;
+    public void setPages(String pages) {
+        this.pages = pages;
     }
+
 }

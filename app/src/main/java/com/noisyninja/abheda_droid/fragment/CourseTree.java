@@ -46,7 +46,7 @@ public class CourseTree extends Fragment {
                 for (Courses courses : topic.getCoursesList()) {
                     GroupItem groupItem = new GroupItem();
                     groupItem.name = courses.getCourseName();
-                    groupItem.description = courses.getCourseDescription();
+                    groupItem.description = courses.getCourseLongDescription();
                     groupItem.completion = courses.getCompletion();
                     groupItem.marks = courses.getMarks();
                     if(courses.getModules() != null && courses.getModules().size()>0) {
@@ -222,7 +222,7 @@ public class CourseTree extends Fragment {
             GroupItem item = getGroup(groupPosition);
             if (convertView == null) {
                 holder = new GroupHolder();
-                convertView = inflater.inflate(R.layout.tree_group_item, parent, false);
+                convertView = inflater.inflate(R.layout.item_tree_group, parent, false);
                 holder.name = (TextView) convertView.findViewById(R.id.textView1);
                 holder.description = (TextView) convertView.findViewById(R.id.textView2);
                 //holder.completion = (TextView) convertView.findViewById(R.id.textView3);

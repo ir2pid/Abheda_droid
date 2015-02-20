@@ -5,6 +5,14 @@
     android:background="@drawable/background_gradient4"
     android:gravity="center">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="q no"
+        android:id="@+id/textView"
+        android:background="@drawable/background_shape_blue_translucent"
+        android:gravity="center" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -31,9 +39,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
-            android:id="@+id/button4"
-            android:background="@drawable/button_blue" />
+            android:text="@string/next"
+            android:id="@+id/button"
+            android:background="@drawable/button_green" />
     </LinearLayout>
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.pojo.MCQQuiz;
@@ -21,11 +22,12 @@ public class MCQDetailFrag extends Fragment {
 
     View window;
     MCQQuiz mcqQuiz;
+    int progress;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        progress = 0;
         if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
@@ -34,7 +36,7 @@ public class MCQDetailFrag extends Fragment {
                     ARG_ITEM_ID));*/
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
 
-            mcqQuiz = new MCQQuiz();
+
             mcqQuiz = (MCQQuiz)Utils.getFromJson(data, MCQQuiz.class);
 
             Utils.handleInfo(getActivity(), mcqQuiz.toString());
@@ -44,19 +46,11 @@ public class MCQDetailFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        window = inflater.inflate(R.layout.mcq_detail_frag, container, false);
+        window = inflater.inflate(R.layout.frag_mcq_detail, container, false);
 
-        RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
-        radioButton1.setText(mcqQuiz.getOption1());
-        RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
-        radioButton2.setText(mcqQuiz.getOption2());
-        RadioButton radioButton3 = ((RadioButton) window.findViewById(R.id.radioButton3));
-        radioButton3.setText(mcqQuiz.getOption3());
-        RadioButton radioButton4 = ((RadioButton) window.findViewById(R.id.radioButton4));
-        radioButton4.setText(mcqQuiz.getOption4());
 
-        Button button = ((Button) window.findViewById(R.id.button));
-        button.setOnClickListener(new View.OnClickListener() {
+        Button buttonNext = ((Button) window.findViewById(R.id.button));
+        buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -65,9 +59,18 @@ public class MCQDetailFrag extends Fragment {
                 RadioButton radioButton = (RadioButton) window.findViewById(selectedId);
                 //Utils.makeToast(getActivity(), String.valueOf(idx));
 
-                if(radioButton != null && Integer.valueOf(radioButton.getTag().toString()) == mcqQuiz.getCorrect())
+                if(radioButton != null && Integer.valueOf(radioButton.getTag().toString()) == mcqQuiz.getMcqQuestions().get(progress).getCorrect())
                 {
                     Utils.showResult(getActivity(), true);
+                    if(progress < mcqQuiz.getMcqQuestions().size()-1)
+                    {
+                        progress++;
+                    }
+                    else
+                    {
+                        Utils.backPress(getActivity());
+                    }
+                    loadQuestions(progress);
                 }
                 else if(radioButton != null && selectedId != -1)
                 {
@@ -75,6 +78,24 @@ public class MCQDetailFrag extends Fragment {
                 }
             }
         });
+
+        loadQuestions(progress);
+
         return window;
+    }
+
+    void loadQuestions(int no)
+    {
+        TextView textViewQuestion  = ((TextView) window.findViewById(R.id.textView3));
+        textViewQuestion.setText(no+"/"+mcqQuiz.getMcqQuestions().size()+") "+ mcqQuiz.getMcqQuestions().get(no).getQuestion());
+        RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
+        radioButton1.setText(mcqQuiz.getMcqQuestions().get(no).getOption1());
+        RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
+        radioButton2.setText(mcqQuiz.getMcqQuestions().get(no).getOption2());
+        RadioButton radioButton3 = ((RadioButton) window.findViewById(R.id.radioButton3));
+        radioButton3.setText(mcqQuiz.getMcqQuestions().get(no).getOption3());
+        RadioButton radioButton4 = ((RadioButton) window.findViewById(R.id.radioButton4));
+        radioButton4.setText(mcqQuiz.getMcqQuestions().get(no).getOption4());
+
     }
 }

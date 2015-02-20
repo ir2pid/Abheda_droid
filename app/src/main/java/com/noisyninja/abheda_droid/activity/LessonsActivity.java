@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
 import com.noisyninja.abheda_droid.fragment.LessonListFrag;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
@@ -57,13 +56,13 @@ public class LessonsActivity extends FragmentActivity implements
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
-
-            Bundle arguments = new Bundle();
+            Utils.courseFacade(this, data, module_type);
+            /*Bundle arguments = new Bundle();
             arguments.putString(Constants.FRAGMENT_DATA, data);
             LessonDetailFrag fragment = new LessonDetailFrag();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.lesson_detail_container, fragment).commit();
+                    .replace(R.id.lesson_detail_container, fragment).commit();*/
 
         } else {
             // In single-pane mode, simply start the detail activity
