@@ -2,8 +2,6 @@ package com.noisyninja.abheda_droid.pojo;
 
 import com.noisyninja.abheda_droid.util.Constants;
 
-import java.util.ArrayList;
-
 /**
  * Created by ir2pi on 12/24/2014.
  */
@@ -16,7 +14,8 @@ public class PictureMatchQuiz extends BaseLesson {
 
     String name;
     String description;
-    ArrayList<PictureMatchQuestion> pictureMatchQuestions;
+    String pictureMatchQuestions;
+    //ArrayList<PictureMatchQuestion> pictureMatchQuestions;
 
     public String getName() {
         return name;
@@ -34,11 +33,11 @@ public class PictureMatchQuiz extends BaseLesson {
         this.description = description;
     }
 
-    public ArrayList<PictureMatchQuestion> getPictureMatchQuestions() {
+    public String getPictureMatchQuestions() {
         return pictureMatchQuestions;
     }
 
-    public void setPictureMatchQuestions(ArrayList<PictureMatchQuestion> pictureMatchQuestions) {
+    public void setPictureMatchQuestions(String pictureMatchQuestions) {
         this.pictureMatchQuestions = pictureMatchQuestions;
     }
 }

@@ -1,14 +1,50 @@
 [
-                      {
-                        "description": "BCP1.1 description chapter1",
-                        "image1": "BCP1.1 image chapter1",
-                        "name": "BCP1.1 Name chapter1",
-                        "text1": "BCP1.1 text chapter1"
-                      },
-                      {
-                        "description": "BCP1.1 description chapter2",
-                        "image1": "BCP1.1 image chapter2",
-                        "name": "BCP1.1 Name chapter2",
-                        "text1": "BCP1.1 text chapter2"
-                      }
+  {
+    "name": "",
+    "description": "",
+    "image1": "https://drive.google.com/file/d/0B3-WqXENqs7dTzlPOHhOMUM1WkU/view?usp=sharing",
+    "image2": "",
+    "text1": "আমি হই",
+    "text2": "I am."
+  },
+  {
+    "name": "",
+    "description": "",
+    "image1": "https://drive.google.com/file/d/0B3-WqXENqs7dbVF5OGh3RjJ4SkU/view?usp=sharing",
+    "image2": "",
+    "text1": "তুমি হও",
+    "text2": "You are."
+  },
+  {
+    "name": "",
+    "description": "",
+    "image1": "",
+    "image2": "",
+    "text1": "আমরা হই " ,
+    "text2": "We are."
+  },
+  {
+    "name": "",
+    "description": "",
+    "image1": "",
+    "image2": "",
+    "text1": " তোমরা হও", 
+    "text2": "You are."
+  },
+  {
+    "name": "",
+    "description": "",
+    "image1": "",
+    "image2": "",
+    "text1": "সে (ছেলে) হয় ", 
+    "text2": "He is."
+  }, 
+   {
+    "name": "",
+    "description": "",
+    "image1": "",
+    "image2": "",
+    "text1": "সে (মেয়ে) হয় ", 
+    "text2": "She is."
+  }
 ]

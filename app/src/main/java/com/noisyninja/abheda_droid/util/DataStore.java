@@ -397,6 +397,45 @@ public class DataStore {
         MCQQuiz mcqQuiz0 = new MCQQuiz();
         mcqQuiz0.setName("BCP1name0 mcqQuiz0");
         mcqQuiz0.setDescription("BCP1 mcqQuiz0 description0");
+
+        mcqQuiz0.setMcqQuestions("bcp1mcq1.json");
+        //mcqQuiz0.setMcqQuestions(getmcqQuestions1());
+
+        MCQQuiz mcqQuiz1 = new MCQQuiz();
+        mcqQuiz1.setName("BCP1name1 mcqQuiz1");
+        mcqQuiz1.setDescription("BCP1 mcqQuiz1 description1");
+
+        mcqQuiz1.setMcqQuestions("bcp1mcq2.json");
+
+        mcqQuizs.add(mcqQuiz0);
+        mcqQuizs.add(mcqQuiz1);
+
+        OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
+        orderGameQuiz0.setDescription("orderGameQuiz0 Description");
+        orderGameQuiz0.setName("orderGameQuiz0 Name");
+
+
+
+        orderGameQuiz0.setOrderGameQuestions("bcp1quizordergame1.json");
+        orderGameQuizs.add(orderGameQuiz0);
+
+        PictureMatchQuiz pictureMatchQuiz0 = new PictureMatchQuiz();
+        pictureMatchQuiz0.setName("pictureMatchQuiz0 Name");
+        pictureMatchQuiz0.setDescription("pictureMatchQuiz0 Description");
+
+
+        pictureMatchQuiz0.setPictureMatchQuestions("bcp1quizpicturematchgame1.json");
+        pictureMatchQuiz.add(pictureMatchQuiz0);
+
+        quizzes.setMcqQuizs(mcqQuizs);
+        quizzes.setOrderGameQuizs(orderGameQuizs);
+        quizzes.setPictureMatchQuiz(pictureMatchQuiz);
+        return quizzes;
+    }
+
+
+    public ArrayList<MCQQuestion> getmcqQuestions1()
+    {
         ArrayList<MCQQuestion> mcqQuestions = new ArrayList<>();
         MCQQuestion mcqQuestion1 = new MCQQuestion();
         mcqQuestion1.setQuestion("BCP question1");
@@ -415,11 +454,11 @@ public class DataStore {
         mcqQuestion2.setCorrect(3);
         mcqQuestions.add(mcqQuestion1);
         mcqQuestions.add(mcqQuestion2);
-        mcqQuiz0.setMcqQuestions(mcqQuestions);
+        return mcqQuestions;
+    }
 
-        MCQQuiz mcqQuiz1 = new MCQQuiz();
-        mcqQuiz1.setName("BCP1name1 mcqQuiz1");
-        mcqQuiz1.setDescription("BCP1 mcqQuiz1 description1");
+    public ArrayList<MCQQuestion> getmcqQuestions2()
+    {
         ArrayList<MCQQuestion> mcqQuestions2 = new ArrayList<>();
         MCQQuestion mcqQuestion21 = new MCQQuestion();
         mcqQuestion21.setQuestion("BCP question1");
@@ -429,15 +468,11 @@ public class DataStore {
         mcqQuestion21.setOption4("BCPoption4");
         mcqQuestion21.setCorrect(3);
         mcqQuestions2.add(mcqQuestion21);
-        mcqQuiz1.setMcqQuestions(mcqQuestions2);
+        return mcqQuestions2;
+    }
 
-        mcqQuizs.add(mcqQuiz0);
-        mcqQuizs.add(mcqQuiz1);
-
-        OrderGameQuiz orderGameQuiz0 = new OrderGameQuiz();
-        orderGameQuiz0.setDescription("orderGameQuiz0 Description");
-        orderGameQuiz0.setName("orderGameQuiz0 Name");
-
+    public ArrayList<OrderGameQuestion> getOrderQuiz1()
+    {
         ArrayList<OrderGameQuestion> orderGameQuestions = new ArrayList<>();
         OrderGameQuestion orderGameQuestion1 = new OrderGameQuestion();
         Map<Integer,String> words0 = new HashMap<Integer, String>();
@@ -455,15 +490,14 @@ public class DataStore {
         words1.put(4, "BCPword4");
         orderGameQuestion2.setWords(words1);
 
+
         orderGameQuestions.add(orderGameQuestion1);
         orderGameQuestions.add(orderGameQuestion2);
+        return orderGameQuestions;
+    }
 
-        orderGameQuiz0.setOrderGameQuestions(orderGameQuestions);
-        orderGameQuizs.add(orderGameQuiz0);
-
-        PictureMatchQuiz pictureMatchQuiz0 = new PictureMatchQuiz();
-        pictureMatchQuiz0.setName("pictureMatchQuiz0 Name");
-        pictureMatchQuiz0.setDescription("pictureMatchQuiz0 Description");
+    public ArrayList<PictureMatchQuestion> getPictureMatchQuiz()
+    {
 
         ArrayList<PictureMatchQuestion> pictureMatchQuestions = new ArrayList<>();
 
@@ -486,13 +520,6 @@ public class DataStore {
         pictureMatchQuestions.add(pictureMatchQuestion1);
         pictureMatchQuestions.add(pictureMatchQuestion2);
 
-        pictureMatchQuiz0.setPictureMatchQuestions(pictureMatchQuestions);
-        pictureMatchQuiz.add(pictureMatchQuiz0);
-
-        quizzes.setMcqQuizs(mcqQuizs);
-        quizzes.setOrderGameQuizs(orderGameQuizs);
-        quizzes.setPictureMatchQuiz(pictureMatchQuiz);
-        return quizzes;
+        return pictureMatchQuestions;
     }
-
 }

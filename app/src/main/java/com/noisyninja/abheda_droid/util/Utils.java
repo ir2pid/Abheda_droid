@@ -450,6 +450,17 @@ public class Utils {
                 .into(view);
     }
 
+    public static void animateFlip(View rootLayout, View cardFace, View cardBack)
+    {
+        FlipAnimation flipAnimation = new FlipAnimation(cardFace, cardBack);
+
+        if (cardFace.getVisibility() == View.INVISIBLE)
+        {
+            flipAnimation.reverse();
+        }
+        rootLayout.startAnimation(flipAnimation);
+    }
+
     public static void mail(Context context, String data)
     {
         mail(context, "ir2pid@gmail.com", data);

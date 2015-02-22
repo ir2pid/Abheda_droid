@@ -2,8 +2,6 @@ package com.noisyninja.abheda_droid.pojo;
 
 import com.noisyninja.abheda_droid.util.Constants;
 
-import java.util.ArrayList;
-
 /**
  * Created by ir2pi on 12/13/2014.
  */
@@ -16,7 +14,8 @@ public class OrderGameQuiz extends BaseLesson {
 
     String name;
     String description;
-    ArrayList<OrderGameQuestion> orderGameQuestions;
+    String orderGameQuestions;
+    //ArrayList<OrderGameQuestion> orderGameQuestions;
 
     public String getName() {
         return name;
@@ -34,11 +33,11 @@ public class OrderGameQuiz extends BaseLesson {
         this.description = description;
     }
 
-    public ArrayList<OrderGameQuestion> getOrderGameQuestions() {
+    public String getOrderGameQuestions() {
         return orderGameQuestions;
     }
 
-    public void setOrderGameQuestions(ArrayList<OrderGameQuestion> orderGameQuestions) {
+    public void setOrderGameQuestions(String orderGameQuestions) {
         this.orderGameQuestions = orderGameQuestions;
     }
 }

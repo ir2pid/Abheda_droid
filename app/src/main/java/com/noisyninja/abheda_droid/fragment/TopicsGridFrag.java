@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.github.lzyzsd.circleprogress.ArcProgress;
 import com.github.lzyzsd.circleprogress.DonutProgress;
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.activity.LessonsActivity;
+import com.noisyninja.abheda_droid.activity.CourseActivity;
 import com.noisyninja.abheda_droid.control.AnimatedButton;
 import com.noisyninja.abheda_droid.pojo.Topic;
 import com.noisyninja.abheda_droid.pojo.Topics;
@@ -204,7 +204,7 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
             public void onClick(View view) {
                 //Utils.playSound(getActivity(), Constants.Sound.CLICK);
                 Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
-                Utils.startActivity(getActivity(), LessonsActivity.class);
+                Utils.startActivity(getActivity(), CourseActivity.class);
                 //MainActivity mainActivity = (MainActivity) getActivity();
                 //mainActivity.switchTab(0);
                 dialog.dismiss();

@@ -13,22 +13,28 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.pojo.Page;
 import com.noisyninja.abheda_droid.util.Utils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ViewPagerAdapter extends PagerAdapter {
     // Declare Variables
     Context context;
     List<Page> pageArrayList;
     LayoutInflater inflater;
+    boolean isBack;
+    Map<Integer, ViewFlipper> containerMap = new HashMap<Integer, ViewFlipper>();
 
     public ViewPagerAdapter(Context context, List<Page> pageArrayList) {
         this.context = context;
         this.pageArrayList = pageArrayList;
+        isBack = false;
     }
 
     @Override
@@ -42,37 +48,72 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
 
         // Declare Variables
-
-        TextView name;
-        TextView description;
-        TextView text;
-        ImageView image;
-
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View itemView = inflater.inflate(R.layout.item_view_pager, container,
-                false);
 
-        // Locate the TextViews in viewpager_item.xml
-        name = (TextView) itemView.findViewById(R.id.name);
-        description = (TextView) itemView.findViewById(R.id.description);
-        text = (TextView) itemView.findViewById(R.id.text);
-
-        // Capture position and set to the TextViews
-        name.setText(pageArrayList.get(position).getName());
-        description.setText(pageArrayList.get(position).getDescription());
-        text.setText(pageArrayList.get(position).getText1());
-
-        // Locate the ImageView in viewpager_item.xml
-        image = (ImageView) itemView.findViewById(R.id.image);
-        // Capture position and set to the ImageView
-        Utils.lazyload(context, image, pageArrayList.get(position).getImage1());
-        // Add viewpager_item.xml to ViewPager
+        View itemView = loadView(container, position);
+        itemView.setTag(position);
         ((ViewPager) container).addView(itemView);
 
+        /*itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utils.makeToast(context, "clicked: "+position);
+                int pos = (Integer)view.getTag();
+                //View itemView = loadView(containerMap.get(Integer.valueOf(position)), position, false);
+
+                //Utils.animateFlip(view.getRootView(), view, view);
+            }
+        });*/
+        return itemView;
+    }
+
+    private View loadView(ViewGroup container, int position)
+    {
+        TextView name1;
+        TextView description1;
+        TextView text1;
+        ImageView image1;
+        TextView name2;
+        TextView description2;
+        TextView text2;
+        ImageView image2;
+
+        View itemView = inflater.inflate(R.layout.item_view_pager, container,
+                false);
+        itemView.setTag(position);
+
+        name1 = (TextView) itemView.findViewById(R.id.name1);
+        description1 = (TextView) itemView.findViewById(R.id.description1);
+        text1 = (TextView) itemView.findViewById(R.id.text1);
+        image1 = (ImageView) itemView.findViewById(R.id.image1);
+
+        name1.setText(pageArrayList.get(position).getName());
+        description1.setText(pageArrayList.get(position).getDescription());
+        text1.setText(pageArrayList.get(position).getText1());
+        Utils.lazyload(context, image1, pageArrayList.get(position).getImage1());
+
+
+        ViewFlipper viewSwitcher = (ViewFlipper) itemView.findViewById(R.id.viewflipper);
+        containerMap.put(position, viewSwitcher);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = (Integer)view.getTag();
+                ViewFlipper viewSwitcher = containerMap.get(pos);
+                if(!isBack) {
+                    viewSwitcher.showNext();
+                    isBack = true;
+                }else {
+                    viewSwitcher.showPrevious();
+                    isBack = false;
+                }
+            }
+        });
         return itemView;
     }
 

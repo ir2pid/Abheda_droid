@@ -15,13 +15,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.control.FlipAnimation;
+import com.noisyninja.abheda_droid.pojo.PictureMatchQuestion;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,7 +47,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
 
     ArrayList<Button> buttonArrayList;
     ArrayList<ImageView> imageViewArrayList;
-    PictureMatchQuiz pictureMatchQuiz;
+    List<PictureMatchQuestion> pictureMatchQuestions;
     HashMap<String, String> map;
 
     @Override
@@ -57,8 +59,9 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
 
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
 
-            pictureMatchQuiz = new PictureMatchQuiz();
-            pictureMatchQuiz = (PictureMatchQuiz)Utils.getFromJson(data, PictureMatchQuiz.class);
+            PictureMatchQuiz pictureMatchQuiz = (PictureMatchQuiz)Utils.getFromJson(data, PictureMatchQuiz.class);
+            pictureMatchQuestions = Arrays.asList((PictureMatchQuestion[]) Utils.getObject(getActivity(),
+                    pictureMatchQuiz.getPictureMatchQuestions(), PictureMatchQuestion[].class));
 
             Utils.handleInfo(getActivity(), pictureMatchQuiz.toString());
         }
@@ -115,7 +118,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(progress < pictureMatchQuiz.getPictureMatchQuestions().size()-1)
+                if(progress < pictureMatchQuestions.size()-1)
                 {
                     progress++;
                 }
@@ -133,9 +136,9 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
 
     void loadQuestions()
     {
-        textViewQuestionNo.setText("Q: "+progress+"/"+pictureMatchQuiz.getPictureMatchQuestions().size());
+        textViewQuestionNo.setText("Q: "+progress+"/"+pictureMatchQuestions.size());
         int i = 0;
-        for(Map.Entry<String, String> entry : pictureMatchQuiz.getPictureMatchQuestions().get(progress).getWords().entrySet()) {
+        for(Map.Entry<String, String> entry : pictureMatchQuestions.get(progress).getWords().entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
             buttonArrayList.get(i).setText(value);
@@ -176,28 +179,28 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                             View rootLayout = (View) window.findViewById(R.id.frameLayout1);
                             View cardFace = (View) window.findViewById(R.id.imageView1);
                             View cardBack = (View) window.findViewById(R.id.circleButton11);
-                            doAnim(rootLayout, cardFace, cardBack);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
                             break;
                         }
                         case R.id.imageView2: {
                             View rootLayout = (View) window.findViewById(R.id.frameLayout2);
                             View cardFace = (View) window.findViewById(R.id.imageView2);
                             View cardBack = (View) window.findViewById(R.id.circleButton21);
-                            doAnim(rootLayout, cardFace, cardBack);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
                             break;
                         }
                         case R.id.imageView3: {
                             View rootLayout = (View) window.findViewById(R.id.frameLayout3);
                             View cardFace = (View) window.findViewById(R.id.imageView3);
                             View cardBack = (View) window.findViewById(R.id.circleButton31);
-                            doAnim(rootLayout, cardFace, cardBack);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
                             break;
                         }
                         case R.id.imageView4: {
                             View rootLayout = (View) window.findViewById(R.id.frameLayout4);
                             View cardFace = (View) window.findViewById(R.id.imageView4);
                             View cardBack = (View) window.findViewById(R.id.circleButton41);
-                            doAnim(rootLayout, cardFace, cardBack);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
                             break;
                         }
                     }
@@ -217,15 +220,6 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         }
         return true;
     }
-    public void doAnim(View rootLayout, View cardFace, View cardBack)
-    {
-        FlipAnimation flipAnimation = new FlipAnimation(cardFace, cardBack);
 
-        if (cardFace.getVisibility() == View.INVISIBLE)
-        {
-            flipAnimation.reverse();
-        }
-        rootLayout.startAnimation(flipAnimation);
-    }
 
 }

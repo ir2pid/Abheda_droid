@@ -1,15 +1,14 @@
 [
-
-                      {
-                        "description": "BCP1.2 description chapter1",
-                        "image1": "BCP1.2 image chapter1",
-                        "name": "BCP1.2 Name chapter1",
-                        "text1": "BCP1.2 text chapter1"
-                      },
-                      {
-                        "description": "BCP1.2 description chapter2",
-                        "image1": "BCP1.2 image chapter2",
-                        "name": "BCP1.2 Name chapter2",
-                        "text1": "BCP1.2 text chapter2"
-                      }
+    {
+        "description": "BCP1.2 description chapter1",
+        "image1": "BCP1.2 image chapter1",
+        "name": "BCP1.2 Name chapter1",
+        "text1": "BCP1.2 text chapter1"
+    },
+    {
+        "description": "BCP1.2 description chapter2",
+        "image1": "BCP1.2 image chapter2",
+        "name": "BCP1.2 Name chapter2",
+        "text1": "BCP1.2 text chapter2"
+    }
 ]

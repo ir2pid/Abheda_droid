@@ -2,8 +2,6 @@ package com.noisyninja.abheda_droid.pojo;
 
 import com.noisyninja.abheda_droid.util.Constants;
 
-import java.util.ArrayList;
-
 /**
  * Created by ir2pi on 11/30/2014.
  */
@@ -16,7 +14,10 @@ public class MCQQuiz extends BaseLesson{
 
     String name;
     String description;
-    ArrayList<MCQQuestion>mcqQuestions;
+    String instruction;
+    int daysToComplete;
+    String mcqQuestions;
+    //ArrayList<MCQQuestion> mcqQuestions;
 
     public String getName() {
         return name;
@@ -34,11 +35,27 @@ public class MCQQuiz extends BaseLesson{
         this.description = description;
     }
 
-    public ArrayList<MCQQuestion> getMcqQuestions() {
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+
+    public int getDaysToComplete() {
+        return daysToComplete;
+    }
+
+    public void setDaysToComplete(int daysToComplete) {
+        this.daysToComplete = daysToComplete;
+    }
+
+    public String getMcqQuestions() {
         return mcqQuestions;
     }
 
-    public void setMcqQuestions(ArrayList<MCQQuestion> mcqQuestions) {
+    public void setMcqQuestions(String mcqQuestions) {
         this.mcqQuestions = mcqQuestions;
     }
 }

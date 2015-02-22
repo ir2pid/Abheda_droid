@@ -8,6 +8,7 @@ import com.noisyninja.abheda_droid.util.Constants;
 public class Lesson extends BaseLesson{
     String name;
     String description;
+    String instruction;
     String image;
     String pages;
     boolean isFlashCard;
@@ -58,4 +59,11 @@ public class Lesson extends BaseLesson{
         this.pages = pages;
     }
 
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
 }

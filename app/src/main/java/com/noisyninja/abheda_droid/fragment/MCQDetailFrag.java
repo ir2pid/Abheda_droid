@@ -11,9 +11,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.pojo.MCQQuestion;
 import com.noisyninja.abheda_droid.pojo.MCQQuiz;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by ir2pi on 11/30/2014.
@@ -21,7 +25,7 @@ import com.noisyninja.abheda_droid.util.Utils;
 public class MCQDetailFrag extends Fragment {
 
     View window;
-    MCQQuiz mcqQuiz;
+    List<MCQQuestion> mcqQuestions;
     int progress;
 
     @Override
@@ -37,7 +41,11 @@ public class MCQDetailFrag extends Fragment {
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
 
 
-            mcqQuiz = (MCQQuiz)Utils.getFromJson(data, MCQQuiz.class);
+            MCQQuiz mcqQuiz = (MCQQuiz)Utils.getFromJson(data, MCQQuiz.class);
+
+            mcqQuestions = Arrays.asList((MCQQuestion[]) Utils.getObject(getActivity(),
+                    mcqQuiz.getMcqQuestions(), MCQQuestion[].class));
+
 
             Utils.handleInfo(getActivity(), mcqQuiz.toString());
         }
@@ -59,10 +67,10 @@ public class MCQDetailFrag extends Fragment {
                 RadioButton radioButton = (RadioButton) window.findViewById(selectedId);
                 //Utils.makeToast(getActivity(), String.valueOf(idx));
 
-                if(radioButton != null && Integer.valueOf(radioButton.getTag().toString()) == mcqQuiz.getMcqQuestions().get(progress).getCorrect())
+                if(radioButton != null && Integer.valueOf(radioButton.getTag().toString()) == mcqQuestions.get(progress).getCorrect())
                 {
                     Utils.showResult(getActivity(), true);
-                    if(progress < mcqQuiz.getMcqQuestions().size()-1)
+                    if(progress < mcqQuestions.size()-1)
                     {
                         progress++;
                     }
@@ -87,15 +95,15 @@ public class MCQDetailFrag extends Fragment {
     void loadQuestions(int no)
     {
         TextView textViewQuestion  = ((TextView) window.findViewById(R.id.textView3));
-        textViewQuestion.setText(no+"/"+mcqQuiz.getMcqQuestions().size()+") "+ mcqQuiz.getMcqQuestions().get(no).getQuestion());
+        textViewQuestion.setText(no+"/"+mcqQuestions.size()+") "+ mcqQuestions.get(no).getQuestion());
         RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
-        radioButton1.setText(mcqQuiz.getMcqQuestions().get(no).getOption1());
+        radioButton1.setText(mcqQuestions.get(no).getOption1());
         RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
-        radioButton2.setText(mcqQuiz.getMcqQuestions().get(no).getOption2());
+        radioButton2.setText(mcqQuestions.get(no).getOption2());
         RadioButton radioButton3 = ((RadioButton) window.findViewById(R.id.radioButton3));
-        radioButton3.setText(mcqQuiz.getMcqQuestions().get(no).getOption3());
+        radioButton3.setText(mcqQuestions.get(no).getOption3());
         RadioButton radioButton4 = ((RadioButton) window.findViewById(R.id.radioButton4));
-        radioButton4.setText(mcqQuiz.getMcqQuestions().get(no).getOption4());
+        radioButton4.setText(mcqQuestions.get(no).getOption4());
 
     }
 }

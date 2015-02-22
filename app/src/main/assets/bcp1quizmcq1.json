@@ -1,0 +1,62 @@
+[
+  {
+    "name": "",
+    "question": "আমি হই",
+    "option1": "I is.",
+    "option2": "I am.",
+    "option3": "I was.",
+    "option4": "I are.",
+    "isPicture": false,
+    "correct": 2
+  },
+  {
+    "name": "",
+    "question":  "তুমি হও",
+    "option1": "You is.",
+    "option2": "You were.",
+    "option3": "You are.",
+    "option4": "You am.",
+    "isPicture": false,
+    "correct": 2
+  },              
+  {
+    "name": "",
+    "question": "আমরা হই",
+    "option1": "We is.",
+    "option2": "We were.",
+    "option3": "We has.",
+    "option4": "We are.",
+    "isPicture": false,
+    "correct": 4
+  },
+  {
+    "name": "",
+    "question": "তোমরা হও",
+    "option1": "You are.",
+    "option2": "You is.",
+    "option3": "You were.",
+    "option4": "You was.",
+    "isPicture": false,
+    "correct": 1
+  },
+  {
+    "name": "",
+    "question": "সে (ছেলে) হয়",
+    "option1": "He are.",
+    "option2": "She are.",
+    "option3": "He is.",
+    "option4": "She is.",
+    "isPicture": false,
+    "correct": 3
+  },
+  {
+    "name": "",
+    "question": "সে (মেয়ে) হয",
+    "option1": "He are.",
+    "option2": "She are.",
+    "option3": "He is.",
+    "option4": "She is.",
+    "isPicture": false,
+    "correct": 4
+  }
+]

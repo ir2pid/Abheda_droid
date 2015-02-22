@@ -11,11 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.pojo.OrderGameQuestion;
 import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map.Entry;
 
 /**
@@ -31,7 +34,7 @@ public class OrderGameDetailFrag extends Fragment {
     TextView textViewQuestionNo;
     LinearLayout linearLayout1;
     LinearLayout linearLayout2;
-    OrderGameQuiz orderGameQuiz;
+    List<OrderGameQuestion> orderGameQuestions;
     int progress;
 
     @Override
@@ -46,10 +49,9 @@ public class OrderGameDetailFrag extends Fragment {
             /*mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
                     ARG_ITEM_ID));*/
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
-
-            orderGameQuiz = new OrderGameQuiz();
-            orderGameQuiz = (OrderGameQuiz)Utils.getFromJson(data, OrderGameQuiz.class);
-
+            OrderGameQuiz orderGameQuiz = (OrderGameQuiz)Utils.getFromJson(data, OrderGameQuiz.class);
+            orderGameQuestions = Arrays.asList((OrderGameQuestion[]) Utils.getObject(getActivity(),
+                    orderGameQuiz.getOrderGameQuestions(), OrderGameQuestion[].class));
             Utils.handleInfo(getActivity(), orderGameQuiz.toString());
         }
     }
@@ -69,7 +71,7 @@ public class OrderGameDetailFrag extends Fragment {
                 {
                     Utils.playSound(getActivity(), Constants.Sound.RIGHT);
                     Utils.showResult(context, true);
-                    if(progress < orderGameQuiz.getOrderGameQuestions().size()-1)
+                    if(progress < orderGameQuestions.size()-1)
                     {
                         progress++;
                     }
@@ -90,7 +92,7 @@ public class OrderGameDetailFrag extends Fragment {
     public void loadQuestions(final ArrayList<String> words, LinearLayout linearLayout)
     {
         linearLayout2.removeAllViews();
-        textViewQuestionNo.setText("Q: "+progress+"/"+orderGameQuiz.getOrderGameQuestions().size());
+        textViewQuestionNo.setText("Q: "+progress+"/"+orderGameQuestions.size());
         for(String word:words)
         {
             Button button = new Button(getActivity());
@@ -121,7 +123,7 @@ public class OrderGameDetailFrag extends Fragment {
     public ArrayList<String> getWords(int no)
     {
         words = new ArrayList<String>();
-        for(Entry<Integer, String> entry : orderGameQuiz.getOrderGameQuestions().get(no).getWords().entrySet()) {
+        for(Entry<Integer, String> entry : orderGameQuestions.get(no).getWords().entrySet()) {
             int key = entry.getKey();
             String value = entry.getValue();
             words.add(value);
