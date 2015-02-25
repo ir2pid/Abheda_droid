@@ -20,7 +20,7 @@ android:orientation="horizontal">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:weightSum="9">
 
         <ImageView
@@ -30,12 +30,13 @@ android:orientation="horizontal">
             android:background="@drawable/book2"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/name"
             android:layout_gravity="center_vertical|left"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:layout_marginTop="5dp"
@@ -46,19 +47,19 @@ android:orientation="horizontal">
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_gravity="right"
-            android:layout_weight="2"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_weight="2">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
-                android:id="@+id/textView3"
+                android:id="@+id/daystocomplete"
                 android:layout_margin="5dp"
                 android:textColor="@android:color/white"
                 android:textSize="8dp"
@@ -69,7 +70,7 @@ android:orientation="horizontal">
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
-                android:id="@+id/textView4"
+                android:id="@+id/description"
                 android:layout_margin="5dp"
                 android:textColor="@android:color/white"
                 android:textSize="8dp"
@@ -79,7 +80,7 @@ android:orientation="horizontal">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/textView5"
+                android:id="@+id/marks"
                 android:textColor="@android:color/white"
                 android:textSize="8dp"
                 android:textStyle="italic" />
@@ -87,10 +88,10 @@ android:orientation="horizontal">
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/textView2"
+        android:id="@+id/instructions"
         android:layout_gravity="center_vertical"
         android:textStyle="italic"
         android:textColor="@android:color/white"

@@ -153,7 +153,7 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
             View rowView;
 
             rowView = inflater.inflate(R.layout.topics_grid_item, null);
-            holder.tName =(TextView) rowView.findViewById(R.id.textView1);
+            holder.tName =(TextView) rowView.findViewById(R.id.name);
             holder.tDescription =(TextView) rowView.findViewById(R.id.textView2);
             holder.dProgressCompletion =(DonutProgress) rowView.findViewById(R.id.course_progress_arc);
             holder.tMarks =(TextView) rowView.findViewById(R.id.textView4);

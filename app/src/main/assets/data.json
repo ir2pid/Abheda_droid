@@ -8,53 +8,64 @@
       "marks": 0,
       "coursesList": [
         {
+          "courseInstruction": "এই অনুশীলনীগুলি ইংরিজি ভাষার ভিত্তিস্বরূপ । অত্যন্ত সরল বাক্যের সাহায্যে তোমাদের ভিত তৈরী করা হচ্ছে । এগুলি শেষ করতে যা সময় তোমার লাগবে, তা নাও । সাধারণ ভুল যেগুলি ছাত্ররা করে, সেগুলিকে মাথায় রেখে ব্যাখ্যাগুলি দেওয়া হয়েছে আর কুইজগুলি তৈরী করা হয়েছে । সবকটা কুইজে ১০০% পেলে তবেই অন্য/পরের অনুশীলনীর কথা ভাববে, কারণ এই অনুশীলনীগুলির বাক্যগুলি এতই মৌলিক যে এগুলো কম বা ভুল শিখলে পরের অনুশীলনীগুলি শিখতে অসুবিধে হবে ।",
+          "courseLongDescription": "English fundamental sentences and questions with am/is/are, has/have, shall/will, basic pronouns, adjectives, prepositions and  very basic conjugation patterns",
           "courseName": "BCP",
-          "courseShortDescription": "Basic Sentences",
-          "courseLongDescription" : "English fundamental sentences and questions with am/is/are, has/have, shall/will, basic pronouns, adjectives, prepositions and  very basic conjugation patterns",
-          "courseInstruction" : "এই অনুশীলনীগুলি ইংরিজি ভাষার ভিত্তিস্বরূপ । অত্যন্ত সরল বাক্যের সাহায্যে তোমাদের ভিত তৈরী করা হচ্ছে । এগুলি শেষ করতে যা সময় তোমার লাগবে, তা নাও । সাধারণ ভুল যেগুলি ছাত্ররা করে, সেগুলিকে মাথায় রেখে ব্যাখ্যাগুলি দেওয়া হয়েছে আর কুইজগুলি তৈরী করা হয়েছে । সবকটা কুইজে ১০০% পেলে তবেই অন্য/পরের অনুশীলনীর কথা ভাববে, কারণ এই অনুশীলনীগুলির বাক্যগুলি এতই মৌলিক যে এগুলো কম বা ভুল শিখলে পরের অনুশীলনীগুলি শিখতে অসুবিধে হবে ।",
+          "courseShortDescription": "BCP-Basic Sentences",
+          "completion": 36,
           "marks": 0,
-          "completion": 0,
           "modules": [
             {
-              "name": "BCP1",
-              "description": "English conjugation (Primary level) - Set 1",
-              "desc": "",
-              "marks": 0,
+              "name": "B C P 1 L",
+              "desc": "Lesson on English conjugation (Primary level) - Set 1",
+              "instruction": "am/is/are দিয়ে মৌলিক বাক্য শেখানো হয়েছে এখানে - সঙ্গে pronoun আর adjective । প্রতিটি বাক্য ও ব্যাখ্যা খাতায় লেখো, মনে রাখো । এক এক দিনে ৩০-৩৫টা বাক্য পড় ।  ",
+              "daysToComplete":4,
               "level": 0,
-              "daysToComplete": 6,
-              "passmarks": 100,
+              "marks": 0,
+              "passMarks": 100,
               "lessons": {
                 "lessons": [
                   {
-                    "name": "BCP1L",
-                    "description": "Lesson on English conjugation (Primary level) - Set 1",
-                    "instruction": "am/is/are দিয়ে মৌলিক বাক্য শেখানো হয়েছে এখানে - সঙ্গে pronoun আর adjective । প্রতিটি বাক্য ও ব্যাখ্যা খাতায় লেখো, মনে রাখো । এক এক দিনে ৩০-৩৫টা বাক্য পড় । ",
+                    "name": "BCP1L-Lesson1 (30 sentences)",
+                    "description": "",
                     "image": "",
-                    "daysToComplete": 4,
-                    "isFlashCard": true,
+                    "isFlashCard":true,
                     "module_type": "FLASHCARD",
                     "pages": "bcp1lesson1.json"
                   }
                 ]
               },
               "quizzes": {
-                
                 "mcqQuizs": [
                   {
-                    "name": "BCP1Q",
-                    "description": "Quiz on English conjugation (Primary level) - Set 1",
-                    "instruction": "পুরো BCP1L করব, তারপর BCP1Q করব, তা ভেবো না । একদিন অনুশীলনীর যতটা পড়লে,  সেইদিনই তাদেরই কুইজ কর । শেষে ২ দিন ধরে সবকটা কুইজ আরেকবার কর, তাহলে পুরোটা তৈরী হয়ে যাবে ।",
-                    "daysToComplete": 2,
+                    "description": "BCP1 mcqQuiz0 description0",
+                    "name": "BCP1-Quiz1 (30 Quizes)",
                     "module_type": "MCQ_QUIZ",
                     "mcqQuestions": "bcp1quizmcq1.json"
+                  },
+                  {
+                    "description": "BCP1 mcqQuiz1 description1",
+                    "name": "BCP1-Quiz2 (30 Quizes)",
+                    "module_type": "MCQ_QUIZ",
+                    "mcqQuestions": "bcp1quizmcq2.json"
+                  },
+                  {
+                    "description": "BCP1 mcqQuiz0 description0",
+                    "name": "BCP1-Quiz3 (30 Quizes)",
+                    "module_type": "MCQ_QUIZ",
+                    "mcqQuestions": "bcp1quizmcq3.json"
+                  },
+                  {
+                    "description": "BCP1 mcqQuiz1 description1",
+                    "name": "BCP1-Quiz4 (35 Quizes)",
+                    "module_type": "MCQ_QUIZ",
+                    "mcqQuestions": "bcp1quizmcq4.json"
                   }
                 ],
                 "orderGameQuizs": [
                   {
                     "description": "orderGameQuiz0 Description",
                     "name": "orderGameQuiz0 Name",
-                    "instruction": "",
-                    "daysToComplete": 2,
                     "module_type": "ORDER_GAME_QUIZ",
                     "orderGameQuestions": "bcp1quizordergame1.json"
                   }
@@ -63,8 +74,6 @@
                   {
                     "description": "pictureMatchQuiz0 Description",
                     "name": "pictureMatchQuiz0 Name",
-                    "instruction": "",
-                    "daysToComplete": 2,
                     "module_type": "PICTURE_MATCH_QUIZ",
                     "pictureMatchQuestions": "bcp1quizpicturematchgame1.json"
                   }
@@ -96,12 +105,10 @@
           ]
         },
         {
-         "courseName": "BCG",
-          "courseShortDescription": "Conjugation - 'Go'",
-          "courseLongDescription" : "Conjugation using Verb 'Go'",
-          "courseInstruction" : "Conjugation যে কোন ভাষার বাক্যগঠনের কাঠামো । সরল ইংরিজি লিখতে যা conjugation দরকার হয়, তা এখানে দেওয়া হয়েছে শুধুমাত্র 'go' verb ব্যবহার ক'রে । এই প্যাটার্নগুলি শিখে নিলে তারপর তোমরা অন্য verb-",
-          "marks": 0,
-          "completion": 0     
+          "courseLongDescription": "BCG Description",
+          "courseName": "BCG",
+          "completion": 0,
+          "marks": 0
         }
       ]
     }

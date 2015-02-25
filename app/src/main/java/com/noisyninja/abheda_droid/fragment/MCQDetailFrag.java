@@ -94,7 +94,7 @@ public class MCQDetailFrag extends Fragment {
 
     void loadQuestions(int no)
     {
-        TextView textViewQuestion  = ((TextView) window.findViewById(R.id.textView3));
+        TextView textViewQuestion  = ((TextView) window.findViewById(R.id.daystocomplete));
         textViewQuestion.setText(no+"/"+mcqQuestions.size()+") "+ mcqQuestions.get(no).getQuestion());
         RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
         radioButton1.setText(mcqQuestions.get(no).getOption1());

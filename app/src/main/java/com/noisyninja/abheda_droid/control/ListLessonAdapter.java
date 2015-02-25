@@ -32,8 +32,8 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
 
             // initialize the view holder
             viewHolder = new ViewHolder();
-            viewHolder.name = (TextView) convertView.findViewById(R.id.textView1);
-            viewHolder.description = (TextView) convertView.findViewById(R.id.textView1);
+            viewHolder.name = (TextView) convertView.findViewById(R.id.name);
+            viewHolder.description = (TextView) convertView.findViewById(R.id.name);
             /*viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.ivIcon);
             viewHolder.quiz = (Button) convertView.findViewById(R.id.button1);
             viewHolder.learn = (Button) convertView.findViewById(R.id.button2);*/

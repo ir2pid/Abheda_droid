@@ -177,11 +177,11 @@ public class CourseTree extends Fragment {
             if (convertView == null) {
                 holder = new ChildHolder();
                 convertView = inflater.inflate(R.layout.tree_child_item, parent, false);
-                holder.name = (TextView) convertView.findViewById(R.id.textView1);
-                holder.description = (TextView) convertView.findViewById(R.id.textView2);
-                holder.daysToComplete = (TextView) convertView.findViewById(R.id.textView3);
-                holder.instruction = (TextView) convertView.findViewById(R.id.textView4);
-                holder.marks = (TextView) convertView.findViewById(R.id.textView5);
+                holder.name = (TextView) convertView.findViewById(R.id.name);
+                holder.description = (TextView) convertView.findViewById(R.id.description);
+                holder.daysToComplete = (TextView) convertView.findViewById(R.id.daystocomplete);
+                holder.instruction = (TextView) convertView.findViewById(R.id.instructions);
+                holder.marks = (TextView) convertView.findViewById(R.id.marks);
                 convertView.setTag(holder);
             } else {
                 holder = (ChildHolder) convertView.getTag();
@@ -223,7 +223,7 @@ public class CourseTree extends Fragment {
             if (convertView == null) {
                 holder = new GroupHolder();
                 convertView = inflater.inflate(R.layout.item_tree_group, parent, false);
-                holder.name = (TextView) convertView.findViewById(R.id.textView1);
+                holder.name = (TextView) convertView.findViewById(R.id.name);
                 holder.description = (TextView) convertView.findViewById(R.id.textView2);
                 //holder.completion = (TextView) convertView.findViewById(R.id.textView3);
                 holder.marks = (TextView) convertView.findViewById(R.id.textView4);
