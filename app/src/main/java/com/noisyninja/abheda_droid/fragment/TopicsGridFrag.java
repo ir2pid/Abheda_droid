@@ -72,7 +72,12 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
                 String url = Utils.getPreference(getActivity(), Constants.URL_STORE_KEY, Constants.URL_STORE);
 
                 Utils.handleInfo(getActivity(), Constants.DOWNLOAD_TEXT +" "+url);
-                String[] params = {url, Constants.LOCAL_STORE};
+                String[] params = {url,
+                        Utils.getTempString(Constants.SD_CARD, Constants.DATA_ZIP),
+                        Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER)};
+
+               // Utils.makeDirs(getActivity(), params[1]);
+
                 new DownloadFileAsync(this, getActivity()).execute(params);
 
                 break;

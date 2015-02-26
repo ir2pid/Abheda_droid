@@ -16,7 +16,7 @@ import java.net.URLConnection;
  * Created by ir2pi on 1/10/2015.
  */
 public class DownloadFileAsync extends AsyncTask<String, String, String> {
-
+    private static String TAG = DownloadFileAsync.class.getCanonicalName();
     IDownloadFileAsync iDownloadFileAsync;
     Context context;
 
@@ -37,7 +37,7 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
         if(iDownloadFileAsync == null)
             return;
         iDownloadFileAsync.init();
-        Utils.showProgress(context, PROGRESS_STYLE.INDETERMINATE);
+        Utils.showProgress(context, PROGRESS_STYLE.DETERMINATE);
     }
 
     @Override
@@ -53,11 +53,12 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
 
             URL url = new URL(aurl[0]);
             String path = aurl[1];
+
             URLConnection conexion = url.openConnection();
             conexion.connect();
 
             int lenghtOfFile = conexion.getContentLength();
-            Log.d("ANDRO_ASYNC", "Lenght of file: " + lenghtOfFile);
+            Log.d(TAG, "Lenght of file: " + lenghtOfFile);
 
             InputStream input = new BufferedInputStream(url.openStream());
             OutputStream output = new FileOutputStream(path);
@@ -68,24 +69,33 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
 
             while ((count = input.read(data)) != -1) {
                 total += count;
-                publishProgress(""+(int)((total*100)/lenghtOfFile));
+                setProgress(Constants.DOWNLOAD_TEXT, String.valueOf((int)((total*100)/lenghtOfFile)));
                 output.write(data, 0, count);
             }
 
+            if(aurl.length>2)
+            {//is zip and has unpack directory
+                ZipUtil.getInstance().unzip(aurl[1], aurl[2], this);
+            }
             output.flush();
             output.close();
             input.close();
-        } catch (Exception e) {
 
-            Utils.handleError(context, e);
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+           // Utils.handleError(context, e);
         }
+        setProgress(Constants.INFO_SUCCESS_DOWNLOAD);
         return "";
 
     }
     protected void onProgressUpdate(String... progress) {
-        Log.d("ANDRO_ASYNC", progress[0]);
-        Log.i(DownloadFileAsync.class.getSimpleName(),"progress: "+progress[0]);
-        //Utils.updateProgressDeterminate(Integer.valueOf(progress[0]));
+        Log.d(TAG, progress[0]);
+        Log.i(DownloadFileAsync.class.getSimpleName(),progress[0]);
+        if(progress.length>1)
+            Utils.updateProgressDeterminate(progress[0], Integer.valueOf(progress[1]));
+        else
+            Utils.updateProgressDeterminate(progress[0], 100);
     }
 
     @Override
@@ -99,6 +109,11 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
         }
         iDownloadFileAsync.end();
         Utils.hideProgress();
+    }
+
+    public void setProgress(String... arg){
+        if(arg!=null)
+            publishProgress(arg);
     }
 
 }

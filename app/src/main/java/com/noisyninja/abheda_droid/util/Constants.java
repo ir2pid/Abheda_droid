@@ -1,7 +1,5 @@
 package com.noisyninja.abheda_droid.util;
 
-import com.noisyninja.abheda_droid.R;
-
 /**
  * Created by ir2pi on 11/30/2014.
  *
@@ -37,10 +35,22 @@ public class Constants {
     public static int COURSE_ID = 0;//BCP
     public static int MODULE_ID = 0;//BCP 1
     public static int LESSON_QUIZ_ID = 0; //Lesson 1
-    public static String DATA_FILE = "data.json";
-    public static String URL_STORE = "https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWEJtTURZNWtDTmc";
+
+    public static String UTF8 = "UTF8";
+    public static String BACKSLASH = "/";
+    public static String DATA_JSON = "data.json";
+    public static String DATA_ZIP = "abheda.zip";
+    public static String DATA_FOLDER = "abheda/";
+    public static String SD_CARD = "/sdcard/";
+    public static String URL_STORE = "https://dl.dropbox.com/s/o2qh922feobk7sg/data.zip?dl=0";//"https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWEJtTURZNWtDTmc";
     public static String URL_STORE_KEY = "URL_STORE_KEY";
-    public static String LOCAL_STORE = "/sdcard/abheda.json";
+    public static String FIRST_RUN_KEY = "FIRST_RUN_KEY";
+
+    /*public static String JSON = "data.json";
+    public static String _DATA_FOLDER = "/abheda/";
+    public static String _DATA_FILE = _DATA_FOLDER+JSON;
+    public static String _SDCARD = "/sdcard/";
+    public static String _LOCAL_STORE = _SDCARD+"abheda.zip";*/
 
     public enum Sound {
         CLICK,
@@ -66,11 +76,14 @@ public class Constants {
     public static int TAB_COUNT = 3;
     public static int PROGRESS = 31;
     public static long SLEEP_TIME_2000 = 2000;    // Sleep for some time
+    public static long SLEEP_TIME_1000 = 1000;    // Sleep for some time
     public static long SLEEP_TIME_20 = 20;    // Sleep for some time
     public static long ANIMATION_TIME_700 = 700;    // Sleep for some time
-    public static String PROGRESS_TEXT = "Progress.. ";
+    public static String PROGRESS_TEXT = "Working...";
     public static String PROGRESS_PERCENT = "%";
     public static String DOWNLOAD_TEXT = "Downloading file..";
+
+
     //error
     public static String ERROR = "ERROR:";
     public static String ERROR_NO_NETWORK = "NO_NETWORK";
@@ -79,27 +92,8 @@ public class Constants {
     public static String INFO_SUCCESS_DOWNLOAD = "Download success";
     public static String INFO_NO_LESSON = "ERROR_NO_LESSON";
 
-    // Array of strings storing country names
-    public static String[] itemTypes = new String[] {
-            "Tick",
-            "Cross",
-            "Left",
-            "Right"
-    };
 
-    // Array of integers points to images stored in /res/drawable/
-    public static int[] flags = new int[]{
-            R.drawable.ic_action_tick,
-            R.drawable.ic_action_cross,
-            R.drawable.ic_action_left,
-            R.drawable.ic_action_right
-    };
 
-    // Array of strings to store currencies
-    public static String[] itemTypes2 = new String[]{
-            "ic_action_tick",
-            "ic_action_cross",
-            "ic_action_left",
-            "ic_action_right"
-    };
+    public static String HTTP_FLAG = "http";
+
 }

@@ -90,12 +90,12 @@ public class DataStore {
         posts = Arrays.asList(gson.fromJson(reader, Post[].class));
         */
         String json = Utils.read(context);
-        if(json != null)
+        if(json != null && json.length()>1)
         {
             temp = gson.fromJson(json, Topics.class);
         }
         else{
-            temp = gson.fromJson(Utils.getStringFromAsset(context, Constants.DATA_FILE), Topics.class);
+            temp = gson.fromJson(Utils.getStringFromAsset(context, Utils.getTempString(Constants.DATA_FOLDER, Constants.DATA_JSON)), Topics.class);
         }
         topics = temp;
     }
@@ -416,7 +416,7 @@ public class DataStore {
 
 
 
-        orderGameQuiz0.setOrderGameQuestions("bcp1quizordergame1.json");
+        orderGameQuiz0.setOrderGameQuestions("abheda/bcp1quizordergame1.json");
         orderGameQuizs.add(orderGameQuiz0);
 
         PictureMatchQuiz pictureMatchQuiz0 = new PictureMatchQuiz();
@@ -424,7 +424,7 @@ public class DataStore {
         pictureMatchQuiz0.setDescription("pictureMatchQuiz0 Description");
 
 
-        pictureMatchQuiz0.setPictureMatchQuestions("bcp1quizpicturematchgame1.json");
+        pictureMatchQuiz0.setPictureMatchQuestions("abheda/bcp1quizpicturematchgame1.json");
         pictureMatchQuiz.add(pictureMatchQuiz0);
 
         quizzes.setMcqQuizs(mcqQuizs);

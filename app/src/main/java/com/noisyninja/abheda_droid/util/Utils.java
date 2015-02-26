@@ -6,12 +6,15 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -49,6 +52,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 
 import at.markushi.ui.CircleButton;
 
@@ -232,7 +236,7 @@ public class Utils {
     }
 
     public static void write(Context context, String data){
-        write(context, Constants.LOCAL_STORE,  data);
+        write(context,Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER,Constants.DATA_JSON),  data);
     }
 
     public static void write(Context context, String fileName, String data){
@@ -258,25 +262,52 @@ public class Utils {
         List<Post> posts = new ArrayList<Post>();
         posts = Arrays.asList(gson.fromJson(reader, Post[].class));
         */
-        String json = Utils.read(context, fileName);
-        if(json == null)
+        String json = Utils.read(context, Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER, fileName));
+        if(json == null || json.length() < 2 )
         {
-            json = Utils.getStringFromAsset(context, fileName);
+            json = Utils.getStringFromAsset(context, Utils.getTempString(Constants.DATA_FOLDER, fileName));
         }
         return gson.fromJson(json, clazz);
     }
 
     public static String read(Context context)
     {
-        return read(context, Constants.LOCAL_STORE);
+        return read(context, Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER, Constants.DATA_JSON));
     }
 
     public static String read(Context context, String fileName){
         StringBuilder temp = new StringBuilder();
-        FileInputStream fin = null;
+        try {
+            File fileDir = new File(fileName);
 
-        if(fileName == null)
-            fileName = Constants.LOCAL_STORE;
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream(fileDir), Constants.UTF8));
+
+            String str;
+
+            while ((str = in.readLine()) != null) {
+                temp.append(str);
+            }
+
+            in.close();
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        catch (IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+
+        return temp.toString();
+        /*StringBuilder temp = new StringBuilder();
+        FileInputStream fin = null;
 
         try{
             fin =  new FileInputStream (new File(fileName));
@@ -298,7 +329,7 @@ public class Utils {
                     Log.e(TAG, "Error closing asset " + fileName);
                 }
             }
-        return null;
+        return null;*/
     }
 
     public static String getStringFromAsset(Context context, String fileName) {
@@ -383,8 +414,16 @@ public class Utils {
         mProgressDialog.show();
     }
 
-    public static void updateProgressDeterminate(int value)
+   /* public static void updateProgressInDeterminate(String text)
     {
+        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mProgressDialog.setMessage(text);
+    }*/
+
+    public static void updateProgressDeterminate(String text, int value)
+    {
+        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        mProgressDialog.setMessage(text);
         mProgressDialog.setProgress(value);
     }
 
@@ -441,13 +480,30 @@ public class Utils {
 
     public static void lazyload(Context context, ImageView view, String url)
     {
-        Glide.with(context)
-                .load(url)
-                .fitCenter()
-                .placeholder(R.drawable.loading)
-                .crossFade()
-                .animate(new FlipAnimation(view, view))
-                .into(view);
+        if(url == null || url.length() <= 1) {    // no image
+            view.setVisibility(View.GONE);
+        }
+        else if(url.contains(Constants.HTTP_FLAG)) { // web url
+            Glide.with(context)
+                    .load(url)
+                    .fitCenter()
+                    .placeholder(R.drawable.loading)
+                    .crossFade()
+                    .animate(new FlipAnimation(view, view))
+                    .into(view);
+        }
+        else {  // local image asset or sdcard
+
+            File file = new  File(url);
+            if(file.exists()){   // sdcard image
+
+                view.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
+            }
+            else {   // asset image
+
+                view.setImageResource(getDrawable(context, url));
+            }
+        }
     }
 
     public static void animateFlip(View rootLayout, View cardFace, View cardBack)
@@ -521,6 +577,82 @@ public class Utils {
                 break;
             }
 
+        }
+    }
+
+    public static String getTempString(String... args)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String str:args){
+            stringBuilder.append(str);
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public static StringBuilder getTempStringBuilder(String... args)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String str:args){
+            stringBuilder.append(str);
+        }
+
+        return stringBuilder;
+    }
+
+
+    public static  void dirChecker(String location, String dir) {
+        File f = new File(location + dir);
+
+        if(!f.isDirectory()) {
+            Log.v(TAG, " created dir: "+dir);
+            f.mkdirs();
+        }
+    }
+
+
+    public static void makeDirs(Context context, String path)
+    {
+        String dirs[] = path.split(Constants.BACKSLASH);
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("");
+        Log.v(TAG, "Creating download directory..."+ path);
+        for(String str:dirs)
+        {
+            if(!str.contains(".") && str.length()>0){
+                Utils.dirChecker(stringBuffer.toString(), str);
+                stringBuffer.append(str);
+            }
+
+        }
+
+        refreshFileSystem(context, path);
+    }
+
+    public static void refreshFileSystem(Context context, String path)
+    {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Intent mediaScanIntent = new Intent(
+                    Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            File file = new File(path);
+            Uri contentUri = Uri.fromFile(file); //out is your output file
+            mediaScanIntent.setData(contentUri);
+            context.sendBroadcast(mediaScanIntent);
+        } else {
+            context.sendBroadcast(new Intent(
+                    Intent.ACTION_MEDIA_MOUNTED,
+                    Uri.parse("file://"
+                            + Environment.getExternalStorageDirectory())));
+        }
+    }
+
+    public static void firstRun(Context context)
+    {
+        if(getPreference(context, Constants.FIRST_RUN_KEY) == null){
+            setPreference(context, Constants.FIRST_RUN_KEY, Constants.FIRST_RUN_KEY);
+            Utils.handleInfo(context, "First run detected");
+          /*  makeDirs(context, getTempString(Constants.SD_CARD, Constants.DATA_FOLDER));
+            refreshFileSystem(context, getTempString(Constants.SD_CARD, Constants.DATA_FOLDER));*/
         }
     }
 }

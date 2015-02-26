@@ -1,14 +1,16 @@
 package com.noisyninja.abheda_droid.activity;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.content.Intent;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.Utils;
 
 /**
  * Created by ir2pi on 12/5/2014.
@@ -21,6 +23,7 @@ public class SplashActivity extends Activity {
      * The thread to process splash screen events
      */
     private Thread mSplashThread;
+    Context context;
 
     /** Called when the activity is first created. */
     @Override
@@ -29,7 +32,7 @@ public class SplashActivity extends Activity {
         final SplashActivity splashActivity = this;
         // Splash screen view
         setContentView(R.layout.splash_activity);
-
+        context = this;
         final ImageView splashImageView = (ImageView) findViewById(R.id.SplashImageView);
         splashImageView.setBackgroundResource(R.drawable.splashframes);
         final AnimationDrawable frameAnimation = (AnimationDrawable)splashImageView.getBackground();
@@ -41,7 +44,7 @@ public class SplashActivity extends Activity {
             }
         });
 
-
+        Utils.firstRun(context);
         // The thread to wait for splash screen events
         mSplashThread =  new Thread(){
             @Override
@@ -49,7 +52,8 @@ public class SplashActivity extends Activity {
                 try {
                     synchronized(this){
                         // Wait given period of time or exit on touch
-                        wait(Constants.SLEEP_TIME_2000);
+
+                        wait(Constants.SLEEP_TIME_1000);
                     }
                 }
                 catch(InterruptedException ex){

@@ -4,7 +4,6 @@ import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
@@ -34,21 +33,28 @@ public class ZipUtil {
         return zipUtil;
     }
 
-    protected void unzip(String zipFile, String location) {
+    public static String TAG = ZipUtil.class.getCanonicalName();
+    public void unzip(String zipFile, String location){
+        unzip(zipFile, location, null);
+    }
+    public void unzip(String zipFile, String location, DownloadFileAsync downloadFileAsync) {
         this.zipFile = zipFile;
         this.location = location;
 
-        dirChecker("");
+        Utils.dirChecker(this.location, "");
 
         try  {
             FileInputStream fin = new FileInputStream(zipFile);
             ZipInputStream zin = new ZipInputStream(fin);
             ZipEntry ze = null;
+
             while ((ze = zin.getNextEntry()) != null) {
-                Log.v("Decompress", "Unzipping " + ze.getName());
+                Log.v(TAG, Utils.getTempString("Decompress..." , ze.getName()));
+                setProgressHandle(downloadFileAsync,Utils.getTempStringBuilder("Decompress..." , ze.getName()));
+
 
                 if(ze.isDirectory()) {
-                    dirChecker(ze.getName());
+                    Utils.dirChecker(this.location, ze.getName());
                 } else {
                     FileOutputStream fout = new FileOutputStream(location + ze.getName());
                     for (int c = zin.read(); c != -1; c = zin.read()) {
@@ -62,12 +68,18 @@ public class ZipUtil {
             }
             zin.close();
         } catch(Exception e) {
-            Log.e("Decompress", "unzip", e);
+            Log.e(TAG, Utils.getTempString("Decompress ",e.getMessage()));
+
         }
+        Log.v(TAG, Utils.getTempString("Decompress ","All done!"));
+        setProgressHandle(downloadFileAsync,Utils.getTempStringBuilder("Decompress ","All done!"));
 
     }
 
-    protected void zip(String[] files, String zipFile) {
+    public void zip(String[] files, String zipFile){
+        zip(files, zipFile, null);
+    }
+    public void zip(String[] files, String zipFile, DownloadFileAsync downloadFileAsync) {
         this.files = files;
         this.zipFile = zipFile;
         try  {
@@ -79,7 +91,8 @@ public class ZipUtil {
             byte data[] = new byte[BUFFER];
 
             for(int i=0; i < files.length; i++) {
-                Log.v("Compress", "Adding: " + files[i]);
+                Log.v(TAG, Utils.getTempString("Compress ","adding...", files[i]));
+                setProgressHandle(downloadFileAsync,Utils.getTempStringBuilder("Compress ","adding...", files[i]));
                 FileInputStream fi = new FileInputStream(files[i]);
                 origin = new BufferedInputStream(fi, BUFFER);
                 ZipEntry entry = new ZipEntry(files[i].substring(files[i].lastIndexOf("/") + 1));
@@ -95,17 +108,17 @@ public class ZipUtil {
         } catch(Exception e) {
             e.printStackTrace();
         }
-
+        Log.v(TAG, Utils.getTempString("Compress ","All done!"));
+        setProgressHandle(downloadFileAsync,Utils.getTempStringBuilder("Compress ","All done!"));
     }
 
-    private void dirChecker(String dir) {
-        File f = new File(location + dir);
-
-        if(!f.isDirectory()) {
-            f.mkdirs();
+    private void setProgressHandle(DownloadFileAsync downloadFileAsync, StringBuilder stringBuilder)
+    {
+        if(downloadFileAsync != null)
+        {
+            downloadFileAsync.setProgress(stringBuilder.toString());
         }
     }
-
 
 }
 

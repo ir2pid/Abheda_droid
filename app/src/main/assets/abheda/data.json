@@ -1,0 +1,188 @@
+{
+  "topics": [
+    {
+      "description": "English fundamentals",
+      "name": "English",
+      "completion": 0,
+      "level": 0,
+      "marks": 0,
+      "coursesList": [
+        {
+          "courseInstruction": "এই অনুশীলনীগুলি ইংরিজি ভাষার ভিত্তিস্বরূপ । অত্যন্ত সরল বাক্যের সাহায্যে তোমাদের ভিত তৈরী করা হচ্ছে । এগুলি শেষ করতে যা সময় তোমার লাগবে, তা নাও । সাধারণ ভুল যেগুলি ছাত্ররা করে, সেগুলিকে মাথায় রেখে ব্যাখ্যাগুলি দেওয়া হয়েছে আর কুইজগুলি তৈরী করা হয়েছে । সবকটা কুইজে ১০০% পেলে তবেই অন্য/পরের অনুশীলনীর কথা ভাববে, কারণ এই অনুশীলনীগুলির বাক্যগুলি এতই মৌলিক যে এগুলো কম বা ভুল শিখলে পরের অনুশীলনীগুলি শিখতে অসুবিধে হবে ।",
+          "courseLongDescription": "English fundamental sentences and questions with am/is/are, has/have, shall/will, basic pronouns, adjectives, prepositions and  very basic conjugation patterns",
+          "courseName": "BCP",
+          "courseShortDescription": "BCP-Basic Sentences",
+          "completion": 36,
+          "marks": 0,
+          "modules": [
+            {
+              "name": "B C P 1 L",
+              "desc": "Lesson on English conjugation (Primary level) - Set 1",
+              "instruction": "am/is/are দিয়ে মৌলিক বাক্য শেখানো হয়েছে এখানে - সঙ্গে pronoun আর adjective । প্রতিটি বাক্য ও ব্যাখ্যা খাতায় লেখো, মনে রাখো । এক এক দিনে ৩০-৩৫টা বাক্য পড় ।  ",
+              "daysToComplete":4,
+              "level": 0,
+              "marks": 0,
+              "passMarks": 100,
+              "lessons": {
+                "lessons": [
+                  {
+                    "name": "BCP1L-Lesson1 (30 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson1.json"
+                  },
+                  {
+                    "name": "BCP1L-Lesson2 (30 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson2.json"
+                  },
+                  {
+                    "name": "BCP1L-Lesson3 (30 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson3.json"
+                  },
+                  {
+                    "name": "BCP1L-Lesson4 (35 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson4.json"
+                  },
+                  {
+                    "name": "BCP1.2  lesson Name0",
+                    "description": "BCP1.2  lesson description0",
+                    "image": "BCP1.2 lesson.jpg",
+                    "isFlashCard": false,
+                    "module_type": "LESSON",
+                    "pages": "bcp1lesson2.json"
+                  },
+                  {
+                    "description": "BCP1.3flashcard lesson description0",
+                    "image": "BCP1.3flashcardlesson.jpg",
+                    "name": "BCP1.3flashcard lesson Name0",
+                    "isFlashCard": true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson3.json"
+                  }
+                ]
+              },
+              "quizzes": {
+                "mcqQuizs": [
+                  {
+                    "description": "BCP1 mcqQuiz0 description0",
+                    "name": "BCP1-Quiz1 (30 Quizes)",
+                    "module_type": "MCQ_QUIZ",
+                    "mcqQuestions": "bcp1quizmcq1.json"
+                  },
+                  {
+                    "description": "BCP1 mcqQuiz1 description1",
+                    "name": "BCP1-Quiz2 (30 Quizes)",
+                    "module_type": "MCQ_QUIZ",
+                    "mcqQuestions": "bcp1quizmcq2.json"
+                  },
+                  {
+                    "description": "BCP1 mcqQuiz2 description0",
+                    "name": "BCP1-Quiz3 (30 Quizes)",
+                    "module_type": "MCQ_QUIZ",
+                    "mcqQuestions": "bcp1quizmcq3.json"
+                  },
+                  {
+                    "description": "BCP1 mcqQuiz3 description1",
+                    "name": "BCP1-Quiz4 (35 Quizes)",
+                    "module_type": "MCQ_QUIZ",
+                    "mcqQuestions": "bcp1quizmcq4.json"
+                  }
+                ],
+                "orderGameQuizs": [
+                  {
+                    "description": "orderGameQuiz0 Description",
+                    "name": "orderGameQuiz0 Name",
+                    "module_type": "ORDER_GAME_QUIZ",
+                    "orderGameQuestions": "bcp1quizordergame1.json"
+                  }
+                ],
+                "pictureMatchQuiz": [
+                  {
+                    "description": "pictureMatchQuiz0 Description",
+                    "name": "pictureMatchQuiz0 Name",
+                    "module_type": "PICTURE_MATCH_QUIZ",
+                    "pictureMatchQuestions": "bcp1quizpicturematchgame1.json"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "B C P 2 L",
+              "desc": "Lesson on English conjugation (Primary level) - Set 2",
+              "description": "",
+              "instruction": "প্রশ্ন, সময় আর preposition শেখানো হয়েছে এখানে । প্রতিটি বাক্য ও ব্যাখ্যা খাতায় লেখো, মনে রাখো । এক এক দিনে ২৫টা বাক্য পড় । ",
+              "daysToComplete": 5,
+              "level": 0,
+              "marks": 0,
+              "passMarks": 100,
+              "lessons": {
+                "lessons": [
+                  {
+                    "name": "BCP2L-Lesson1 (25 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson1.json"
+                  },
+                  {
+                    "name": "BCP2L-Lesson2 (25 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson2.json"
+                  },
+                  {
+                    "name": "BCP2L-Lesson3 (25 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson3.json"
+                  },
+                  {
+                    "name": "BCP2L-Lesson4 (25 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson4.json"
+                  },
+                  {
+                    "name": "BCP2L-Lesson5 (25 sentences)",
+                    "description": "",
+                    "image": "",
+                    "isFlashCard":true,
+                    "module_type": "FLASHCARD",
+                    "pages": "bcp1lesson4.json"
+                  },  
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "courseLongDescription": "BCG Description",
+          "courseName": "BCG",
+          "completion": 0,
+          "marks": 0
+        }
+      ]
+    }
+  ]
+}
