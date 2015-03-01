@@ -93,6 +93,7 @@ public class FlashcardDetailFrag extends Fragment{
             }
         });
 
+        Utils.showInstriction(getActivity());
 
         return windows;
     }

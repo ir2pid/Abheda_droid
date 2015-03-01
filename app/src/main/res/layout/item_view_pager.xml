@@ -16,8 +16,8 @@
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center">
 
@@ -35,22 +35,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="4"
-                android:gravity="center_vertical|center_horizontal">
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/name1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_instruction"
+                    android:background="@drawable/background_shape_blue_translucent"
+                    android:gravity="center" />
 
                 <TextView
                     android:id="@+id/description1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_desc"
+                    android:gravity="center" />
 
                 <TextView
                     android:id="@+id/text1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_text"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_margin="@dimen/padding_20"
+                    android:gravity="center" />
             </LinearLayout>
         </LinearLayout>
 

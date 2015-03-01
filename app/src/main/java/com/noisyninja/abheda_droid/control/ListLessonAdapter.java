@@ -25,29 +25,30 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
 
-        if(convertView == null) {
+        //if(convertView == null) {
             // inflate the GridView item layout
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.list_lesson_item, parent, false);
 
-            // initialize the view holder
-            viewHolder = new ViewHolder();
-            viewHolder.name = (TextView) convertView.findViewById(R.id.name);
-            viewHolder.description = (TextView) convertView.findViewById(R.id.name);
+            TextView name;
+            TextView description;
+            name = (TextView) convertView.findViewById(R.id.textView1);
+            description = (TextView) convertView.findViewById(R.id.textView2);
+
             /*viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.ivIcon);
             viewHolder.quiz = (Button) convertView.findViewById(R.id.button1);
             viewHolder.learn = (Button) convertView.findViewById(R.id.button2);*/
-            convertView.setTag(viewHolder);
-        } else {
+            //convertView.setTag(viewHolder);
+        //} else {
             // recycle the already inflated view
-            viewHolder = (ViewHolder) convertView.getTag();
-        }
+        //    viewHolder = (ViewHolder) convertView.getTag();
+        //}
 
         // update the item view
         ListLessonItem item = getItem(position);
 
-        viewHolder.name.setText(item.title);
-        viewHolder.description.setText(item.description);
+        name.setText(item.title);
+        description.setText(item.description);
 
         RelativeLayout relativeLayout = (RelativeLayout) convertView.findViewById(R.id.relativeLayout1);
         switch (item.module_type)
@@ -101,8 +102,6 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
         //ImageView ivIcon;
         //Button quiz;
         //Button learn;
-        TextView name;
-        TextView description;
         //MODULE_TYPE module_type;
     }
 }

@@ -113,57 +113,70 @@ public class LessonListFrag extends ListFragment {
 
         int quizNo=0;
 
-        for(Lesson lesson:lessons.getLessons())
-        {
-            baseLessons.add(lesson);
+        if(lessons != null) {
+            for (Lesson lesson : lessons.getLessons()) {
+                if (lesson == null)//handles a condition of null objects being iterated
+                    continue;
 
-            MODULE_TYPE module_type = lesson.isFlashCard()?MODULE_TYPE.FLASHCARD:MODULE_TYPE.LESSON;
-            lesson.setModule_type(module_type);
+                baseLessons.add(lesson);
 
-            ListLessonItem listLessonItem = new ListLessonItem(
-                    lesson.getName(),
-                    lesson.getDescription(), module_type);
+                MODULE_TYPE module_type = lesson.isFlashCard() ? MODULE_TYPE.FLASHCARD : MODULE_TYPE.LESSON;
+                lesson.setModule_type(module_type);
 
-            items.add(listLessonItem);
+                ListLessonItem listLessonItem = new ListLessonItem(
+                        lesson.getName(),
+                        lesson.getDescription(), module_type);
+
+                items.add(listLessonItem);
+            }
         }
 
-        for(MCQQuiz mcqQuiz:quizzes.getMcqQuizs())
-        {
-            quizNo++;
-            baseLessons.add(mcqQuiz);
-            MODULE_TYPE module_type = MODULE_TYPE.MCQ_QUIZ;
+        if(quizzes != null) {
 
-            ListLessonItem listLessonItem = new ListLessonItem(
-                    "Quiz "+quizNo,
-                    "Quiz", module_type);
 
-            items.add(listLessonItem);
+            for (MCQQuiz mcqQuiz : quizzes.getMcqQuizs()) {
+                if (mcqQuiz == null)//handles a condition of null objects being iterated
+                    continue;
+
+                quizNo++;
+                baseLessons.add(mcqQuiz);
+                MODULE_TYPE module_type = MODULE_TYPE.MCQ_QUIZ;
+
+                ListLessonItem listLessonItem = new ListLessonItem(
+                        "Quiz " + quizNo,
+                        "Quiz", module_type);
+
+                items.add(listLessonItem);
+            }
+            for (OrderGameQuiz orderGameQuiz : quizzes.getOrderGameQuizs()) {
+                if (orderGameQuiz == null)//handles a condition of null objects being iterated
+                    continue;
+
+                quizNo++;
+                baseLessons.add(orderGameQuiz);
+                MODULE_TYPE module_type = MODULE_TYPE.ORDER_GAME_QUIZ;
+
+                ListLessonItem listLessonItem = new ListLessonItem(
+                        "Quiz " + quizNo,
+                        "Order Game Quiz", module_type);
+
+                items.add(listLessonItem);
+            }
+            for (PictureMatchQuiz pictureMatchQuiz : quizzes.getPictureMatchQuiz()) {
+                if (pictureMatchQuiz == null)//handles a condition of null objects being iterated
+                    continue;
+
+                quizNo++;
+                baseLessons.add(pictureMatchQuiz);
+                MODULE_TYPE module_type = MODULE_TYPE.PICTURE_MATCH_QUIZ;
+
+                ListLessonItem listLessonItem = new ListLessonItem(
+                        "Quiz " + quizNo,
+                        "Picture Match Quiz", module_type);
+
+                items.add(listLessonItem);
+            }
         }
-        for(OrderGameQuiz orderGameQuiz:quizzes.getOrderGameQuizs())
-        {
-            quizNo++;
-            baseLessons.add(orderGameQuiz);
-            MODULE_TYPE module_type = MODULE_TYPE.ORDER_GAME_QUIZ;
-
-            ListLessonItem listLessonItem = new ListLessonItem(
-                    "Quiz "+quizNo,
-                    "Order Game Quiz", module_type);
-
-            items.add(listLessonItem);
-        }
-        for(PictureMatchQuiz pictureMatchQuiz:quizzes.getPictureMatchQuiz())
-        {
-            quizNo++;
-            baseLessons.add(pictureMatchQuiz);
-            MODULE_TYPE module_type = MODULE_TYPE.PICTURE_MATCH_QUIZ;
-
-            ListLessonItem listLessonItem = new ListLessonItem(
-                    "Quiz "+quizNo,
-                    "Picture Match Quiz", module_type);
-
-            items.add(listLessonItem);
-        }
-
 
         /*ListLessonItem listLessonItem1 = new ListLessonItem(
                 getResources().getDrawable(R.drawable.ic_disclosure2),

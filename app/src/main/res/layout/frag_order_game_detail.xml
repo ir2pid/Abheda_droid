@@ -39,7 +39,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next"
+            android:text="@string/submit"
             android:id="@+id/button"
             android:background="@drawable/button_green" />
     </LinearLayout>

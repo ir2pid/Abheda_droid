@@ -79,6 +79,7 @@ public class Constants {
     public static long SLEEP_TIME_1000 = 1000;    // Sleep for some time
     public static long SLEEP_TIME_20 = 20;    // Sleep for some time
     public static long ANIMATION_TIME_700 = 700;    // Sleep for some time
+    public static String QUIZ_COMPLETED_TEXT = "Quiz Completed!";
     public static String PROGRESS_TEXT = "Working...";
     public static String PROGRESS_PERCENT = "%";
     public static String DOWNLOAD_TEXT = "Downloading file..";

@@ -137,7 +137,7 @@
                     "image": "",
                     "isFlashCard":true,
                     "module_type": "FLASHCARD",
-                    "pages": "bcp1lesson1.json"
+                    "pages": "bcp2lesson1.json"
                   },
                   {
                     "name": "BCP2L-Lesson2 (25 sentences)",
@@ -145,7 +145,7 @@
                     "image": "",
                     "isFlashCard":true,
                     "module_type": "FLASHCARD",
-                    "pages": "bcp1lesson2.json"
+                    "pages": "bcp2lesson2.json"
                   },
                   {
                     "name": "BCP2L-Lesson3 (25 sentences)",
@@ -153,7 +153,7 @@
                     "image": "",
                     "isFlashCard":true,
                     "module_type": "FLASHCARD",
-                    "pages": "bcp1lesson3.json"
+                    "pages": "bcp2lesson3.json"
                   },
                   {
                     "name": "BCP2L-Lesson4 (25 sentences)",
@@ -161,7 +161,7 @@
                     "image": "",
                     "isFlashCard":true,
                     "module_type": "FLASHCARD",
-                    "pages": "bcp1lesson4.json"
+                    "pages": "bcp2lesson4.json"
                   },
                   {
                     "name": "BCP2L-Lesson5 (25 sentences)",
@@ -169,8 +169,8 @@
                     "image": "",
                     "isFlashCard":true,
                     "module_type": "FLASHCARD",
-                    "pages": "bcp1lesson4.json"
-                  },  
+                    "pages": "bcp2lesson5.json"
+                  }
                 ]
               }
             }

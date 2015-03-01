@@ -25,7 +25,7 @@ import com.noisyninja.abheda_droid.pojo.Topics;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.DataStore;
 import com.noisyninja.abheda_droid.util.DownloadFileAsync;
-import com.noisyninja.abheda_droid.util.IDownloadFileAsync;
+import com.noisyninja.abheda_droid.util.IDownloadFileAsyncCallback;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ import java.util.ArrayList;
 /**
  * Created by ir2pi on 12/5/2014.
  */
-public class TopicsGridFrag extends Fragment implements View.OnClickListener, IDownloadFileAsync{
+public class TopicsGridFrag extends Fragment implements View.OnClickListener, IDownloadFileAsyncCallback {
 
     ArrayList<Topic> topicArrayList;
     GridView gridView;
@@ -158,7 +158,7 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
             View rowView;
 
             rowView = inflater.inflate(R.layout.topics_grid_item, null);
-            holder.tName =(TextView) rowView.findViewById(R.id.name);
+            holder.tName =(TextView) rowView.findViewById(R.id.textView1);
             holder.tDescription =(TextView) rowView.findViewById(R.id.textView2);
             holder.dProgressCompletion =(DonutProgress) rowView.findViewById(R.id.course_progress_arc);
             holder.tMarks =(TextView) rowView.findViewById(R.id.textView4);

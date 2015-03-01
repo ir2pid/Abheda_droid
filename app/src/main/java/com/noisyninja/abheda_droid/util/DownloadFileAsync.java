@@ -17,7 +17,7 @@ import java.net.URLConnection;
  */
 public class DownloadFileAsync extends AsyncTask<String, String, String> {
     private static String TAG = DownloadFileAsync.class.getCanonicalName();
-    IDownloadFileAsync iDownloadFileAsync;
+    IDownloadFileAsyncCallback iDownloadFileAsyncCallback;
     Context context;
 
     private DownloadFileAsync()
@@ -25,28 +25,28 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
 
     }
 
-    public DownloadFileAsync(IDownloadFileAsync iDownloadFileAsync, Context context)
+    public DownloadFileAsync(IDownloadFileAsyncCallback iDownloadFileAsyncCallback, Context context)
     {
-        this.iDownloadFileAsync = iDownloadFileAsync;
+        this.iDownloadFileAsyncCallback = iDownloadFileAsyncCallback;
         this.context = context;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        if(iDownloadFileAsync == null)
+        if(iDownloadFileAsyncCallback == null)
             return;
-        iDownloadFileAsync.init();
+        iDownloadFileAsyncCallback.init();
         Utils.showProgress(context, PROGRESS_STYLE.DETERMINATE);
     }
 
     @Override
     protected String doInBackground(String... aurl) {
 
-        if(iDownloadFileAsync == null || !Utils.isNetworkAvailable(context)) {
+        if(iDownloadFileAsyncCallback == null || !Utils.isNetworkAvailable(context)) {
             return null;
         }
-        iDownloadFileAsync.start();
+        iDownloadFileAsyncCallback.start();
         int count;
 
         try {
@@ -69,7 +69,7 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
 
             while ((count = input.read(data)) != -1) {
                 total += count;
-                setProgress(Constants.DOWNLOAD_TEXT, String.valueOf((int)((total*100)/lenghtOfFile)));
+                setProgress(Constants.DOWNLOAD_TEXT, String.valueOf((int) ((total * 100) / lenghtOfFile)));
                 output.write(data, 0, count);
             }
 
@@ -101,13 +101,13 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String unused) {
 
-        if(iDownloadFileAsync == null || unused == null )
+        if(iDownloadFileAsyncCallback == null || unused == null )
         {
             Utils.handleError(context, Constants.ERROR_NO_NETWORK);
             Utils.hideProgress();
             return;
         }
-        iDownloadFileAsync.end();
+        iDownloadFileAsyncCallback.end();
         Utils.hideProgress();
     }
 

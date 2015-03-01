@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Abheda Courses</string>
+    <string name="app_name">Abheda ED</string>
     <string name="abheda_courses">Abheda Courses</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -9,7 +9,7 @@
     <string name="lessons">Lessons</string>
     <string name="quiz">Quiz</string>
     <string name="info">Info</string>
-    <string name="next">Next</string>
+    <string name="submit">Submit</string>
     <string name="list_item_image">list_item_image</string>
     <string name="answer">Answer</string>
     <string name="progress">Progress</string>
@@ -27,5 +27,7 @@
     <string name="ranklabel">"Rank : "</string>
     <string name="countrylabel">"Country : "</string>
     <string name="populationlabel">"Population : "</string>
+    <string name="swipe">"Swipe to change"</string>
+    <string name="tap">"Tap to show"</string>
 
 </resources>

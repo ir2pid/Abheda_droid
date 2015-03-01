@@ -1,9 +1,11 @@
 package com.noisyninja.abheda_droid.util;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
@@ -16,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
@@ -96,14 +99,14 @@ public class Utils {
 
     public static void makeAnimation(View view, Techniques techniques)
     {
-        YoYo.with(Techniques.RubberBand)
+        YoYo.with(techniques)
                 .duration(Constants.ANIMATION_TIME_700)
                 .playOn(view);
     }
 
     public static void makeAnimation(View view)
     {
-        makeAnimation(view, Techniques.Bounce);
+        makeAnimation(view, Techniques.RubberBand);
     }
 
     public static void playSound(Context context, Constants.Sound sound)
@@ -128,6 +131,41 @@ public class Utils {
         gd.setCornerRadius(0f);
 
         //layout.setBackgroundDrawable(gd);
+    }
+
+    public static void showDialog(final Fragment fragment, String title, String message, boolean isInfo) {
+        // custom dialog
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(fragment.getActivity())
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (fragment instanceof IDialogCallback) {
+                            ((IDialogCallback) fragment).ok(dialog);
+                        }
+                        else {
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+            if (!isInfo){
+
+                dialogBuilder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (fragment instanceof IDialogCallback) {
+                            ((IDialogCallback) fragment).cancel(dialog);
+                        }
+                    }
+                }).setIcon(android.R.drawable.ic_dialog_alert);
+            }
+        AlertDialog dialog = dialogBuilder.create();
+
+        //dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_down_up;
+        dialog.show();
     }
 
     public static void showResult(Context context, boolean value)
@@ -155,6 +193,18 @@ public class Utils {
             buttonModule1.setVisibility(View.INVISIBLE);
             buttonModule2.setVisibility(View.VISIBLE);
         }
+
+        dialog.show();
+    }
+
+    public static void showInstriction(Context context)
+    {
+        // custom dialog
+        final Dialog dialog = new Dialog(context);//, R.style.TransparentDialog
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.setContentView(R.layout.dialog_instruction_flashcard);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_down_up;
 
         dialog.show();
     }
@@ -579,6 +629,12 @@ public class Utils {
 
         }
     }
+
+    public static int getColor(Context context, int colorId)
+    {
+        return context.getResources().getColor(colorId);
+    }
+
 
     public static String getTempString(String... args)
     {
