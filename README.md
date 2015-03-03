@@ -2,8 +2,8 @@ Abheda_droid
 ============
 Droid App for Abheda
 Educational App for an NGO to teach rural classrooms and to be distributed through low cost tablets among candidates eligible for scholarship.
+[Absolute README link](http://www.abhedafoundation.org)
 
-abhedafoundation.org
 
 Screenshots:
 ![alt tag](https://dl.dropboxusercontent.com/u/19489672/projects/Abheda/Screenshot_2015-01-11-12-28-01.png)
