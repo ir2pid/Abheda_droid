@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.List;
 
@@ -47,8 +48,9 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
         // update the item view
         ListLessonItem item = getItem(position);
 
-        name.setText(item.title);
-        description.setText(item.description);
+        Utils.setText(name,item.title);
+
+        Utils.setText(description,item.description);
 
         RelativeLayout relativeLayout = (RelativeLayout) convertView.findViewById(R.id.relativeLayout1);
         switch (item.module_type)

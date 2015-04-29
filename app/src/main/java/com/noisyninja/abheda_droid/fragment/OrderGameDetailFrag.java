@@ -3,6 +3,7 @@ package com.noisyninja.abheda_droid.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,7 @@ public class OrderGameDetailFrag extends Fragment {
                              Bundle savedInstanceState) {
         window = inflater.inflate(R.layout.frag_order_game_detail, container, false);
         buttonNext = ((Button) window.findViewById(R.id.button));
-        textViewQuestionNo  = ((TextView) window.findViewById(R.id.textView));
+        textViewQuestionNo  = ((TextView) window.findViewById(R.id.question));
         linearLayout1 = ((LinearLayout) window.findViewById(R.id.linearlayout1));
         linearLayout2 = ((LinearLayout) window.findViewById(R.id.linearlayout2));
         buttonNext.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +93,9 @@ public class OrderGameDetailFrag extends Fragment {
     public void loadQuestions(final ArrayList<String> words, LinearLayout linearLayout)
     {
         linearLayout2.removeAllViews();
-        textViewQuestionNo.setText("Q: "+progress+"/"+orderGameQuestions.size());
+        linearLayout1.removeAllViews();
+        textViewQuestionNo.setText("Q: "+progress+"/"+orderGameQuestions.size() + " ) "+orderGameQuestions.get(progress).getQuestion());
+
         for(String word:words)
         {
             Button button = new Button(getActivity());
@@ -107,16 +110,18 @@ public class OrderGameDetailFrag extends Fragment {
                     linearLayout.removeView(view);
                     if(linearLayout.getId() == linearLayout1.getId())
                     {
-                        linearLayout2.addView(view);
+                        addButtonToLinearLayout(linearLayout2, (Button) view);
                     }
                     else
                     {
-                        linearLayout1.addView(view);
+                        addButtonToLinearLayout(linearLayout1, (Button) view);
                     }
 
                 }
             });
-            linearLayout.addView(button);
+
+            addButtonToLinearLayout(linearLayout, button);
+
         }
     }
 
@@ -133,6 +138,48 @@ public class OrderGameDetailFrag extends Fragment {
 
         return words;
     }
+    private void removeButtonToLinearLayout(LinearLayout ll, Button button)
+    {
 
+    }
+    //this method will add image view to liner grid and warp it if no space in new child LinearLayout grid
+    private void addButtonToLinearLayout(LinearLayout ll, Button button)
+    {
+        //set the padding and margin and weight
+        button.setPadding(5, 5, 5, 5);
 
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int maxWidth = display.getWidth() - 10;
+        int maxChildNum = (int) ( maxWidth / (110)) ;
+        /*Toast.makeText(getActivity().getBaseContext(), "c" + v.getWidth(),
+                Toast.LENGTH_LONG).show();*/
+        //loop through all child of the LinearLayout
+        for (int i = 0; i < ll.getChildCount(); i++) {
+            View childV = ll.getChildAt(i);
+            Class c = childV.getClass();
+            if (c == LinearLayout.class) {
+                //here we are in the child lay out check to add the imageView if there is space
+                //Available else we will add it to new linear layout
+                LinearLayout chidvL = (LinearLayout)childV;
+                if(chidvL.getChildCount() < maxChildNum)
+                {
+                    chidvL.addView(button);
+                    return;
+                }
+            } else{
+                continue;
+            }
+        }
+
+        //if you reached here this means there was no roam for adding view so we will
+        //add new linear layout
+        LinearLayout childLinearLayout = new LinearLayout(getActivity());
+        childLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        childLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+        ll.addView(childLinearLayout);
+        childLinearLayout.addView(button);
+
+    }
 }

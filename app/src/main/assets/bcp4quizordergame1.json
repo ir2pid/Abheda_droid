@@ -1,0 +1,121 @@
+[
+    {
+        "question":"সেদিন নাসীমার দেরী হয় নি",
+        "words": {
+          "4": "late",
+          "1": "Nasima",
+          "3": "not",
+          "2": "was",
+          "5": "on",
+          "6": "that",
+          "7": "day",
+          "-1": "be",
+          "-2": "in",
+          "-3": "no",
+          "-4": "came"
+        }
+    },
+    {
+        "question":"নাসীমার আজ দেরী হয় নি",
+        "words": {
+          "4": "late",
+          "1": "Nasima",
+          "3": "not",
+          "2": "is",
+          "5": "today",
+          "-1": "on",
+          "-2": "in",
+          "-3": "be"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    },
+    {
+        "question":"",
+        "words": {
+          "4": "BCPword4",
+          "1": "BCPword1",
+          "3": "BCPword3",
+          "2": "BCPword2"
+        }
+    }
+]

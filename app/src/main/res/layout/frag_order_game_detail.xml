@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="q no"
-        android:id="@+id/textView"
+        android:id="@+id/question"
         android:background="@drawable/background_shape_blue_translucent"
         android:gravity="center" />
 

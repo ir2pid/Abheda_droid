@@ -38,6 +38,7 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
     int correct;
     int wrong;
     boolean isWrong;
+    boolean isPicture;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +56,12 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
 
 
             MCQQuiz mcqQuiz = (MCQQuiz)Utils.getFromJson(data, MCQQuiz.class);
-
-            mcqQuestions = Arrays.asList((MCQQuestion[]) Utils.getObject(getActivity(),
-                    mcqQuiz.getMcqQuestions(), MCQQuestion[].class));
-
+            try {
+                mcqQuestions = Arrays.asList((MCQQuestion[]) Utils.getObject(getActivity(),
+                        mcqQuiz.getMcqQuestions(), MCQQuestion[].class));
+            }catch(Exception e){
+                Utils.handleError(getActivity(),e);
+            }
 
             Utils.handleInfo(getActivity(), mcqQuiz.toString());
         }
@@ -132,6 +135,11 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
 
     void loadQuestions(int no)
     {
+        if(mcqQuestions == null)
+        {
+            Utils.makeToast(getActivity(), Constants.ERROR_INVALID_JSON);
+            return;
+        }
         if(progress < mcqQuestions.size()-1)
         {
             progress++;
@@ -145,7 +153,7 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
         //Utils.animateFlip(window,scrollView,scrollView);
         RadioGroup radioGroup = (RadioGroup) window.findViewById(R.id.radioGroup);
 
-        TextView textViewQuestion  = ((TextView) window.findViewById(R.id.daystocomplete));
+        TextView textViewQuestion  = ((TextView) window.findViewById(R.id.question));
         TextView textViewCorrect  = ((TextView) window.findViewById(R.id.correct));
         TextView textViewWrong = ((TextView) window.findViewById(R.id.wrong));
         RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));

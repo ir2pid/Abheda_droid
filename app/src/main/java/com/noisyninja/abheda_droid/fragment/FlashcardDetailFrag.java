@@ -109,14 +109,16 @@ public class FlashcardDetailFrag extends Fragment{
         TextView name = (TextView)view.findViewById(R.id.name1);
         if(isFront)
         {
-            name.setText(pageList.get(position).getName());
-            description.setText(pageList.get(position).getDescription());
-            text.setText(pageList.get(position).getText1());
+            Utils.setText(name, pageList.get(position).getName());
+            Utils.setText(description, pageList.get(position).getDescription());
+            Utils.setText(text, pageList.get(position).getText1());
+
             Utils.lazyload(getActivity(), imageView, pageList.get(position).getImage1());
         }else {
-            name.setText(pageList.get(position).getName());
-            description.setText(pageList.get(position).getDescription());
-            text.setText(pageList.get(position).getText2());
+            String[] texts = pageList.get(position).getText2().split(Constants.SPLIT_DELIMITER);
+            Utils.setText(name, pageList.get(position).getName());
+            Utils.setText(description, pageList.get(position).getDescription());
+            Utils.setText(text, Utils.getTempStringNewLine(texts));
             Utils.lazyload(getActivity(), imageView, pageList.get(position).getImage2());
         }
 

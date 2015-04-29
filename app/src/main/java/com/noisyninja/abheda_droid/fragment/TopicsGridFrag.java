@@ -165,8 +165,8 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
 
             //holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
 
-            holder.tName.setText(topicArrayList.get(position).getName());
-            holder.tDescription.setText(topicArrayList.get(position).getDescription());
+            Utils.setText(holder.tName, topicArrayList.get(position).getName());
+            Utils.setText(holder.tDescription,topicArrayList.get(position).getDescription());
             holder.dProgressCompletion.setProgress(topicArrayList.get(position).getCompletion());
             Utils.styleDonut(holder.dProgressCompletion, getActivity());
                     //setText(getActivity().getString(R.string.completion)+topicArrayList.get(position).getCompletion());

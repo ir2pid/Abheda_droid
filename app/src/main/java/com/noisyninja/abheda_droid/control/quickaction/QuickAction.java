@@ -16,6 +16,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -170,7 +171,7 @@ public class QuickAction extends PopupWindows implements OnDismissListener {
 		}
 		
 		if (title != null) {
-			text.setText(title);
+            Utils.setText(text, title);
 		} else {
 			text.setVisibility(View.GONE);
 		}

@@ -179,7 +179,7 @@ public class CourseTree extends Fragment {
                 convertView = inflater.inflate(R.layout.tree_child_item, parent, false);
                 holder.name = (TextView) convertView.findViewById(R.id.textView1);
                 holder.description = (TextView) convertView.findViewById(R.id.description);
-                holder.daysToComplete = (TextView) convertView.findViewById(R.id.daystocomplete);
+                holder.daysToComplete = (TextView) convertView.findViewById(R.id.question);
                 holder.instruction = (TextView) convertView.findViewById(R.id.instructions);
                 holder.marks = (TextView) convertView.findViewById(R.id.marks);
                 convertView.setTag(holder);

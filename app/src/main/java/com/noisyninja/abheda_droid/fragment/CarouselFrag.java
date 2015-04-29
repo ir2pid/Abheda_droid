@@ -53,8 +53,8 @@ public class CarouselFrag extends Fragment implements AdapterView.OnItemSelected
         //setContentView(panel);
 
         // copy images from assets to sdcard
-        AppUtils.AssetFileCopy(getActivity(), "/mnt/sdcard/comic1.jpg", "comic1.jpg", false);
-        AppUtils.AssetFileCopy(getActivity(), "/mnt/sdcard/comic2.jpg", "comic2.jpg", false);
+        AppUtils.AssetFileCopy(getActivity(), "/mnt/sdcard/comic1.jpg", "abheda/comic1.jpg", false);
+        AppUtils.AssetFileCopy(getActivity(), "/mnt/sdcard/comic2.jpg", "abheda/comic2.jpg", false);
         //AppUtils.AssetFileCopy(getActivity(), "/mnt/sdcard/imageholder.png", "comic1.png", false);
         //AppUtils.AssetFileCopy(getActivity(), "/mnt/sdcard/imageholder.png", "imageholder.png", false);
 

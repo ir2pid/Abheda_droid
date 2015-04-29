@@ -38,6 +38,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.noisyninja.abheda_droid.util.Utils;
+
 public class CarouselViewItem extends RelativeLayout{
 	int m_w, m_h;
 	
@@ -64,7 +66,7 @@ public class CarouselViewItem extends RelativeLayout{
     	
 		// create text
     	TextView tv = new TextView(context);
-    	tv.setText(AppUtils.ShortText(text, 18));
+        Utils.setText(tv, AppUtils.ShortText(text, 18));
     	tv.setTextColor(Color.BLACK);
 	    //tv.setShadowLayer(2, 0, 0, Color.BLACK);
 	    tv.setTextSize(Constants.m_nTextSizeMedium); 

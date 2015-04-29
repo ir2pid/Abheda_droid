@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
+import com.crittercism.app.Crittercism;
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
@@ -52,7 +53,7 @@ public class SplashActivity extends Activity {
                 try {
                     synchronized(this){
                         // Wait given period of time or exit on touch
-
+                        Crittercism.initialize(getApplicationContext(), Constants.CRITTERCISM_APP_ID);
                         wait(Constants.SLEEP_TIME_1000);
                     }
                 }

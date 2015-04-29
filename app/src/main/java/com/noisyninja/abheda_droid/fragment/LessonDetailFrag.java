@@ -28,6 +28,7 @@ public class LessonDetailFrag extends ListFragment {
      */
     //public static final String ARG_ITEM_ID = "item_id";
     Lesson lesson;
+    List<Page> pageList;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -47,6 +48,8 @@ public class LessonDetailFrag extends ListFragment {
             lesson = new Lesson();
             lesson = (Lesson)Utils.getFromJson(data, Lesson.class);
 
+            pageList = Arrays.asList((Page[])  Utils.getObject(getActivity(),
+                    lesson.getPages(), Page[].class));
             Utils.handleInfo(getActivity(), lesson.toString());
         }
     }
@@ -60,12 +63,13 @@ public class LessonDetailFrag extends ListFragment {
         // Instantiating an adapter to store each items
         // R.layout.listview_layout defines the layout of each item
 
-        List<Page> pageList = Arrays.asList((Page[])  Utils.getObject(getActivity(),
-                lesson.getPages(), Page[].class));
+        /*List<Page> pageList = Arrays.asList((Page[])  Utils.getObject(getActivity(),
+                lesson.getPages(), Page[].class));*/
 
         for(Page page : pageList)
         {
-            items.add(new ListLessonDetailItem(page.getImage1(), page.getName(), page.getDescription()));
+            items.add(new ListLessonDetailItem(page.getImage1(), page.getName(), page.getText1(),
+                    page.getLtext1(), page.getRtext1(), page.getUtext1(), page.getDtext1(),page.getDescription()));
         }
 
         ListLessonDetailAdapter adapter = new ListLessonDetailAdapter(getActivity().getBaseContext(), items);

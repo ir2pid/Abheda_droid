@@ -95,7 +95,7 @@ public class DataStore {
             temp = gson.fromJson(json, Topics.class);
         }
         else{
-            temp = gson.fromJson(Utils.getStringFromAsset(context, Utils.getTempString(Constants.DATA_FOLDER, Constants.DATA_JSON)), Topics.class);
+            temp = gson.fromJson(Utils.getStringFromAsset(context, Constants.DATA_JSON), Topics.class);//Utils.getTempString(Constants.DATA_FOLDER, Constants.DATA_JSON)), Topics.class);
         }
         topics = temp;
     }

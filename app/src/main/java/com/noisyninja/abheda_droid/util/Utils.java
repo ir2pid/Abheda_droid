@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
@@ -20,13 +20,16 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.crittercism.app.Crittercism;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.github.lzyzsd.circleprogress.ArcProgress;
@@ -41,8 +44,9 @@ import com.noisyninja.abheda_droid.control.quickaction.QuickAction;
 import com.noisyninja.abheda_droid.fragment.FlashcardDetailFrag;
 import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
 import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
-import com.noisyninja.abheda_droid.fragment.OrderGameDetailFrag;
+import com.noisyninja.abheda_droid.fragment.OrderGameDetailFragNew;
 import com.noisyninja.abheda_droid.fragment.PictureMatchDetailFrag;
+import com.noisyninja.abheda_droid.pojo.misc.IntegerStringPair;
 import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 import com.noisyninja.abheda_droid.util.Constants.PROGRESS_STYLE;
 
@@ -56,6 +60,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Map;
 
 import at.markushi.ui.CircleButton;
 
@@ -74,60 +80,61 @@ public class Utils {
         Assert.assertNotNull(name);
 
         int id = context.getResources().getIdentifier(name,
-                "drawable", context.getPackageName());
+                Constants.DRAWABLE, context.getPackageName());
 
-        return id != 0? id : context.getResources().getIdentifier("imageholder",
-                "drawable", context.getPackageName());
+        return id != 0 ? id : context.getResources().getIdentifier("imageholder",
+                Constants.DRAWABLE, context.getPackageName());
     }
 
-    public static String getTag(Class c)
-    {
+    public static String getTag(Class c) {
         return c.getSimpleName();
     }
 
-    public static void startActivity(Context context, Class nextClass)
-    {
+    public static void startActivity(Context context, Class nextClass) {
         Intent intent = new Intent(context, nextClass);
         //myIntent.putExtra("key", value); //Optional parameters
         context.startActivity(intent);
     }
 
-    public static void makeToast(Context context, String text)
-    {
+    public static void makeToast(Context context, String text) {
         Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
     }
 
-    public static void makeAnimation(View view, Techniques techniques)
-    {
+    public static void makeAnimation(View view, Techniques techniques) {
         YoYo.with(techniques)
                 .duration(Constants.ANIMATION_TIME_700)
                 .playOn(view);
     }
 
-    public static void makeAnimation(View view)
-    {
+    public static void makeAnimation(View view) {
         makeAnimation(view, Techniques.RubberBand);
     }
 
-    public static void playSound(Context context, Constants.Sound sound)
-    {
+    public static void playSound(Context context, Constants.Sound sound) {
         MediaPlayer mp;
         switch (sound) {
-            case RIGHT: mp = MediaPlayer.create(context, R.raw.tethys);break;
-            case WRONG: mp = MediaPlayer.create(context, R.raw.iapetus);break;
-            case CLICK: mp = MediaPlayer.create(context, R.raw.unlock);break;
-            default: mp = MediaPlayer.create(context, R.raw.elara);break;
+            case RIGHT:
+                mp = MediaPlayer.create(context, R.raw.tethys);
+                break;
+            case WRONG:
+                mp = MediaPlayer.create(context, R.raw.iapetus);
+                break;
+            case CLICK:
+                mp = MediaPlayer.create(context, R.raw.unlock);
+                break;
+            default:
+                mp = MediaPlayer.create(context, R.raw.elara);
+                break;
         }
         mp.start();
     }
 
-    public static void setBgGradient()
-    {
+    public static void setBgGradient() {
         //View layout = findViewById(R.id.mainlayout);
 
         GradientDrawable gd = new GradientDrawable(
                 GradientDrawable.Orientation.TOP_BOTTOM,
-                new int[] {0xFF616261,0xFF131313});
+                new int[]{0xFF616261, 0xFF131313});
         gd.setCornerRadius(0f);
 
         //layout.setBackgroundDrawable(gd);
@@ -143,23 +150,22 @@ public class Utils {
                     public void onClick(DialogInterface dialog, int which) {
                         if (fragment instanceof IDialogCallback) {
                             ((IDialogCallback) fragment).ok(dialog);
-                        }
-                        else {
+                        } else {
                             dialog.dismiss();
                         }
                     }
                 });
 
-            if (!isInfo){
+        if (!isInfo) {
 
-                dialogBuilder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (fragment instanceof IDialogCallback) {
-                            ((IDialogCallback) fragment).cancel(dialog);
-                        }
+            dialogBuilder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    if (fragment instanceof IDialogCallback) {
+                        ((IDialogCallback) fragment).cancel(dialog);
                     }
-                }).setIcon(android.R.drawable.ic_dialog_alert);
-            }
+                }
+            }).setIcon(android.R.drawable.ic_dialog_alert);
+        }
         AlertDialog dialog = dialogBuilder.create();
 
         //dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -168,8 +174,7 @@ public class Utils {
         dialog.show();
     }
 
-    public static void showResult(Context context, boolean value)
-    {
+    public static void showResult(Context context, boolean value) {
         // custom dialog
         final Dialog dialog = new Dialog(context);//, R.style.TransparentDialog
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -181,14 +186,11 @@ public class Utils {
         CircleButton buttonModule1 = (CircleButton) dialog.findViewById(R.id.circleButton1);
         CircleButton buttonModule2 = (CircleButton) dialog.findViewById(R.id.circleButton2);
 
-        if(value)
-        {
+        if (value) {
             Utils.playSound(context, Constants.Sound.RIGHT);
             buttonModule1.setVisibility(View.VISIBLE);
             buttonModule2.setVisibility(View.INVISIBLE);
-        }
-        else
-        {
+        } else {
             Utils.playSound(context, Constants.Sound.WRONG);
             buttonModule1.setVisibility(View.INVISIBLE);
             buttonModule2.setVisibility(View.VISIBLE);
@@ -197,8 +199,7 @@ public class Utils {
         dialog.show();
     }
 
-    public static void showInstriction(Context context)
-    {
+    public static void showInstriction(Context context) {
         // custom dialog
         final Dialog dialog = new Dialog(context);//, R.style.TransparentDialog
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -209,15 +210,14 @@ public class Utils {
         dialog.show();
     }
 
-    public static void showQuickAction(Activity activity, View view)
-    {
+    public static void showQuickAction(Activity activity, View view) {
 
-        ActionItem nextItem 	= new ActionItem(1, "Next", activity.getResources().getDrawable(R.drawable.bulb2));
-        ActionItem prevItem 	= new ActionItem(2, "Prev", activity.getResources().getDrawable(R.drawable.check_book));
-        ActionItem searchItem 	= new ActionItem(3, "Find", activity.getResources().getDrawable(R.drawable.bookmark_add));
-        ActionItem infoItem 	= new ActionItem(4, "Info", activity.getResources().getDrawable(R.drawable.check_book));
-        ActionItem eraseItem 	= new ActionItem(5, "Clear", activity.getResources().getDrawable(R.drawable.bookmark_remove));
-        ActionItem okItem 		= new ActionItem(6, "OK", activity.getResources().getDrawable(R.drawable.book4));
+        ActionItem nextItem = new ActionItem(1, "Next", activity.getResources().getDrawable(R.drawable.bulb2));
+        ActionItem prevItem = new ActionItem(2, "Prev", activity.getResources().getDrawable(R.drawable.check_book));
+        ActionItem searchItem = new ActionItem(3, "Find", activity.getResources().getDrawable(R.drawable.bookmark_add));
+        ActionItem infoItem = new ActionItem(4, "Info", activity.getResources().getDrawable(R.drawable.check_book));
+        ActionItem eraseItem = new ActionItem(5, "Clear", activity.getResources().getDrawable(R.drawable.bookmark_remove));
+        ActionItem okItem = new ActionItem(6, "OK", activity.getResources().getDrawable(R.drawable.book4));
 
         //use setSticky(true) to disable QuickAction dialog being dismissed after an item is clicked
         prevItem.setSticky(true);
@@ -257,39 +257,39 @@ public class Utils {
         quickAction.setOnDismissListener(new QuickAction.OnDismissListener() {
             @Override
             public void onDismiss() {
-               // Toast.makeText(getApplicationContext(), "Dismissed", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getApplicationContext(), "Dismissed", Toast.LENGTH_SHORT).show();
             }
         });
 
         quickAction.show(view);
     }
 
-    public static void handleError(Context context, Exception e){
-
+    public static void handleError(Context context, Exception e) {
+        crittercismException(e);
         Log.e(Utils.class.getCanonicalName(), Constants.ERROR + e.getMessage());
         Toast.makeText(context, Constants.ERROR + e.getMessage(), Toast.LENGTH_SHORT).show();
 
     }
 
-    public static void handleError(Context context, String e){
+    public static void handleError(Context context, String e) {
 
         Log.e(Utils.class.getCanonicalName(), Constants.ERROR + e);
         Toast.makeText(context, Constants.ERROR + e, Toast.LENGTH_SHORT).show();
 
     }
 
-    public static void handleInfo(Context context, String e){
+    public static void handleInfo(Context context, String e) {
 
         Log.i(Utils.class.getCanonicalName(), Constants.INFO + e);
         Toast.makeText(context, Constants.INFO + e, Toast.LENGTH_SHORT).show();
 
     }
 
-    public static void write(Context context, String data){
-        write(context,Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER,Constants.DATA_JSON),  data);
+    public static void write(Context context, String data) {
+        write(context, Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER, Constants.DATA_JSON), data);
     }
 
-    public static void write(Context context, String fileName, String data){
+    public static void write(Context context, String fileName, String data) {
         try {
             FileOutputStream fOut = context.openFileOutput(fileName, Context.MODE_WORLD_READABLE);
             fOut.write(data.getBytes());
@@ -302,30 +302,35 @@ public class Utils {
         }
     }
 
-    public static Object getObject(Context context, String fileName, Class clazz)
-    {
+    public static Object getObject(Context context, String fileName, Class clazz) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         //gsonBuilder.setDateFormat("M/d/yy hh:mm a");
         Gson gson = gsonBuilder.create();
-
+        Object o = null;
         /*
         List<Post> posts = new ArrayList<Post>();
         posts = Arrays.asList(gson.fromJson(reader, Post[].class));
         */
         String json = Utils.read(context, Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER, fileName));
-        if(json == null || json.length() < 2 )
-        {
-            json = Utils.getStringFromAsset(context, Utils.getTempString(Constants.DATA_FOLDER, fileName));
+        if (json == null || json.length() < 2) {
+            json = Utils.getStringFromAsset(context, fileName);//Utils.getTempString(Constants.DATA_FOLDER, fileName));
         }
-        return gson.fromJson(json, clazz);
+        try {
+          o = gson.fromJson(json, clazz);
+        } catch (Exception e) {
+            Utils.handleError(context, e);
+        }
+        finally
+        {
+            return o;
+        }
     }
 
-    public static String read(Context context)
-    {
+    public static String read(Context context) {
         return read(context, Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER, Constants.DATA_JSON));
     }
 
-    public static String read(Context context, String fileName){
+    public static String read(Context context, String fileName) {
         StringBuilder temp = new StringBuilder();
         try {
             File fileDir = new File(fileName);
@@ -341,47 +346,35 @@ public class Utils {
             }
 
             in.close();
-        }
-        catch (UnsupportedEncodingException e)
-        {
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e)
-        {
-            System.out.println(e.getMessage());
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
+        } catch (UnsupportedEncodingException e) {
+            Utils.handleError(context, e);
+        } catch (IOException e) {
+            Utils.handleError(context, e);
+        } catch (Exception e) {
+            Utils.handleError(context, e);
         }
 
         return temp.toString();
-        /*StringBuilder temp = new StringBuilder();
-        FileInputStream fin = null;
 
-        try{
-            fin =  new FileInputStream (new File(fileName));
-            int c;
-
-            while( (c = fin.read()) != -1){
-                temp = temp.append(Character.toString((char)c));
-            }
-            return temp.toString();
-        }catch(Exception e){
-            Utils.handleError(context, e);
-        }
-        finally {
-                try {
-                   if (fin != null) {
-                       fin.close();
-                   }
-                } catch (IOException e) {
-                    Log.e(TAG, "Error closing asset " + fileName);
-                }
-            }
-        return null;*/
     }
 
+    public static Drawable getDrawableFromAsset(Context context, String fileName){
+        Drawable d = null;
+        try
+        {
+            // get input stream
+            InputStream ims = context.getAssets().open(fileName);
+            // load image as Drawable
+            d = Drawable.createFromStream(ims, null);
+            // set image to ImageView
+
+        }
+        catch(IOException ex)
+        {
+            Utils.handleError(context, ex);
+        }
+        return d != null ? d : context.getResources().getDrawable( R.drawable.imageholder );
+    }
     public static String getStringFromAsset(Context context, String fileName) {
         BufferedReader in = null;
         try {
@@ -401,12 +394,14 @@ public class Utils {
 
             return buf.toString();
         } catch (IOException e) {
+            crittercismException(e);
             Log.e(TAG, "Error opening asset " + fileName);
         } finally {
             if (in != null) {
                 try {
                     in.close();
                 } catch (IOException e) {
+                    crittercismException(e);
                     Log.e(TAG, "Error closing asset " + fileName);
                 }
             }
@@ -510,14 +505,32 @@ public class Utils {
         return value;
     }
 
-    public static Object getFromJson(String data, Class clazz)
+    public static void crittercismLog(String data)
     {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        Gson gson = gsonBuilder.create();
-        return gson.fromJson(data, clazz);
+        Crittercism.leaveBreadcrumb(data);
+    }
+    public static void crittercismException(Exception  exception)
+    {
+        Crittercism.logHandledException(exception);
     }
 
-    public static void lazyload(Context context, ImageView fromview, ImageView toview, String url)
+    public static Object getFromJson(String data, Class clazz)
+    {
+        Object o = null;
+
+        try {
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            Gson gson = gsonBuilder.create();
+            o = gson.fromJson(data, clazz);
+        }catch (Exception e){
+            crittercismException(e);
+            Log.e(TAG, "Json Error" + e.getMessage());
+        }
+
+        return o;
+    }
+
+    /*public static void lazyload(Context context, ImageView fromview, ImageView toview, String url)
     {
         Glide.with(context)
                 .load(url)
@@ -526,6 +539,17 @@ public class Utils {
                 .crossFade()
                 .animate(new FlipAnimation(fromview, toview))
                 .into(toview);
+    }*/
+
+    public static void glideLoad(Context context, ImageView view, String url)
+    {
+        Glide.with(context)
+                .load(url)
+                .sizeMultiplier(1.0f)//fitCenter()
+                .placeholder(R.drawable.loading)
+                .crossFade()
+                .animate(new FlipAnimation(view, view))
+                .into(view);
     }
 
     public static void lazyload(Context context, ImageView view, String url)
@@ -534,26 +558,52 @@ public class Utils {
             view.setVisibility(View.GONE);
         }
         else if(url.contains(Constants.HTTP_FLAG)) { // web url
-            Glide.with(context)
-                    .load(url)
-                    .fitCenter()
-                    .placeholder(R.drawable.loading)
-                    .crossFade()
-                    .animate(new FlipAnimation(view, view))
-                    .into(view);
+            glideLoad(context, view, url);
         }
         else {  // local image asset or sdcard
-
-            File file = new  File(url);
-            if(file.exists()){   // sdcard image
-
-                view.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
+            String localUrl = downloadImageExists(url, "").toString();
+            File file = new  File(localUrl);
+            if(file.exists()){   // sdcard image no extension
+                /*Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                view.setImageBitmap(bitmap);*/
+                glideLoad(context, view, localUrl);
             }
-            else {   // asset image
+            else{
+                localUrl = downloadImageExists(url, Constants.IMAGE_EXTENSION_JPG).toString();
+                file =  new  File(localUrl);
+                if(file.exists()){   // sdcard jpeg image
 
-                view.setImageResource(getDrawable(context, url));
+                    glideLoad(context, view, localUrl);
+                }
+                else
+                {
+                    localUrl = downloadImageExists(url, Constants.IMAGE_EXTENSION_PNG).toString();
+                    file =  new  File(localUrl);
+                    if(file.exists()){   // sdcard png image
+                        glideLoad(context, view, localUrl);
+                    }else {   // asset image
+                        localUrl = Utils.getTempString(Constants.BACKSLASH, Constants.DATA_FOLDER, url, Constants.IMAGE_EXTENSION_JPG);
+                        //view.setImageResource(getDrawable(context, localUrl));
+                        Drawable d = Utils.getDrawableFromAsset(context, localUrl);
+                        if(d == null)
+                        {   localUrl = Utils.getTempString(Constants.BACKSLASH, Constants.DATA_FOLDER, url, Constants.IMAGE_EXTENSION_PNG);
+                            //view.setImageResource(getDrawable(context, localUrl));
+                            d = Utils.getDrawableFromAsset(context, localUrl);
+                        }
+
+                        view.setImageDrawable(d);
+                    }
+                }
             }
         }
+    }
+
+
+
+    public static String downloadImageExists(String url, String extension){
+
+        return Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER, url, extension);
+
     }
 
     public static void animateFlip(View rootLayout, View cardFace, View cardBack)
@@ -567,23 +617,9 @@ public class Utils {
         rootLayout.startAnimation(flipAnimation);
     }
 
-    public static void mail(Context context, String data)
-    {
-        mail(context, "ir2pid@gmail.com", data);
-    }
-
-    public static void mail(Context context, String to, String data)
-    {
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                "mailto", to, null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "schema");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, data+"\n--------\n\n\n\n-------\n");
-        context.startActivity(Intent.createChooser(emailIntent, "Send email..."));
-    }
-
-    public static void backPress(Activity activity)
-    {
-        activity.onBackPressed();
+    public static void setText(TextView textView, String data){
+        if(data != null && data.length()>1)
+            textView.setText(Html.fromHtml(data));
     }
 
     public static void courseFacade(FragmentActivity activity, String data, MODULE_TYPE module_type)
@@ -614,7 +650,7 @@ public class Utils {
                         .add(R.id.lesson_detail_container, fragment).commit();
                 break;
             }case ORDER_GAME_QUIZ: {
-                OrderGameDetailFrag fragment = new OrderGameDetailFrag();
+                OrderGameDetailFragNew fragment = new OrderGameDetailFragNew();
                 fragment.setArguments(arguments);
                 activity.getSupportFragmentManager().beginTransaction()
                         .add(R.id.lesson_detail_container, fragment).commit();
@@ -641,6 +677,17 @@ public class Utils {
         StringBuilder stringBuilder = new StringBuilder();
         for (String str:args){
             stringBuilder.append(str);
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public static String getTempStringNewLine(String... args)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String str:args){
+            stringBuilder.append(str);
+            stringBuilder.append(Constants.NEWLINE);
         }
 
         return stringBuilder.toString();
@@ -710,5 +757,47 @@ public class Utils {
           /*  makeDirs(context, getTempString(Constants.SD_CARD, Constants.DATA_FOLDER));
             refreshFileSystem(context, getTempString(Constants.SD_CARD, Constants.DATA_FOLDER));*/
         }
+    }
+
+    public static void sendMail(Context context, String string)
+    {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", Constants.EMAIL, null));
+
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, Constants.ERROR_INVALID_JSON);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, string+"\n--------\n\n\n\n-------\n");
+        context.startActivity(Intent.createChooser(emailIntent, "Send email..."));
+    }
+
+
+    public static void mail(Context context, String data)
+    {
+        mail(context, "ir2pid@gmail.com", data);
+    }
+
+    public static void mail(Context context, String to, String data)
+    {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", to, null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "schema");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, data+"\n--------\n\n\n\n-------\n");
+        context.startActivity(Intent.createChooser(emailIntent, "Send email..."));
+    }
+
+    public static void backPress(Activity activity)
+    {
+        activity.onBackPressed();
+    }
+
+    public static ArrayList<IntegerStringPair>map2IntegerStringPairList(Map<Integer, String> map){
+        ArrayList<IntegerStringPair> integerStringPairList = new ArrayList<IntegerStringPair>();
+
+        for (Map.Entry<Integer, String> entry : map.entrySet())
+        {
+            IntegerStringPair integerStringPair = new IntegerStringPair(entry.getKey(), entry.getValue());
+            integerStringPairList.add(integerStringPair);
+        }
+
+        return integerStringPairList;
     }
 }

@@ -4,6 +4,7 @@ package com.noisyninja.abheda_droid.util;
  * Created by ir2pi on 11/30/2014.
  *
  * apache 2.0 libraries used:
+ * AndroidTreeView https://github.com/bmelnychuk/AndroidTreeView
  * android-circlebutton https://github.com/markushi/android-circlebutton
  * android-HoloCircularProgressBar https://github.com/passsy/android-HoloCircularProgressBar
  * progressbutton https://github.com/f2prateek/progressbutton
@@ -28,20 +29,30 @@ package com.noisyninja.abheda_droid.util;
  *         https://github.com/daimajia/AndroidViewAnimations
  *
  *         Free for personal and commercial use with attribution to 1001FreeDownloads.com
+ *
+ *
  */
 public class Constants {
+
+
+    public static String EMAIL = "abhedafoundation@gmail.com";
 
     public static int TOPIC_ID = 0;//english
     public static int COURSE_ID = 0;//BCP
     public static int MODULE_ID = 0;//BCP 1
     public static int LESSON_QUIZ_ID = 0; //Lesson 1
 
+    public static String SPLIT_DELIMITER = "@";
+    public static String NEWLINE = "\n";
     public static String UTF8 = "UTF8";
     public static String BACKSLASH = "/";
+    public static String DRAWABLE = "drawable";
     public static String DATA_JSON = "data.json";
     public static String DATA_ZIP = "abheda.zip";
     public static String DATA_FOLDER = "abheda/";
     public static String SD_CARD = "/sdcard/";
+    public static String IMAGE_EXTENSION_JPG = ".jpg";
+    public static String IMAGE_EXTENSION_PNG = ".png";
     public static String URL_STORE = "https://dl.dropbox.com/s/o2qh922feobk7sg/data.zip?dl=0";//"https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWEJtTURZNWtDTmc";
     public static String URL_STORE_KEY = "URL_STORE_KEY";
     public static String FIRST_RUN_KEY = "FIRST_RUN_KEY";
@@ -61,6 +72,7 @@ public class Constants {
         LESSON,
         FLASHCARD,
         MCQ_QUIZ,
+        MCQ_IMAGE_QUIZ,
         PICTURE_MATCH_QUIZ,
         ORDER_GAME_QUIZ
     }
@@ -88,12 +100,14 @@ public class Constants {
     //error
     public static String ERROR = "ERROR:";
     public static String ERROR_NO_NETWORK = "NO_NETWORK";
+    public static String ERROR_INVALID_JSON = "INVALID_JSON_OR_NOT_FOUND";
+    public static String ERROR_FILE_NOT_FOUND = "FILE_NOT_FOUND";
     //info
     public static String INFO = "INFO:";
     public static String INFO_SUCCESS_DOWNLOAD = "Download success";
     public static String INFO_NO_LESSON = "ERROR_NO_LESSON";
 
-
+    public static String CRITTERCISM_APP_ID = "5500497db59ef2d535335cf3";
 
     public static String HTTP_FLAG = "http";
 

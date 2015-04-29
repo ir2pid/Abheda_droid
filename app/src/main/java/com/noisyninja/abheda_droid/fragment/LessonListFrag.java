@@ -133,8 +133,8 @@ public class LessonListFrag extends ListFragment {
 
         if(quizzes != null) {
 
-
-            for (MCQQuiz mcqQuiz : quizzes.getMcqQuizs()) {
+            if(quizzes.getMcqQuizs()!=null){
+                for (MCQQuiz mcqQuiz : quizzes.getMcqQuizs()) {
                 if (mcqQuiz == null)//handles a condition of null objects being iterated
                     continue;
 
@@ -147,7 +147,8 @@ public class LessonListFrag extends ListFragment {
                         "Quiz", module_type);
 
                 items.add(listLessonItem);
-            }
+            }}
+            if(quizzes.getOrderGameQuizs()!=null){
             for (OrderGameQuiz orderGameQuiz : quizzes.getOrderGameQuizs()) {
                 if (orderGameQuiz == null)//handles a condition of null objects being iterated
                     continue;
@@ -161,7 +162,8 @@ public class LessonListFrag extends ListFragment {
                         "Order Game Quiz", module_type);
 
                 items.add(listLessonItem);
-            }
+            }}
+            if(quizzes.getPictureMatchQuiz()!=null){
             for (PictureMatchQuiz pictureMatchQuiz : quizzes.getPictureMatchQuiz()) {
                 if (pictureMatchQuiz == null)//handles a condition of null objects being iterated
                     continue;
@@ -175,7 +177,7 @@ public class LessonListFrag extends ListFragment {
                         "Picture Match Quiz", module_type);
 
                 items.add(listLessonItem);
-            }
+            }}
         }
 
         /*ListLessonItem listLessonItem1 = new ListLessonItem(

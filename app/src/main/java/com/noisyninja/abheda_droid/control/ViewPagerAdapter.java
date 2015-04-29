@@ -91,9 +91,9 @@ public class ViewPagerAdapter extends PagerAdapter {
         text1 = (TextView) itemView.findViewById(R.id.text1);
         image1 = (ImageView) itemView.findViewById(R.id.image1);
 
-        name1.setText(pageArrayList.get(position).getName());
-        description1.setText(pageArrayList.get(position).getDescription());
-        text1.setText(pageArrayList.get(position).getText1());
+        Utils.setText(name1,pageArrayList.get(position).getName());
+        Utils.setText(description1,pageArrayList.get(position).getDescription());
+        Utils.setText(text1,pageArrayList.get(position).getText1());
         Utils.lazyload(context, image1, pageArrayList.get(position).getImage1());
 
 

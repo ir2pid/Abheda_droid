@@ -9,6 +9,14 @@ public class Page extends BasePojo {
     String description;
     String image1;
     String image2;
+    String utext1;
+    String utext2;
+    String dtext1;
+    String dtext2;
+    String ltext1;
+    String ltext2;
+    String rtext1;
+    String rtext2;
     String text1;
     String text2;
 
@@ -58,5 +66,69 @@ public class Page extends BasePojo {
 
     public void setText2(String text2) {
         this.text2 = text2;
+    }
+
+    public String getUtext1() {
+        return utext1;
+    }
+
+    public void setUtext1(String utext1) {
+        this.utext1 = utext1;
+    }
+
+    public String getUtext2() {
+        return utext2;
+    }
+
+    public void setUtext2(String utext2) {
+        this.utext2 = utext2;
+    }
+
+    public String getDtext1() {
+        return dtext1;
+    }
+
+    public void setDtext1(String dtext1) {
+        this.dtext1 = dtext1;
+    }
+
+    public String getDtext2() {
+        return dtext2;
+    }
+
+    public void setDtext2(String dtext2) {
+        this.dtext2 = dtext2;
+    }
+
+    public String getLtext1() {
+        return ltext1;
+    }
+
+    public void setLtext1(String ltext1) {
+        this.ltext1 = ltext1;
+    }
+
+    public String getLtext2() {
+        return ltext2;
+    }
+
+    public void setLtext2(String ltext2) {
+        this.ltext2 = ltext2;
+    }
+
+    public String getRtext1() {
+        return rtext1;
+    }
+
+    public void setRtext1(String rtext1) {
+        this.rtext1 = rtext1;
+    }
+
+    public String getRtext2() {
+        return rtext2;
+    }
+
+    public void setRtext2(String rtext2) {
+        this.rtext2 = rtext2;
     }
 }

@@ -21,21 +21,12 @@
                 android:layout_weight="1"
                 android:layout_gravity="center">
 
-                <ImageView
-                    android:id="@+id/image1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:background="#000000"
-                    android:padding="1dp"
-                    android:layout_gravity="center" />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="4"
-                android:gravity="center">
+                android:layout_height="fill_parent">
 
                 <TextView
                     android:id="@+id/name1"
@@ -43,14 +34,24 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/font_instruction"
                     android:background="@drawable/background_shape_blue_translucent"
-                    android:gravity="center" />
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp" />
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="#000000"
+                    android:padding="1dp"
+                    android:layout_gravity="center" />
 
                 <TextView
                     android:id="@+id/description1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/font_desc"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal" />
 
                 <TextView
                     android:id="@+id/text1"
@@ -59,7 +60,20 @@
                     android:textSize="@dimen/font_text"
                     android:nestedScrollingEnabled="false"
                     android:layout_margin="@dimen/padding_20"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textColor="@color/button_off_white"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_text"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_margin="@dimen/padding_20"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal" />
+
             </LinearLayout>
         </LinearLayout>
 
