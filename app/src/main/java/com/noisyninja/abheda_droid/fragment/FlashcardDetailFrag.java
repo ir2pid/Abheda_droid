@@ -104,6 +104,7 @@ public class FlashcardDetailFrag extends Fragment{
         View view = layoutInflater.inflate(R.layout.item_view_pager, null, false);
 
         ImageView imageView = (ImageView)view.findViewById(R.id.image1);
+        ImageView imageFooter = (ImageView)view.findViewById(R.id.imagefooter);
         TextView text = (TextView)view.findViewById(R.id.text1);
         TextView description = (TextView)view.findViewById(R.id.description1);
         TextView name = (TextView)view.findViewById(R.id.name1);
@@ -114,12 +115,15 @@ public class FlashcardDetailFrag extends Fragment{
             Utils.setText(text, pageList.get(position).getText1());
 
             Utils.lazyload(getActivity(), imageView, pageList.get(position).getImage1());
+            Utils.lazyload(getActivity(), imageFooter, pageList.get(position).getImagefooter1());
+
         }else {
             String[] texts = pageList.get(position).getText2().split(Constants.SPLIT_DELIMITER);
             Utils.setText(name, pageList.get(position).getName());
             Utils.setText(description, pageList.get(position).getDescription());
             Utils.setText(text, Utils.getTempStringNewLine(texts));
             Utils.lazyload(getActivity(), imageView, pageList.get(position).getImage2());
+            Utils.lazyload(getActivity(), imageFooter, pageList.get(position).getImagefooter2());
         }
 
         return view;

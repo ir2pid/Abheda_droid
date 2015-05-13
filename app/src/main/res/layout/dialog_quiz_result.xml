@@ -2,8 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="150dp"
-    android:layout_height="150dp"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:gravity="center"
     android:visibility="visible"
     android:background="@drawable/button_disabled">
@@ -16,7 +16,8 @@
         app:cb_color="@color/button_green"
         app:cb_pressedRingWidth="8dip"
         android:visibility="visible"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true" />
 
     <at.markushi.ui.CircleButton
         android:id="@+id/circleButton2"
@@ -26,6 +27,44 @@
         app:cb_color="@color/button_red"
         app:cb_pressedRingWidth="8dip"
         android:visibility="invisible"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/question"
+        android:layout_below="@+id/circleButton1"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/button_blue"
+        android:textStyle="normal"
+        android:visibility="gone"
+        android:background="@drawable/cell_background" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/correct"
+        android:layout_below="@+id/question"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/button_green"
+        android:visibility="gone"
+        android:text="Medium Text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/wrong"
+        android:layout_below="@+id/correct"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/button_red"
+        android:textStyle="italic"
+        android:visibility="gone" />
 
 </RelativeLayout>

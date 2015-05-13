@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/question"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/background_shape_blue_translucent"
+                android:background="@drawable/cell_background"
                 android:padding="5dp"
                 android:layout_margin="5dp">
 
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linearLayout1"
                 android:gravity="center"
-                android:background="@drawable/background_shape_blue_translucent"
+                android:background="@drawable/cell_background"
                 android:padding="5dp"
                 android:layout_margin="5dp"
                 android:weightSum="7">

@@ -38,6 +38,7 @@ import com.github.lzyzsd.circleprogress.DonutProgress;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.control.CircleTransform;
 import com.noisyninja.abheda_droid.control.FlipAnimation;
 import com.noisyninja.abheda_droid.control.quickaction.ActionItem;
 import com.noisyninja.abheda_droid.control.quickaction.QuickAction;
@@ -175,6 +176,10 @@ public class Utils {
     }
 
     public static void showResult(Context context, boolean value) {
+        showResult(context, value, null, null, null);
+    }
+
+    public static void showResult(Context context, boolean state,String sQuestion, String sCorrect, String sWrong ) {
         // custom dialog
         final Dialog dialog = new Dialog(context);//, R.style.TransparentDialog
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -185,8 +190,11 @@ public class Utils {
         // set the custom dialog components - button
         CircleButton buttonModule1 = (CircleButton) dialog.findViewById(R.id.circleButton1);
         CircleButton buttonModule2 = (CircleButton) dialog.findViewById(R.id.circleButton2);
+        TextView question = (TextView) dialog.findViewById(R.id.question);
+        TextView correct = (TextView) dialog.findViewById(R.id.correct);
+        TextView wrong = (TextView) dialog.findViewById(R.id.wrong);
 
-        if (value) {
+        if (state) {
             Utils.playSound(context, Constants.Sound.RIGHT);
             buttonModule1.setVisibility(View.VISIBLE);
             buttonModule2.setVisibility(View.INVISIBLE);
@@ -196,9 +204,23 @@ public class Utils {
             buttonModule2.setVisibility(View.VISIBLE);
         }
 
+        if(sQuestion!=null)
+        {
+            Utils.setText(question, sQuestion);
+            question.setVisibility(View.VISIBLE);
+        }
+        if(sCorrect!=null)
+        {
+            Utils.setText(correct, sCorrect);
+            correct.setVisibility(View.VISIBLE);
+        }
+        if(sWrong!=null)
+        {
+            Utils.setText(wrong, sWrong);
+            wrong.setVisibility(View.VISIBLE);
+        }
         dialog.show();
     }
-
     public static void showInstriction(Context context) {
         // custom dialog
         final Dialog dialog = new Dialog(context);//, R.style.TransparentDialog
@@ -541,6 +563,18 @@ public class Utils {
                 .into(toview);
     }*/
 
+    public static void glideLoadRounded(Context context, ImageView view, String url)
+    {
+        Glide.with(context)
+                .load(url)
+                .transform(new CircleTransform(context))
+                .sizeMultiplier(1.0f)//fitCenter()
+                .placeholder(R.drawable.placeholder)
+                .crossFade()
+                .animate(new FlipAnimation(view, view))
+                .into(view);
+    }
+    
     public static void glideLoad(Context context, ImageView view, String url)
     {
         Glide.with(context)

@@ -8,7 +8,9 @@ public class Page extends BasePojo {
     String name;
     String description;
     String image1;
+    String imagefooter1;
     String image2;
+    String imagefooter2;
     String utext1;
     String utext2;
     String dtext1;
@@ -19,6 +21,22 @@ public class Page extends BasePojo {
     String rtext2;
     String text1;
     String text2;
+
+    public String getImagefooter1() {
+        return imagefooter1;
+    }
+
+    public void setImagefooter1(String imagefooter1) {
+        this.imagefooter1 = imagefooter1;
+    }
+
+    public String getImagefooter2() {
+        return imagefooter2;
+    }
+
+    public void setImagefooter2(String imagefooter2) {
+        this.imagefooter2 = imagefooter2;
+    }
 
     public String getName() {
         return name;

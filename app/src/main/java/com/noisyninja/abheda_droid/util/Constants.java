@@ -42,6 +42,9 @@ public class Constants {
     public static int MODULE_ID = 0;//BCP 1
     public static int LESSON_QUIZ_ID = 0; //Lesson 1
 
+    public static String QUESTION = "Q:";
+    public static String CORRECT = "✓";// ✓,✔, ☑,
+    public static String WRONG = "✘";//✖,x, ×, X, ✕, ☓, ✖, ✗, ✘,☒
     public static String SPLIT_DELIMITER = "@";
     public static String NEWLINE = "\n";
     public static String UTF8 = "UTF8";

@@ -39,6 +39,7 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
     int wrong;
     boolean isWrong;
     boolean isPicture;
+    int selectedId;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,10 +79,16 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
             @Override
             public void onClick(View view) {
 
+                /*if(selectedId == -1)
+                {
+                    Utils.playSound(getActivity(), Constants.Sound.WRONG);
+                    return;
+                }*/
+
                 LinearLayout root1 = (LinearLayout)window.findViewById(R.id.root1);
                 LinearLayout root2 = (LinearLayout)window.findViewById(R.id.root2);
                 RadioGroup radioGroup = ((RadioGroup) window.findViewById(R.id.radioGroup));
-                int selectedId = radioGroup.getCheckedRadioButtonId();
+                selectedId = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = (RadioButton) window.findViewById(selectedId);
                 //Utils.makeToast(getActivity(), String.valueOf(idx));
 
@@ -97,7 +104,7 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
                     correct++;
                    // radioButton.setTextColor(Utils.getColor(getActivity(), R.color.button_green));
                    // Utils.makeAnimation(radioButton, Techniques.Tada);
-                    Utils.showResult(getActivity(), true);
+                    Utils.showResult(getActivity(), true, Utils.getTempString(Constants.QUESTION,mcqQuestions.get(progress).getQuestion()), Utils.getTempString(Constants.CORRECT,radioButton.getText().toString()), null);
                     loadQuestions(progress);
                 }
                 else if(radioButton != null && selectedId != -1)
@@ -108,7 +115,29 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
                     Utils.animateFlip(root2, circleButton,circleButton);
                     radioButton.setTextColor(Utils.getColor(getActivity(), R.color.button_red));
                     Utils.makeAnimation(radioButton, Techniques.Shake);
-                    Utils.showResult(getActivity(), false);
+                    String correctAnswer = "";
+                    switch (mcqQuestions.get(progress).getCorrect()){
+                        case 1:{
+                            correctAnswer=mcqQuestions.get(progress).getOption1();
+                            break;
+                        }
+                        case 2:{
+                            correctAnswer=mcqQuestions.get(progress).getOption2();
+                            break;
+                        }
+                        case 3:{
+                            correctAnswer=mcqQuestions.get(progress).getOption3();
+                            break;
+                        }
+                        case 4:{
+                            correctAnswer=mcqQuestions.get(progress).getOption4();
+                            break;
+                        }
+                        default:correctAnswer=Constants.ERROR_INVALID_JSON;
+                    }
+
+                    Utils.showResult(getActivity(), false, Utils.getTempString(Constants.QUESTION,mcqQuestions.get(progress).getQuestion()), Utils.getTempString(Constants.CORRECT,correctAnswer), Utils.getTempString(Constants.WRONG,radioButton.getText().toString()));
+
                     int correct = mcqQuestions.get(progress).getCorrect();
                     int count = radioGroup.getChildCount();
                     for (int i=0;i<count;i++) {
@@ -135,6 +164,7 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
 
     void loadQuestions(int no)
     {
+        selectedId = -1;
         if(mcqQuestions == null)
         {
             Utils.makeToast(getActivity(), Constants.ERROR_INVALID_JSON);
@@ -160,13 +190,13 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
         RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
         RadioButton radioButton3 = ((RadioButton) window.findViewById(R.id.radioButton3));
         RadioButton radioButton4 = ((RadioButton) window.findViewById(R.id.radioButton4));
-        Utils.makeAnimation(textViewQuestion, Techniques.StandUp);
+        /*Utils.makeAnimation(textViewQuestion, Techniques.StandUp);
         Utils.makeAnimation(radioButton1, Techniques.StandUp);
         Utils.makeAnimation(radioButton2, Techniques.StandUp);
         Utils.makeAnimation(radioButton3, Techniques.StandUp);
         Utils.makeAnimation(radioButton4, Techniques.StandUp);
         Utils.makeAnimation(textViewCorrect, Techniques.RubberBand);
-        Utils.makeAnimation(textViewWrong, Techniques.RubberBand);
+        Utils.makeAnimation(textViewWrong, Techniques.RubberBand);*/
 
 
         textViewCorrect.setText(String.valueOf(correct));
@@ -188,6 +218,7 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
         radioButton4.setTextColor(Utils.getColor(getActivity(), R.color.black));
         radioButton4.setChecked(false);
         radioButton4.setEnabled(true);
+
 
     }
 
