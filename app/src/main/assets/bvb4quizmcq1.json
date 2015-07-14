@@ -370,11 +370,11 @@
     "isPicture": false
     },
     {
-    "option1": "The leader said,'Will select me ?' ",
-    "option2": "The leader said, 'Selecting me.'",
-    "option3": "The leader said, 'Selected me.' ",
-    "option4": "The leader said, 'Select me.' ",
-    "question": "নেতাটি বললেন,'আমায় নির্বাচিত করুন' ",
+    "option1": "The leader said,\"Will select me\" ?",
+    "option2": "The leader said, \"Selecting me\".",
+    "option3": "The leader said, \"Selected me\".",
+    "option4": "The leader said, \"Select me\". ",
+    "question": "নেতাটি বললেন,\"আমায় নির্বাচিত করুন\"",
     "correct": 4,
     "isPicture": false
     },

@@ -2,7 +2,6 @@ package com.noisyninja.abheda_droid.fragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,10 +28,11 @@ import at.markushi.ui.CircleButton;
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class MCQDetailFrag extends Fragment implements IDialogCallback{
+public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
 
     View window;
     ScrollView scrollView;
+    BaseFragment fragment;
     List<MCQQuestion> mcqQuestions;
     int progress;
     int correct;
@@ -40,9 +40,16 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
     boolean isWrong;
     boolean isPicture;
     int selectedId;
+    enum STATES{
+        NORMAL,
+        LAST
+    }
+    STATES states;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fragment = this;
+        states = STATES.NORMAL;
         progress = -1;
         correct = 0;
         wrong = 0;
@@ -85,73 +92,82 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
                     return;
                 }*/
 
-                LinearLayout root1 = (LinearLayout)window.findViewById(R.id.root1);
-                LinearLayout root2 = (LinearLayout)window.findViewById(R.id.root2);
+                LinearLayout root1 = (LinearLayout) window.findViewById(R.id.root1);
+                LinearLayout root2 = (LinearLayout) window.findViewById(R.id.root2);
                 RadioGroup radioGroup = ((RadioGroup) window.findViewById(R.id.radioGroup));
                 selectedId = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = (RadioButton) window.findViewById(selectedId);
                 //Utils.makeToast(getActivity(), String.valueOf(idx));
 
-                if(isWrong)
-                {
+                if (isWrong) {
                     isWrong = false;
+                    radioGroup.clearCheck();
                     loadQuestions(progress);
-                }
-                else if(radioButton != null && Integer.valueOf(radioButton.getTag().toString()) == mcqQuestions.get(progress).getCorrect())
-                {
-                    CircleButton circleButton = (CircleButton)  window.findViewById(R.id.correct_button);
-                    Utils.animateFlip(root1, circleButton, circleButton);
+                } else if (radioButton != null && Integer.valueOf(radioButton.getTag().toString()) == mcqQuestions.get(progress).getCorrect()) {
+
                     correct++;
-                   // radioButton.setTextColor(Utils.getColor(getActivity(), R.color.button_green));
-                   // Utils.makeAnimation(radioButton, Techniques.Tada);
-                    Utils.showResult(getActivity(), true, Utils.getTempString(Constants.QUESTION,mcqQuestions.get(progress).getQuestion()), Utils.getTempString(Constants.CORRECT,radioButton.getText().toString()), null);
-                    loadQuestions(progress);
-                }
-                else if(radioButton != null && selectedId != -1)
-                {
-                    wrong++;
+                    radioGroup.clearCheck();
+                    CircleButton circleButton = (CircleButton) window.findViewById(R.id.correct_button);
+                    Utils.animateFlip(root1, circleButton, circleButton);
+
+                    TextView textViewCorrect = ((TextView) window.findViewById(R.id.correctno));
+                    textViewCorrect.setText(""+correct);
+
+                    Utils.showResult(getActivity(), true, Utils.getTempString(Constants.QUESTION, mcqQuestions.get(progress).getQuestion()), Utils.getTempString(Constants.CORRECT, radioButton.getText().toString()), null, fragment);
+
+                } else if (radioButton != null && selectedId != -1) {
                     isWrong = true;
-                    CircleButton circleButton = (CircleButton)  window.findViewById(R.id.wrong_button);
-                    Utils.animateFlip(root2, circleButton,circleButton);
-                    radioButton.setTextColor(Utils.getColor(getActivity(), R.color.button_red));
+                    wrong++;
+                    CircleButton circleButton = (CircleButton) window.findViewById(R.id.wrong_button);
+                    Utils.animateFlip(root2, circleButton, circleButton);
+
+                    TextView textViewWrong = ((TextView) window.findViewById(R.id.wrongno));
+                    textViewWrong.setText("" + wrong);
+
+                    Button submit = (Button) window.findViewById(R.id.button);
+                    submit.setText(Utils.getStringResource(getActivity(), R.string.next));
+
+                    radioButton.setTextColor(Utils.getColorResource(getActivity(), R.color.button_red));
                     Utils.makeAnimation(radioButton, Techniques.Shake);
                     String correctAnswer = "";
-                    switch (mcqQuestions.get(progress).getCorrect()){
-                        case 1:{
-                            correctAnswer=mcqQuestions.get(progress).getOption1();
+                    switch (mcqQuestions.get(progress).getCorrect()) {
+                        case 1: {
+                            correctAnswer = mcqQuestions.get(progress).getOption1();
                             break;
                         }
-                        case 2:{
-                            correctAnswer=mcqQuestions.get(progress).getOption2();
+                        case 2: {
+                            correctAnswer = mcqQuestions.get(progress).getOption2();
                             break;
                         }
-                        case 3:{
-                            correctAnswer=mcqQuestions.get(progress).getOption3();
+                        case 3: {
+                            correctAnswer = mcqQuestions.get(progress).getOption3();
                             break;
                         }
-                        case 4:{
-                            correctAnswer=mcqQuestions.get(progress).getOption4();
+                        case 4: {
+                            correctAnswer = mcqQuestions.get(progress).getOption4();
                             break;
                         }
-                        default:correctAnswer=Constants.ERROR_INVALID_JSON;
+                        default:
+                            correctAnswer = Constants.ERROR_INVALID_JSON;
                     }
 
-                    Utils.showResult(getActivity(), false, Utils.getTempString(Constants.QUESTION,mcqQuestions.get(progress).getQuestion()), Utils.getTempString(Constants.CORRECT,correctAnswer), Utils.getTempString(Constants.WRONG,radioButton.getText().toString()));
+                    Utils.showResult(getActivity(), false, Utils.getTempString(Constants.QUESTION, mcqQuestions.get(progress).getQuestion()), Utils.getTempString(Constants.CORRECT, correctAnswer), Utils.getTempString(Constants.WRONG, radioButton.getText().toString()));
 
                     int correct = mcqQuestions.get(progress).getCorrect();
                     int count = radioGroup.getChildCount();
-                    for (int i=0;i<count;i++) {
+                    for (int i = 0; i < count; i++) {
                         View o = radioGroup.getChildAt(i);
 
-                        if (o instanceof RadioButton){
+                        if (o instanceof RadioButton) {
                             RadioButton r = (RadioButton) o;
                             r.setEnabled(false);
                             if (Integer.valueOf(o.getTag().toString()) == correct) {
-                                r.setTextColor(Utils.getColor(getActivity(), R.color.button_green));
+                                r.setTextColor(Utils.getColorResource(getActivity(), R.color.button_green));
                                 Utils.makeAnimation(r, Techniques.Tada);
                                 radioGroup.check(r.getId());
 
-                            }}
+                            }
+                        }
                     }
                 }
             }
@@ -177,6 +193,7 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
         }
         else
         {
+                states = STATES.LAST;
                Utils.showDialog(this, Constants.QUIZ_COMPLETED_TEXT, correct+" correct of "+(correct+wrong), true);
         }
 
@@ -184,49 +201,49 @@ public class MCQDetailFrag extends Fragment implements IDialogCallback{
         RadioGroup radioGroup = (RadioGroup) window.findViewById(R.id.radioGroup);
 
         TextView textViewQuestion  = ((TextView) window.findViewById(R.id.question));
-        TextView textViewCorrect  = ((TextView) window.findViewById(R.id.correct));
-        TextView textViewWrong = ((TextView) window.findViewById(R.id.wrong));
         RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
         RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
         RadioButton radioButton3 = ((RadioButton) window.findViewById(R.id.radioButton3));
         RadioButton radioButton4 = ((RadioButton) window.findViewById(R.id.radioButton4));
-        /*Utils.makeAnimation(textViewQuestion, Techniques.StandUp);
-        Utils.makeAnimation(radioButton1, Techniques.StandUp);
-        Utils.makeAnimation(radioButton2, Techniques.StandUp);
-        Utils.makeAnimation(radioButton3, Techniques.StandUp);
-        Utils.makeAnimation(radioButton4, Techniques.StandUp);
-        Utils.makeAnimation(textViewCorrect, Techniques.RubberBand);
-        Utils.makeAnimation(textViewWrong, Techniques.RubberBand);*/
+        Button submit = (Button) window.findViewById(R.id.button);
 
-
-        textViewCorrect.setText(String.valueOf(correct));
-        textViewWrong.setText(String.valueOf(wrong));
         textViewQuestion.setText((no + 1) + "/" + mcqQuestions.size() + ") " + mcqQuestions.get(no).getQuestion());
         radioButton1.setText(mcqQuestions.get(no).getOption1());
-        radioButton1.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton1.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton1.setChecked(false);
         radioButton1.setEnabled(true);
         radioButton2.setText(mcqQuestions.get(no).getOption2());
-        radioButton2.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton2.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton2.setChecked(false);
         radioButton2.setEnabled(true);
         radioButton3.setText(mcqQuestions.get(no).getOption3());
-        radioButton3.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton3.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton3.setChecked(false);
         radioButton3.setEnabled(true);
         radioButton4.setText(mcqQuestions.get(no).getOption4());
-        radioButton4.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton4.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton4.setChecked(false);
         radioButton4.setEnabled(true);
-
+        submit.setText(Utils.getStringResource(getActivity(), R.string.submit));
 
     }
 
     @Override
     public void ok(DialogInterface dialog){
 
-        Utils.backPress(getActivity());
-        dialog.dismiss();
+        // Utils.backPress(getActivity());
+        switch (states){
+            case NORMAL:{
+                loadQuestions(progress);
+                break;
+            }
+            case LAST:{
+                dialog.dismiss();
+                Utils.showReview(getActivity());
+                break;
+            }
+        }
+
     }
     @Override
     public void cancel(DialogInterface dialog){

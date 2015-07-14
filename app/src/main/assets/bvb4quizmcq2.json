@@ -45,11 +45,11 @@
     "isPicture": false
     },
     {
-    "option1": "Mother said,'Show me your face.' ",
-    "option2": "Mother said,'Showing me your face.'",
-    "option3": "Mother said,'Showed me your face.'",
-    "option4": "Mother said,'Can you show me your face.'",
-    "question": "মা বললো ,'আমায় তোমার মুখ দেখাও' ",
+    "option1": "Mother said,\"Show me your face\".",
+    "option2": "Mother said,\"Showing me your face\".",
+    "option3": "Mother said,\"Showed me your face\".",
+    "option4": "Mother said,\"Can you show me your face\".",
+    "question": "মা বললো ,\"আমায় তোমার মুখ দেখাও\"",
     "correct": 1,
     "isPicture": false
     },
@@ -108,7 +108,7 @@
     "isPicture": false
     },
     {
-    "option1": "Wait, you will see.Wait, you will see.",
+    "option1": "Wait, you will see.",
     "option2": "Waiting , you will see.",
     "option3": "Wait, you  see.",
     "option4": "Wait, you seeing.",
@@ -126,12 +126,12 @@
     "isPicture": false
     },
     {
-    "option1": "Wait, you will see.",
-    "option2": "Waiting , you will see.",
-    "option3": "Wait, you  see.",
-    "option4": "Wait, you seeing.",
-    "question": "অপেক্ষা করো, দেখতে পাবে",
-    "correct": 1,
+    "option1": "Can you not waited for me ?",
+    "option2": "Can you not waiting for me ?",
+    "option3": "Can you not wait for me ?",
+    "option4": "Can you not be waiting for me ?",
+    "question": "তুমি কি আমার জন্য অপেক্ষা করতে পারবে না ?",
+    "correct": 3,
     "isPicture": false
     },
     {
@@ -144,11 +144,11 @@
     "isPicture": false
     },
     {
-    "option1": "The father said,'Saved  for future.' ",
-    "option2": "The father said,'Save for future.' ",
-    "option3": "The father said, 'Saving for future.'",
-    "option4": "The father said, 'Saving in future.'",
-    "question": "বাবা বললেন,'ভবিষ্যতের জন্য জমাও' ",
+    "option1": "The father said, \"Saved  for future\".",
+    "option2": "The father said, \"Save for future\".",
+    "option3": "The father said, \"Saving for future\".",
+    "option4": "The father said, \"Saving in future\".",
+    "question": "বাবা বললেন,\"ভবিষ্যতের জন্য জমাও\"",
     "correct": 2,
     "isPicture": false
     },
@@ -234,7 +234,7 @@
     "isPicture": false
     },
     {
-    "option1": "Kabita has changed her mind.",
+    "option1": "Kabita had changed her mind.",
     "option2": "Kabita has change her mind.",
     "option3": "Kabita has changed her mind.",
     "option4": "Kabita was changed her mind.",
@@ -393,6 +393,15 @@
     "option4": "Turned  the tv on.",
     "question": "টিভিটা চালিয়ে দাও",
     "correct": 1,
+    "isPicture": false
+    },
+    {
+    "option1": "Irfan has tried for turn people against Arjun.",
+    "option2": "Irfan tried to turning people against Arjun.",
+    "option3": "Irfan has tried to turned people against Arjun.",
+    "option4": "Irfan tried to turn people against Arjun.",
+    "question": "ইরফান চেষ্টা করেছিলো জনগণকে অর্জুনের বিরুদ্ধে নিতে",
+    "correct": 4,
     "isPicture": false
     },
     {

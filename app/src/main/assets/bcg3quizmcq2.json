@@ -58,7 +58,7 @@
     "option2": "We had to go.",
     "option3": "We had going.",
     "option4": "We had gone.",
-    "question": "আমরা গিয়েছিলাম",
+    "question": "আমরা গেলাম",
     "correct": 4,
     "isPicture": false
     },
@@ -67,7 +67,7 @@
     "option2": "Had we been gone ?",
     "option3": "Had we gone ?",
     "option4": "Had we went ?",
-    "question": "আমরা কি গিয়েছিলাম ?",
+    "question": "আমরা কি গেলাম ?",
     "correct": 3,
     "isPicture": false
     },
@@ -148,7 +148,7 @@
     "option2": "We cannot but go.",
     "option3": "We cannot be go.",
     "option4": "We cannot had go.",
-    "question": "আমরা না গিয়ে পারলাম না",
+    "question": "আমরা না গিয়ে পারি না",
     "correct": 2,
     "isPicture": false
     },
@@ -157,7 +157,7 @@
     "option2": "We cannot help go.",
     "option3": "We cannot be going.",
     "option4": "We cannot help gone.",
-    "question": "আমরা না গিয়ে পারলাম না",
+    "question": "আমরা না গিয়ে পারি না",
     "correct": 1,
     "isPicture": false
     }

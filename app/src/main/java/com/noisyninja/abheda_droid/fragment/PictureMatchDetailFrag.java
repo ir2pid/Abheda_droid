@@ -2,6 +2,7 @@ package com.noisyninja.abheda_droid.fragment;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.DragEvent;
@@ -12,12 +13,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuestion;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.IDialogCallback;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ import java.util.Map;
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class PictureMatchDetailFrag extends Fragment implements View.OnTouchListener, View.OnDragListener  {
+public class PictureMatchDetailFrag extends Fragment implements View.OnTouchListener, View.OnDragListener, IDialogCallback {
 
     View window;
     Context context;
@@ -44,17 +45,27 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     ImageView imageView3;
     ImageView imageView4;
     int progress;
-
+    int correct;
+    int wrong;
+    int completedMatches;
+    Fragment fragment;
     ArrayList<Button> buttonArrayList;
     ArrayList<ImageView> imageViewArrayList;
     List<PictureMatchQuestion> pictureMatchQuestions;
     HashMap<String, String> map;
-
+    enum STATES{
+        NORMAL,
+        LAST
+    }
+    STATES states;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getActivity();
+        fragment = this;
         progress = 0;
+        correct = 0;
+        wrong = 0;
         if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
 
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
@@ -118,15 +129,18 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(progress < pictureMatchQuestions.size()-1)
+                if(progress < pictureMatchQuestions.size()-1 && completedMatches == 4)
                 {
+                    states = STATES.NORMAL;
                     progress++;
+                    loadQuestions();
                 }
-                else
-                {
-                    Utils.backPress(getActivity());
+                else if(completedMatches<4) {
+                    Utils.showDialog(fragment, Constants.ERROR, Constants.ERROR_INCOMPLETE, true);
+                }else {
+                    states = STATES.LAST;
+                    Utils.showDialog(fragment, Constants.QUIZ_COMPLETED_TEXT, correct+" correct of "+(correct+wrong), true);
                 }
-                loadQuestions();
             }
         });
         loadQuestions();
@@ -136,13 +150,41 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
 
     void loadQuestions()
     {
-        textViewQuestionNo.setText("Q: "+progress+"/"+pictureMatchQuestions.size());
+        completedMatches = 0;
+
+        View correctIndicator11 = (View) window.findViewById(R.id.circleButton11);
+        View correctIndicator21 = (View) window.findViewById(R.id.circleButton21);
+        View correctIndicator31 = (View) window.findViewById(R.id.circleButton31);
+        View correctIndicator41 = (View) window.findViewById(R.id.circleButton41);
+        View correctIndicator12 = (View) window.findViewById(R.id.circleButton11);
+        View correctIndicator22 = (View) window.findViewById(R.id.circleButton21);
+        View correctIndicator32 = (View) window.findViewById(R.id.circleButton31);
+        View correctIndicator42 = (View) window.findViewById(R.id.circleButton41);
+
+        correctIndicator11.setVisibility(View.INVISIBLE);
+        correctIndicator21.setVisibility(View.INVISIBLE);
+        correctIndicator31.setVisibility(View.INVISIBLE);
+        correctIndicator41.setVisibility(View.INVISIBLE);
+        correctIndicator12.setVisibility(View.INVISIBLE);
+        correctIndicator22.setVisibility(View.INVISIBLE);
+        correctIndicator32.setVisibility(View.INVISIBLE);
+        correctIndicator42.setVisibility(View.INVISIBLE);
+
+        buttonNext.setEnabled(false);
+        textViewQuestionNo.setText("Q: "+(progress+1)+"/"+pictureMatchQuestions.size());
         int i = 0;
         for(Map.Entry<String, String> entry : pictureMatchQuestions.get(progress).getWords().entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            buttonArrayList.get(i).setText(value);
+            if(value == null || value.compareTo(Constants.BLANK)==0){
+                completedMatches++;
+                buttonArrayList.get(i).setVisibility(View.GONE);
+            }else {
+                buttonArrayList.get(i).setText(value);
+                buttonArrayList.get(i).setVisibility(View.VISIBLE);
+            }
             Utils.lazyload(getActivity(), imageViewArrayList.get(i), key);
+            imageViewArrayList.get(i).setBackgroundResource(R.drawable.button_white_enabled);
             i++;
         }
     }
@@ -150,8 +192,8 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     @Override
     public boolean onTouch(View v, MotionEvent arg1) {
         // TODO Auto-generated method stub
-        ClipData data = ClipData.newPlainText(String.valueOf(v.getId()), map.get(String.valueOf(v.getId())));
-        View.DragShadowBuilder shadow = new View.DragShadowBuilder(button1);
+        ClipData data = ClipData.newPlainText(String.valueOf(v.getId()),String.valueOf(v.getId()));//map.get(String.valueOf(v.getId())));
+        View.DragShadowBuilder shadow = new View.DragShadowBuilder(v);
         v.startDrag(data, shadow, null, 0);
         return false;
     }
@@ -170,12 +212,20 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             case DragEvent.ACTION_DRAG_ENTERED:
                 break;
             case DragEvent.ACTION_DROP:{
-                if(v.getId() == Integer.valueOf(data.getItemAt(0).getText().toString())) {
+                String imageStringId = data.getItemAt(0).getText().toString();
+                int imageId = Integer.valueOf(map.get(imageStringId));
+                if(v.getId() == Integer.valueOf(imageId)){
 
-                    Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
+                    int buttonId = Integer.valueOf(imageStringId);
+                    Button button = (Button)window.findViewById(buttonId);
+                    button.setEnabled(false);
+                    v.setBackgroundResource(R.drawable.button_green_enabled);
+                    correct++;
+                    //Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
                     Utils.playSound(getActivity(), Constants.Sound.RIGHT);
                     switch (v.getId()) {
                         case R.id.imageView1: {
+                            completedMatches++;
                             View rootLayout = (View) window.findViewById(R.id.frameLayout1);
                             View cardFace = (View) window.findViewById(R.id.imageView1);
                             View cardBack = (View) window.findViewById(R.id.circleButton11);
@@ -183,6 +233,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                             break;
                         }
                         case R.id.imageView2: {
+                            completedMatches++;
                             View rootLayout = (View) window.findViewById(R.id.frameLayout2);
                             View cardFace = (View) window.findViewById(R.id.imageView2);
                             View cardBack = (View) window.findViewById(R.id.circleButton21);
@@ -190,6 +241,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                             break;
                         }
                         case R.id.imageView3: {
+                            completedMatches++;
                             View rootLayout = (View) window.findViewById(R.id.frameLayout3);
                             View cardFace = (View) window.findViewById(R.id.imageView3);
                             View cardBack = (View) window.findViewById(R.id.circleButton31);
@@ -197,18 +249,61 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                             break;
                         }
                         case R.id.imageView4: {
+                            completedMatches++;
                             View rootLayout = (View) window.findViewById(R.id.frameLayout4);
                             View cardFace = (View) window.findViewById(R.id.imageView4);
                             View cardBack = (View) window.findViewById(R.id.circleButton41);
                             Utils.animateFlip(rootLayout, cardFace, cardBack);
                             break;
                         }
+
                     }
                 }
                 else {
-                    Utils.showResult(getActivity(), false);
-                }
 
+                    int buttonId = Integer.valueOf(imageStringId);
+                    Button button = (Button)window.findViewById(buttonId);
+                    button.setEnabled(false);
+                    v.setBackgroundResource(R.drawable.button_green_enabled);
+                    wrong++;
+                    Utils.playSound(getActivity(), Constants.Sound.WRONG);
+                    switch (v.getId()) {
+                        case R.id.imageView1: {
+                            completedMatches++;
+                            View rootLayout = (View) window.findViewById(R.id.frameLayout1);
+                            View cardFace = (View) window.findViewById(R.id.imageView1);
+                            View cardBack = (View) window.findViewById(R.id.circleButton12);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
+                            break;
+                        }
+                        case R.id.imageView2: {
+                            completedMatches++;
+                            View rootLayout = (View) window.findViewById(R.id.frameLayout2);
+                            View cardFace = (View) window.findViewById(R.id.imageView2);
+                            View cardBack = (View) window.findViewById(R.id.circleButton22);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
+                            break;
+                        }
+                        case R.id.imageView3: {
+                            completedMatches++;
+                            View rootLayout = (View) window.findViewById(R.id.frameLayout3);
+                            View cardFace = (View) window.findViewById(R.id.imageView3);
+                            View cardBack = (View) window.findViewById(R.id.circleButton32);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
+                            break;
+                        }
+                        case R.id.imageView4: {
+                            completedMatches++;
+                            View rootLayout = (View) window.findViewById(R.id.frameLayout4);
+                            View cardFace = (View) window.findViewById(R.id.imageView4);
+                            View cardBack = (View) window.findViewById(R.id.circleButton42);
+                            Utils.animateFlip(rootLayout, cardFace, cardBack);
+                            break;
+                        }
+                    }
+                }
+                if(completedMatches == 4)
+                    buttonNext.setEnabled(true);
 
                 return(true);
             }
@@ -222,4 +317,15 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     }
 
 
+    @Override
+    public void ok(DialogInterface dialog) {
+        if(states.compareTo(STATES.LAST)==0){
+        Utils.backPress(getActivity());
+        }
+    }
+
+    @Override
+    public void cancel(DialogInterface dialog) {
+
+    }
 }

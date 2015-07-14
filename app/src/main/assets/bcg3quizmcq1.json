@@ -58,7 +58,7 @@
     "option2": "I had gone.",
     "option3": "I was gone.",
     "option4": "I had been gone.",
-    "question": "আমি গিয়েছিলাম",
+    "question": "আমি গেলাম",
     "correct": 2,
     "isPicture": false
     },
@@ -67,7 +67,7 @@
     "option2": "Had I gone ?",
     "option3": "Had I went ?",
     "option4": "Have I gone ?",
-    "question": "আমি কি গিয়েছিলাম ?",
+    "question": "আমি কি গেলাম ?",
     "correct": 2,
     "isPicture": false
     },
@@ -144,20 +144,20 @@
     "isPicture": false
     },
     {
-    "option1": "I cannot but going.",
-    "option2": "I cannot but to go.",
-    "option3": "I cannot but goes.",
-    "option4": "I cannot but go.",
-    "question": "আমি না গিয়ে পারলাম না",
+    "option1": "I can not but going.",
+    "option2": "I can not but to go.",
+    "option3": "I can not but goes.",
+    "option4": "I can not but go.",
+    "question": "আমি না গিয়ে পারি না",
     "correct": 4,
     "isPicture": false
     },
     {
-    "option1": "I cannot help go.",
-    "option2": "I cannot help going.",
-    "option3": "I cannot helped going.",
+    "option1": "I can not help go.",
+    "option2": "I can not help going.",
+    "option3": "I can not helped going.",
     "option4": "I could not help going.",
-    "question": "আমি না গিয়ে পারলাম না",
+    "question": "আমি না গিয়ে পারি না",
     "correct": 2,
     "isPicture": false
     }

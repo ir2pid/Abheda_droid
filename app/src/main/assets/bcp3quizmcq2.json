@@ -13,7 +13,7 @@
     "option2": "I had breakfast at 7 AM in the morning.",
     "option3": "I had breakfast at 7 AM.",
     "option4": "I had the breakfast at 7 AM.",
-    "question": "He has not love for her.",
+    "question": "আমি সকাল ৭টায় প্রাতঃরাশ নিয়েছিলাম",
     "correct": 3,
     "isPicture": false
     },
@@ -171,10 +171,10 @@
     "isPicture": false
     },
      {
-    "option1": "Does the poor people not have any money ?",
-    "option2": "Do the poor people not have no money ?",
-    "option3": "Do the poor people not have any money ?",
-    "option4": "Not the poor people have no money ?",
+    "option1": "Does poor people not have any money ?",
+    "option2": "Do poor people not have no money ?",
+    "option3": "Do poor people not have any money ?",
+    "option4": "Not poor people have no money ?",
     "question": "গরীব লোকেদের কি কোন টাকা নেই ?",
     "correct": 3,
     "isPicture": false

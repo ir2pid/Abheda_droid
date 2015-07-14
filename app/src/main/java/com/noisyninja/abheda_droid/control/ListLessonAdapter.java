@@ -70,6 +70,12 @@ public class ListLessonAdapter  extends ArrayAdapter<ListLessonItem> {
             case ORDER_GAME_QUIZ:
                 relativeLayout.setBackgroundResource(R.drawable.background_shape_red);
                 break;
+            case SIMPLE_QUIZ:
+                relativeLayout.setBackgroundResource(R.drawable.background_shape_blue);
+                break;
+            default:
+                relativeLayout.setBackgroundResource(R.drawable.background_shape_lime);
+
         }
         /*viewHolder.ivIcon.setImageDrawable(item.icon);
 

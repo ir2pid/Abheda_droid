@@ -1,8 +1,8 @@
 package com.noisyninja.abheda_droid.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +17,7 @@ import com.noisyninja.abheda_droid.pojo.OrderGameQuestion;
 import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
 import com.noisyninja.abheda_droid.pojo.misc.IntegerStringPair;
 import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.IDialogCallback;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import java.util.List;
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class OrderGameDetailFragNew extends Fragment implements View.OnClickListener{
+public class OrderGameDetailFragNew extends BaseFragment implements View.OnClickListener, IDialogCallback{
 
     View window;
     Context context;
@@ -41,13 +42,24 @@ public class OrderGameDetailFragNew extends Fragment implements View.OnClickList
     GridViewAdapter gridViewAdapter1;
     GridViewAdapter gridViewAdapter2;
     int progress;
+    int correct;
+    int wrong;
+    enum STATE{
+        NORMAL,
+        RESULT,
+        LAST_RESULT,
+        END_QUIZ,
+        NO_SELECTION
+    };
+    STATE state;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getActivity();
         progress = 0;
-
+        state = STATE.NORMAL;
         if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
@@ -81,20 +93,30 @@ public class OrderGameDetailFragNew extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View view){
+        if(wordsSelected.size()<1){
+            state = STATE.NO_SELECTION;
+            Utils.showDialog(this,Constants.ERROR,Constants.ERROR_NO_SELECTION,true);
+            return;
+        }
         switch (view.getId()){
             case R.id.submit:{
-                if(progress<orderGameQuestions.size()-1)
-                {
-                    checkAnswers();
+
+
+                    state = STATE.RESULT;
+                progress++;
+                    if(checkAnswers())
                     {
-                        setupQuestion(++progress);
-                        gridViewAdapter1.notifyDataSetChanged();
-                        gridViewAdapter2.notifyDataSetInvalidated();
+                        correct++;
+                    }else {
+                        wrong++;
                     }
+                    if(progress<orderGameQuestions.size())
+                    {
+                    setupQuestion(progress);
+                    gridViewAdapter1.notifyDataSetChanged();
+                    gridViewAdapter2.notifyDataSetInvalidated();
                 }
-                else{
-                    checkAnswers();
-                }
+
                 break;
             }
         }
@@ -102,8 +124,9 @@ public class OrderGameDetailFragNew extends Fragment implements View.OnClickList
 
 
     private ArrayList<IntegerStringPair> setupQuestion(int questionNo){
+        Utils.buttonDeactivate(buttonSubmit);
         orderGameQuestion = orderGameQuestions.get(questionNo);
-        textViewQuestion.setText(orderGameQuestion.getQuestion());
+        textViewQuestion.setText("("+(questionNo+1)+"/"+orderGameQuestions.size()+") "+orderGameQuestion.getQuestion());
         Utils.makeToast(context, orderGameQuestion.getAnswers().toString());
         wordsList = Utils.map2IntegerStringPairList(orderGameQuestion.getWords());
         wordsSelected = new ArrayList<IntegerStringPair>();
@@ -114,7 +137,7 @@ public class OrderGameDetailFragNew extends Fragment implements View.OnClickList
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
+                Utils.buttonActivate(buttonSubmit);
                 IntegerStringPair integerStringPair = wordsList.get(position);
                 wordsSelected.add(integerStringPair);
                 wordsList.remove(integerStringPair);
@@ -129,6 +152,9 @@ public class OrderGameDetailFragNew extends Fragment implements View.OnClickList
                 IntegerStringPair integerStringPair = wordsSelected.get(position);
                 wordsList.add(integerStringPair);
                 wordsSelected.remove(integerStringPair);
+                if(wordsSelected.size()==0){
+                    Utils.buttonDeactivate(buttonSubmit);
+                }
                 refreshAdapters();
             }
         });
@@ -138,34 +164,40 @@ public class OrderGameDetailFragNew extends Fragment implements View.OnClickList
 
     private boolean checkAnswers(){
         ArrayList<ArrayList<Integer>> arrayArrayList = orderGameQuestion.getAnswers();
+        boolean status = false;
+        StringBuffer answer = new StringBuffer();
+        for(IntegerStringPair isp : wordsSelected){
+            answer.append(isp.getS());
+            answer.append(Constants.SPACE);
+        }
 
-        boolean flag = false;
-        for (ArrayList<Integer> arrayList:arrayArrayList){
+        StringBuffer corrects = new StringBuffer();
 
-            for(int i=0; i<arrayList.size() && !flag ; i++){
-
-                if(wordsSelected.size() > i){
-                    if( arrayList.get(i) != wordsSelected.get(i).getI()){
-                        break;
-                    }else{
-                        if(i == wordsSelected.size()-1){
-                            flag = true;
-                        }
-                    }
-                }else {
-                    break;
-                }
-
-
+        for (ArrayList<Integer> arrayList:arrayArrayList) {
+        StringBuffer sb = new StringBuffer();
+            for (Integer i : arrayList) {
+                sb.append(orderGameQuestion.getWords().get(i));
+                sb.append(Constants.SPACE);
             }
-        }
-        if(flag){
-            Utils.showResult(context, true);
-        }else {
-            Utils.showResult(context, false);
+            if(sb.toString().compareTo(answer.toString()) == 0){
+                status = true;
+            }
+            if(corrects.length()<1)//enter first only
+            {
+                corrects.append(sb);
+            }
+
         }
 
-        return flag;
+        String question = orderGameQuestion.getQuestion();
+
+        if(status){
+            Utils.showResult(context, true, question, corrects.toString(), null, this);
+        }else {
+            Utils.showResult(context, false, question, corrects.toString(), answer.toString(), this);
+        }
+
+        return status;
     }
 
     private void refreshAdapters(){
@@ -178,4 +210,37 @@ public class OrderGameDetailFragNew extends Fragment implements View.OnClickList
     }
 
 
+    @Override
+    public void ok(DialogInterface dialog) {
+        switch (state){
+            case NO_SELECTION:{
+                break;
+            }
+            case END_QUIZ:{
+                dialog.dismiss();
+                Utils.showReview(getActivity());
+                break;
+            }
+            case RESULT:{
+
+                if(progress == orderGameQuestions.size()){//HANDLE END OF QUIZ
+                    state = STATE.END_QUIZ;
+                    Utils.showDialog(this, Constants.QUIZ_COMPLETED_TEXT, correct+" correct of "+(correct+wrong), true);
+
+                }
+                break;
+            }
+            case LAST_RESULT:{
+
+            }
+            default:{
+
+            }
+        }
+    }
+
+    @Override
+    public void cancel(DialogInterface dialog) {
+
+    }
 }

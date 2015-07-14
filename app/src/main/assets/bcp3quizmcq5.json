@@ -144,9 +144,9 @@
     "isPicture": false
     },
     {
-    "option1": "I do look like a Monkey ?",
-    "option2": "Does I look like a Monkey ?",
-    "option3": "Do I look like a Monkey ?",
+    "option1": "I do look like a monkey ?",
+    "option2": "Does I look like a monkey ?",
+    "option3": "Do I look like a monkey ?",
     "option4": "Does monkey look like me ?",
     "question": "আমাকে কি বাঁদরের মত দেখতে ?",
     "correct": 3,

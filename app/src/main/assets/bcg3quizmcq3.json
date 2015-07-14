@@ -58,7 +58,7 @@
     "option2": "You had went.",
     "option3": "You had gone.",
     "option4": "You had been gone.",
-    "question": "তুমি গিয়েছিলে",
+    "question": "তুমি গেলে",
     "correct": 3,
     "isPicture": false
     },
@@ -67,7 +67,7 @@
     "option2": "Had you go ?",
     "option3": "Was you gone ?",
     "option4": "Had you went ?",
-    "question": "তুমি কি গিয়েছিলে ?",
+    "question": "তুমি কি গেলে ?",
     "correct": 1,
     "isPicture": false
     },
@@ -148,7 +148,7 @@
     "option2": "You cannot but going.",
     "option3": "You cannot but go.",
     "option4": "You cannot but went.",
-    "question": "তুমি না গিয়ে পারবে না",
+    "question": "তুমি না গিয়ে পারো না",
     "correct": 3,
     "isPicture": false
     },
@@ -157,7 +157,7 @@
     "option2": "You cannot help going.",
     "option3": "You cannot helped going.",
     "option4": "You cannot help go.",
-    "question": "তুমি না গিয়ে পারবে না",
+    "question": "তুমি না গিয়ে পারো না",
     "correct": 2,
     "isPicture": false
     }

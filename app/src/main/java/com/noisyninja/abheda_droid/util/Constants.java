@@ -42,11 +42,20 @@ public class Constants {
     public static int MODULE_ID = 0;//BCP 1
     public static int LESSON_QUIZ_ID = 0; //Lesson 1
 
+
+    public static String HTML_BREAK = "<BR>";
+    public static String HTML_BOLD_PRE = "<B>";
+    public static String HTML_BOLD_POST = "</B>";
+    public static String HTML_ITALICS_PRE = "<I>";
+    public static String HTML_ITALICS_POST = "</I>";
+
+    public static String BLANK = "";
     public static String QUESTION = "Q:";
     public static String CORRECT = "✓";// ✓,✔, ☑,
     public static String WRONG = "✘";//✖,x, ×, X, ✕, ☓, ✖, ✗, ✘,☒
     public static String SPLIT_DELIMITER = "@";
     public static String NEWLINE = "\n";
+    public static String SPACE = " ";
     public static String UTF8 = "UTF8";
     public static String BACKSLASH = "/";
     public static String DRAWABLE = "drawable";
@@ -77,7 +86,9 @@ public class Constants {
         MCQ_QUIZ,
         MCQ_IMAGE_QUIZ,
         PICTURE_MATCH_QUIZ,
-        ORDER_GAME_QUIZ
+        ORDER_GAME_QUIZ,
+        SIMPLE_QUIZ,
+        REVIEW
     }
     public enum PROGRESS_STYLE {
         DETERMINATE,
@@ -102,6 +113,8 @@ public class Constants {
 
     //error
     public static String ERROR = "ERROR:";
+    public static String ERROR_INCOMPLETE = "please complete the question";
+    public static String ERROR_NO_SELECTION = "Please select an answer.";
     public static String ERROR_NO_NETWORK = "NO_NETWORK";
     public static String ERROR_INVALID_JSON = "INVALID_JSON_OR_NOT_FOUND";
     public static String ERROR_FILE_NOT_FOUND = "FILE_NOT_FOUND";

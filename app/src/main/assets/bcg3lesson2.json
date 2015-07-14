@@ -45,14 +45,14 @@
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson2 (7)",
-                        "text1": "আমরা গিয়েছিলাম",
+                        "text1": "আমরা  গেলাম",
                         "text2": "We had gone."
                       },
                        {
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson2 (8)",
-                        "text1": "আমরা কি গিয়েছিলাম ?",
+                        "text1": "আমরা কি  গেলাম ?",
                         "text2": "Had we gone ?"
                       },
                        {
@@ -60,7 +60,7 @@
                         "image1": "",
                         "name": "BCg3-Lesson2 (9)",
                         "text1": "আমরা যেতে পারতাম",
-                        "text2": "We could have gone. \nExample: We said we could have gone. ঘটনাটা ঘটতে পারতো ।"
+                        "text2": "We could have gone. <br> <br>Example: We said we could have gone । ঘটনাটা ঘটতে পারতো, আর আমাদের যাবার ক্ষমতা ছিল ।"
                       },
                        {
                         "description": "",
@@ -74,7 +74,7 @@
                         "image1": "",
                         "name": "BCg3-Lesson2 (11)",
                         "text1": "আমরা যেতে পারতাম",
-                        "text2": "We would have gone. \nExample: Had you told us we would have gone. সম্ভাবনা বোঝাতে ।"
+                        "text2": "We would have gone. <br> <br>Example: Had you told us we would have gone । 'অতীতে সম্ভাবনা বোঝাতে' ।"
                       },
                        {
                         "description": "",
@@ -115,14 +115,14 @@
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson2 (17)",
-                        "text1": "আমরা না গিয়ে পারলাম না",
+                        "text1": "আমরা না গিয়ে পারি না",
                         "text2": "We cannot but go."
                       },
                        {
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson2 (18)",
-                        "text1": "আমরা না গিয়ে পারলাম না",
-                        "text2": "We cannot help going."
+                        "text1": "আমরা না গিয়ে পারি না",
+                        "text2": "We can not help going. <br> <br>দুটোই হয় - We can not but go আর We can not help going ।"
                       }
 ]

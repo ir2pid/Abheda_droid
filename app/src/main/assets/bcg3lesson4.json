@@ -45,14 +45,14 @@
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson4 (7)",
-                        "text1": "সে গিয়েছিল",
+                        "text1": "সে গেল",
                         "text2": "He had gone."
                       },
                        {
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson4 (8)",
-                        "text1": "সে কি গিয়েছিল ?",
+                        "text1": "সে কি গেল ?",
                         "text2": "Had he gone ?"
                       },
                        {
@@ -60,7 +60,7 @@
                         "image1": "",
                         "name": "BCg3-Lesson4 (9)",
                         "text1": "সে যেতে পারতো",
-                        "text2": "He could have gone. \nExample : He said he could have gone. ঘটনাটা ঘটতে পারতো ।"
+                        "text2": "He could have gone. <br> <br>Example : He said he could have gone । ঘটনাটা ঘটতে পারতো, আর তার যাবার ক্ষমতা ছিল ।"
                       },
                        {
                         "description": "",
@@ -74,7 +74,7 @@
                         "image1": "",
                         "name": "BCg3-Lesson4 (11)",
                         "text1": "সে  যেতো",
-                        "text2": "He would have gone. \nExample: Had you told him he would have gone. সম্ভাবনা বোঝাতে ।"
+                        "text2": "He would have gone. <br> <br>Example: Had you told him he would have gone । 'অতীতে সম্ভাবনা বোঝাতে' ।"
                       },
                        {
                         "description": "",
@@ -115,14 +115,14 @@
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson4 (17)",
-                        "text1": "সে না গিয়ে পারলো না",
+                        "text1": "সে না গিয়ে পারে না",
                         "text2": "He cannot but go."
                       },
                        {
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson4 (18)",
-                        "text1": "সে না গিয়ে পারলো না",
-                        "text2": "He cannot help going."
+                        "text1": "সে না গিয়ে পারে না",
+                        "text2": "He can not help going. <br> <br>দুটোই হয় - He can not but go আর He can not help going ।"
                       }
 ]

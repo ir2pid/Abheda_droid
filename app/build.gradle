@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.noisyninja.abheda_droid"
         minSdkVersion 14
-        targetSdkVersion 17
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
     }
@@ -24,20 +24,23 @@ repositories {
     mavenCentral()
     mavenLocal()
     maven { url 'http://clinker.47deg.com/nexus/content/groups/public' }
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.+'
-    compile 'com.google.code.gson:gson:2.2.4'
+    compile "com.android.support:appcompat-v7:21.0.2"
+    compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.github.markushi:circlebutton:1.1'
     compile 'com.github.lzyzsd:circleprogress:1.0.1@aar'
 
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.easing:library:1.0.1@aar'
     compile 'com.daimajia.androidanimations:library:1.1.3@aar'
-    compile 'com.github.bumptech.glide:glide:3.4.+'
-    compile 'com.crittercism:crittercism-android-agent:+'
+    compile 'com.github.bumptech.glide:glide:3.6.0'
+    compile 'com.crittercism:crittercism-android-agent:5.0.6'
+    compile 'com.beardedhen:androidbootstrap:1.2.2'
+    compile 'com.lorentzos.swipecards:library:1.0.9@aar'
     //compile 'net.lingala.zip4j:zip4j:1.2.4'
 
     //compile 'com.squareup.picasso:picasso:2.4.0'

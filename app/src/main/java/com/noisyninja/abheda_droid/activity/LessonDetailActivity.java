@@ -79,6 +79,8 @@ public class LessonDetailActivity extends FragmentActivity {
 
         }
     }
+
+
 /*
  *not available in legacy apps
         @Override

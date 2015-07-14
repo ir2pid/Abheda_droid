@@ -207,21 +207,12 @@
     "isPicture": false
     },
     {
-    "option1": "You  need not going  there.",
-    "option2": "You  need not go there.",
+    "option1": "You need not going there.",
+    "option2": "You need not go there.",
     "option3": "You are need not go there.",
-    "option4": "You  need not going  there.",
+    "option4": "You will need not going there.",
     "question": "তোমার যাবার দরকার নেই",
     "correct": 2,
-    "isPicture": false
-    },
-    {
-    "option1": "Have you really needed the pen ?",
-    "option2": "You really need the pen ?",
-    "option3": "Do you really need the pen ?",
-    "option4": "Need you really the pen ?",
-    "question": "তোমার কি পেনটা দরকার ?",
-    "correct": 3,
     "isPicture": false
     },
     {
@@ -306,11 +297,11 @@
     "isPicture": false
     },
     {
-    "option1": "He told, 'Get me a person, who only loves and does not hate.' ",
-    "option2": "He said, 'Take me a person, who only loves and does not hate.' ",
-    "option3": "He said, 'Get me a person, who only loves and not hates.' ",
-    "option4": "He said, 'Get me a person, who only loves and does not hate.' ",
-    "question": "সে বলল, 'একজন লোক আনতো দেখি যে শুধু ভালবাসে, ঘৃণা করে না' ",
+    "option1": "He told, \"Get me a person, who only loves and does not hate\".",
+    "option2": "He said, \"Take me a person, who only loves and does not hate\".",
+    "option3": "He said, \"Get me a person, who only loves and not hates\".",
+    "option4": "He said, \"Get me a person, who only loves and does not hate\".",
+    "question": "সে বলল, \"একজন লোক আনতো দেখি যে শুধু ভালবাসে, ঘৃণা করে না\"",
     "correct": 4,
     "isPicture": false
     },
@@ -459,6 +450,3 @@
     "isPicture": false
     }
 ]
-
-
-    

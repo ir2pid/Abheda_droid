@@ -19,6 +19,7 @@ import com.noisyninja.abheda_droid.pojo.Module;
 import com.noisyninja.abheda_droid.pojo.OrderGameQuiz;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.pojo.Quizzes;
+import com.noisyninja.abheda_droid.pojo.SimpleQuiz;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 import com.noisyninja.abheda_droid.util.DataStore;
@@ -164,20 +165,35 @@ public class LessonListFrag extends ListFragment {
                 items.add(listLessonItem);
             }}
             if(quizzes.getPictureMatchQuiz()!=null){
-            for (PictureMatchQuiz pictureMatchQuiz : quizzes.getPictureMatchQuiz()) {
-                if (pictureMatchQuiz == null)//handles a condition of null objects being iterated
-                    continue;
+                for (PictureMatchQuiz pictureMatchQuiz : quizzes.getPictureMatchQuiz()) {
+                    if (pictureMatchQuiz == null)//handles a condition of null objects being iterated
+                        continue;
 
-                quizNo++;
-                baseLessons.add(pictureMatchQuiz);
-                MODULE_TYPE module_type = MODULE_TYPE.PICTURE_MATCH_QUIZ;
+                    quizNo++;
+                    baseLessons.add(pictureMatchQuiz);
+                    MODULE_TYPE module_type = MODULE_TYPE.PICTURE_MATCH_QUIZ;
 
-                ListLessonItem listLessonItem = new ListLessonItem(
-                        "Quiz " + quizNo,
-                        "Picture Match Quiz", module_type);
+                    ListLessonItem listLessonItem = new ListLessonItem(
+                            "Quiz " + quizNo,
+                            "Picture Match Quiz", module_type);
 
-                items.add(listLessonItem);
-            }}
+                    items.add(listLessonItem);
+                }}
+            if(quizzes.getSimpleQuizs()!=null){
+                for (SimpleQuiz simpleQuiz : quizzes.getSimpleQuizs()) {
+                    if (simpleQuiz == null)//handles a condition of null objects being iterated
+                        continue;
+
+                    quizNo++;
+                    baseLessons.add(simpleQuiz);
+                    MODULE_TYPE module_type = MODULE_TYPE.SIMPLE_QUIZ;
+
+                    ListLessonItem listLessonItem = new ListLessonItem(
+                            "Quiz " + quizNo,
+                            "Simple Quiz", module_type);
+
+                    items.add(listLessonItem);
+                }}
         }
 
         /*ListLessonItem listLessonItem1 = new ListLessonItem(

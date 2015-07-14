@@ -33,6 +33,7 @@ public class DataStore {
     protected DataStore() {
         // Exists only to defeat instantiation.
     }
+
     public static DataStore getInstance(Context context) {
         if(instance == null) {
             init(context);

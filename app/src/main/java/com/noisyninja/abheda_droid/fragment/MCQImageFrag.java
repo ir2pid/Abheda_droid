@@ -94,7 +94,7 @@ public class MCQImageFrag extends Fragment implements IDialogCallback {
                     CircleButton circleButton = (CircleButton)  window.findViewById(R.id.correct_button);
                     Utils.animateFlip(root1, circleButton, circleButton);
                     correct++;
-                    // radioButton.setTextColor(Utils.getColor(getActivity(), R.color.button_green));
+                    // radioButton.setTextColor(Utils.getColorResource(getActivity(), R.color.button_green));
                     // Utils.makeAnimation(radioButton, Techniques.Tada);
                     Utils.showResult(getActivity(), true);
                     loadQuestions(progress);
@@ -105,7 +105,7 @@ public class MCQImageFrag extends Fragment implements IDialogCallback {
                     isWrong = true;
                     CircleButton circleButton = (CircleButton)  window.findViewById(R.id.wrong_button);
                     Utils.animateFlip(root2, circleButton,circleButton);
-                    radioButton.setTextColor(Utils.getColor(getActivity(), R.color.button_red));
+                    radioButton.setTextColor(Utils.getColorResource(getActivity(), R.color.button_red));
                     Utils.makeAnimation(radioButton, Techniques.Shake);
                     Utils.showResult(getActivity(), false);
                     int correct = mcqQuestions.get(progress).getCorrect();
@@ -117,7 +117,7 @@ public class MCQImageFrag extends Fragment implements IDialogCallback {
                             RadioButton r = (RadioButton) o;
                             r.setEnabled(false);
                             if (Integer.valueOf(o.getTag().toString()) == correct) {
-                                r.setTextColor(Utils.getColor(getActivity(), R.color.button_green));
+                                r.setTextColor(Utils.getColorResource(getActivity(), R.color.button_green));
                                 Utils.makeAnimation(r, Techniques.Tada);
                                 radioGroup.check(r.getId());
 
@@ -153,7 +153,7 @@ public class MCQImageFrag extends Fragment implements IDialogCallback {
         RadioGroup radioGroup = (RadioGroup) window.findViewById(R.id.radioGroup);
 
         TextView textViewQuestion  = ((TextView) window.findViewById(R.id.question));
-        TextView textViewCorrect  = ((TextView) window.findViewById(R.id.correct));
+        TextView textViewCorrect  = ((TextView) window.findViewById(R.id.correctno));
         TextView textViewWrong = ((TextView) window.findViewById(R.id.wrong));
         RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
         RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
@@ -172,19 +172,19 @@ public class MCQImageFrag extends Fragment implements IDialogCallback {
         textViewWrong.setText(String.valueOf(wrong));
         textViewQuestion.setText((no + 1) + "/" + mcqQuestions.size() + ") " + mcqQuestions.get(no).getQuestion());
         radioButton1.setText(mcqQuestions.get(no).getOption1());
-        radioButton1.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton1.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton1.setChecked(false);
         radioButton1.setEnabled(true);
         radioButton2.setText(mcqQuestions.get(no).getOption2());
-        radioButton2.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton2.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton2.setChecked(false);
         radioButton2.setEnabled(true);
         radioButton3.setText(mcqQuestions.get(no).getOption3());
-        radioButton3.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton3.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton3.setChecked(false);
         radioButton3.setEnabled(true);
         radioButton4.setText(mcqQuestions.get(no).getOption4());
-        radioButton4.setTextColor(Utils.getColor(getActivity(), R.color.black));
+        radioButton4.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton4.setChecked(false);
         radioButton4.setEnabled(true);
 

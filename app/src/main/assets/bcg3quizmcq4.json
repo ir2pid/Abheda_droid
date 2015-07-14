@@ -58,7 +58,7 @@
     "option2": "He had gone.",
     "option3": "He was gone.",
     "option4": "He did gone.",
-    "question": "সে গিয়েছিল",
+    "question": "সে গেল",
     "correct": 2,
     "isPicture": false
     },
@@ -67,7 +67,7 @@
     "option2": "Had he went ?",
     "option3": "Did he gone ?",
     "option4": "Had he gone ?",
-    "question": "সে কি গিয়েছিল ?",
+    "question": "সে কি গেল ?",
     "correct": 4,
     "isPicture": false
     },
@@ -148,7 +148,7 @@
     "option2": "He cannot but going.",
     "option3": "He cannot go.",
     "option4": "He has not but go.",
-    "question": "সে না গিয়ে পারলো না",
+    "question": "সে না গিয়ে পারে না",
     "correct": 1,
     "isPicture": false
     },
@@ -157,7 +157,7 @@
     "option2": "He cannot help going.",
     "option3": "He cannot help gone.",
     "option4": "He cannot help went.",
-    "question": "সে না গিয়ে পারলো না",
+    "question": "সে না গিয়ে পারে না",
     "correct": 2,
     "isPicture": false
     }

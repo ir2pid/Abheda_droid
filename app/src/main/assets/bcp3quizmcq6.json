@@ -44,7 +44,7 @@
     "correct": 1,
     "isPicture": false
     },
-     {
+    {
     "option1": "He sometimes comes the zoo.",
     "option2": "He seldom comes to the zoo.",
     "option3": "He sometimes comes to the zoo.",
@@ -67,7 +67,7 @@
     "option2": "Do they not come to you ?",
     "option3": "Not they come to you ?",
     "option4": "Do they not come you ?",
-    "question": "তারা কি তোমার কাছে আসে নি ?",
+    "question": "তারা কি তোমার কাছে আসে না ?",
     "correct": 2,
     "isPicture": false
     },

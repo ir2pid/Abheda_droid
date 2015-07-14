@@ -133,7 +133,11 @@ public class FlashcardDetailFrag extends Fragment{
     {
         if(position >= pageList.size()-1)
             return;
-        isBackFace = false;
+        if(isBackFace)
+        {
+            isBackFace = false;
+            viewFlipper.setDisplayedChild(position);
+        }
         // Next screen comes in from left.
         viewFlipper.setInAnimation(getActivity(), R.anim.push_left_out);
         // Current screen goes out from right.
@@ -148,7 +152,11 @@ public class FlashcardDetailFrag extends Fragment{
     {
         if(position <= 0)
             return;
-        isBackFace = false;
+        if(isBackFace)
+        {
+            isBackFace = false;
+            viewFlipper.setDisplayedChild(position);
+        }
         // Next screen comes in from right.
         viewFlipper.setInAnimation(getActivity(), R.anim.push_left_in);
         // Current screen goes out from left.
@@ -161,18 +169,24 @@ public class FlashcardDetailFrag extends Fragment{
 
     public void flip(){
 
-        Utils.makeToast(getActivity(), "Clicked: " + position + "opposite: "+(position+pageList.size()));
         View front;
         View back;
         if(!isBackFace) {
+            Utils.makeToast(getActivity(), "Clicked: " + position + "opposite: "+(position+pageList.size()));
             isBackFace = !isBackFace;
             front = viewFlipper.getChildAt(position);
             back = viewFlipper.getChildAt(position + (pageList.size()));
+            Utils.animateFlip(viewFlipper, front, back);
+            viewFlipper.setDisplayedChild(position + (pageList.size()));
         }else {
-            return;
-        }
-        Utils.animateFlip(viewFlipper, front, back);
+            Utils.makeToast(getActivity(), "Clicked: " + (position+pageList.size()) + "opposite: "+position);
+            isBackFace = !isBackFace;
+            front = viewFlipper.getChildAt(position);
+            back = viewFlipper.getChildAt(position + (pageList.size()));
+            Utils.animateFlip(viewFlipper, back, front);
+            viewFlipper.setDisplayedChild(position);
 
+        }
     }
 
     /*

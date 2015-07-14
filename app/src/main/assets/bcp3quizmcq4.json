@@ -136,9 +136,9 @@
     },
      {
     "option1": "Were any one of the two men tall ?",
-    "option2": "Was any one of the two men tall ?",
+    "option2": "Was any one of the two tall ?",
     "option3": "Was none of the two men tall ?",
-    "option4": "None of the two men was tall ?",
+    "option4": "None of the two was tall ?",
     "question": "দুজনের মধ্যে কেউ কি লম্বা ছিল ?",
     "correct": 2,
     "isPicture": false

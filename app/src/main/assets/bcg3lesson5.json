@@ -45,14 +45,14 @@
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson5 (7)",
-                        "text1": "তারা গিয়েছিলো",
+                        "text1": "তারা গেল",
                         "text2": "They had gone."
                       },
                        {
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson5 (8)",
-                        "text1": "তারা  কি গিয়েছিলো ?",
+                        "text1": "তারা  কি গেল ?",
                         "text2": "Had they gone ?"
                       },
                        {
@@ -60,7 +60,7 @@
                         "image1": "",
                         "name": "BCg3-Lesson5 (9)",
                         "text1": "তারা যেতে পারতো",
-                        "text2": "They could have gone. \nExample: Had you told them they would have gone. সম্ভাবনা বোঝাতে ।"
+                        "text2": "They could have gone. <br> <br>Example: Had you told them they would have gone । ঘটনাটা ঘটতে পারতো, আর তাদের যাবার ক্ষমতা ছিল ।"
                       },
                        {
                         "description": "",
@@ -74,7 +74,7 @@
                         "image1": "",
                         "name": "BCg3-Lesson5 (11)",
                         "text1": "তারা যেতে পারতো",
-                        "text2": "They would have gone. \nExample: They wish they would have gone. সম্ভাবনা বোঝাতে ।"
+                        "text2": "They would have gone. <br> <br>Example: They wish they would have gone । 'অতীতে সম্ভাবনা বোঝাতে' ।"
                       },
                        {
                         "description": "",
@@ -115,14 +115,14 @@
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson5 (17)",
-                        "text1": "তারা না গিয়ে পারবে না",
+                        "text1": "তারা না গিয়ে পারো না",
                         "text2": "They cannot but go."
                       },
                        {
                         "description": "",
                         "image1": "",
                         "name": "BCg3-Lesson5 (18)",
-                        "text1": "তারা না গিয়ে পারবে না",
-                        "text2": "They cannot help going."
+                        "text1": "তারা না গিয়ে পারো না",
+                        "text2": "They can not help going. <br. <br>দুটোই হয় - They can not but go আর They can not help going ।"
                       }
 ]

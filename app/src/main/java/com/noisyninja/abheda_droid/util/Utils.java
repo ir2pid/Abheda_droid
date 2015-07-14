@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
@@ -21,9 +22,11 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +50,8 @@ import com.noisyninja.abheda_droid.fragment.LessonDetailFrag;
 import com.noisyninja.abheda_droid.fragment.MCQDetailFrag;
 import com.noisyninja.abheda_droid.fragment.OrderGameDetailFragNew;
 import com.noisyninja.abheda_droid.fragment.PictureMatchDetailFrag;
+import com.noisyninja.abheda_droid.fragment.QuizReviewFrag;
+import com.noisyninja.abheda_droid.fragment.SimpleQuizDetailFrag;
 import com.noisyninja.abheda_droid.pojo.misc.IntegerStringPair;
 import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 import com.noisyninja.abheda_droid.util.Constants.PROGRESS_STYLE;
@@ -175,24 +180,49 @@ public class Utils {
         dialog.show();
     }
 
-    public static void showResult(Context context, boolean value) {
-        showResult(context, value, null, null, null);
+    public static void showReview(FragmentActivity activity) {
+        Constants.MODULE_TYPE module_type = Constants.MODULE_TYPE.REVIEW;
+        Utils.courseFacade(activity, null, module_type);
     }
 
-    public static void showResult(Context context, boolean state,String sQuestion, String sCorrect, String sWrong ) {
+    public static void showResult(Context context, boolean value) {
+        showResult(context, value, null, null, null, null);
+    }
+    public static void showResult(Context context, boolean state,String sQuestion, String sCorrect, String sWrong){
+        showResult(context, state, sQuestion, sCorrect, sWrong, null);
+    }
+    public static void showResult(Context context, boolean state,String sQuestion, String sCorrect, String sWrong, final Fragment fragment) {
         // custom dialog
+        ReviewUtil.getInstance().addOptions(sQuestion, sWrong, sCorrect);
         final Dialog dialog = new Dialog(context);//, R.style.TransparentDialog
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setCanceledOnTouchOutside(true);
         dialog.setContentView(R.layout.dialog_quiz_result);
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                if(fragment != null){
+                    if (fragment instanceof IDialogCallback) {
+                        ((IDialogCallback) fragment).ok(dialog);
+                    } else {
+                        dialog.dismiss();
+                    }
+                }
+            }
+        });
         dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_down_up;
 
         // set the custom dialog components - button
         CircleButton buttonModule1 = (CircleButton) dialog.findViewById(R.id.circleButton1);
         CircleButton buttonModule2 = (CircleButton) dialog.findViewById(R.id.circleButton2);
         TextView question = (TextView) dialog.findViewById(R.id.question);
-        TextView correct = (TextView) dialog.findViewById(R.id.correct);
+        TextView correct = (TextView) dialog.findViewById(R.id.correctno);
         TextView wrong = (TextView) dialog.findViewById(R.id.wrong);
+
+        question.setMovementMethod(new ScrollingMovementMethod());
+        correct.setMovementMethod(new ScrollingMovementMethod());
+        wrong.setMovementMethod(new ScrollingMovementMethod());
 
         if (state) {
             Utils.playSound(context, Constants.Sound.RIGHT);
@@ -438,10 +468,10 @@ public class Utils {
         cProgress.setTextColor(context.getResources().getColor(R.color.button_gray));
         //cProgress.setTextSize(8);
         /*arcProgress.setBottomText(context.getString(R.string.progress));
-        arcProgress.setFinishedStrokeColor(context.getResources().getColor(R.color.button_off_white));
-        arcProgress.setTextColor(context.getResources().getColor(R.color.button_off_white));
+        arcProgress.setFinishedStrokeColor(context.getResources().getColorResource(R.color.button_off_white));
+        arcProgress.setTextColor(context.getResources().getColorResource(R.color.button_off_white));
         arcProgress.setStrokeWidth(15);
-        arcProgress.setUnfinishedStrokeColor(context.getResources().getColor(R.color.button_transparent_white));*/
+        arcProgress.setUnfinishedStrokeColor(context.getResources().getColorResource(R.color.button_transparent_white));*/
     }
 
     public static void styleDonut(DonutProgress dProgress, Context context)
@@ -454,10 +484,10 @@ public class Utils {
         dProgress.setInnerBackgroundColor(context.getResources().getColor(R.color.button_transparent));
         //cProgress.setTextSize(8);
         /*arcProgress.setBottomText(context.getString(R.string.progress));
-        arcProgress.setFinishedStrokeColor(context.getResources().getColor(R.color.button_off_white));
-        arcProgress.setTextColor(context.getResources().getColor(R.color.button_off_white));
+        arcProgress.setFinishedStrokeColor(context.getResources().getColorResource(R.color.button_off_white));
+        arcProgress.setTextColor(context.getResources().getColorResource(R.color.button_off_white));
         arcProgress.setStrokeWidth(15);
-        arcProgress.setUnfinishedStrokeColor(context.getResources().getColor(R.color.button_transparent_white));*/
+        arcProgress.setUnfinishedStrokeColor(context.getResources().getColorResource(R.color.button_transparent_white));*/
     }
 
     public static void styleArc(ArcProgress arcProgress, Context context)
@@ -652,8 +682,9 @@ public class Utils {
     }
 
     public static void setText(TextView textView, String data){
-        if(data != null && data.length()>1)
+        if(data != null && data.length()>1){
             textView.setText(Html.fromHtml(data));
+        }
     }
 
     public static void courseFacade(FragmentActivity activity, String data, MODULE_TYPE module_type)
@@ -669,30 +700,49 @@ public class Utils {
                 LessonDetailFrag fragment = new LessonDetailFrag();
                 fragment.setArguments(arguments);
                 activity.getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.push_up, R.anim.push_down)
                         .add(R.id.lesson_detail_container, fragment).commit();
                 break;
             }case FLASHCARD: {
                 FlashcardDetailFrag fragment = new FlashcardDetailFrag();
                 fragment.setArguments(arguments);
                 activity.getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.push_up, R.anim.push_down)
                         .add(R.id.lesson_detail_container, fragment).commit();
                 break;
             }case MCQ_QUIZ: {
                 MCQDetailFrag fragment = new MCQDetailFrag();
                 fragment.setArguments(arguments);
                 activity.getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.push_up, R.anim.push_down)
                         .add(R.id.lesson_detail_container, fragment).commit();
                 break;
             }case ORDER_GAME_QUIZ: {
                 OrderGameDetailFragNew fragment = new OrderGameDetailFragNew();
                 fragment.setArguments(arguments);
                 activity.getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.push_up, R.anim.push_down)
                         .add(R.id.lesson_detail_container, fragment).commit();
                 break;
             }case PICTURE_MATCH_QUIZ: {
                 PictureMatchDetailFrag fragment = new PictureMatchDetailFrag();
                 fragment.setArguments(arguments);
                 activity.getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.push_up, R.anim.push_down)
+                        .add(R.id.lesson_detail_container, fragment).commit();
+                break;
+            }case SIMPLE_QUIZ: {
+                SimpleQuizDetailFrag fragment = new SimpleQuizDetailFrag();
+                fragment.setArguments(arguments);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.push_up, R.anim.push_down)
+                        .add(R.id.lesson_detail_container, fragment).commit();
+                break;
+            }case REVIEW: {
+                QuizReviewFrag fragment = new QuizReviewFrag();
+                fragment.setArguments(arguments);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.push_up, R.anim.push_down)
                         .add(R.id.lesson_detail_container, fragment).commit();
                 break;
             }
@@ -700,11 +750,15 @@ public class Utils {
         }
     }
 
-    public static int getColor(Context context, int colorId)
+    public static int getColorResource(Context context, int colorId)
     {
         return context.getResources().getColor(colorId);
     }
 
+    public static String getStringResource(Context context, int stringId)
+    {
+        return context.getResources().getString(stringId);
+    }
 
     public static String getTempString(String... args)
     {
@@ -833,5 +887,15 @@ public class Utils {
         }
 
         return integerStringPairList;
+    }
+
+    public static void buttonActivate(Button button){
+        button.setEnabled(true);
+        button.setBackgroundResource(R.drawable.button_green);
+    }
+
+    public static void buttonDeactivate(Button button){
+        button.setEnabled(false);
+        button.setBackgroundResource(R.drawable.button_grey);
     }
 }
