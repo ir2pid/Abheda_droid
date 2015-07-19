@@ -1,8 +1,8 @@
 package com.noisyninja.abheda_droid.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.CourseTree;
@@ -10,7 +10,7 @@ import com.noisyninja.abheda_droid.fragment.CourseTree;
 /**
  * Created by ir2pi on 2/22/2015.
  */
-public class CourseActivity extends Activity {
+public class CourseActivity extends FragmentActivity {
 
     Context context;
 
@@ -22,7 +22,7 @@ public class CourseActivity extends Activity {
 
         CourseTree fragment = new CourseTree();
 
-        this.getFragmentManager().beginTransaction().add(R.id.activity_course, fragment).commit();
+        this.getSupportFragmentManager().beginTransaction().add(R.id.activity_course, fragment).commit();
 
     }
 }

@@ -2,7 +2,7 @@ package com.noisyninja.abheda_droid.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,13 +31,14 @@ public class CourseTree extends Fragment {
 
     private AnimatedExpandableListView animatedExpandableListView;
     private CustomAdapter adapter;
+    Fragment fragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View windows = inflater.inflate(R.layout.course_tree_frag, container, false);
         animatedExpandableListView = (AnimatedExpandableListView) windows.findViewById(R.id.listView);
-
+        fragment = this;
         List<GroupItem> groupItems = new ArrayList<GroupItem>();
         Topics topics = DataStore.getInstance(getActivity()).getTopics();
         for(Topic topic:topics.getTopics())
@@ -173,7 +174,7 @@ public class CourseTree extends Fragment {
         @Override
         public View getRealChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             ChildHolder holder;
-            ChildItem item = getChild(groupPosition, childPosition);
+            final ChildItem item = getChild(groupPosition, childPosition);
             if (convertView == null) {
                 holder = new ChildHolder();
                 convertView = inflater.inflate(R.layout.tree_child_item, parent, false);
@@ -189,7 +190,7 @@ public class CourseTree extends Fragment {
 
             holder.name.setText(item.name);
             holder.description.setText(item.description);
-            holder.daysToComplete.setText(getString(R.string.days_to_complete)+item.daysToComplete);
+            holder.daysToComplete.setText(getString(R.string.days_to_complete) + item.daysToComplete);
             holder.instruction.setText(item.instruction);
             holder.marks.setText(getString(R.string.marks)+item.marks);
 

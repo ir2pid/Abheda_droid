@@ -100,7 +100,8 @@ public class SimpleQuizDetailFrag extends Fragment implements IDialogCallback{
 
     void loadQuestions(){
         SimpleQuestion simpleQuestion = simpleQuestions.get(progress);
-        question.setText("Q:" + (progress+1) + "/" + simpleQuestions.size() + ") " + simpleQuestion.getQuestion());
+        Utils.setText(question, "Q:" + (progress+1) + "/" + simpleQuestions.size() + ") " + simpleQuestion.getQuestion());
+
         answer.setText("");
         correctAnswer = simpleQuestion.getAnswer();
         Utils.buttonDeactivate(next);

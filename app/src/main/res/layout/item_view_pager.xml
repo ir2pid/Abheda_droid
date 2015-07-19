@@ -37,7 +37,9 @@
                     android:textSize="@dimen/font_instruction"
                     android:background="@drawable/background_shape_blue_translucent"
                     android:layout_gravity="center_horizontal"
-                    android:layout_margin="10dp" />
+                    android:layout_margin="10dp"
+                    android:maxLines = "@integer/text_lines"
+                    android:scrollbars = "vertical" />
 
                 <ImageView
                     android:id="@+id/image1"
@@ -52,7 +54,9 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/font_desc"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:maxLines = "@integer/text_lines"
+                    android:scrollbars = "vertical" />
 
                 <TextView
                     android:id="@+id/text1"
@@ -63,7 +67,9 @@
                     android:layout_margin="@dimen/padding_20"
                     android:gravity="center"
                     android:textColor="@color/button_off_white"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:maxLines = "@integer/text_lines"
+                    android:scrollbars = "vertical" />
 
                 <TextView
                     android:id="@+id/text2"
@@ -73,7 +79,9 @@
                     android:nestedScrollingEnabled="false"
                     android:layout_margin="@dimen/padding_20"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:maxLines = "@integer/text_lines"
+                    android:scrollbars = "vertical" />
 
                 <ImageView
                     android:layout_width="wrap_content"

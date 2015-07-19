@@ -3,6 +3,7 @@ package com.noisyninja.abheda_droid.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -108,6 +109,11 @@ public class FlashcardDetailFrag extends Fragment{
         TextView text = (TextView)view.findViewById(R.id.text1);
         TextView description = (TextView)view.findViewById(R.id.description1);
         TextView name = (TextView)view.findViewById(R.id.name1);
+
+        text.setMovementMethod(new ScrollingMovementMethod());
+        description.setMovementMethod(new ScrollingMovementMethod());
+        name.setMovementMethod(new ScrollingMovementMethod());
+
         if(isFront)
         {
             Utils.setText(name, pageList.get(position).getName());
