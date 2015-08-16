@@ -42,6 +42,24 @@ public class DataStore {
         return instance;
     }
 
+    public static void init(Context context) {
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        //gsonBuilder.setDateFormat("M/d/yy hh:mm a");
+        Gson gson = gsonBuilder.create();
+        Topics temp = null;
+        /*
+        List<Post> posts = new ArrayList<Post>();
+        posts = Arrays.asList(gson.fromJson(reader, Post[].class));
+        */
+        String json = Utils.read(context);
+        if (json != null && json.length() > 1) {
+            temp = gson.fromJson(json, Topics.class);
+        } else {
+            temp = gson.fromJson(Utils.getStringFromAsset(context, Constants.DATA_JSON), Topics.class);//Utils.getTempString(Constants.DATA_FOLDER, Constants.DATA_JSON)), Topics.class);
+        }
+        topics = temp;
+    }
+
     public Topics getTopics()
     {
         return topics;
@@ -79,29 +97,6 @@ public class DataStore {
         Quizzes quizzes = (Quizzes)Utils.getObject(context,fileName, Quizzes.class);
         return quizzes;
     }
-
-    public static void init(Context context)
-    {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        //gsonBuilder.setDateFormat("M/d/yy hh:mm a");
-        Gson gson = gsonBuilder.create();
-        Topics temp = null;
-        /*
-        List<Post> posts = new ArrayList<Post>();
-        posts = Arrays.asList(gson.fromJson(reader, Post[].class));
-        */
-        String json = Utils.read(context);
-        if(json != null && json.length()>1)
-        {
-            temp = gson.fromJson(json, Topics.class);
-        }
-        else{
-            temp = gson.fromJson(Utils.getStringFromAsset(context, Constants.DATA_JSON), Topics.class);//Utils.getTempString(Constants.DATA_FOLDER, Constants.DATA_JSON)), Topics.class);
-        }
-        topics = temp;
-    }
-
-
 
     public Topics getMockTopics()
     {
@@ -437,7 +432,7 @@ public class DataStore {
 
     public ArrayList<MCQQuestion> getmcqQuestions1()
     {
-        ArrayList<MCQQuestion> mcqQuestions = new ArrayList<>();
+        ArrayList<MCQQuestion> mcqQuestions = new ArrayList<MCQQuestion>();
         MCQQuestion mcqQuestion1 = new MCQQuestion();
         mcqQuestion1.setQuestion("BCP question1");
         mcqQuestion1.setOption1("BCPoption1");
@@ -460,7 +455,7 @@ public class DataStore {
 
     public ArrayList<MCQQuestion> getmcqQuestions2()
     {
-        ArrayList<MCQQuestion> mcqQuestions2 = new ArrayList<>();
+        ArrayList<MCQQuestion> mcqQuestions2 = new ArrayList<MCQQuestion>();
         MCQQuestion mcqQuestion21 = new MCQQuestion();
         mcqQuestion21.setQuestion("BCP question1");
         mcqQuestion21.setOption1("BCPoption1");
@@ -474,7 +469,7 @@ public class DataStore {
 
     public ArrayList<OrderGameQuestion> getOrderQuiz1()
     {
-        ArrayList<OrderGameQuestion> orderGameQuestions = new ArrayList<>();
+        ArrayList<OrderGameQuestion> orderGameQuestions = new ArrayList<OrderGameQuestion>();
         OrderGameQuestion orderGameQuestion1 = new OrderGameQuestion();
         Map<Integer,String> words0 = new HashMap<Integer, String>();
         words0.put(1, "BCPword1");
@@ -500,7 +495,7 @@ public class DataStore {
     public ArrayList<PictureMatchQuestion> getPictureMatchQuiz()
     {
 
-        ArrayList<PictureMatchQuestion> pictureMatchQuestions = new ArrayList<>();
+        ArrayList<PictureMatchQuestion> pictureMatchQuestions = new ArrayList<PictureMatchQuestion>();
 
         PictureMatchQuestion pictureMatchQuestion1 = new PictureMatchQuestion();
         Map<String,String> words3 = new HashMap<String, String>();
