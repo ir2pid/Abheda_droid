@@ -26,6 +26,7 @@ import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.DataStore;
 import com.noisyninja.abheda_droid.util.DownloadFileAsync;
 import com.noisyninja.abheda_droid.util.IDownloadFileAsyncCallback;
+import com.noisyninja.abheda_droid.util.TTSUtils;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
@@ -42,7 +43,6 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
     AnimatedButton animatedButton1;
     private CustomAdapter adapter;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,14 +53,22 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
         gridView = (GridView) windows.findViewById(R.id.gridview1);
         arcProgress = (ArcProgress) windows.findViewById(R.id.arc_progress_total);
         arcProgress.setProgress(15);
-        Utils.styleArc(arcProgress,getActivity());
+        Utils.styleArc(arcProgress, getActivity());
         Topics topics = DataStore.getInstance(getActivity()).getTopics();
         topicArrayList = topics.getTopics();
 
-        adapter = new CustomAdapter(getActivity(),topicArrayList);
+        adapter = new CustomAdapter(getActivity(), topicArrayList);
 
         gridView.setAdapter(adapter);
 
+
+        final TextView textView = (TextView) windows.findViewById(R.id.textView6);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TTSUtils.getInstance(getActivity()).initQueue(textView.getText().toString());
+            }
+        });
         return windows;
     }
 
@@ -69,15 +77,14 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button1: {
-
                 String url = Utils.getPreference(getActivity(), Constants.URL_STORE_KEY, Constants.URL_STORE);
 
-                Utils.handleInfo(getActivity(), Constants.DOWNLOAD_TEXT +" "+url);
+                Utils.handleInfo(getActivity(), Constants.DOWNLOAD_TEXT + " " + url);
                 String[] params = {url,
                         Utils.getTempString(Constants.SD_CARD, Constants.DATA_ZIP),
                         Utils.getTempString(Constants.SD_CARD, Constants.DATA_FOLDER)};
 
-               // Utils.makeDirs(getActivity(), params[1]);
+                // Utils.makeDirs(getActivity(), params[1]);
 
                 new DownloadFileAsync(this, getActivity()).execute(params);
 
@@ -103,7 +110,7 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
         Topics topics = DataStore.getInstance(getActivity()).getTopics();
         topicArrayList = topics.getTopics();
 
-        adapter = new CustomAdapter(getActivity(),topicArrayList);
+        adapter = new CustomAdapter(getActivity(), topicArrayList);
         gridView.invalidateViews();
         gridView.setAdapter(adapter);
 
@@ -153,13 +160,13 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
 
         ArrayList<Topic> topicArrayList;
         Context context;
-        private LayoutInflater inflater=null;
+        private LayoutInflater inflater = null;
 
         public CustomAdapter(Activity activity, ArrayList<Topic> topicArrayList) {
             // TODO Auto-generated constructor stub
             context = activity;
             this.topicArrayList = topicArrayList;
-            inflater = ( LayoutInflater )context.
+            inflater = (LayoutInflater) context.
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         }
@@ -185,23 +192,23 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             // TODO Auto-generated method stub
-            Holder holder=new Holder();
+            Holder holder = new Holder();
             View rowView;
 
             rowView = inflater.inflate(R.layout.topics_grid_item, null);
-            holder.tName =(TextView) rowView.findViewById(R.id.textView1);
-            holder.tDescription =(TextView) rowView.findViewById(R.id.textView2);
-            holder.dProgressCompletion =(DonutProgress) rowView.findViewById(R.id.course_progress_arc);
-            holder.tMarks =(TextView) rowView.findViewById(R.id.textView4);
+            holder.tName = (TextView) rowView.findViewById(R.id.textView1);
+            holder.tDescription = (TextView) rowView.findViewById(R.id.textView2);
+            holder.dProgressCompletion = (DonutProgress) rowView.findViewById(R.id.course_progress_arc);
+            holder.tMarks = (TextView) rowView.findViewById(R.id.textView4);
 
             //holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
 
             Utils.setText(holder.tName, topicArrayList.get(position).getName());
-            Utils.setText(holder.tDescription,topicArrayList.get(position).getDescription());
+            Utils.setText(holder.tDescription, topicArrayList.get(position).getDescription());
             holder.dProgressCompletion.setProgress(topicArrayList.get(position).getCompletion());
             Utils.styleDonut(holder.dProgressCompletion, getActivity());
-                    //setText(getActivity().getString(R.string.completion)+topicArrayList.get(position).getCompletion());
-            holder.tMarks.setText(getActivity().getString(R.string.marks)+topicArrayList.get(position).getMarks());
+            //setText(getActivity().getString(R.string.completion)+topicArrayList.get(position).getCompletion());
+            holder.tMarks.setText(getActivity().getString(R.string.marks) + topicArrayList.get(position).getMarks());
 
             //holder.img.setImageResource(imageId[position]);
 

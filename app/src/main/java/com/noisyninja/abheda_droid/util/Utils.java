@@ -81,6 +81,27 @@ public class Utils {
     private static String TAG = Utils.class.getSimpleName();
     private static ProgressDialog mProgressDialog;
 
+    public static void addSpeechClickListener(final Context context, final View view, final String text) {
+
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String formattedText = text.replace("<br>", "")
+                        .replace("</b>", "")
+                        .replace("<b>", "")
+                        .replace("</i>", "")
+                        .replace("<i>", "")
+                        .replace("<u>", "")
+                        .replace("</u>", "");
+
+                final String speak = formattedText;
+                TTSUtils.getInstance(context).initQueue(speak);
+            }
+        });
+    }
+
     public static void speak(Context context, String text) {
         Log.d("", "tts");
         TextToSpeech tts = new TextToSpeech(context, null);

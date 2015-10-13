@@ -53,13 +53,20 @@ public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> 
 
         Utils.lazyload(context, image, item.image);
 
-        Utils.setText(name,item.name);
-        Utils.setText(text,item.text);
-        Utils.setText(ltext,item.ltext);
-        Utils.setText(rtext,item.rtext);
-        Utils.setText(utext,item.utext);
-        Utils.setText(dtext,item.dtext);
-        Utils.setText(description,item.description);
+        Utils.setText(name, item.name);
+        Utils.addSpeechClickListener(context, name, name.getText().toString());
+        Utils.setText(text, item.text);
+        Utils.addSpeechClickListener(context, text, text.getText().toString());
+        Utils.setText(ltext, item.ltext);
+        Utils.addSpeechClickListener(context, ltext, ltext.getText().toString());
+        Utils.setText(rtext, item.rtext);
+        Utils.addSpeechClickListener(context, rtext, rtext.getText().toString());
+        Utils.setText(utext, item.utext);
+        Utils.addSpeechClickListener(context, utext, utext.getText().toString());
+        Utils.setText(dtext, item.dtext);
+        Utils.addSpeechClickListener(context, dtext, dtext.getText().toString());
+        Utils.setText(description, item.description);
+        Utils.addSpeechClickListener(context, description, description.getText().toString());
 
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)image.getLayoutParams();
         if(item.ltext!=null && item.ltext.length()>1)

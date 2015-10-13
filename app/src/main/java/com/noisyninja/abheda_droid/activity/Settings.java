@@ -1,6 +1,5 @@
 package com.noisyninja.abheda_droid.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.noisyninja.abheda_droid.R;
@@ -8,7 +7,7 @@ import com.noisyninja.abheda_droid.R;
 /**
  * Created by ir2pi on 12/3/2014.
  */
-public class Settings extends Activity {
+public class Settings extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

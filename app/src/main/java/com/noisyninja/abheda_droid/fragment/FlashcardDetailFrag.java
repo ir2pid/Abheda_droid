@@ -26,12 +26,12 @@ import java.util.List;
  */
 public class FlashcardDetailFrag extends Fragment{
 
+    View windows;
+    List<Page> pageList;
     //ViewPager viewPager;
     //PagerAdapter adapter;
     //the ViewSwitcher
     private ViewFlipper viewFlipper;
-    View windows;
-    List<Page> pageList;
     private int position;
     private boolean isBackFace;
     public FlashcardDetailFrag() {
@@ -126,8 +126,11 @@ public class FlashcardDetailFrag extends Fragment{
         }else {
             String[] texts = pageList.get(position).getText2().split(Constants.SPLIT_DELIMITER);
             Utils.setText(name, pageList.get(position).getName());
+            Utils.addSpeechClickListener(getActivity(), name, name.getText().toString());
             Utils.setText(description, pageList.get(position).getDescription());
+            Utils.addSpeechClickListener(getActivity(), description, description.getText().toString());
             Utils.setText(text, Utils.getTempStringNewLine(texts));
+            Utils.addSpeechClickListener(getActivity(), text, text.getText().toString());
             Utils.lazyload(getActivity(), imageView, pageList.get(position).getImage2());
             Utils.lazyload(getActivity(), imageFooter, pageList.get(position).getImagefooter2());
         }

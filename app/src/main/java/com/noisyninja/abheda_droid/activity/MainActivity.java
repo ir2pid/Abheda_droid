@@ -1,6 +1,5 @@
 package com.noisyninja.abheda_droid.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +11,7 @@ import com.noisyninja.abheda_droid.fragment.TopicsGridFrag;
 import com.noisyninja.abheda_droid.util.Utils;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
     Context context;
 
@@ -21,7 +20,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
-
         TopicsGridFrag fragment = new TopicsGridFrag();
 
         this.getFragmentManager().beginTransaction()

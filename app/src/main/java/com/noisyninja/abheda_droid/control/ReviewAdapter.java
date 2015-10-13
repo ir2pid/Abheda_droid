@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.pojo.misc.ReviewItem;
+import com.noisyninja.abheda_droid.util.TTSUtils;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
 
@@ -25,32 +27,39 @@ public class ReviewAdapter extends ArrayAdapter {
         this.reviewItemArrayList = reviewItemArrayList;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         ViewHolder holder;
-        if(convertView==null)
-        {
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_review, parent, false);
 
             holder = new ViewHolder();
             holder.question = (TextView) convertView.findViewById(R.id.question);
             holder.wrong = (TextView) convertView.findViewById(R.id.wrong);
             holder.correct = (TextView) convertView.findViewById(R.id.correct);
-            holder.question.setText(reviewItemArrayList.get(position).getQuestion());
-            holder.wrong.setText(reviewItemArrayList.get(position).getWrong());
-            holder.correct.setText(reviewItemArrayList.get(position).getCorrect());
-            convertView.setTag(holder);
-        }
 
-        else{
+            holder.question.setText(reviewItemArrayList.get(position).getQuestion());
+
+            holder.wrong.setText(reviewItemArrayList.get(position).getWrong());
+            Utils.addSpeechClickListener(context, holder.wrong, holder.wrong.getText().toString());
+
+            holder.correct.setText(reviewItemArrayList.get(position).getCorrect());
+            Utils.addSpeechClickListener(context, holder.wrong, holder.correct.getText().toString());
+
+            convertView.setTag(holder);
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
 
         return convertView;
+    }
+
+    private void speak(String text) {
+        TTSUtils.getInstance(getContext()).initQueue(text);
     }
 
     @Override
@@ -69,8 +78,7 @@ public class ReviewAdapter extends ArrayAdapter {
     }
 
 
-    public static class ViewHolder
-    {
+    public static class ViewHolder {
         TextView question;
         TextView wrong;
         TextView correct;

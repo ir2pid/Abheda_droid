@@ -1,14 +1,13 @@
 package com.noisyninja.abheda_droid.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.pojo.Module;
 import com.noisyninja.abheda_droid.pojo.Courses;
 import com.noisyninja.abheda_droid.pojo.Lesson;
 import com.noisyninja.abheda_droid.pojo.Lessons;
 import com.noisyninja.abheda_droid.pojo.MCQQuiz;
+import com.noisyninja.abheda_droid.pojo.Module;
 import com.noisyninja.abheda_droid.pojo.Quizzes;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Created by ir2pi on 12/3/2014.
  */
-public class About extends Activity{
+public class About extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

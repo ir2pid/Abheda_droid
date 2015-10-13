@@ -74,31 +74,8 @@ public class Constants {
     public static String _DATA_FILE = _DATA_FOLDER+JSON;
     public static String _SDCARD = "/sdcard/";
     public static String _LOCAL_STORE = _SDCARD+"abheda.zip";*/
-
-    public enum Sound {
-        CLICK,
-        RIGHT,
-        WRONG
-    }
-    public enum MODULE_TYPE {
-        LESSON,
-        FLASHCARD,
-        MCQ_QUIZ,
-        MCQ_IMAGE_QUIZ,
-        PICTURE_MATCH_QUIZ,
-        ORDER_GAME_QUIZ,
-        SIMPLE_QUIZ,
-        REVIEW
-    }
-    public enum PROGRESS_STYLE {
-        DETERMINATE,
-        INDETERMINATE
-    }
-
-
     public static String FRAGMENT_DATA = "FRAGMENT_DATA";
     public static String FRAGMENT_TYPE = "FRAGMENT_TYPE";
-
     public static int TAB_COUNT = 3;
     public static int PROGRESS = 31;
     public static long SLEEP_TIME_2000 = 2000;    // Sleep for some time
@@ -109,8 +86,6 @@ public class Constants {
     public static String PROGRESS_TEXT = "Working...";
     public static String PROGRESS_PERCENT = "%";
     public static String DOWNLOAD_TEXT = "Downloading file..";
-
-
     //error
     public static String ERROR = "ERROR:";
     public static String ERROR_INCOMPLETE = "please complete the question";
@@ -118,13 +93,35 @@ public class Constants {
     public static String ERROR_NO_NETWORK = "NO_NETWORK";
     public static String ERROR_INVALID_JSON = "INVALID_JSON_OR_NOT_FOUND";
     public static String ERROR_FILE_NOT_FOUND = "FILE_NOT_FOUND";
+    public static String ERROR_LANGUAGE_NOT_FOUND = "ERROR_LANGUAGE_NOT_FOUND";
+    public static String ERROR_LANGUAGE_INIT_ERROR = "ERROR_LANGUAGE_INIT_ERROR";
     //info
     public static String INFO = "INFO:";
     public static String INFO_SUCCESS_DOWNLOAD = "Download success";
     public static String INFO_NO_LESSON = "ERROR_NO_LESSON";
-
     public static String CRITTERCISM_APP_ID = "5500497db59ef2d535335cf3";
-
     public static String HTTP_FLAG = "http";
+
+    public enum Sound {
+        CLICK,
+        RIGHT,
+        WRONG
+    }
+
+    public enum MODULE_TYPE {
+        LESSON,
+        FLASHCARD,
+        MCQ_QUIZ,
+        MCQ_IMAGE_QUIZ,
+        PICTURE_MATCH_QUIZ,
+        ORDER_GAME_QUIZ,
+        SIMPLE_QUIZ,
+        REVIEW
+    }
+
+    public enum PROGRESS_STYLE {
+        DETERMINATE,
+        INDETERMINATE
+    }
 
 }

@@ -40,11 +40,8 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
     boolean isWrong;
     boolean isPicture;
     int selectedId;
-    enum STATES{
-        NORMAL,
-        LAST
-    }
     STATES states;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,12 +60,12 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
             String data = getArguments().getString(Constants.FRAGMENT_DATA);
 
 
-            MCQQuiz mcqQuiz = (MCQQuiz)Utils.getFromJson(data, MCQQuiz.class);
+            MCQQuiz mcqQuiz = (MCQQuiz) Utils.getFromJson(data, MCQQuiz.class);
             try {
                 mcqQuestions = Arrays.asList((MCQQuestion[]) Utils.getObject(getActivity(),
                         mcqQuiz.getMcqQuestions(), MCQQuestion[].class));
-            }catch(Exception e){
-                Utils.handleError(getActivity(),e);
+            } catch (Exception e) {
+                Utils.handleError(getActivity(), e);
             }
 
             Utils.handleInfo(getActivity(), mcqQuiz.toString());
@@ -212,32 +209,36 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
         radioButton1.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton1.setChecked(false);
         radioButton1.setEnabled(true);
+        Utils.addSpeechClickListener(getActivity(), radioButton1, radioButton1.getText().toString());
         radioButton2.setText(mcqQuestions.get(no).getOption2());
         radioButton2.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton2.setChecked(false);
         radioButton2.setEnabled(true);
+        Utils.addSpeechClickListener(getActivity(), radioButton2, radioButton2.getText().toString());
         radioButton3.setText(mcqQuestions.get(no).getOption3());
         radioButton3.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton3.setChecked(false);
         radioButton3.setEnabled(true);
+        Utils.addSpeechClickListener(getActivity(), radioButton3, radioButton3.getText().toString());
         radioButton4.setText(mcqQuestions.get(no).getOption4());
         radioButton4.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton4.setChecked(false);
         radioButton4.setEnabled(true);
+        Utils.addSpeechClickListener(getActivity(), radioButton4, radioButton4.getText().toString());
         submit.setText(Utils.getStringResource(getActivity(), R.string.submit));
 
     }
 
     @Override
-    public void ok(DialogInterface dialog){
+    public void ok(DialogInterface dialog) {
 
         // Utils.backPress(getActivity());
-        switch (states){
-            case NORMAL:{
+        switch (states) {
+            case NORMAL: {
                 loadQuestions(progress);
                 break;
             }
-            case LAST:{
+            case LAST: {
                 dialog.dismiss();
                 Utils.showReview(getActivity());
                 break;
@@ -245,8 +246,14 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
         }
 
     }
+
     @Override
     public void cancel(DialogInterface dialog){
         // do nothing
+    }
+
+    enum STATES {
+        NORMAL,
+        LAST
     }
 }
