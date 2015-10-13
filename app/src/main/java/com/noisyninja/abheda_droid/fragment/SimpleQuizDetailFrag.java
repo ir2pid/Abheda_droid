@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,17 +36,12 @@ public class SimpleQuizDetailFrag extends Fragment implements IDialogCallback{
     int correct;
     int wrong;
     int progress;
-
-
-    enum STATES{
-        NORMAL,
-        LAST
-    }
     STATES states;
     Button next;
     TextView question;
     EditText answer;
     String correctAnswer;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +71,7 @@ public class SimpleQuizDetailFrag extends Fragment implements IDialogCallback{
         question = (TextView) window.findViewById(R.id.textView1);
         answer = (EditText) window.findViewById(R.id.editText1);
         next = (Button) window.findViewById(R.id.button1);
-
+        question.setMovementMethod(new ScrollingMovementMethod());
         answer.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
@@ -120,5 +116,10 @@ public class SimpleQuizDetailFrag extends Fragment implements IDialogCallback{
     @Override
     public void cancel(DialogInterface dialog) {
 
+    }
+
+    enum STATES {
+        NORMAL,
+        LAST
     }
 }

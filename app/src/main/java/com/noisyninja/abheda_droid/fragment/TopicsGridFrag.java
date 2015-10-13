@@ -69,6 +69,7 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button1: {
+
                 String url = Utils.getPreference(getActivity(), Constants.URL_STORE_KEY, Constants.URL_STORE);
 
                 Utils.handleInfo(getActivity(), Constants.DOWNLOAD_TEXT +" "+url);
@@ -110,6 +111,44 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
 
     }
 
+    public void getLessonKind() {
+        // custom dialog
+        final Dialog dialog = new Dialog(getActivity(), R.style.TransparentDialog);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.setContentView(R.layout.dialog_course_type);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_up_down;
+        //dialog.setTitle("Select course type...");
+
+        // set the custom dialog components - button
+        AnimatedButton buttonModule = (AnimatedButton) dialog.findViewById(R.id.button1);
+        buttonModule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Utils.playSound(getActivity(), Constants.Sound.CLICK);
+                Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
+                Utils.startActivity(getActivity(), CourseActivity.class);
+                //MainActivity mainActivity = (MainActivity) getActivity();
+                //mainActivity.switchTab(0);
+                dialog.dismiss();
+            }
+        });
+
+        AnimatedButton buttonRandom = (AnimatedButton) dialog.findViewById(R.id.button2);
+        buttonRandom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Utils.playSound(getActivity(), Constants.Sound.CLICK);
+                Toast.makeText(getActivity(), "Coming soon", Toast.LENGTH_SHORT).show();
+                //MainActivity mainActivity = (MainActivity) getActivity();
+                //mainActivity.switchTab(2);
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
     public class CustomAdapter extends BaseAdapter {
 
         ArrayList<Topic> topicArrayList;
@@ -143,14 +182,6 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
             return position;
         }
 
-        public class Holder
-        {
-            TextView tName;
-            TextView tDescription;
-            DonutProgress dProgressCompletion;
-            TextView tMarks;
-            ImageView img;
-        }
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             // TODO Auto-generated method stub
@@ -189,46 +220,14 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
             return rowView;
         }
 
-    }
+        public class Holder {
+            TextView tName;
+            TextView tDescription;
+            DonutProgress dProgressCompletion;
+            TextView tMarks;
+            ImageView img;
+        }
 
-
-    public void getLessonKind()
-    {
-        // custom dialog
-        final Dialog dialog = new Dialog(getActivity(), R.style.TransparentDialog);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCanceledOnTouchOutside(true);
-        dialog.setContentView(R.layout.dialog_course_type);
-        dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_up_down;
-        //dialog.setTitle("Select course type...");
-
-        // set the custom dialog components - button
-        AnimatedButton buttonModule = (AnimatedButton) dialog.findViewById(R.id.button1);
-        buttonModule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Utils.playSound(getActivity(), Constants.Sound.CLICK);
-                Toast.makeText(getActivity(), "Module selected", Toast.LENGTH_SHORT).show();
-                Utils.startActivity(getActivity(), CourseActivity.class);
-                //MainActivity mainActivity = (MainActivity) getActivity();
-                //mainActivity.switchTab(0);
-                dialog.dismiss();
-            }
-        });
-
-        AnimatedButton buttonRandom = (AnimatedButton) dialog.findViewById(R.id.button2);
-        buttonRandom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Utils.playSound(getActivity(), Constants.Sound.CLICK);
-                Toast.makeText(getActivity(), "Coming soon", Toast.LENGTH_SHORT).show();
-                //MainActivity mainActivity = (MainActivity) getActivity();
-                //mainActivity.switchTab(2);
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
     }
 }
 

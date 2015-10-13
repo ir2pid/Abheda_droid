@@ -93,8 +93,8 @@
 
                     <ImageView
                         android:id="@+id/imageView1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/padding_128"
+                        android:layout_height="@dimen/padding_128"
                         android:layout_margin="10dp"
                         android:background="@drawable/button_white"
                         android:src="@drawable/imageholder" />
@@ -131,8 +131,8 @@
 
                     <ImageView
                         android:id="@+id/imageView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/padding_128"
+                        android:layout_height="@dimen/padding_128"
                         android:layout_margin="10dp"
                         android:background="@drawable/button_white"
                         android:src="@drawable/imageholder" />
@@ -168,8 +168,8 @@
 
                     <ImageView
                         android:id="@+id/imageView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/padding_128"
+                        android:layout_height="@dimen/padding_128"
                         android:layout_margin="10dp"
                         android:background="@drawable/button_white"
                         android:src="@drawable/imageholder" />
@@ -205,8 +205,8 @@
 
                     <ImageView
                         android:id="@+id/imageView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/padding_128"
+                        android:layout_height="@dimen/padding_128"
                         android:layout_margin="10dp"
                         android:background="@drawable/button_white"
                         android:src="@drawable/imageholder" />
