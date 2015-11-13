@@ -9,11 +9,11 @@
     "isPicture": false
     },
     {
-    "option1": "Someone has left the bag here.",
-    "option2": "Someone has leaving  the bag here.",
-    "option3": "Someone  leaves  the bag here.",
-    "option4": "Someone has been left the bag here.",
-    "question": "কেউ এখানে ব্যাগটা ফেলে গেছে",
+        "option1": "Someone has left a bag here.",
+        "option2": "Someone has leaving a bag here.",
+        "option3": "Someone leaves a bag here.",
+        "option4": "Someone has been left a bag here.",
+        "question": "কেউ এখানে একটা ব্যাগ ফেলে গেছে",
     "correct": 1,
     "isPicture": false
     },
@@ -36,10 +36,10 @@
     "isPicture": false
     },
     {
-    "option1": "We may leave the place soon.",
-    "option2": "Let us leave the place soon.",
-    "option3": "Let us left the place soon.",
-    "option4": "We may leaves the place soon.",
+        "option1": "We may leave this place soon.",
+        "option2": "Let us leave this place soon.",
+        "option3": "Let us left this place soon.",
+        "option4": "We may leaves this place soon.",
     "question": "এখান থেকে তাড়াতাড়ি যাওয়া যাক",
     "correct": 2,
     "isPicture": false
@@ -49,8 +49,8 @@
     "option2": "The boy grows into a man.",
     "option3": "The boy grew into a man.",
     "option4": "The boy is grow into a man.",
-    "question": "ছেলেটা লোকে পরিণত হলো",
-    "correct": 3,
+        "question": "ছেলেটা লোকে পরিণত হয়",
+        "correct": 2,
     "isPicture": false
     },
     {
@@ -108,10 +108,10 @@
     "isPicture": false
     },
     {
-    "option1": "Count  many persons are there in that room.",
-    "option2": "Count how many person  are there in that room.",
-    "option3": "Counting  how many persons are there in that room.",
-    "option4": "Count how many persons are there in that room.",
+        "option1": "Count many persons there are in that room.",
+        "option2": "Count how many person there are in that room.",
+        "option3": "Counting how many persons there are in that room.",
+        "option4": "Count how many persons there are in that room.",
     "question": "ওঘরে কজন আছে গুণে বলো",
     "correct": 4,
     "isPicture": false
@@ -139,15 +139,15 @@
     "option2": "Let us fixed  the picture to the frame.",
     "option3": "Let us fixing  the picture to the frame.",
     "option4": "Let us fix the picture to the frame.",
-    "question": "চলো ছবিটা ফ্রেমে লাগাই",
+        "question": "চলো, ছবিটা ফ্রেমে লাগাই",
     "correct": 4,
     "isPicture": false
     },
     {
-    "option1": "The date of the final  was fixed.",
-    "option2": "The date of the final  is fixed.",
-    "option3": "The date of the final   fixed.",
-    "option4": "The date of the final  had fixed.",
+        "option1": "The date of the final was fixed.",
+        "option2": "The date of the final is fixed.",
+        "option3": "The date of the final fixed.",
+        "option4": "The date of the final had fixed.",
     "question": "ফাইনালের দিন ঠিক হয়ে গেছে",
     "correct": 2,
     "isPicture": false
@@ -162,11 +162,11 @@
     "isPicture": false
     },
     {
-    "option1": "Fixing  your eyes on that side.",
-    "option2": "Fixed  your eyes on that side.",
-    "option3": "Fix your eyes on that side.",
-    "option4": "Can fix your eyes on that side.",
-    "question": "চোখ ওদিকেই স্থির করে রাখো",
+        "option1": "Fixing your eyes on that side only.",
+        "option2": "Fixed your eyes on that side only.",
+        "option3": "Fix your eyes on that side only.",
+        "option4": "Can fix your eyes on that side only.",
+        "question": "তোমার চোখ ওদিকেই স্থির করে রাখো",
     "correct": 3,
     "isPicture": false
     },
@@ -198,19 +198,19 @@
     "isPicture": false
     },
     {
-    "option1": "This time he has need you.",
-    "option2": "This time he is  need you.",
-    "option3": "This time he need you.",
-    "option4": "This time he needs you.",
+        "option1": "He has need you at this time.",
+        "option2": "He is need you at this time.",
+        "option3": "He need you at this time.",
+        "option4": "He needs you at this time.",
     "question": "এসময়ে ওর তোমাকে  দরকার",
     "correct": 4,
     "isPicture": false
     },
     {
-    "option1": "You need not going there.",
-    "option2": "You need not go there.",
-    "option3": "You are need not go there.",
-    "option4": "You will need not going there.",
+        "option1": "You need not going.",
+        "option2": "You need not go.",
+        "option3": "You are need not go.",
+        "option4": "You will need not going.",
     "question": "তোমার যাবার দরকার নেই",
     "correct": 2,
     "isPicture": false
@@ -220,7 +220,7 @@
     "option2": "You really need the pen ?",
     "option3": "Do you really need the pen ?",
     "option4": "Need you really the pen ?",
-    "question": "তোমার কি পেনটা দরকার ?",
+        "question": "তোমার কি সত্যিই পেনটা দরকার ?",
     "correct": 3,
     "isPicture": false
     },
@@ -315,11 +315,11 @@
     "isPicture": false
     },
     {
-    "option1": "Two much garlic killed the taste of the food.",
-    "option2": "Too much garlic killed the taste of the food.",
-    "option3": "Too much garlic has killed the taste of the food.",
-    "option4": "Too much garlic and the taste of the food was killed.",
-    "question": "এতো রসুনে রান্নার স্বাদ নষ্ট হলো",
+        "option1": "Two much garlic kills the taste of the food.",
+        "option2": "Too much garlic kills the taste of the food.",
+        "option3": "Too much garlic has killing the taste of the food.",
+        "option4": "To much garlic killing the taste of the food.",
+        "question": "এতো রসুনে রান্নার স্বাদ নষ্ট হয়",
     "correct": 2,
     "isPicture": false
     },
@@ -351,10 +351,10 @@
     "isPicture": false
     },
     {
-    "option1": "My shoes killed me.",
-    "option2": "My shoes were killing me.",
-    "option3": "My shoes kill me.",
-    "option4": "My shoes are killing me.",
+        "option1": "My shoe killed me.",
+        "option2": "My shoe was killing me.",
+        "option3": "My shoe kill me.",
+        "option4": "My shoe is killing me.",
     "question": "আমার জুতো আমায় পাগল করছে",
     "correct": 4,
     "isPicture": false

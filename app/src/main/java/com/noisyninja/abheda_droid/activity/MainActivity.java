@@ -2,6 +2,7 @@ package com.noisyninja.abheda_droid.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -11,7 +12,7 @@ import com.noisyninja.abheda_droid.fragment.TopicsGridFrag;
 import com.noisyninja.abheda_droid.util.Utils;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends FragmentActivity {
 
     Context context;
 

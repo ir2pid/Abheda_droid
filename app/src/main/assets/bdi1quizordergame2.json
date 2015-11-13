@@ -8,51 +8,29 @@
           "2": "said",
           "5": "take",
           "6": "the patient",
-          "7": "the",
+          "7": "the doctor",
           "8": "had",
           "9": "to",
           "10": "not",
-          "11": "the",
-          "12": "right",
-          "13": "taken",
-          "14": "did"
+          "11": "did",
+          "12": "the right",
+          "13": "taken"
         },
-        "answers":[[7,2,9,4,3,6,8,10,13,11,12,1]]
-    },
-    {
-        "question": "Rabi said, \"I shall not start without you.\"",
-        "words": {
-          "4": "me",
-          "1": "not",
-          "3": "you",
-          "2": "Rabi",
-          "5": "I",
-          "6": "that",
-          "7": "would",
-          "8": "start",
-          "9": "should",
-          "10": "he",
-          "11": "without",
-          "12": "said"
-        },
-        "answers":[[2,12,6,10,7,1,8,11,4]]
-    },
-    {
-        "question": "I told you, \"I shall not start without him.\"",
-        "words": {
-          "4": "I",
-          "1": "start",
-          "3": "told",
-          "2": "would",
-          "5": "not",
-          "6": "I",
-          "7": "you",
-          "8": "him",
-          "9": "should",
-          "10": "that",
-          "11": "without"
-        },
-        "answers":[[4,3,7,10,6,9,5,1,11,8],[6,3,7,10,4,9,5,1,11,8]]
+      "answers": [
+        [
+          7,
+          2,
+          9,
+          4,
+          3,
+          6,
+          8,
+          10,
+          13,
+          12,
+          1
+        ]
+      ]
     },
     {
         "question": "He told me, \"You will not start without me.\"",
@@ -63,97 +41,82 @@
           "2": "should",
           "5": "start",
           "6": "I",
-          "7": "would",
+          "7": "me",
           "8": "not",
-          "9": "without",
+          "9": "will",
           "10": "told",
-          "11": "him"
+          "11": "him",
+          "12": "you",
+          "13": "would",
+          "14": "without"
         },
-        "answers":[[4,10,3,1,6,2,8,5,9,11]]
+      "answers": [
+        [
+          4,
+          10,
+          3,
+          1,
+          6,
+          2,
+          8,
+          5,
+          14,
+          11
+        ],
+        [
+          4,
+          10,
+          3,
+          1,
+          6,
+          13,
+          8,
+          5,
+          14,
+          11
+        ]
+      ]
     },
     {
-        "question": "The workers said, \"We will not work today.\"",
-        "words": {
-          "4": "work",
-          "1": "day",
-          "3": "they",
-          "2": "said",
-          "5": "will",
-          "6": "the",
-          "7": "that",
-          "8": "would",
-          "9": "today",
-          "10": "not",
-          "11": "workers",
-          "12": "that"
-        },
-        "answers":[[6,11,2,12,3,8,10,4,7,1],[6,11,2,7,3,8,10,4,12,1]]
-    },
-    {
-        "question": "Jesus said, \"We should love our neighbours.\"",
-        "words": {
-          "4": "should",
-          "1": "that",
-          "3": "Jesus",
-          "2": "we",
-          "5": "love",
-          "6": "they",
-          "7": "our",
-          "8": "said",
-          "9": "neighbours",
-          "10": "their",
-          "11": "will"
-        },
-        "answers":[[3,8,1,2,4,5,7,9]]
-    },
-    {
-        "question": "Ruchira said, \"You should go to bed early.\"",
-        "words": {
-          "4": "bed",
-          "1": "you",
-          "3": "that",
-          "2": "will",
-          "5": "Ruchira",
-          "6": "to",
-          "7": "I",
-          "8": "go",
-          "9": "said",
-          "10": "early",
-          "11": "should"
-        },
-        "answers":[[5,9,3,7,11,8,6,4,10]]
-    },
-    {
-        "question": "We said, \"We can do it, and we must do it.\"",
+      "question": "We said, \"We can do it, and we must do it.\"",
         "words": {
           "4": "we said",
           "1": "do that",
           "3": "and",
-          "2": "we can",
+          "2": "did it",
           "5": "that",
           "6": "we must",
-          "7": "we could",
-          "8": "do that"
+          "7": "do it",
+          "8": "do that",
+          "9": "do it",
+          "10": "done it",
+          "11": "we could",
+          "12": "did it",
+          "13": "we can"
         },
-        "answers":[[4,5,7,8,3,6,1],[4,5,7,1,3,6,8]]
+      "answers": [
+        [
+          4,
+          5,
+          11,
+          8,
+          3,
+          6,
+          1
+        ],
+        [
+          4,
+          5,
+          11,
+          1,
+          3,
+          6,
+          8
+        ]
+      ]
     },
     {
-        "question": "The teacher taught, \"The earth moves round the sun.\"",
-        "words": {
-          "4": "moved",
-          "1": "taught",
-          "3": "moving",
-          "2": "the",
-          "5": "moves",
-          "6": "that",
-          "7": "round",
-          "8": "the earth",
-          "9": "the sun"
-        },
-        "answers":[[2,1,6,8,5,7,9]]
-    },
-    {
-        "question": "My father always said, \"All work and no play makes Jack a dull boy.\"",
+      "question": "My father always said, \"All work and no play makes Jack a dull boy.\"",
         "words": {
           "4": "father",
           "1": "Jack",
@@ -172,7 +135,195 @@
           "15": "boy",
           "16": "no"
         },
-        "answers":[[8,4,14,5,9,6,12,10,16,3,7,1,13,11,15]]
+      "answers": [
+        [
+          8,
+          4,
+          14,
+          5,
+          9,
+          6,
+          12,
+          10,
+          16,
+          3,
+          7,
+          1,
+          13,
+          11,
+          15
+        ]
+      ]
+    },
+    {
+      "question": "The team shouted, \"We were winning the match.\"",
+        "words": {
+          "4": "winning",
+          "1": "they",
+          "3": "saying",
+          "2": "the match",
+          "5": "the team",
+          "6": "that",
+          "7": "been",
+          "8": "and",
+          "9": "shouted",
+          "10": "had",
+          "11": "said",
+          "12": "were",
+          "13": "shouting"
+        },
+      "answers": [
+        [
+          5,
+          9,
+          3,
+          6,
+          1,
+          10,
+          7,
+          4,
+          2
+        ],
+        [
+          5,
+          11,
+          13,
+          6,
+          1,
+          10,
+          7,
+          4,
+          2
+        ],
+        [
+          5,
+          9,
+          8,
+          11,
+          6,
+          1,
+          10,
+          7,
+          4,
+          2
+        ]
+      ]
+    },
+    {
+      "question": "The workers said, \"We will not work today.\"",
+        "words": {
+          "4": "work",
+          "1": "that day",
+          "3": "they",
+          "2": "said",
+          "5": "next day",
+          "6": "the",
+          "7": "we",
+          "8": "would",
+          "9": "today",
+          "10": "not",
+          "11": "workers",
+          "12": "that",
+          "13": "will"
+        },
+      "answers": [
+        [
+          6,
+          11,
+          2,
+          12,
+          3,
+          8,
+          10,
+          4,
+          1
+        ]
+      ]
+    },
+    {
+        "question": "The teacher taught, \"The earth moves round the sun.\"",
+        "words": {
+          "4": "moved",
+          "1": "taught",
+          "3": "moving",
+          "2": "the",
+          "5": "moves",
+          "6": "that",
+          "7": "round",
+          "8": "the earth",
+          "9": "the sun",
+          "10": "teacher",
+          "11": "is"
+        },
+      "answers": [
+        [
+          2,
+          10,
+          1,
+          6,
+          8,
+          5,
+          7,
+          9
+        ]
+      ]
+    },
+    {
+      "question": "I told you, \"I shall not start without him.\"",
+        "words": {
+          "4": "I",
+          "1": "start",
+          "3": "told",
+          "2": "you",
+          "5": "not",
+          "6": "I",
+          "7": "you",
+          "8": "him",
+          "9": "should",
+          "10": "me",
+          "11": "without",
+          "12": "he",
+          "13": "would",
+          "14": "that"
+        },
+      "answers": [
+        [
+          4,
+          3,
+          7,
+          14,
+          6,
+          9,
+          5,
+          1,
+          11,
+          8
+        ],
+        [
+          6,
+          3,
+          7,
+          14,
+          4,
+          9,
+          5,
+          1,
+          11,
+          8
+        ],
+        [
+          4,
+          3,
+          7,
+          14,
+          6,
+          13,
+          5,
+          1,
+          11,
+          8
+        ]
+      ]
     },
     {
         "question": "Pushpita told me, \"English is easy to learn.\"",
@@ -182,16 +333,82 @@
           "3": "to",
           "2": "Pushpita",
           "5": "that",
-          "6": "the",
+          "6": "had",
           "7": "was",
           "8": "told",
           "9": "easy",
           "10": "English",
-          "11": "learning"
+          "11": "is",
+          "12": "been",
+          "13": "the",
+          "14": "learning"
         },
         "answers":[[2,8,1,5,10,7,9,3,4]]
     },
     {
+      "question": "Jesus said, \"We should love our neighbours.\"",
+      "words": {
+        "4": "should",
+        "1": "that",
+        "3": "Jesus",
+        "2": "we",
+        "5": "love",
+        "6": "shoulded",
+        "7": "our",
+        "8": "said",
+        "9": "neighbours",
+        "10": "be",
+        "11": "will",
+        "12": "loved",
+        "13": "they",
+        "14": "their"
+      },
+      "answers": [
+        [
+          3,
+          8,
+          1,
+          2,
+          4,
+          5,
+          7,
+          9
+        ]
+      ]
+    },
+  {
+    "question": "Rabi said, \"I shall not start without you.\"",
+    "words": {
+      "4": "me",
+      "1": "not",
+      "3": "you",
+      "2": "Rabi",
+      "5": "will",
+      "6": "that",
+      "7": "would",
+      "8": "start",
+      "9": "him",
+      "10": "he",
+      "11": "without",
+      "12": "said",
+      "13": "I",
+      "14": "should"
+    },
+    "answers": [
+      [
+        2,
+        12,
+        6,
+        10,
+        7,
+        1,
+        8,
+        11,
+        4
+      ]
+    ]
+  },
+  {
         "question": "She told me, \"I was waiting for the bus yesterday.\"",
         "words": {
           "4": "the bus",
@@ -214,21 +431,35 @@
         "answers":[[10,14,11,9,6,1,16,7,2,4,12,8,5],[6,14,11,9,10,1,16,7,2,4,12,8,5]]
     },
     {
-        "question": "The team shouted, \"We were winning the match.\"",
+      "question": "Ruchira said, \"You should go to bed early.\"",
         "words": {
-          "4": "winning",
-          "1": "they",
-          "3": "saying",
-          "2": "the match",
-          "5": "the team",
-          "6": "that",
-          "7": "been",
-          "8": "and",
-          "9": "shouted",
-          "10": "had",
-          "11": "said"
+          "4": "bed",
+          "1": "you",
+          "3": "that",
+          "2": "went",
+          "5": "Ruchira",
+          "6": "shall",
+          "7": "I",
+          "8": "go",
+          "9": "said",
+          "10": "early",
+          "11": "should",
+          "12": "will",
+          "13": "to"
         },
-        "answers":[[5,9,3,6,1,10,7,4,2]]
+      "answers": [
+        [
+          5,
+          9,
+          3,
+          7,
+          11,
+          8,
+          13,
+          4,
+          10
+        ]
+      ]
     },
     {
         "question": "She said, \"I was sleeping when Jaya called.\"",
@@ -238,13 +469,43 @@
           "3": "Jaya",
           "2": "she",
           "5": "she",
-          "6": "that",
-          "7": "had been",
+          "6": "was",
+          "7": "had",
           "8": "was",
           "9": "said",
           "10": "had",
-          "11": "when"
+          "11": "when",
+          "12": "I",
+          "13": "been",
+          "14": "that"
         },
-        "answers":[[5,9,6,2,7,1,11,3,10,4],[2,9,6,5,7,1,11,3,10,4]]
+      "answers": [
+        [
+          5,
+          9,
+          14,
+          2,
+          7,
+          13,
+          1,
+          11,
+          3,
+          10,
+          4
+        ],
+        [
+          2,
+          9,
+          14,
+          5,
+          7,
+          13,
+          1,
+          11,
+          3,
+          10,
+          4
+        ]
+      ]
     }
 ]

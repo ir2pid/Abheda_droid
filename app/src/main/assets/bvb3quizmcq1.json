@@ -94,7 +94,7 @@
     "option2": "Koushik smiled when he said that.",
     "option3": "Koushik smiles when he said that.",
     "option4": "Koushik smiled when he was say that.",
-    "question": "সেটা বলার সময় কৌশিক মৃদু হেসেছিল",
+        "question": "সে সেটা বলার সময় কৌশিক মৃদু হেসেছিল",
     "correct": 2,
     "isPicture": false
     },
@@ -117,10 +117,10 @@
     "isPicture": false
     },
     {
-    "option1": "Manisha smiles when talked.",
-    "option2": "Manisha smiles when talks.",
-    "option3": "Manisha smiled when talking.",
-    "option4": "Manisha smiles when talking.",
+        "option1": "Manisha smiles while talked.",
+        "option2": "Manisha smiles while talks.",
+        "option3": "Manisha smiled while talking.",
+        "option4": "Manisha smiles while talking.",
     "question": "মনীষা হেসে কথা বলে",
     "correct":4 ,
     "isPicture": false
@@ -148,7 +148,7 @@
     "option2": "Your cooking was smelled this place up.",
     "option3": "Your cooking smelled this place up.",
     "option4": "Your cooking smelling this place up.",
-    "question": "তোমার রান্না এই জায়গায় গন্ধ ছড়িয়েছে",
+        "question": "তোমার রান্না এই জায়গায় গন্ধ ছড়িয়েছিল",
     "correct": 3,
     "isPicture": false
     },
@@ -198,10 +198,10 @@
     "isPicture": false
     },
      {
-    "option1": "Practised breathing exercise after you know it.",
-    "option2": "Practise breathing exercise after you know it.",
-    "option3": "Practise breathing exercise after you knew it.",
-    "option4": "Practise breathing exercise after you knowing it.",
+         "option1": "Practised breathing exercise after you knew it.",
+         "option2": "Practise breathing exercise after knowing it.",
+         "option3": "Practise breathing exercise after knew it.",
+         "option4": "Practise breathing exercise after you know it.",
     "question": "শ্বাসপ্রশ্বাসের অনুশীলন জেনে করবে",
     "correct": 2,
     "isPicture": false
@@ -270,11 +270,11 @@
     "isPicture": false
     },
     {
-    "option1": "Washing  your hands before you eat.",
-    "option2": "Washed  your hands before you eat.",
+        "option1": "Washing your hands before you eat.",
+        "option2": "Washed your hands before you eat.",
     "option3": "Wash your hands before you eating.",
     "option4": "Wash your hands before you eat.",
-    "question": "খাবার আগে হাত ধোও",
+        "question": "খাবার আগে তোমার হাত ধোও",
     "correct": 4,
     "isPicture": false
     },

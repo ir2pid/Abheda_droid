@@ -6,13 +6,31 @@
           "1": "leader",
           "3": "as",
           "2": "does",
-          "5": "speaks",
-          "6": "if",
+          "5": "also",
+          "6": "but",
           "7": "a",
           "8": "speaks",
-          "9": "like"
+          "9": "like",
+          "10": "if"
         },
-        "answers":[[4,5,3,7,1,2],4,8,3,7,1,2]
+      "answers": [
+        [
+          4,
+          8,
+          3,
+          7,
+          1,
+          2
+        ],
+        [
+          4,
+          8,
+          9,
+          7,
+          1,
+          2
+        ]
+      ]
     },
     {
         "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): Having finished his exercise he put away his books.",
@@ -46,68 +64,182 @@
           "8": "spite",
           "9": "for",
           "10": "being",
-          "11": "still"
+          "11": "still",
+          "12": "and"
         },
-        "answers":[[1,8,3,10,7,4,2,6],[4,2,7,5,6]]
+      "answers": [
+        [
+          1,
+          8,
+          3,
+          10,
+          7,
+          4,
+          2,
+          6
+        ],
+        [
+          4,
+          2,
+          7,
+          5,
+          6
+        ],
+        [
+          1,
+          8,
+          3,
+          10,
+          7,
+          4,
+          2,
+          11,
+          6
+        ],
+        [
+          4,
+          2,
+          6,
+          1,
+          8,
+          3,
+          10,
+          7
+        ],
+        [
+          4,
+          2,
+          11,
+          6,
+          1,
+          8,
+          3,
+          10,
+          7
+        ]
+      ]
     },
     {
-        "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): He is too weak to walk.",
+      "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): Owing to bad luck he met with an accident.",
         "words": {
-          "4": "he",
-          "1": "walk",
-          "3": "that",
-          "2": "too",
-          "5": "as",
-          "6": "so",
-          "7": "is",
-          "8": "to",
-          "9": "he",
-          "10": "not",
-          "11": "weak",
-          "12": "can"
+          "4": "being",
+          "1": "for",
+          "3": "as",
+          "2": "so",
+          "5": "he",
+          "6": "unlucky",
+          "7": "badlucky",
+          "8": "accdient",
+          "9": "was",
+          "10": "therefore",
+          "11": "with",
+          "12": "an",
+          "13": "met"
         },
-        "answers":[[4,7,6,11,3,9,12,10,1]]
-    },
-    {
-        "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): Owing to bad luck he met with a bad accident on his birthday.",
-        "words": {
-          "4": "he",
-          "1": "birthday",
-          "3": "so",
-          "2": "bad",
-          "5": "unlucky",
-          "6": "with",
-          "7": "accident",
-          "8": "he",
-          "9": "therefore",
-          "10": "met",
-          "11": "on",
-          "12": "in",
-          "13": "for",
-          "14": "and",
-          "15": "his",
-          "16": "was",
-          "17": "a",
-          "18": "being",
-          "19": "as"
-        },
-        "answers":[[8,16,5,14,9,4,10,6,17,2,7,11,15,1],[4,16,5,14,9,8,10,6,17,2,7,11,15,1]]
+      "answers": [
+        [
+          5,
+          9,
+          6,
+          10,
+          13,
+          11,
+          12,
+          8
+        ],
+        [
+          5,
+          9,
+          6,
+          2,
+          13,
+          11,
+          12,
+          8
+        ]
+      ]
      },
      {
-        "question": "Compound (যৌগিক বাক্য) to Simple (সরল বাক্য): He is not only weak but also he is ill.",
+       "question": "Complex (জটিল বাক্য) to Compound (যৌগিক বাক্য): If you listen to me, you will be happy.",
         "words": {
-          "4": "he",
-          "1": "ill",
-          "3": "weak",
-          "2": "also",
-          "5": "being",
-          "6": "is",
-          "7": "only",
-          "8": "besides",
-          "9": "not",
-          "10": "but"
+          "4": "me",
+          "1": "happy",
+          "3": "for",
+          "2": "and",
+          "5": "to",
+          "6": "be",
+          "7": "listen",
+          "8": "so",
+          "9": "being",
+          "10": "but",
+          "11": "as",
+          "12": "will",
+          "13": "you"
         },
-        "answers":[[8,5,3,4,6,2,1],[4,6,9,7,3,10,2,1]]
+       "answers": [
+         [
+           8,
+           5,
+           3,
+           4,
+           6,
+           2,
+           1
+         ],
+         [
+           4,
+           6,
+           9,
+           11,
+           3,
+           10,
+           2,
+           1
+         ],
+         [
+           4,
+           6,
+           2,
+           1,
+           8,
+           5,
+           3
+         ],
+         [
+           4,
+           6,
+           1,
+           2,
+           8,
+           5,
+           3
+         ],
+         [
+           8,
+           5,
+           3,
+           4,
+           6,
+           1,
+           2
+         ],
+         [
+           8,
+           5,
+           3,
+           4,
+           6,
+           1
+         ],
+         [
+           4,
+           6,
+           1,
+           8,
+           5,
+           3
+         ]
+       ]
     },
     {
         "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): He is too poor to buy a car.",
@@ -120,12 +252,32 @@
           "6": "can",
           "7": "car",
           "8": "he is",
-          "9": "very",
+          "9": "enough",
           "10": "that",
           "11": "not",
-          "12": "so"
+          "12": "so",
+          "13": "very"
         },
-        "answers":[[4,6,11,5,2,7,3,8,9,1],[8,12,1,10,4,6,11,5,2,7]]
+      "answers": [
+        [
+          7,
+          5,
+          4,
+          2,
+          6,
+          1
+        ],
+        [
+          7,
+          5,
+          4,
+          2,
+          13,
+          12,
+          6,
+          1
+        ]
+      ]
     },
     {
         "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): In spite of being my friend he did not help me.",
@@ -136,13 +288,49 @@
           "2": "still",
           "5": "my",
           "6": "me",
-          "7": "although",
+          "7": "because",
           "8": "not",
           "9": "he is",
-          "10": "but",
-          "11": "did"
+          "10": "moreover",
+          "11": "did",
+          "12": "although",
+          "13": "but"
         },
-        "answers":[[9,5,1,2,4,11,8,3,6],[7,9,5,1,4,11,8,3,6]]
+      "answers": [
+        [
+          9,
+          5,
+          1,
+          2,
+          4,
+          11,
+          8,
+          3,
+          6
+        ],
+        [
+          12,
+          9,
+          5,
+          1,
+          4,
+          11,
+          8,
+          3,
+          6
+        ],
+        [
+          4,
+          11,
+          8,
+          3,
+          6,
+          12,
+          9,
+          5,
+          1
+        ]
+      ]
     },
     {
         "question": "Compound (যৌগিক বাক্য) to Simple (সরল বাক্য): He went to a doctor and told of his illness.",
@@ -160,7 +348,30 @@
           "11": "of",
           "12": "then"
         },
-        "answers":[[3,9,6,4,5,8,11,10,1]]
+      "answers": [
+        [
+          3,
+          9,
+          6,
+          4,
+          5,
+          8,
+          11,
+          10,
+          1
+        ],
+        [
+          5,
+          8,
+          11,
+          10,
+          1,
+          3,
+          9,
+          6,
+          4
+        ]
+      ]
     },
     {
         "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): In spite of being your friend I can not help you.",
@@ -173,12 +384,37 @@
           "6": "friend",
           "7": "not",
           "8": "still",
-          "9": "as",
+          "9": "but",
           "10": "can",
           "11": "so",
-          "12": "being"
+          "12": "being",
+          "13": "as"
         },
-        "answers":[[4,2,6,8,1,10,7,5,3]]
+      "answers": [
+        [
+          4,
+          2,
+          6,
+          8,
+          1,
+          10,
+          7,
+          5,
+          3
+        ],
+        [
+          4,
+          2,
+          6,
+          9,
+          8,
+          1,
+          10,
+          7,
+          5,
+          3
+        ]
+      ]
     },
     {
         "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): The man being very hungry ate too much.",
@@ -188,47 +424,164 @@
           "3": "hungry",
           "2": "much",
           "5": "the",
-          "6": "as",
+          "6": "is",
           "7": "so",
           "8": "too",
           "9": "very",
           "10": "ate",
           "11": "was",
           "12": "being",
-          "13": "that"
+          "13": "that",
+          "14": "as"
         },
-        "answers":[[5,1,11,9,3,7,4,10,8,2],[5,1,10,8,2,6,4,11,9,3],[5,1,11,7,3,13,4,10,8,2]]
+      "answers": [
+        [
+          5,
+          1,
+          11,
+          9,
+          3,
+          7,
+          4,
+          10,
+          8,
+          2
+        ],
+        [
+          5,
+          1,
+          10,
+          8,
+          2,
+          14,
+          4,
+          11,
+          9,
+          3
+        ],
+        [
+          5,
+          1,
+          11,
+          7,
+          3,
+          13,
+          4,
+          10,
+          8,
+          2
+        ],
+        [
+          14,
+          5,
+          1,
+          11,
+          9,
+          3,
+          4,
+          10,
+          8,
+          2
+        ]
+      ]
     },
     {
         "question": "Compound (যৌগিক বাক্য) to Simple (সরল বাক্য): The children saw the giant and ran away.",
         "words": {
-          "4": "giant",
-          "1": "children",
+          "4": "the giant",
+          "1": "the children",
           "3": "away",
-          "2": "the",
-          "5": "Seeing",
+          "2": "saw",
+          "5": "seeing",
           "6": "they",
-          "7": "the",
+          "7": "running",
           "8": "ran",
           "9": "after",
           "10": "to"
         },
-        "answers":[[5,7,4,2,1,8,3],[5,2,4,7,1,8,3]]
+      "answers": [
+        [
+          5,
+          4,
+          1,
+          8,
+          3
+        ],
+        [
+          1,
+          8,
+          3,
+          5,
+          4
+        ],
+        [
+          9,
+          5,
+          4,
+          1,
+          8,
+          3
+        ],
+        [
+          1,
+          8,
+          3,
+          9,
+          5,
+          4
+        ]
+      ]
     },
     {
-        "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): Beside being intelligent he is also diligent.",
+      "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): Besides being intelligent he is also diligent.",
         "words": {
           "4": "he is",
           "1": "but",
-          "3": "being",
+          "3": "moreover",
           "2": "intelligent",
           "5": "diligent",
           "6": "not",
           "7": "also",
           "8": "he is",
-          "9": "only"
+          "9": "only",
+          "10": "still"
         },
-        "answers":[[4,6,9,2,1,7,8,5],[8,6,9,2,1,7,4,5]]
+      "answers": [
+        [
+          4,
+          6,
+          9,
+          2,
+          1,
+          7,
+          8,
+          5
+        ],
+        [
+          8,
+          6,
+          9,
+          2,
+          1,
+          7,
+          4,
+          5
+        ],
+        [
+          4,
+          2,
+          3,
+          8,
+          5
+        ],
+        [
+          8,
+          2,
+          3,
+          4,
+          5
+        ]
+      ]
     },
     {
         "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): Being dissatisfied he resigned from his position.",
@@ -237,25 +590,128 @@
           "1": "his",
           "3": "he",
           "2": "from",
-          "5": "as",
-          "6": "so",
+          "5": "but",
+          "6": "and",
           "7": "dissatisfied",
           "8": "resigned",
           "9": "position",
-          "10": "was"
+          "10": "was",
+          "11": "yet",
+          "12": "as",
+          "13": "so"
         },
-        "answers":[[4,10,7,6,3,8,2,1,9],[3,10,7,6,4,8,2,1,9]]
+      "answers": [
+        [
+          4,
+          10,
+          7,
+          13,
+          3,
+          8,
+          2,
+          1,
+          9
+        ],
+        [
+          3,
+          10,
+          7,
+          13,
+          4,
+          8,
+          2,
+          1,
+          9
+        ],
+        [
+          12,
+          4,
+          10,
+          7,
+          3,
+          8,
+          2,
+          1,
+          9
+        ],
+        [
+          4,
+          8,
+          2,
+          1,
+          9,
+          12,
+          3,
+          10,
+          7
+        ],
+        [
+          3,
+          8,
+          2,
+          1,
+          9,
+          12,
+          4,
+          10,
+          7
+        ],
+        [
+          12,
+          3,
+          10,
+          7,
+          4,
+          8,
+          2,
+          1,
+          9
+        ]
+      ]
     },
     {
         "question": "Simple (সরল বাক্য) to Compound (যৌগিক বাক্য): In spite of being poor he is happy.",
         "words": {
           "4": "he is",
           "1": "but",
-          "3": "happy",
-          "2": "poor",
-          "5": "he-is",
-          "6": "being"
+          "3": "then",
+          "2": "so",
+          "5": "he is",
+          "6": "being",
+          "7": "still",
+          "8": "because",
+          "9": "poor",
+          "10": "happy"
         },
-        "answers":[[4,2,1,5,3]]
+      "answers": [
+        [
+          4,
+          9,
+          1,
+          5,
+          10
+        ],
+        [
+          5,
+          9,
+          1,
+          4,
+          10
+        ],
+        [
+          4,
+          9,
+          7,
+          5,
+          10
+        ],
+        [
+          5,
+          9,
+          7,
+          4,
+          10
+        ]
+      ]
     }
 ]

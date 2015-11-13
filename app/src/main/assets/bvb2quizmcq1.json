@@ -9,7 +9,7 @@
     "isPicture": false
     },
     {
-    "option1": "Tanmoy drawn  good salary.",
+        "option1": "Tanmoy drawn good salary.",
     "option2": "Tanmoy draws good salary.",
     "option3": "Tanmoy is drawing  good salary.",
     "option4": "Tanmoy draw good salary.",
@@ -63,7 +63,7 @@
     "isPicture": false
     },
     {
-    "option1": "Sit on and listen  me.",
+        "option1": "Sit on and listen me.",
     "option2": "Sit down and listen to me.",
     "option3": "Sat down and listen to me.",
     "option4": "Sit up and listen to me.",
@@ -136,7 +136,7 @@
     },
     {
     "option1": "I stood at straight.",
-    "option2": "I standing  straight.",
+        "option2": "I standing straight.",
     "option3": "I stand straight.",
     "option4": "I stood straight.",
     "question": "আমি সোজা দাঁড়িয়েছিলাম",
@@ -148,7 +148,7 @@
     "option2": "Stand by your friends during their bad time.",
     "option3": "Stood at your friends during their bad time.",
     "option4": "Standing with your friends during their bad time.",
-    "question": "বন্ধুদের খারাপ সময়ে তাদের পাশে দাঁড়িয়ো",
+        "question": "তোমার বন্ধুদের খারাপ সময়ে তাদের পাশে দাঁড়িয়ো",
     "correct": 2,
     "isPicture": false
     },
@@ -184,8 +184,8 @@
     "option2": "Rajesh said that he can walk fast.",
     "option3": "Rajesh says that he can walk fast.",
     "option4": "Rajesh says that he walk fast.",
-    "question": "রাজেশ বলল যে সে জোরে হাঁটতে পারে",
-    "correct": 2,
+        "question": "রাজেশ বলে যে সে জোরে হাঁটতে পারে",
+        "correct": 3,
     "isPicture": false
     },
     {
@@ -198,7 +198,7 @@
     "isPicture": false
     },
     {
-    "option1": "When I  walk I saw you.",
+        "option1": "When I walk I saw you.",
     "option2": "When I was walking I see you.",
     "option3": "When I am walking I saw you.",
     "option4": "When I was walking I saw you.",
@@ -208,7 +208,7 @@
     },
     {
     "option1": "Do you walk everyday ?",
-    "option2": "Do you walked  everyday ?",
+        "option2": "Do you walked everyday ?",
     "option3": "Does  you walk everyday ?",
     "option4": "Do you walking everyday ?",
     "question": "তুমি কি রোজ হাঁটো ?",
@@ -237,16 +237,16 @@
     "option1": "Kalyan is running in money.",
     "option2": "Kalyan is running after money.",
     "option3": "Kalyan is running with money.",
-    "option4": "Kalyan  run after money.",
+        "option4": "Kalyan run after money.",
     "question": "কল্যাণ টাকার পেছনে ছুটছে",
     "correct": 2,
     "isPicture": false
     },
     {
-    "option1": "You have run enough , now taking water.",
-    "option2": "You ran enough , now took water.",
-    "option3": "You have run enough , now take water.",
-    "option4": "You ran enough , now taken  water.",
+        "option1": "You have run enough, now taking water.",
+        "option2": "You ran enough, now took water.",
+        "option3": "You have run enough, now take water.",
+        "option4": "You ran enough, now taken  water.",
     "question": "অনেক ছুটেছো, এবারে জল খাও",
     "correct": 3,
     "isPicture": false
@@ -261,19 +261,19 @@
     "isPicture": false
     },
     {
-    "option1": "Children are running around the tree.",
-    "option2": "Childrens run around the tree.",
-    "option3": "Children are running round the tree.",
-    "option4": "Childrens ran round the tree.",
+        "option1": "The children are running around the tree.",
+        "option2": "The children run around the tree.",
+        "option3": "The children are running round the tree.",
+        "option4": "The children ran round the tree.",
     "question": "বাচ্চারা গাছের চারপাশে দৌড়চ্ছে",
     "correct": 1,
     "isPicture": false
     },
     {
-    "option1": "Students is playing in the ground.",
-    "option2": "Students played  in the ground.",
-    "option3": "Students were playing in the ground.",
-    "option4": "Students are playing in the ground.",
+        "option1": "The students is playing in the ground.",
+        "option2": "The students played  in the ground.",
+        "option3": "The students were playing in the ground.",
+        "option4": "The students are playing in the ground.",
     "question": "ছাত্ররা মাঠে খেলছে",
     "correct": 4,
     "isPicture": false
@@ -360,10 +360,10 @@
     "isPicture": false
     },
     {
-    "option1": "The boy is fallings from the tree.",
-    "option2": "The boy often fell from the tree.",
-    "option3": "The boy often fall from the tree.",
-    "option4": "The boy often falls from the tree.",
+        "option1": "The boy is fallings from tree.",
+        "option2": "The boy often fell from tree.",
+        "option3": "The boy often fall from tree.",
+        "option4": "The boy often falls from tree.",
     "question": "ছেলেটা প্রায়ই গাছ থেকে পড়ে",
     "correct": 4,
     "isPicture": false
@@ -378,10 +378,10 @@
     "isPicture": false
     },
     {
-    "option1": "I fell down but I did not break my legs.",
-    "option2": "I fall down but I did not break my legs.",
-    "option3": "I fell down but I do not break my legs.",
-    "option4": "I fell down but I can not break my legs.",
+        "option1": "I fell down but I did not break my leg.",
+        "option2": "I fall down but I did not break my leg.",
+        "option3": "I fell down but I do not break my leg.",
+        "option4": "I fell down but I can not break my leg.",
     "question": "আমি পড়লাম, কিন্তু আমার পা ভাঙলো না",
     "correct": 1,
     "isPicture": false
@@ -405,19 +405,19 @@
     "isPicture": false
     },
     {
-    "option1": "Sanju  threw a balloon.",
+        "option1": "Sanju threw a balloon.",
     "option2": "Sanju has thrown a balloon.",
-    "option3": "Sanju  throwing a balloon.",
+        "option3": "Sanju throwing a balloon.",
     "option4": "Sanju is throwing a balloon.",
     "question": "সঞ্জু একটা বেলুন ছুঁড়ছে",
     "correct": 4,
     "isPicture": false
     },
     {
-    "option1": "The horse is threw his rider.",
-    "option2": "The horse threw its rider.",
-    "option3": "The horse throwing  its rider.",
-    "option4": "The horse can throw its rider.",
+        "option1": "The horse is threw away his rider.",
+        "option2": "The horse threw away its rider.",
+        "option3": "The horse throwing away its rider.",
+        "option4": "The horse can throw away its rider.",
     "question": "ঘোড়াটি তার সওয়ারীকে ফেলে দিলো",
     "correct": 2,
     "isPicture": false

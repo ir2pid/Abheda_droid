@@ -4,7 +4,7 @@
                         "image1": "",
                         "name": "BGP2-Lesson3 (1)",
                         "text1": "একটি সুন্দর করে আঁকা ছবি হাজার শব্দের চেয়ে ভাল",
-                        "text2": "A picture nicely painted is better than thousand words. <br> <br>A picture nicely painted - একটি সাধারণ participle-এর ব্যবহার, যদিও  nicely painted picture-ও লেখা যেত । সেটি হত participle adjective-এর ব্যবহার ।"
+                        "text2": "A picture nicely painted is better than thousand words. <br> <br>A picture nicely painted - একটি সাধারণ participle-এর ব্যবহার, যদিও  nicely painted picture-ও লেখা যেত । সেটি হত participle adjective-এর ব্যবহার । কিন্তু a nice painting লিখলে 'সুন্দর করে আঁকা ছবি' এই ভাব আসত না ।"
                       },
                       {
                         "description": "",
@@ -45,8 +45,8 @@
                         "description": "",
                         "image1": "",
                         "name": "BGP2-Lesson3 (7)",
-                        "text1": "ঈশানকে দাঁড় করিয়ে রাখো",
-                        "text2": "Make Ishan stand. <br> <br>এটিও আগের মতই । make(verb) আছে বলে Make Ishan to stand হল না, Make Ishan stand হল । কারোকে কিছু করানো অর্থে make-এর ব্যবহার লক্ষ্য কর (শুধু তৈরী করা অর্থেই make ব্যবহার করা হয় না), যেমন make him stand (দাঁড় করিয়ে রাখা), make him run (দৌড় করানো), make him walk (হাঁটানো) ইত্যাদি ।"
+                        "text1": "ঈশানকে দাঁড় করাও",
+                        "text2": "Make Ishan stand. <br> <br>এটিও আগের মতই । make (verb) আছে বলে Make Ishan to stand হল না, Make Ishan stand হল । কারোকে কিছু করানো অর্থে make-এর ব্যবহার লক্ষ্য কর (শুধু তৈরী করা অর্থেই make ব্যবহার করা হয় না), যেমন make him stand (দাঁড় করানো), make him run (দৌড় করানো), make him walk (হাঁটানো) ইত্যাদি । আবার keep Ishan standing লেখা যায়, যদি দাঁড় করিয়ে রাখা বোঝায় ।"
                       },
                       {
                         "description": "",
@@ -60,14 +60,14 @@
                         "image1": "",
                         "name": "BGP2-Lesson3 (9)",
                         "text1": "আমি সুস্মিতকে হাসতে দেখেছিলাম",
-                        "text2": "I saw Susmit laugh. <br> <br>এটাও আগের মত । কাউকে হাসতে দেখা - see someone laugh । আসলে এখানে to উহ্য আছে, আগের দুটো বাক্যের মতই । I saw Susmit laughing বা I saw laughing Susmit - ভুল ইংরিজি ।"
+                        "text2": "I saw Susmit laugh. <br> <br>এটাও আগের মত । কাউকে হাসতে দেখা - see someone laugh । আসলে এখানে to উহ্য আছে, আগের দুটো বাক্যের মতই । I saw Susmit laughing চলতে পারে ।  I saw laughing Susmit - ভুল ইংরিজি ।"
                       },
                       {
                         "description": "",
                         "image1": "",
                         "name": "BGP2-Lesson3 (10)",
                         "text1": "আমি নন্দিতাকে গান গাইতে শুনেছিলাম",
-                        "text2": "I heard Nandita sing. <br> <br>Let, make, see-এর মতই hear-এর পরে to উহ্য রইল । এখানে I heard Nandita to sing না লিখে, লেখা হল I heard Nandita sing ।"
+                        "text2": "I heard Nandita sing. <br> <br>Let, make, see-এর মতই hear-এর পরে to উহ্য রইল । এখানে I heard Nandita to sing না লিখে, লেখা হল I heard Nandita sing । আবার লিখতে পারো - I heard Nandita singing ।"
                       },
                       {
                         "description": "",
@@ -81,7 +81,7 @@
                         "image1": "",
                         "name": "BGP2-Lesson3 (12)",
                         "text1": "আমার অভ্যাস ধূমপান করা আর আনন্দ হল গান করা",
-                        "text2": "My habit is to smoke, and my pleasure is to sing. <br> <br>এখানে to smoke-এর জায়গায় smoking এবং to sing-এর জায়গায় singing লেখা যেত । কিন্তু My habit is smoke, and my pleasure is sing হবে না, to smoke এবং to sing লিখতে হবে (infinitive), যেগুলি noun হিসেবে ব্যবহার হচ্ছে (ধুমপান করা, গান করা এই কাজগুলি) ।"
+                        "text2": "My habit is to smoke, and my pleasure is to sing. <br> <br>এখানে to smoke-এর জায়গায় smoking এবং to sing-এর জায়গায় singing লেখা যেত । কিন্তু My habit is smoke, and my pleasure is sing হবে না, to smoke এবং to sing লিখতে হবে (infinitive), যেগুলি noun হিসেবে ব্যবহার হচ্ছে (ধুমপান করা, গান করা এই কাজগুলি) । my habit is smoking and my pleasure is singing লিখতে পারো অবশ্য ।"
                       },
                       {
                         "description": "",
@@ -95,6 +95,6 @@
                         "image1": "",
                         "name": "BGP2-Lesson3 (14)",
                         "text1": "স্বামী বিবেকানন্দ এক শ্রদ্ধা করার মত মানুষ",
-                        "text2": "Swami Vivekananda is a man to be respected. <br> <br>লক্ষ্য কর, এখানে passive voice ব্যবহার হল to be respected, কারণ তিনি শ্রদ্ধা করছেন না, শ্রদ্ধা পাচ্ছেন । Swami Vivekananda is a respected man লিখলে ভাবার্থ ঠিক আসত না, কারণ তাহলে অর্থ দাঁড়াত, স্বামী বিবেকানন্দ শ্রদ্ধা পাচ্ছেন, কিন্তু এখানে আছে 'শ্রদ্ধা করার মত', তাকে শ্রদ্ধা করা হচ্ছে তা নয় ।"
+                        "text2": "Swami Vivekananda is a man to be respected. <br> <br>লক্ষ্য কর, এখানে passive voice ব্যবহার হল to be respected, কারণ তিনি শ্রদ্ধা করছেন না, শ্রদ্ধা পাচ্ছেন । Swami Vivekananda is a respected man লিখলে ভাবার্থ ঠিক আসত না, কারণ তাহলে অর্থ দাঁড়াত, স্বামী বিবেকানন্দ শ্রদ্ধা পাচ্ছেন, কিন্তু এখানে আছে 'শ্রদ্ধা করার মত', তাকে শ্রদ্ধা করা হচ্ছে তা নয় । আবার এরকমও লেখা হয় - Swami Vivekananda is a man of respect ।"
                       }
 ]

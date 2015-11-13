@@ -36,4 +36,9 @@
     <string name="c">"C"</string>
     <string name="d">"D"</string>
 
+
+    <string name="VOICE_CONTROLS">"Voice controls"</string>
+    <string name="PITCH">"Pitch"</string>
+    <string name="SPEED">"Speed"</string>
+
 </resources>

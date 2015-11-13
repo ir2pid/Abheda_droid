@@ -1,7 +1,6 @@
 package com.noisyninja.abheda_droid.control;
 
 import android.content.Context;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,13 +42,13 @@ public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> 
         TextView rtext = (TextView) convertView.findViewById(R.id.rtext);
         TextView description = (TextView) convertView.findViewById(R.id.description);
 
-        name.setMovementMethod(new ScrollingMovementMethod());
-        text.setMovementMethod(new ScrollingMovementMethod());
-        ltext.setMovementMethod(new ScrollingMovementMethod());
-        dtext.setMovementMethod(new ScrollingMovementMethod());
-        utext.setMovementMethod(new ScrollingMovementMethod());
-        rtext.setMovementMethod(new ScrollingMovementMethod());
-        description.setMovementMethod(new ScrollingMovementMethod());
+        //name.setMovementMethod(new ScrollingMovementMethod());
+        //text.setMovementMethod(new ScrollingMovementMethod());
+        //ltext.setMovementMethod(new ScrollingMovementMethod());
+        //dtext.setMovementMethod(new ScrollingMovementMethod());
+        //utext.setMovementMethod(new ScrollingMovementMethod());
+        //rtext.setMovementMethod(new ScrollingMovementMethod());
+        //description.setMovementMethod(new ScrollingMovementMethod());
 
         Utils.lazyload(context, image, item.image);
 

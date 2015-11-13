@@ -2,10 +2,12 @@ package com.noisyninja.abheda_droid.util;
 
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 
 import java.util.Locale;
 
 /**
+ * Text to speech engine
  * Created by ir2pid on 13/10/15.
  */
 public class TTSUtils {
@@ -35,7 +37,7 @@ public class TTSUtils {
         // Exists only to defeat instantiation.
     }
 
-    public static TTSUtils getInstance(Context sContext) {//initiated in mainactivity onresume
+    /*public static TTSUtils getInstance(Context sContext) {//initiated in mainactivity onresume
         if (instance == null) {
             try {
                 instance = new TTSUtils();
@@ -46,7 +48,7 @@ public class TTSUtils {
             }
         }
         return instance;
-    }
+    }*/
 
     public void shutDown() {//called in mainactivity onpause
         mTts.shutdown();
@@ -61,6 +63,7 @@ public class TTSUtils {
 
     public void initQueue(String text) {
 
+        Log.d(getClass().getSimpleName(), "Speaking:" + text);
         if (isLoaded)
             mTts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
         else

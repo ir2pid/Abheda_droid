@@ -36,9 +36,9 @@
     "isPicture": false
     },
     {
-    "option1": "I understood that he loves me.",
-    "option2": "I have understanded that he loved me.",
-    "option3": "I understanded that he loved me.",
+        "option1": "I understood that he loved me.",
+        "option2": "I have understanded that he loves me.",
+        "option3": "I understand that he loved me.",
     "option4": "I understand that he loves me.",
     "question": "আমি বুঝেছিলাম, সে আমায় ভালবাসে",
     "correct": 1,
@@ -211,7 +211,7 @@
     "option2": "I thought of searching your bag.",
     "option3": "I was thinking of searching your bag.",
     "option4": "I think of searching your bag.",
-    "question": "আমি তোমার ব্যাগ তল্লাশ করব ভাব ছিলাম",
+        "question": "আমি তোমার ব্যাগ তল্লাশ করব ভাবছিলাম",
     "correct": 3,
     "isPicture": false
     },
@@ -225,8 +225,8 @@
     "isPicture": false
     },
     {
-    "option1": "I was  found the key.",
-    "option2": "I have  found the key.",
+        "option1": "I was found the key.",
+        "option2": "I have found the key.",
     "option3": "I find the key.",
     "option4": "I found the key.",
     "question": "আমি চাবিটা খুঁজে পেলাম",
@@ -234,7 +234,7 @@
     "isPicture": false
     },
     {
-    "option1": "I searched, but  not find.",
+        "option1": "I searched, but not find.",
     "option2": "I searched, but did not find.",
     "option3": "I searched, but do not find.",
     "option4": "I search, but did not find.",
@@ -244,7 +244,7 @@
     },
     {
     "option1": "If you want to find you have to search.",
-    "option2": "If you want to finding  you have to search.",
+        "option2": "If you want to finding you have to search.",
     "option3": "If you wanted to find you have to search.",
     "option4": "If you want to kind you had to search.",
     "question": "যদি পেতে চাও তোমায় খুঁজতে হবে",
@@ -252,10 +252,10 @@
     "isPicture": false
     },
     {
-    "option1": "I have cried, have  called Him, but did not find Him.",
-    "option2": "I cried, called Him, but do not find Him.",
-    "option3": "I cried, called Him, but not found Him.",
-    "option4": "I cried, called Him, but did not find Him.",
+        "option1": "I have cried, have called him, but did not find him.",
+        "option2": "I cried, called him, but do not find him.",
+        "option3": "I cried, called him, but not found him.",
+        "option4": "I cried, called him, but did not find him.",
     "question": "আমি কাঁদলাম, তাকে ডাকলাম, কিন্তু পেলাম না",
     "correct": 4,
     "isPicture": false

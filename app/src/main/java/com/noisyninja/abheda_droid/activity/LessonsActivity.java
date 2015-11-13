@@ -3,7 +3,6 @@ package com.noisyninja.abheda_droid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.LessonListFrag;
@@ -12,17 +11,19 @@ import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 import com.noisyninja.abheda_droid.util.Utils;
 
 /**
+ * Lesson activity
  * Created by ir2pi on 12/3/2014.
  */
-public class LessonsActivity extends FragmentActivity implements
+public class LessonsActivity extends BaseFragmentActivity implements
         LessonListFrag.Callbacks {
 
+    Context context;
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
     private boolean mTwoPane;
-    Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

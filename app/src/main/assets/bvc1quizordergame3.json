@@ -7,65 +7,122 @@
           "3": "said",
           "2": "nothing",
           "5": "been",
-          "6": "having",
+          "6": "anything",
           "7": "by",
           "8": "should",
-          "9": "be"
+          "9": "not",
+          "10": "being",
+          "11": "having",
+          "12": "be"
         },
         "answers":[[2,8,1,5,3,7,4]]
     },
     {
-        "question": "The killer may have killed many innocent people by now",
-        "words": {
-          "4": "innocent",
-          "1": "been",
-          "3": "killer",
-          "2": "by",
-          "5": "now",
-          "6": "many",
-          "7": "may",
-          "8": "by",
-          "9": "being",
-          "10": "have",
-          "11": "now",
-          "12": "killed",
-          "13": "people",
-          "14": "the"
-        },
-        "answers":[[6,4,13,7,10,1,12,2,14,3,8,5],[6,4,13,7,10,1,12,8,14,3,2,5]]
-    },
-    {
-        "question": "The referee will have finished the match by then",
-        "words": {
-          "4": "finished",
-          "1": "been",
-          "3": "the referee",
-          "2": "then",
-          "5": "the match",
-          "6": "to",
-          "7": "by",
-          "8": "have",
-          "9": "by",
-          "10": "will",
-          "11": "finish",
-          "12": "be"
-        },
-        "answers":[[5,10,8,1,4,9,3,7,2],[5,10,8,1,4,7,3,9,2]]
-    },
-    {
-        "question": "Lalita loves to play table tennis",
+      "question": "Lalita loves to play table tennis",
         "words": {
           "4": "Lalita",
           "1": "played",
           "3": "to",
           "2": "table tennis",
-          "5": "be",
+          "5": "love",
           "6": "by",
-          "7": "is",
+          "7": "been",
           "8": "loved",
-          "9": "playing"
+          "9": "playing",
+          "10": "play",
+          "11": "being",
+          "12": "be",
+          "13": "is"
         },
-        "answers":[[2,7,8,3,5,1,6,4]]
+      "answers": [
+        [
+          2,
+          13,
+          8,
+          3,
+          12,
+          1,
+          6,
+          4
+        ],
+        [
+          9,
+          2,
+          13,
+          8,
+          6,
+          4
+        ]
+      ]
+    },
+    {
+      "question": "You have to play the game to win it",
+        "words": {
+          "4": "game",
+          "1": "to be",
+          "3": "been",
+          "2": "played",
+          "5": "to being",
+          "6": "the",
+          "7": "to be",
+          "8": "you",
+          "9": "won",
+          "10": "to being",
+          "11": "have",
+          "12": "win",
+          "13": "by",
+          "14": "has"
+        },
+      "answers": [
+        [
+          6,
+          4,
+          14,
+          7,
+          2,
+          1,
+          9,
+          13,
+          8
+        ],
+        [
+          6,
+          4,
+          14,
+          1,
+          2,
+          7,
+          9,
+          13,
+          8
+        ]
+      ]
+    },
+    {
+      "question": "Idrish was invited to the party",
+        "words": {
+          "4": "party",
+          "1": "been",
+          "3": "to",
+          "2": "be",
+          "5": "anyone",
+          "6": "Idrish",
+          "7": "someone",
+          "8": "being",
+          "9": "by",
+          "10": "the",
+          "11": "invited"
+        },
+      "answers": [
+        [
+          7,
+          11,
+          6,
+          3,
+          10,
+          4
+        ]
+      ]
     },
     {
         "question": "I am planning to buy a new house",
@@ -82,25 +139,251 @@
           "10": "being",
           "11": "by",
           "12": "house",
-          "13": "be"
+          "13": "be",
+          "14": "buying"
         },
-        "answers":[[6,8,12,3,10,2,1,13,5,11,4]]
+      "answers": [
+        [
+          6,
+          8,
+          12,
+          3,
+          10,
+          2,
+          1,
+          13,
+          5,
+          11,
+          4
+        ],
+        [
+          14,
+          6,
+          8,
+          12,
+          3,
+          10,
+          2,
+          11,
+          4
+        ]
+      ]
     },
     {
+      "question": "My book has been stolen",
+      "words": {
+        "4": "book",
+        "1": "stolen",
+        "3": "been",
+        "2": "somebody",
+        "5": "stole",
+        "6": "being",
+        "7": "my",
+        "8": "stealed",
+        "9": "anybody",
+        "10": "has"
+      },
+      "answers": [
+        [
+          2,
+          10,
+          1,
+          7,
+          4
+        ]
+      ]
+    },
+  {
+    "question": "The referee will have finished the match by then",
+    "words": {
+      "4": "finished",
+      "1": "been",
+      "3": "the referee",
+      "2": "by then",
+      "5": "the match",
+      "6": "having",
+      "7": "by",
+      "8": "have",
+      "9": "being",
+      "10": "will",
+      "11": "finish",
+      "12": "be"
+    },
+    "answers": [
+      [
+        5,
+        10,
+        8,
+        1,
+        4,
+        7,
+        3,
+        2
+      ],
+      [
+        2,
+        5,
+        10,
+        8,
+        1,
+        4,
+        7,
+        3
+      ],
+      [
+        5,
+        10,
+        8,
+        1,
+        4,
+        2,
+        7,
+        3
+      ]
+    ]
+  },
+  {
+    "question": "I was asked my name",
+    "words": {
+      "4": "my",
+      "1": "were",
+      "3": "me",
+      "2": "was",
+      "5": "anyone",
+      "6": "name",
+      "7": "they",
+      "8": "someone",
+      "9": "by",
+      "10": "asked"
+    },
+    "answers": [
+      [
+        7,
+        10,
+        3,
+        4,
+        6
+      ],
+      [
+        7,
+        10,
+        4,
+        6
+      ],
+      [
+        8,
+        10,
+        3,
+        4,
+        6
+      ],
+      [
+        8,
+        10,
+        4,
+        6
+      ]
+    ]
+  },
+  {
         "question": "Shyam has learnt to cook fish",
         "words": {
           "4": "learnt",
           "1": "has",
-          "3": "Shyam",
+          "3": "be",
           "2": "cooking",
           "5": "been",
           "6": "by",
-          "7": "being",
-          "8": "fish"
+          "7": "to",
+          "8": "fish",
+          "9": "cooked",
+          "10": "being",
+          "11": "Shyam"
         },
-        "answers":[[2,8,1,5,4,6,3]]
+    "answers": [
+      [
+        2,
+        8,
+        1,
+        5,
+        4,
+        6,
+        11
+      ],
+      [
+        8,
+        1,
+        5,
+        4,
+        7,
+        3,
+        9,
+        6,
+        11
+      ]
+    ]
     },
     {
+      "question": "The killer may have killed many innocent people by now",
+      "words": {
+        "4": "innocent",
+        "1": "been",
+        "3": "killer",
+        "2": "be",
+        "5": "by now",
+        "6": "many",
+        "7": "may",
+        "8": "by",
+        "9": "being",
+        "10": "have",
+        "11": "having",
+        "12": "killed",
+        "13": "people",
+        "14": "the"
+      },
+      "answers": [
+        [
+          6,
+          4,
+          13,
+          7,
+          10,
+          1,
+          12,
+          8,
+          14,
+          3,
+          5
+        ],
+        [
+          6,
+          4,
+          13,
+          7,
+          10,
+          1,
+          12,
+          5,
+          8,
+          14,
+          3
+        ],
+        [
+          5,
+          6,
+          4,
+          13,
+          7,
+          10,
+          1,
+          12,
+          8,
+          14,
+          3
+        ]
+      ]
+    },
+  {
         "question": "You need to sing a song",
         "words": {
           "4": "singed",
@@ -113,62 +396,51 @@
           "8": "needs",
           "9": "be",
           "10": "song",
-          "11": "you"
+          "11": "you",
+          "12": "being",
+          "13": "singing",
+          "14": "been"
         },
-        "answers":[[5,10,1,6,3,9,7,2,11]]
-    },
-    {
-        "question": "You have to play the game to win it",
-        "words": {
-          "4": "game",
-          "1": "to be",
-          "3": "won",
-          "2": "played",
-          "5": "has",
-          "6": "the",
-          "7": "to be",
-          "8": "you",
-          "9": "win",
-          "10": "by"
-        },
-        "answers":[[6,4,5,7,2,1,3,10,8],[6,4,5,1,2,7,3,10,8]]
-    },
-    {
-        "question": "My book has been stolen",
-        "words": {
-          "4": "book",
-          "1": "stolen",
-          "3": "somebody",
-          "2": "stole",
-          "5": "my",
-          "6": "has"
-        },
-        "answers":[[3,6,1,5,4]]
-    },
-    {
-        "question": "Idrish was invited to the party",
-        "words": {
-          "4": "party",
-          "1": "to",
-          "3": "Idrish",
-          "2": "someone",
-          "5": "by",
-          "6": "the",
-          "7": "invited"
-        },
-        "answers":[[2,7,3,1,6,4]]
-    },
-    {
-        "question": "I was asked my name",
-        "words": {
-          "4": "my",
-          "1": "me",
-          "3": "was",
-          "2": "name",
-          "5": "they",
-          "6": "by",
-          "7": "asked"
-        },
-        "answers":[[5,7,1,4,2]]
+    "answers": [
+      [
+        5,
+        10,
+        1,
+        6,
+        3,
+        9,
+        7,
+        2,
+        11
+      ],
+      [
+        13,
+        5,
+        10,
+        1,
+        6,
+        2,
+        11
+      ],
+      [
+        13,
+        5,
+        10,
+        2,
+        11,
+        1,
+        6
+      ],
+      [
+        5,
+        10,
+        8,
+        3,
+        9,
+        7,
+        2,
+        11
+      ]
+    ]
     }
 ]

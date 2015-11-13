@@ -9,10 +9,10 @@
     "isPicture": false
     },
     {
-    "option1": "He/She was got a phone-call.",
-    "option2": "He/She get a phone-call.",
-    "option3": "He/She got a phone-call.",
-    "option4": "He/She gets a call in her phone.",
+        "option1": "She was got a phone-call.",
+        "option2": "She get a phone-call.",
+        "option3": "She got a phone-call.",
+        "option4": "She gets a call in her phone.",
     "question": "সে একটা ফোন পেয়েছিল",
     "correct": 3,
     "isPicture": false
@@ -67,7 +67,7 @@
     "option2": "Debu said, \"Who are you ?\"",
     "option3": "Debu asked, \"How is you ?\"",
     "option4": "Debu asked, \"How are you ?\"",
-    "question": "দেবু জিজ্ঞেস করলো ,\"তুমি কেমন আছো ?\"",
+        "question": "দেবু জিজ্ঞেস করলো, \"তুমি কেমন আছো ?\"",
     "correct": 4,
     "isPicture": false
     },
@@ -117,10 +117,10 @@
     "isPicture": false
     },
     {
-    "option1": "What class are you read in ?",
-    "option2": "What class do you reading ?",
-    "option3": "What class do you read ?",
-    "option4": "What class do you read in ?",
+        "option1": "Which class are you read in ?",
+        "option2": "Which class do you reading ?",
+        "option3": "Which class do you read ?",
+        "option4": "Which class do you read in ?",
     "question": "তুমি কোন ক্লাসে পড়ো ?",
     "correct": 4,
     "isPicture": false
@@ -144,16 +144,16 @@
     "isPicture": false
     },
     {
-    "option1": "Order written on the paper.",
-    "option2": "Order is written on the paper.",
-    "option3": "Order is writing the paper.",
-    "option4": "Order is write on the paper.",
+        "option1": "The order written on the paper.",
+        "option2": "The order is written on the paper.",
+        "option3": "The order is writing the paper.",
+        "option4": "The order is write on the paper.",
     "question": "অর্ডারটা কাগজে লেখা আছে",
     "correct": 2,
     "isPicture": false
     },
     {
-    "option1": "Saratchandra had written many stories.",
+        "option1": "Saratchandra wrote many stories.",
     "option2": "Saratchandra has written many stories.",
     "option3": "Saratchandra was written many stories.",
     "option4": "Saratchandra writes many stories.",
@@ -180,10 +180,10 @@
     "isPicture": false
     },
     {
-    "option1": "Think and you have given reply also.",
-    "option2": "Thinking can give reply also.",
-    "option3": "Think and you  give reply also.",
-    "option4": "Think and you can give reply also.",
+        "option1": "Think and you have given reply too.",
+        "option2": "Thinking can give reply too.",
+        "option3": "Think and you too give reply.",
+        "option4": "Think and you too can give reply.",
     "question": "ভাবো, তুমিও উত্তর দিতে পারবে",
     "correct": 4,
     "isPicture": false
@@ -315,10 +315,10 @@
     "isPicture": false
     },
     {
-    "option1": "Have not laugh in your class.",
-    "option2": "Does not laugh in your class.",
-    "option3": "Do not laughing in your class.",
-    "option4": "Do not laugh in your class.",
+        "option1": "Have not laugh in the class.",
+        "option2": "Does not laugh in the class.",
+        "option3": "Do not laughing in the class.",
+        "option4": "Do not laugh in the class.",
     "question": "ক্লাসের ভেতর হেসো না",
     "correct": 4,
     "isPicture": false
@@ -360,11 +360,11 @@
     "isPicture": false
     },
     {
-    "option1": "Crying baby is get the milk.",
-    "option2": "Crying baby gets the milk.",
-    "option3": "Crying baby getting the milk.",
-    "option4": "Crying baby has got the milk.",
-    "question": "যে বাচ্চা কাঁদে সে-ই দুধ পায়",
+        "option1": "Only crying baby is get the milk.",
+        "option2": "Only crying baby gets the milk.",
+        "option3": "Only crying baby getting the milk.",
+        "option4": "Only crying baby has got the milk.",
+        "question": "যে বাচ্চা কাঁদে, সে-ই দুধ পায়",
     "correct": 2,
     "isPicture": false
     },
@@ -435,9 +435,9 @@
     "option1": "Does everybody loves to sing ?",
     "option2": "Does everybody love singing ?",
     "option3": "Does everybody loves singing ?",
-    "option4": "Does everybody loves sing ?",
+        "option4": "Does everybody love sing ?",
     "question": "সবাই কি গান গাইতে ভালোবাসে ?",
-    "correct": 3,
+        "correct": 2,
     "isPicture": false
     },
     {

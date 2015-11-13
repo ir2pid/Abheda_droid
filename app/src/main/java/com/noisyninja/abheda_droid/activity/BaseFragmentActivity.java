@@ -1,31 +1,47 @@
 package com.noisyninja.abheda_droid.activity;
 
+import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
-import com.noisyninja.abheda_droid.util.TTSUtils;
+import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.Utils;
+
+import de.greenrobot.event.EventBus;
+import events.OnSpeechEvent;
 
 /**
+ * Base fragment for courses
  * Created by ir2pid on 14/10/15.
  */
-public class BaseFragmentActivity extends FragmentActivity {
+public class BaseFragmentActivity extends FragmentActivity implements TextToSpeech.OnInitListener {
 
-    TTSUtils ttsUtils;
+    //TTS object
+    private TextToSpeech engine;
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        TTSUtils.getInstance(this);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+        engine = new TextToSpeech(this, this);
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onDestroy() {
+        engine.shutdown();
+        //EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        TTSUtils.getInstance(this);
     }
 
     @Override
@@ -33,19 +49,16 @@ public class BaseFragmentActivity extends FragmentActivity {
         super.onPause();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        TTSUtils.getInstance(this).shutDown();
+    public void onEvent(OnSpeechEvent event) {
+
+        Log.d(Utils.class.getSimpleName(), "Speak: " + event.getText());
+        engine.setPitch(Constants.PITCH);
+        engine.setSpeechRate(Constants.SPEED);
+        engine.speak(Utils.makeSpeechReady(event.getText()), TextToSpeech.QUEUE_FLUSH, null);
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
+    public void onInit(int status) {
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
     }
 }

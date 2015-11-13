@@ -19,7 +19,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Html;
@@ -68,10 +67,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Map;
 
 import at.markushi.ui.CircleButton;
+import de.greenrobot.event.EventBus;
+import events.OnSpeechEvent;
 
 /**
  * Created by ir2pi on 12/2/2014.
@@ -88,26 +88,33 @@ public class Utils {
             @Override
             public void onClick(View v) {
 
-                String formattedText = text.replace("<br>", "")
-                        .replace("</b>", "")
-                        .replace("<b>", "")
-                        .replace("</i>", "")
-                        .replace("<i>", "")
-                        .replace("<u>", "")
-                        .replace("</u>", "");
-
-                final String speak = formattedText;
-                TTSUtils.getInstance(context).initQueue(speak);
+                speak(text);
             }
         });
     }
 
-    public static void speak(Context context, String text) {
-        Log.d("", "tts");
+    public static String makeSpeechReady(String s) {
+        String speak = s.replace("<br>", "")
+                .replace("</b>", "")
+                .replace("<b>", "")
+                .replace("</i>", "")
+                .replace("<i>", "")
+                .replace("<u>", "")
+                .replace("</u>", "");
+
+        return speak;
+
+    }
+
+
+    public static void speak(String text) {
+        EventBus.getDefault().post(new OnSpeechEvent(text));
+       /* Log.d("", "tts");
         TextToSpeech tts = new TextToSpeech(context, null);
         tts.setLanguage(Locale.US);
-        tts.speak("Text to say aloud", TextToSpeech.QUEUE_ADD, null);
+        tts.speak("Text to say aloud", TextToSpeech.QUEUE_ADD, null);*/
     }
+
     public static int getDrawable(Context context, String name) {
         // use -> image.setImageResource(getDrawable(this,"image"));
 

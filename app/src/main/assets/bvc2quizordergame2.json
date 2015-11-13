@@ -5,50 +5,212 @@
           "4": "Savitri",
           "1": "waited",
           "3": "I",
-          "2": "keeping",
+          "2": "being",
           "5": "by",
           "6": "to",
           "7": "kept",
           "8": "may",
           "9": "waiting",
-          "10": "be"
+          "10": "be",
+          "11": "keeping",
+          "12": "been"
         },
         "answers":[[3,8,10,7,9,5,4]]
     },
     {
-        "question": "It looks nice that they had painted the house blue",
+      "question": "Do not beat the dog",
         "words": {
-          "4": "them",
-          "1": "painted",
-          "3": "been",
-          "2": "nice",
-          "5": "the",
-          "6": "it",
-          "7": "that",
-          "8": "by",
-          "9": "is",
-          "10": "house",
-          "11": "blue",
-          "12": "looks",
-          "13": "had"
+          "4": "dog",
+          "1": "not",
+          "3": "beat",
+          "2": "requested",
+          "5": "let",
+          "6": "asked",
+          "7": "be",
+          "8": "are",
+          "9": "beaten",
+          "10": "the",
+          "11": "to",
+          "12": "you",
+          "13": "is"
         },
-        "answers":[[6,12,2,7,5,10,13,3,1,11,8,4]]
+      "answers": [
+        [
+          5,
+          10,
+          4,
+          1,
+          7,
+          9
+        ],
+        [
+          12,
+          8,
+          6,
+          1,
+          11,
+          3,
+          10,
+          4
+        ],
+        [
+          5,
+          1,
+          10,
+          4,
+          7,
+          9
+        ],
+        [
+          5,
+          10,
+          4,
+          7,
+          1,
+          9
+        ]
+      ]
     },
     {
-        "question": "Bring it home",
+      "question": "Kindly do this work",
         "words": {
-          "4": "home",
-          "1": "be",
-          "3": "let",
-          "2": "requested",
-          "5": "are",
-          "6": "brought",
-          "7": "asked",
-          "8": "it",
-          "9": "to",
-          "10": "you"
+          "4": "requested",
+          "1": "do",
+          "3": "work",
+          "2": "you",
+          "5": "this",
+          "6": "are",
+          "7": "to",
+          "8": "told",
+          "9": "let",
+          "10": "be",
+          "11": "ordered",
+          "12": "by",
+          "13": "done",
+          "14": "kindly"
         },
-        "answers":[[3,8,1,6,4]]
+      "answers": [
+        [
+          2,
+          6,
+          4,
+          7,
+          1,
+          5,
+          3
+        ],
+        [
+          2,
+          6,
+          14,
+          4,
+          7,
+          1,
+          5,
+          3
+        ],
+        [
+          2,
+          6,
+          4,
+          7,
+          1,
+          5,
+          3,
+          14
+        ],
+        [
+          9,
+          5,
+          3,
+          10,
+          13,
+          12,
+          2,
+          14
+        ],
+        [
+          9,
+          5,
+          3,
+          10,
+          14,
+          13,
+          12,
+          2
+        ]
+      ]
+    },
+  {
+    "question": "Get out",
+    "words": {
+      "4": "you",
+      "1": "out",
+      "3": "to",
+      "2": "told",
+          "5": "are",
+      "6": "been",
+          "7": "asked",
+      "8": "being",
+      "9": "get",
+      "10": "ordered",
+      "11": "got",
+      "12": "let",
+      "13": "be"
+        },
+    "answers": [
+      [
+        4,
+        5,
+        10,
+        3,
+        9,
+        1
+      ],
+      [
+        4,
+        5,
+        7,
+        3,
+        9,
+        1
+      ],
+      [
+        4,
+        5,
+        2,
+        3,
+        9,
+        1
+      ],
+      [
+        4,
+        5,
+        8,
+        10,
+        3,
+        9,
+        1
+      ],
+      [
+        4,
+        5,
+        8,
+        7,
+        3,
+        9,
+        1
+      ],
+      [
+        4,
+        5,
+        8,
+        2,
+        3,
+        9,
+        1
+      ]
+    ]
     },
     {
         "question": "Do it at once",
@@ -66,56 +228,154 @@
           "11": "you",
           "12": "to"
         },
-        "answers":[[1,9,3,5,8,4]]
+      "answers": [
+        [
+          1,
+          9,
+          3,
+          5,
+          8,
+          4
+        ],
+        [
+          11,
+          6,
+          2,
+          12,
+          10,
+          9,
+          8,
+          4
+        ]
+      ]
     },
     {
-        "question": "Do not insult the weak",
-        "words": {
-          "4": "insult",
-          "1": "weak",
-          "3": "be",
-          "2": "let",
-          "5": "requested",
-          "6": "not",
-          "7": "are",
-          "8": "insulted",
-          "9": "the",
-          "10": "to",
-          "11": "you"
-        },
-        "answers":[[2,6,9,1,3,8]]
-    },
-    {
-        "question": "Do not beat the dog",
-        "words": {
-          "4": "dog",
-          "1": "not",
-          "3": "you",
-          "2": "to",
-          "5": "let",
-          "6": "asked",
-          "7": "be",
-          "8": "are",
-          "9": "beaten",
-          "10": "the"
-        },
-        "answers":[[5,10,4,1,7,9]]
-    },
-    {
-        "question": "Let me do it",
+      "question": "Let me do it",
         "words": {
           "4": "me",
-          "1": "you",
+          "1": "I",
           "3": "let",
-          "2": "be",
-          "5": "are",
-          "6": "it",
-          "7": "done",
-          "8": "requested",
-          "9": "by",
-          "10": "to"
+          "2": "is",
+          "5": "be",
+          "6": "am",
+          "7": "letted",
+          "8": "been",
+          "9": "requested",
+          "10": "by",
+          "11": "being",
+          "12": "to",
+          "13": "it",
+          "14": "done"
         },
-        "answers":[[3,6,2,7,9,4]]
+      "answers": [
+        [
+          3,
+          13,
+          5,
+          14,
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "question": "Work hard",
+        "words": {
+          "4": "advised",
+          "1": "worked",
+          "3": "you",
+          "2": "hard",
+          "5": "to",
+          "6": "being",
+          "7": "are",
+          "8": "work",
+          "9": "be",
+          "10": "asked",
+          "11": "let",
+          "12": "been"
+        },
+      "answers": [
+        [
+          3,
+          7,
+          4,
+          5,
+          8,
+          2
+        ],
+        [
+          3,
+          7,
+          10,
+          5,
+          8,
+          2
+        ],
+        [
+          3,
+          7,
+          6,
+          4,
+          5,
+          8,
+          2
+        ],
+        [
+          3,
+          7,
+          6,
+          10,
+          5,
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "question": "Bring it home",
+        "words": {
+          "4": "home",
+          "1": "be",
+          "3": "let",
+          "2": "been",
+          "5": "bring",
+          "6": "requested",
+          "7": "is",
+          "8": "brought",
+          "9": "being",
+          "10": "asked",
+          "11": "it",
+          "12": "are",
+          "13": "to",
+          "14": "you"
+        },
+      "answers": [
+        [
+          3,
+          11,
+          1,
+          8,
+          4
+        ],
+        [
+          11,
+          7,
+          10,
+          13,
+          1,
+          8,
+          4
+        ],
+        [
+          14,
+          12,
+          10,
+          13,
+          5,
+          11,
+          4
+        ]
+      ]
     },
     {
         "question": "Let Gopal marry Dipanwita",
@@ -124,71 +384,184 @@
           "1": "be",
           "3": "by",
           "2": "let",
-          "5": "to",
+          "5": "is",
           "6": "married",
-          "7": "Dipanwita"
+          "7": "Dipanwita",
+          "8": "being",
+          "9": "been"
         },
-        "answers":[[2,7,1,6,3,4]]
-    },
-    {
-        "question": "Get out",
-        "words": {
-          "4": "you",
-          "1": "out",
-          "3": "to",
-          "2": "are",
-          "5": "be",
-          "6": "being",
-          "7": "get",
-          "8": "ordered",
-          "9": "got"
-        },
-        "answers":[[4,2,8,3,7,1]]
-    },
-    {
-        "question": "Work hard",
-        "words": {
-          "4": "advised",
-          "1": "do",
-          "3": "you",
-          "2": "hard",
-          "5": "to",
-          "6": "being",
-          "7": "are",
-          "8": "work",
-          "9": "be"
-        },
-        "answers":[[3,7,4,5,8,2]]
+      "answers": [
+        [
+          2,
+          7,
+          1,
+          6,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          6,
+          3,
+          7
+        ]
+      ]
     },
     {
         "question": "Please give me some money",
         "words": {
           "4": "you",
-          "1": "some",
-          "3": "to",
+          "1": "ordered",
+          "3": "be",
           "2": "me",
           "5": "requested",
           "6": "are",
           "7": "give",
           "8": "money",
-          "9": "asked"
+          "9": "asked",
+          "10": "to",
+          "11": "some",
+          "12": "been"
         },
-        "answers":[[4,6,5,3,7,2,1,8]]
+      "answers": [
+        [
+          4,
+          6,
+          5,
+          10,
+          7,
+          2,
+          11,
+          8
+        ]
+      ]
     },
     {
-        "question": "Kindly do this work",
+      "question": "It looks nice that they had painted the house blue",
         "words": {
-          "4": "requested",
-          "1": "do",
-          "3": "work",
-          "2": "you",
-          "5": "this",
-          "6": "are",
-          "7": "to",
-          "8": "done",
-          "9": "let",
-          "10": "be"
+          "4": "them",
+          "1": "painted",
+          "3": "been",
+          "2": "nice",
+          "5": "the",
+          "6": "it",
+          "7": "that",
+          "8": "by",
+          "9": "looked",
+          "10": "house",
+          "11": "blue",
+          "12": "looks",
+          "13": "had",
+          "14": "is"
         },
-        "answers":[[2,6,4,7,1,5,3]]
+      "answers": [
+        [
+          6,
+          12,
+          2,
+          7,
+          5,
+          10,
+          13,
+          3,
+          1,
+          11,
+          8,
+          4
+        ],
+        [
+          6,
+          12,
+          2,
+          7,
+          5,
+          10,
+          13,
+          3,
+          1,
+          11
+        ],
+        [
+          7,
+          5,
+          10,
+          13,
+          3,
+          1,
+          11,
+          8,
+          4,
+          12,
+          2
+        ],
+        [
+          7,
+          5,
+          10,
+          13,
+          3,
+          1,
+          11,
+          12,
+          2
+        ]
+      ]
+    },
+  {
+    "question": "Do not insult the weak",
+    "words": {
+      "4": "insult",
+      "1": "weak",
+      "3": "be",
+      "2": "let",
+      "5": "requested",
+      "6": "not",
+      "7": "ordered",
+      "8": "insulted",
+      "9": "the",
+      "10": "been",
+      "11": "you",
+      "12": "to",
+      "13": "being",
+      "14": "are"
+    },
+    "answers": [
+      [
+        2,
+        6,
+        9,
+        1,
+        3,
+        8
+      ],
+      [
+        2,
+        9,
+        1,
+        6,
+        3,
+        8
+      ],
+      [
+        2,
+        9,
+        1,
+        3,
+        6,
+        8
+      ],
+      [
+        11,
+        14,
+        7,
+        6,
+        12,
+        4,
+        9,
+        1
+      ]
+    ]
     }
 ]

@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.pojo.misc.ReviewItem;
-import com.noisyninja.abheda_droid.util.TTSUtils;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
 
 /**
+ * adapter for courses review
  * Created by ir2pi on 4/23/2015.
  */
 public class ReviewAdapter extends ArrayAdapter {
@@ -58,9 +58,9 @@ public class ReviewAdapter extends ArrayAdapter {
         return convertView;
     }
 
-    private void speak(String text) {
+    /*private void speak(String text) {
         TTSUtils.getInstance(getContext()).initQueue(text);
-    }
+    }*/
 
     @Override
     public int getCount() {

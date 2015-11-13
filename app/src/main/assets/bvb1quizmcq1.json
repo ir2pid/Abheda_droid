@@ -9,10 +9,10 @@
     "isPicture": false
     },
     {
-    "option1": "Golapi does the work carefully.",
-    "option2": "Golapi  do the work carefully.",
-    "option3": "Golapi will do the work carefully.",
-    "option4": "Golapi do the work care.",
+        "option1": "Golapi does her work carefully.",
+        "option2": "Golapi  do her work carefully.",
+        "option3": "Golapi will do her work carefully.",
+        "option4": "Golapi do her work care.",
     "question": "গোলাপী তার কাজটা যত্ন করে করবে",
     "correct": 3,
     "isPicture": false
@@ -369,10 +369,10 @@
     "isPicture": false
     },
     {
-    "option1": "The beggars wanted food, but he did not get.",
-    "option2": "The beggars wanted food, but did not get.",
-    "option3": "The beggars want food, but did not get.",
-    "option4": "The beggars wanted food, but does not get.",
+        "option1": "Beggars wanted food, but he did not get.",
+        "option2": "Beggars wanted food, but did not get.",
+        "option3": "Beggars want food, but did not get.",
+        "option4": "Beggars wanted food, but does not get.",
     "question": "ভিখারীরা খাবার চেয়েছিল, কিন্তু পায় নি",
     "correct": 2,
     "isPicture": false

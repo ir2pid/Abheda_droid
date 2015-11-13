@@ -59,7 +59,7 @@
     "option2": "I tried, but fail.",
     "option3": "I failed, but tried.",
     "option4": "I tried, but failed.",
-    "question": "আমি চেষ্টা করেছিলাম, কিন্তু পারিনি?",
+        "question": "আমি চেষ্টা করেছিলাম, কিন্তু পারিনি",
     "correct": 4,
     "isPicture": false
     },
@@ -325,10 +325,10 @@
     "isPicture": false
     },
     {
-    "option1": "The party divided in the issue.",
-    "option2": "The party divides on the issue.",
-    "option3": "The party divided on the issue.",
-    "option4": "The party has divided on the issue.",
+        "option1": "The party divided in this issue.",
+        "option2": "The party divides on this issue.",
+        "option3": "The party divided on this issue.",
+        "option4": "The party has divided in this issue.",
     "question": "দল এই বিষয়টা নিয়ে ভাগ হয়ে গেলো",
     "correct": 3,
     "isPicture": false
@@ -356,7 +356,7 @@
     "option2": "Fruits are to be divided between your friends.",
     "option3": "Divide the fruits among your friends.",
     "option4": "Please divide the fruits among your friends.",
-    "question": "ফলগুলো বন্ধুদের মধ্যে ভাগ করে দাও",
+        "question": "ফলগুলো তোমার বন্ধুদের মধ্যে ভাগ করে দাও",
     "correct": 3,
     "isPicture": false
     },
@@ -370,11 +370,11 @@
     "isPicture": false
     },
     {
-    "option1": "The leader said,\"Will select me\" ?",
+        "option1": "The leader said, \"Will select me\" ?",
     "option2": "The leader said, \"Selecting me\".",
     "option3": "The leader said, \"Selected me\".",
     "option4": "The leader said, \"Select me\". ",
-    "question": "নেতাটি বললেন,\"আমায় নির্বাচিত করুন\"",
+        "question": "নেতাটি বললেন, \"আমায় নির্বাচিত করুন\"",
     "correct": 4,
     "isPicture": false
     },

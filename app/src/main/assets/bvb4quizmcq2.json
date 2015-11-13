@@ -22,7 +22,7 @@
     "option2": "Jaya sends flowers in my birthday.",
     "option3": "Jaya sent flowers on my birthday.",
     "option4": "Jaya sending flowers on my birthday.",
-    "question": "জয়া জন্মদিনে ফুল পাঠিয়েছিল",
+        "question": "জয়া আমার জন্মদিনে ফুল পাঠিয়েছিল",
     "correct": 3,
     "isPicture": false
     },
@@ -45,11 +45,11 @@
     "isPicture": false
     },
     {
-    "option1": "Mother said,\"Show me your face\".",
-    "option2": "Mother said,\"Showing me your face\".",
-    "option3": "Mother said,\"Showed me your face\".",
-    "option4": "Mother said,\"Can you show me your face\".",
-    "question": "মা বললো ,\"আমায় তোমার মুখ দেখাও\"",
+        "option1": "Mother said, \"Show me your face\".",
+        "option2": "Mother said, \"Showing me your face\".",
+        "option3": "Mother said, \"Showed me your face\".",
+        "option4": "Mother said, \"Can you show me your face\".",
+        "question": "মা বললো, \"আমায় তোমার মুখ দেখাও\"",
     "correct": 1,
     "isPicture": false
     },
@@ -58,15 +58,15 @@
     "option2": "The employee was showing the door.",
     "option3": "The employee has shown the door.",
     "option4": "The employee was shown the door.",
-    "question": "কর্মচারিটিকে তাড়িয়ে দেওয়া হলো",
+        "question": "কর্মচারীটিকে তাড়িয়ে দেওয়া হলো",
     "correct": 4,
     "isPicture": false
     },
     {
     "option1": "Show me what is in your hand.",
-    "option2": "Showing  me what is in your hand.",
+        "option2": "Showing me what is in your hand.",
     "option3": "Show me what was in your hand.",
-    "option4": "Show me what is  your hand.",
+        "option4": "Show me what is your hand.",
     "question": "তোমার হাতে কী দেখাও",
     "correct": 1,
     "isPicture": false
@@ -109,8 +109,8 @@
     },
     {
     "option1": "Wait, you will see.",
-    "option2": "Waiting , you will see.",
-    "option3": "Wait, you  see.",
+        "option2": "Waiting, you will see.",
+        "option3": "Wait, you see.",
     "option4": "Wait, you seeing.",
     "question": "অপেক্ষা করো, দেখতে পাবে",
     "correct": 1,
@@ -148,7 +148,7 @@
     "option2": "The father said, \"Save for future\".",
     "option3": "The father said, \"Saving for future\".",
     "option4": "The father said, \"Saving in future\".",
-    "question": "বাবা বললেন,\"ভবিষ্যতের জন্য জমাও\"",
+        "question": "বাবা বললেন, \"ভবিষ্যতের জন্য জমাও\"",
     "correct": 2,
     "isPicture": false
     },
@@ -191,7 +191,7 @@
     {
     "option1": "Everything cannot be plan before.",
     "option2": "Everything cannot be planned before.",
-    "option3": "Everything cannot  plan before.",
+        "option3": "Everything cannot plan before.",
     "option4": "Everything cannot be planning before.",
     "question": "আগে থেকে সব পরিকল্পনা করা যায় না",
     "correct": 2,
@@ -220,16 +220,16 @@
     "option2": "If you have failed to planning then you have planned to fail.",
     "option3": "If you fail to plan then you are planning to fail.",
     "option4": "If you have failed to planning then you are planning to fail.",
-    "question": "যদি পরিকল্পনা করতে ব্যর্থ হও, তাহলে ব্যর্থ হবার পরিকল্পনা করেছ",
+        "question": "যদি পরিকল্পনা করতে ব্যর্থ হও, তাহলে ব্যর্থ হবার পরিকল্পনা করেছো",
     "correct": 1,
     "isPicture": false
     },
     {
     "option1": "Please changes your shirt.",
-    "option2": "Please changed  your shirt.",
-    "option3": "Please changing  your shirt.",
+        "option2": "Please changed your shirt.",
+        "option3": "Please changing your shirt.",
     "option4": "Please change your shirt.",
-    "question": "দয়া করে জামাটা পাল্টাও",
+        "question": "দয়া করে তোমার জামাটা পাল্টাও",
     "correct": 4,
     "isPicture": false
     },
@@ -238,13 +238,13 @@
     "option2": "Kabita has change her mind.",
     "option3": "Kabita has changed her mind.",
     "option4": "Kabita was changed her mind.",
-    "question": "কবিতা তার মত বদল করলো",
+        "question": "কবিতা তার মত বদল করেছে",
     "correct": 3,
     "isPicture": false
     },
     {
     "option1": "Nitu has changed completely.",
-    "option2": "Nitu has change  completely.",
+        "option2": "Nitu has change completely.",
     "option3": "Nitu was changed completely.",
     "option4": "Nitu is changing completely.",
     "question": "নিতু একেবারে বদলে গেছে ",
@@ -270,17 +270,17 @@
     "isPicture": false
     },
     {
-    "option1": "The doctor  check  the patient.",
-    "option2": "The doctor is checked  the patient.",
-    "option3": "The doctor  checks  the patient.",
-    "option4": "The doctor is checking  the patient.",
+        "option1": "The doctor check the patient.",
+        "option2": "The doctor is checked the patient.",
+        "option3": "The doctor checks the patient.",
+        "option4": "The doctor is checking the patient.",
     "question": "ডাক্তার রোগীটিকে পরীক্ষা করছেন",
     "correct": 4,
     "isPicture": false
     },
     {
     "option1": "Can you check his bad habits ?",
-    "option2": "Can you checking  his bad habits ?",
+        "option2": "Can you checking his bad habits ?",
     "option3": "Are you check his bad habits ?",
     "option4": "Can you be check his bad habits ?",
     "question": "তুমি কি তার বাজে স্বভাব আটকাতে পারো ?",
@@ -288,7 +288,7 @@
     "isPicture": false
     },
     {
-    "option1": "Checked  it, if it is ok.",
+        "option1": "Checked it, if it is ok.",
     "option2": "Check it, if it is ok.",
     "option3": "Checking it, if it is ok.",
     "option4": "Check it, if it was ok.",
@@ -298,7 +298,7 @@
     },
     {
     "option1": "Finally water has checked.",
-    "option2": "Finally water can  check.",
+        "option2": "Finally water can check.",
     "option3": "Finally water can be checked.",
     "option4": "Finally water could be checked.",
     "question": "অবশেষে জল আটকানো গেল ",
@@ -315,10 +315,10 @@
     "isPicture": false
     },
     {
-    "option1": "Please matching  the answers.",
+        "option1": "Please matching the answers.",
     "option2": "Please match the answers.",
     "option3": "Please to match the answers.",
-    "option4": "Please matched  the answers.",
+        "option4": "Please matched the answers.",
     "question": "দয়া করে উত্তরগুলো মিলিয়ে নাও",
     "correct": 2,
     "isPicture": false
@@ -333,8 +333,8 @@
     "isPicture": false
     },
     {
-    "option1": "The two glasses  not match here.",
-    "option2": "The two glasses  not matching  here.",
+        "option1": "The two glasses not match here.",
+        "option2": "The two glasses not matching  here.",
     "option3": "The two glasses do not match here.",
     "option4": "The two glasses are not match here.",
     "question": "গেলাসদুটো এখানে মানাচ্ছে না ",
@@ -351,16 +351,16 @@
     "isPicture": false
     },
     {
-    "option1": "The shoes do not match with the shirt.",
-    "option2": "The shoes not match with the shirt.",
-    "option3": "The shoes do not matching with the shirt.",
-    "option4": "The shoes not matches with the shirt.",
+        "option1": "The shoe does not match with the shirt.",
+        "option2": "The shoe not match with the shirt.",
+        "option3": "The shoe do not matching with the shirt.",
+        "option4": "The shoe not matches with the shirt.",
     "question": "জামার সঙ্গে জুতোটা মানায় না",
     "correct": 1,
     "isPicture": false
     },
     {
-    "option1": "The shirt  turn into black.",
+        "option1": "The shirt turn into black.",
     "option2": "The shirt is turned into black.",
     "option3": "The shirt has turned from black.",
     "option4": "The shirt has turned into black.",
@@ -373,7 +373,7 @@
     "option2": "He is a writer turns  actor.",
     "option3": "He is a writer turning  actor.",
     "option4": "He is a writer is turned actor.",
-    "question": "সে একজন লেখক থেকে নায়ক",
+        "question": "সে একজন লেখক থেকে অভিনেতা হয়েছে",
     "correct": 1,
     "isPicture": false
     },
@@ -400,7 +400,7 @@
     "option2": "Irfan tried to turning people against Arjun.",
     "option3": "Irfan has tried to turned people against Arjun.",
     "option4": "Irfan tried to turn people against Arjun.",
-    "question": "ইরফান চেষ্টা করেছিলো জনগণকে অর্জুনের বিরুদ্ধে নিতে",
+        "question": "ইরফান চেষ্টা করেছিলো জনগণকে অর্জুনের বিরুদ্ধে ঘোরাতে",
     "correct": 4,
     "isPicture": false
     },
@@ -423,10 +423,10 @@
     "isPicture": false
     },
     {
-    "option1": "Will the price rising only ?",
-    "option2": "Will the price be risen only ?",
-    "option3": "Will the price be rising only ?",
-    "option4": "Is the price be rising ?",
+        "option1": "Will price rising only ?",
+        "option2": "Will price be risen only ?",
+        "option3": "Will price be rising only ?",
+        "option4": "Is price be rising ?",
     "question": "দাম কি বেড়েই যাবে ?",
     "correct": 3,
     "isPicture": false

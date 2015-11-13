@@ -99,10 +99,10 @@
     "isPicture": false
     },
     {
-    "option1": "Have you ever eating chowmin before ?",
-    "option2": "Did you ever eaten chowmin before ?",
-    "option3": "Have you ever eaten chowmin before ?",
-    "option4": "Have you ever eat chowmin ?",
+        "option1": "Have you ever eating chowmein before ?",
+        "option2": "Did you ever eaten chowmein before ?",
+        "option3": "Have you ever eaten chowmein before ?",
+        "option4": "Have you ever eat chowmein ?",
     "question": "তুমি কি আগে কখনো চাউমিন খেয়েছো ?",
     "correct": 3,
     "isPicture": false
@@ -139,7 +139,7 @@
     "option2": "They drank water, but did not eat food.",
     "option3": "They drank water, but not eat food.",
     "option4": "They have drank water, but did not eaten food.",
-    "question": "তারা জল খেলো, কিন্তু খাবার খেল না",
+        "question": "তারা জল খেয়েছিল, কিন্তু খাবার খায় নি",
     "correct": 2,
     "isPicture": false
     },
@@ -226,7 +226,7 @@
     },
     {
     "option1": "Sabitri is looking at the sun.",
-    "option2": "Sabitri  looking  the sun.",
+        "option2": "Sabitri looking the sun.",
     "option3": "Sabitri is look at the sun.",
     "option4": "Sabitri looks at the sun.",
     "question": "সাবিত্রী সূর্যের দিকে তাকিয়ে আছে",
@@ -243,10 +243,10 @@
     "isPicture": false
     },
     {
-    "option1": "Look  on me.",
+        "option1": "Look on me.",
     "option2": "Look to me.",
-    "option3": "Looking  at me.",
-    "option4": "Look  at me.",
+        "option3": "Looking at me.",
+        "option4": "Look at me.",
     "question": "আমার দিকে তাকাও",
     "correct": 4,
     "isPicture": false
@@ -328,7 +328,7 @@
     "option2": "The clock says noon.",
     "option3": "The clock says it was noon.",
     "option4": "The clock says noon has come.",
-    "question": "ঘড়ি বলছে দুপুর হয়েছে",
+        "question": "ঘড়ি বলে, দুপুর হয়েছে",
     "correct": 2,
     "isPicture": false
     },

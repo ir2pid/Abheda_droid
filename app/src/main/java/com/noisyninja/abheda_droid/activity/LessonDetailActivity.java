@@ -1,7 +1,6 @@
 package com.noisyninja.abheda_droid.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.util.Constants;
@@ -9,9 +8,10 @@ import com.noisyninja.abheda_droid.util.Constants.MODULE_TYPE;
 import com.noisyninja.abheda_droid.util.Utils;
 
 /**
+ * Lesson detail activity
  * Created by ir2pi on 12/6/2014.
  */
-public class LessonDetailActivity extends FragmentActivity {
+public class LessonDetailActivity extends BaseFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

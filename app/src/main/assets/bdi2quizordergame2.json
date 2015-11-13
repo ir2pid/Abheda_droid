@@ -4,51 +4,58 @@
         "words": {
           "4": "asked",
           "1": "blue",
-          "3": "the",
+          "3": "whether",
           "2": "the",
           "5": "was",
           "6": "if",
           "7": "sky",
           "8": "student",
           "9": "that",
-          "10": "is"
+          "10": "is",
+          "11": "the"
         },
-        "answers":[[2,8,4,6,3,7,10,1],[3,8,4,6,2,7,10,1]]
-    },
-    {
-        "question": "The student said, \"Was Akbar a good emperor ?\"",
-        "words": {
-          "4": "enquired",
-          "1": "been",
-          "3": "emperor",
-          "2": "was",
-          "5": "a",
-          "6": "the",
-          "7": "had",
-          "8": "if",
-          "9": "good",
-          "10": "Akbar",
-          "11": "student"
-        },
-        "answers":[[6,11,4,8,10,7,1,5,9,3]]
-    },
-    {
-        "question": "He says, \"Were you going to school that day ?\"",
-        "words": {
-          "4": "school",
-          "1": "whether",
-          "3": "been",
-          "2": "I",
-          "5": "he",
-          "6": "that",
-          "7": "to",
-          "8": "had",
-          "9": "asks",
-          "10": "going",
-          "11": "day",
-          "12": "was"
-        },
-        "answers":[[5,9,1,2,8,3,10,7,4,6,11]]
+      "answers": [
+        [
+          2,
+          8,
+          4,
+          6,
+          11,
+          7,
+          10,
+          1
+        ],
+        [
+          2,
+          8,
+          4,
+          3,
+          11,
+          7,
+          10,
+          1
+        ],
+        [
+          2,
+          8,
+          4,
+          6,
+          11,
+          7,
+          5,
+          1
+        ],
+        [
+          2,
+          8,
+          4,
+          3,
+          11,
+          7,
+          5,
+          1
+        ]
+      ]
     },
     {
         "question": "His angry mother shouted, \"Do you think that you know better than your father ?\"",
@@ -58,7 +65,7 @@
           "3": "than",
           "2": "that",
           "5": "and",
-          "6": "known",
+          "6": "had",
           "7": "he",
           "8": "his",
           "9": "he",
@@ -68,44 +75,340 @@
           "13": "thought",
           "14": "knew",
           "15": "angry",
-          "16": "if"
+          "16": "if",
+          "17": "known"
         },
         "answers":[[8,15,1,12,5,11,16,9,13,2,7,14,10,3,4],[8,15,1,12,5,11,16,7,13,2,9,14,10,3,4]]
     },
     {
-        "question": "The policeman said to us, \"Go away.\"",
+      "question": "The teacher said, \"Sit down, boys.\"",
+        "words": {
+          "4": "boys",
+          "1": "asked",
+          "3": "the",
+          "2": "to",
+          "5": "down",
+          "6": "teacher",
+          "7": "told",
+          "8": "sit",
+          "9": "the",
+          "10": "that",
+          "11": "advised",
+          "12": "suggested",
+          "13": "requested"
+        },
+      "answers": [
+        [
+          9,
+          6,
+          1,
+          3,
+          4,
+          2,
+          8,
+          5
+        ],
+        [
+          3,
+          6,
+          7,
+          9,
+          4,
+          2,
+          8,
+          5
+        ]
+      ]
+    },
+    {
+      "question": "She told me, \"Please help me.\"",
+        "words": {
+          "4": "asked",
+          "1": "me",
+          "3": "her",
+          "2": "please",
+          "5": "I",
+          "6": "requested",
+          "7": "that",
+          "8": "she",
+          "9": "ordered",
+          "10": "help",
+          "11": "told",
+          "12": "to",
+          "13": "helped",
+          "14": "him"
+        },
+      "answers": [
+        [
+          8,
+          6,
+          1,
+          12,
+          10,
+          3
+        ]
+      ]
+    },
+    {
+      "question": "The policeman said to us, \"Go away.\"",
         "words": {
           "4": "policeman",
           "1": "that",
           "3": "us",
           "2": "the",
           "5": "to",
-          "6": "ordered",
-          "7": "away",
+          "6": "requested",
+          "7": "went",
           "8": "asked",
-          "9": "go"
+          "9": "go",
+          "10": "we",
+          "11": "should",
+          "12": "advised",
+          "13": "ordered",
+          "14": "away"
         },
-        "answers":[[2,4,6,3,5,9,7]]
+      "answers": [
+        [
+          2,
+          4,
+          13,
+          3,
+          5,
+          9,
+          14
+        ]
+      ]
     },
     {
-        "question": "I told him, \"Please wait here till I return.\"",
+      "question": "The judge said to all, \"Be on time.\"",
         "words": {
-          "4": "I",
-          "1": "him",
-          "3": "there",
-          "2": "to",
+          "4": "ordered",
+          "1": "be",
+          "3": "the",
+          "2": "are",
+          "5": "requested",
+          "6": "advised",
+          "7": "time",
+          "8": "judge",
+          "9": "to",
+          "10": "asked",
+          "11": "we",
+          "12": "on",
+          "13": "all",
+          "14": "for"
+        },
+      "answers": [
+        [
+          3,
+          8,
+          4,
+          13,
+          9,
+          1,
+          12,
+          7
+        ],
+        [
+          3,
+          8,
+          10,
+          13,
+          9,
+          1,
+          12,
+          7
+        ]
+      ]
+    },
+    {
+        "question": "The leader said, \"Be quiet and listen to my words.\"",
+        "words": {
+          "4": "asked",
+          "1": "listen",
+          "3": "be",
+          "2": "listened",
+          "5": "the",
+          "6": "them",
+          "7": "his",
+          "8": "that",
+          "9": "to",
+          "10": "quiet",
+          "11": "leader",
+          "12": "words",
+          "13": "to",
+          "14": "for",
+          "15": "and",
+          "16": "requested"
+        },
+      "answers": [
+        [
+          5,
+          11,
+          4,
+          6,
+          13,
+          3,
+          10,
+          15,
+          1,
+          9,
+          7,
+          12
+        ],
+        [
+          5,
+          11,
+          4,
+          6,
+          9,
+          3,
+          10,
+          15,
+          1,
+          13,
+          7,
+          12
+        ]
+      ]
+    },
+    {
+      "question": "He says, \"Were you going to school that day ?\"",
+        "words": {
+          "4": "school",
+          "1": "whether",
+          "3": "been",
+          "2": "I",
+          "5": "he",
+          "6": "gone",
+          "7": "to",
+          "8": "next",
+          "9": "asks",
+          "10": "going",
+          "11": "day",
+          "12": "was",
+          "13": "had",
+          "14": "that"
+        },
+      "answers": [
+        [
+          5,
+          9,
+          1,
+          2,
+          13,
+          3,
+          10,
+          7,
+          4,
+          14,
+          11
+        ]
+      ]
+    },
+    {
+        "question": "My friend said, \"Can you close the window please ?\"",
+        "words": {
+          "4": "requested",
+          "1": "that",
+          "3": "close",
+          "2": "suggested",
           "5": "I",
           "6": "asked",
-          "7": "returned",
-          "8": "wait",
-          "9": "requested",
-          "10": "till",
-          "11": "here"
+          "7": "closed",
+          "8": "friend",
+          "9": "to",
+          "10": "the",
+          "11": "please",
+          "12": "told",
+          "13": "my",
+          "14": "me",
+          "15": "window"
         },
-        "answers":[[4,9,1,2,8,3,10,5,7]]
+      "answers": [
+        [
+          13,
+          8,
+          4,
+          14,
+          9,
+          3,
+          10,
+          15
+        ]
+      ]
     },
     {
-        "question": "The mother said to her son, \"Eat your food now.\"",
+      "question": "I told him, \"Please wait here till I return.\"",
+      "words": {
+        "4": "I",
+        "1": "him",
+        "3": "there",
+        "2": "had",
+        "5": "I",
+        "6": "please",
+        "7": "that",
+        "8": "wait",
+        "9": "requested",
+        "10": "till",
+        "11": "here",
+        "12": "waited",
+        "13": "he",
+        "14": "returned",
+        "15": "asked",
+        "16": "to"
+      },
+      "answers": [
+        [
+          4,
+          9,
+          1,
+          16,
+          8,
+          3,
+          10,
+          5,
+          14
+        ]
+      ]
+    },
+  {
+        "question": "The doctor said, \"Don't smoke.\"",
+        "words": {
+          "4": "the",
+          "1": "asked",
+          "3": "to",
+          "2": "don't",
+          "5": "all",
+          "6": "smoking",
+          "7": "no",
+          "8": "not",
+          "9": "advised",
+          "10": "ordered",
+          "11": "doctor",
+          "12": "requested",
+          "13": "smoke"
+        },
+    "answers": [
+      [
+        4,
+        11,
+        1,
+        8,
+        3,
+        13
+      ],
+      [
+        4,
+        11,
+        9,
+        8,
+        3,
+        13
+      ]
+    ]
+    },
+    {
+      "question": "The mother said to her son, \"Eat your food now.\"",
         "words": {
           "4": "told",
           "1": "eat",
@@ -114,123 +417,131 @@
           "5": "right",
           "6": "the",
           "7": "son",
-          "8": "asked",
-          "9": "to",
+          "8": "her",
+          "9": "ordered",
           "10": "food",
           "11": "then",
           "12": "mother",
-          "13": "now"
+          "13": "now",
+          "14": "to",
+          "15": "asked"
         },
-        "answers":[[6,12,4,3,7,9,1,2,10,5,11]]
+      "answers": [
+        [
+          6,
+          12,
+          4,
+          3,
+          7,
+          14,
+          1,
+          2,
+          10,
+          5,
+          11
+        ],
+        [
+          6,
+          12,
+          15,
+          3,
+          7,
+          14,
+          1,
+          2,
+          10,
+          5,
+          11
+        ],
+        [
+          6,
+          12,
+          15,
+          3,
+          7,
+          14,
+          1,
+          2,
+          10,
+          11
+        ],
+        [
+          6,
+          12,
+          4,
+          3,
+          7,
+          14,
+          1,
+          2,
+          10,
+          11
+        ]
+      ]
     },
     {
-        "question": "The teacher said, \"Sit down, boys.\"",
-        "words": {
-          "4": "boys",
-          "1": "asked",
-          "3": "the",
-          "2": "to",
-          "5": "down",
-          "6": "teacher",
-          "7": "requested",
-          "8": "sit",
-          "9": "the",
-          "10": "that"
-        },
-        "answers":[[9,6,1,3,4,2,8,5],[3,6,1,9,4,2,8,5]]
+      "question": "The student said, \"Was Akbar a good emperor ?\"",
+      "words": {
+        "4": "enquired",
+        "1": "been",
+        "3": "emperor",
+        "2": "has",
+        "5": "that",
+        "6": "the",
+        "7": "had",
+        "8": "if",
+        "9": "good",
+        "10": "Akbar",
+        "11": "student",
+        "12": "said",
+        "13": "a",
+        "14": "was"
+      },
+      "answers": [
+        [
+          6,
+          11,
+          4,
+          8,
+          10,
+          7,
+          1,
+          13,
+          9,
+          3
+        ]
+      ]
     },
-    {
-        "question": "The leader said, \"Be quiet and listen to my words.\"",
-        "words": {
-          "4": "asked",
-          "1": "listen",
-          "3": "be",
-          "2": "requested",
-          "5": "the",
-          "6": "them",
-          "7": "his",
-          "8": "and",
-          "9": "to",
-          "10": "quiet",
-          "11": "leader",
-          "12": "words",
-          "13": "to"
-        },
-        "answers":[[5,11,4,6,13,3,10,8,1,9,7,12],[5,11,4,6,9,3,10,8,1,13,7,12]]
-    },
-    {
-        "question": "She told me, \"Please help me.\"",
-        "words": {
-          "4": "asked",
-          "1": "me",
-          "3": "her",
-          "2": "please",
-          "5": "to",
-          "6": "requested",
-          "7": "help",
-          "8": "she"
-        },
-        "answers":[[8,6,1,5,7,3]]
-    },
-    {
-        "question": "My friend said, \"Can you close the window please ?\"",
-        "words": {
-          "4": "requested",
-          "1": "that",
-          "3": "close",
-          "2": "my",
-          "5": "me",
-          "6": "asked",
-          "7": "window",
-          "8": "friend",
-          "9": "to",
-          "10": "the"
-        },
-        "answers":[[2,8,4,5,9,3,10,7]]
-    },
-    {
-        "question": "The doctor said, \"Don't smoke.\"",
-        "words": {
-          "4": "the",
-          "1": "asked",
-          "3": "to",
-          "2": "don't",
-          "5": "doctor",
-          "6": "smoke",
-          "7": "requested",
-          "8": "not"
-        },
-        "answers":[[4,5,1,8,3,6]]
-    },
-    {
-        "question": "The judge said to all, \"Be on time.\"",
-        "words": {
-          "4": "ordered",
-          "1": "be",
-          "3": "the",
-          "2": "on",
-          "5": "requested",
-          "6": "all",
-          "7": "time",
-          "8": "judge",
-          "9": "to"
-        },
-        "answers":[[3,8,4,6,9,1,2,7]]
-    },
-    {
+  {
         "question": "The prisoner shouted, \"Let me go.\"",
         "words": {
           "4": "begged",
           "1": "prisoner",
           "3": "said",
-          "2": "let",
+          "2": "ordered",
           "5": "the",
           "6": "and",
-          "7": "go",
+          "7": "if",
           "8": "to",
           "9": "him",
-          "10": "shouted"
+          "10": "shouted",
+          "11": "it",
+          "12": "letted",
+          "13": "go",
+          "14": "let"
         },
-        "answers":[[5,1,10,6,4,8,2,9,7]]
+    "answers": [
+      [
+        5,
+        1,
+        10,
+        6,
+        4,
+        8,
+        14,
+        9,
+        13
+      ]
+    ]
     }
 ]

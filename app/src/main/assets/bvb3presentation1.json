@@ -36,7 +36,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Smell</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;শোঁকা",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "Dogs <font color='#ED7745'>smell</font> better than men. <br>কুকুরেরা মানুষের চেয়ে বেশী ভালো গন্ধ শোঁকে । <br> <br>Have you not <font color='#ED7745'>smelt</font> the cake ? <br>তুমি কেকের গন্ধ পাওনি ? <br> <br>Your cooking <font color='#ED7745'>smelled</font> this place up. <br>তোমার রান্না এই জায়গায় গন্ধ ছড়িয়েছে । <br> <br>Smell&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Smelled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Smelt <br> <br>Translate: ফুলের গন্ধ তোমার কেমন লাগে ?",
+                        "text1": "Dogs <font color='#ED7745'>smell</font> better than men. <br>কুকুরেরা মানুষের চেয়ে বেশী ভালো গন্ধ শোঁকে । <br> <br>Have you not <font color='#ED7745'>smelt</font> the cake ? <br>তুমি কেকের গন্ধ পাওনি ? <br> <br>Your cooking <font color='#ED7745'>smelled</font> this place up. <br>তোমার রান্না এই জায়গায় গন্ধ ছড়িয়েছিল । <br> <br>Smell&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Smelled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Smelt <br> <br>Translate: ফুলের গন্ধ তোমার কেমন লাগে ?",
                         "description": ""
                       },
                       {
@@ -56,7 +56,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Chew</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;চিবোনো",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "<font color='#ED7745'>Chew</font> well to eat well. <br>ভালো করে খেতে ভালো করে চিবোও । <br> <br>Have you ever <font color='#ED7745'>chewed</font> water ? <br>তুমি কি কখনো জল চিবিয়েছো ? <br> <br>The dog <font color='#ED7745'>chewed</font> away a ball all night.<br>কুকুরটা সারা রাত্তির বলটা চিবোলো । <br> <br>Chew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chewed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chewed <br> <br>Translate: বাদাম চিবোতে পারো ?",
+                        "text1": "<font color='#ED7745'>Chew</font> well to eat well. <br>ভালো করে খেতে ভালো করে চিবোও । <br> <br>Have you ever <font color='#ED7745'>chewed</font> water ? <br>তুমি কি কখনো জল চিবিয়েছো ? <br> <br>The dog <font color='#ED7745'>chewed</font> away a ball all night.<br>কুকুরটা সারা রাত্তির একটা বল চিবোলো । <br> <br>Chew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chewed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chewed <br> <br>Translate: বাদাম চিবোতে পারো ?",
                         "description": ""
                       },
                       {
@@ -66,7 +66,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Wash</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ধোওয়া, ভাসানো",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "<font color='#ED7745'>Wash</font> your hands before you eat. <br>খাবার আগে হাত ধোও । <br> <br>The flood <font color='#ED7745'>washed</font> the boat away. <br>বন্যা নৌকোটি ভাসিয়ে নিয়ে গিয়েছিল । <br> <br>He <font color='#ED7745'>washed</font> off the dog with a pipe. <br>সে একটা পাইপ দিয়ে কুকুরটিকে পরিষ্কার করল । <br> <br>Wash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Washed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Washed <br> <br>Translate: নিজের জামাকাপড় নিজে কাচা  ভালো",
+                        "text1": "<font color='#ED7745'>Wash</font> your hands before you eat. <br>খাবার আগে তোমার হাত ধোও । <br> <br>The flood <font color='#ED7745'>washed</font> the boat away. <br>বন্যা নৌকোটি ভাসিয়ে নিয়ে গিয়েছিল । <br> <br>He <font color='#ED7745'>washed</font> off the dog with a pipe. <br>সে একটা পাইপ দিয়ে কুকুরটিকে পরিষ্কার করল । <br> <br>Wash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Washed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Washed <br> <br>Translate: নিজের জামাকাপড় নিজে কাচা  ভালো",
                         "description": ""
                       },
                       {
@@ -86,7 +86,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Swim</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;সাঁতার কাটা",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "Let us <font color='#ED7745'>swim</font> in the river. <br>চলো, নদীতে সাঁতার কাটি । <br> <br>Why have you <font color='#ED7745'>swam</font> in dirty water ? <br>নোংরা জলে সাঁতার কেটেছো কেন ? <br> <br>Swamiji <font color='#ED7745'>swam</font> against the tide. <br>স্বামিজী স্রোতের বিপক্ষে গিয়েছিলেন । <br> <br>Swim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Swam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Swam <br> <br>Translate: মাছ কি সাঁতার জানে না ?",
+                        "text1": "Let us <font color='#ED7745'>swim</font> in the river. <br>চলো, নদীতে সাঁতার কাটি । <br> <br>Why have you <font color='#ED7745'>swum</font> in dirty water ? <br>নোংরা জলে সাঁতার কেটেছো কেন ? <br> <br>Swamiji <font color='#ED7745'>swam</font> against the tide. <br>স্বামিজী স্রোতের বিপক্ষে গিয়েছিলেন । <br> <br>Swim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Swam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Swum <br> <br>Translate: মাছ কি সাঁতার জানে না ?",
                         "description": ""
                       },
                       {

@@ -27,10 +27,10 @@
     "isPicture": false
     },
     {
-    "option1": "Do you like to move ?",
-    "option2": "Do you like to moving ?",
-    "option3": "Does you like to move ?",
-    "option4": "Did you like to move ?",
+        "option1": "Do you like to move around ?",
+        "option2": "Do you like to moving around ?",
+        "option3": "Does you like to move around ?",
+        "option4": "Did you like to move around ?",
     "question": "তোমার ঘুরতে ভালো লাগে ?",
     "correct": 1,
     "isPicture": false
@@ -58,24 +58,24 @@
     "option2": "Use it or lose it.",
     "option3": "Use it or lost it.",
     "option4": "Using  it or lose it.",
-    "question": "ব্যবহার করো নাহলে খারাপ হয়ে যাবে",
+        "question": "এটা ব্যবহার করো নাহলে খারাপ হয়ে যাবে",
     "correct": 2,
     "isPicture": false
     },
     {
-    "option1": "We must use our brain when work.",
-    "option2": "We can use our brain when working.",
-    "option3": "We must used our brain when working.",
-    "option4": "We must use our brain when working.",
+        "option1": "We must use our brain while work.",
+        "option2": "We can use our brain while working.",
+        "option3": "We must used our brain while working.",
+        "option4": "We must use our brain while working.",
     "question": "কাজ করতে আমরা অবশ্যই মাথা ব্যবহার করবো",
     "correct": 4,
     "isPicture": false
     },
     {
-    "option1": "He uses his left leg when playing.",
-    "option2": "He used his left leg when playing.",
-    "option3": "He uses his left leg when played.",
-    "option4": "He using his left leg when playing.",
+        "option1": "He uses his left leg while playing.",
+        "option2": "He used his left leg while playing.",
+        "option3": "He uses his left leg while played.",
+        "option4": "He using his left leg while playing.",
     "question": "সে খেলার সময় বাঁ পা কাজে লাগায়",
     "correct": 1,
     "isPicture": false
@@ -108,10 +108,10 @@
     "isPicture": false
     },
     {
-    "option1": "Eating , then only you will live.",
-    "option2": "Eat , then only you will live.",
-    "option3": "Eat , then only you will living.",
-    "option4": "Eat , then only you  live.",
+        "option1": "Eating, then only you will live.",
+        "option2": "Eat, then only you will live.",
+        "option3": "Eat, then only you will living.",
+        "option4": "Eat, then only you live.",
     "question": "খাবার খাও, তবেই তুমি বাঁচবে",
     "correct": 2,
     "isPicture": false
@@ -145,19 +145,19 @@
     },
     {
     "option1": "If you have loved me, please take the flowers.",
-    "option2": "If you  loved me, please take the flowers.",
-    "option3": "If you  love me, please take the flowers.",
-    "option4": "If you have love , please taking  the flowers.",
-    "question": "যদি তুমি আমায় ভালোবেসেছ, দয়া করে ফুল নাও",
+        "option2": "If you loved me, please take the flowers.",
+        "option3": "If you love me, please take the flowers.",
+        "option4": "If you have love, please taking  the flowers.",
+        "question": "যদি তুমি আমায় ভালোবেসেছো তো দয়া করে ফুল নাও",
     "correct": 1,
     "isPicture": false
     },
     {
-    "option1": "The teacher said,\"Take him my love\".",
-    "option2": "The teacher said,\"Love him\".",
-    "option3": "The teacher said,\"Give him my love\".",
-    "option4": "The teacher said,\"Gave him my love\".",
-    "question": "শিক্ষক বললেন,\"তাকে আমার ভালোবাসা দিয়ো\"",
+        "option1": "The teacher said, \"Take him my love\".",
+        "option2": "The teacher said, \"Love him\".",
+        "option3": "The teacher said, \"Give him my love\".",
+        "option4": "The teacher said, \"Gave him my love\".",
+        "question": "শিক্ষক বললেন, \"তাকে আমার ভালোবাসা দিয়ো\"",
     "correct": 3,
     "isPicture": false
     },
@@ -198,7 +198,7 @@
     "isPicture": false
     },
     {
-    "option1": "Mr. Johnson liking  good food.",
+        "option1": "Mr. Johnson liking good food.",
     "option2": "Mr. Johnson likes to good food.",
     "option3": "Mr. Johnson liked good food.",
     "option4": "Mr. Johnson likes good food.",
@@ -207,10 +207,10 @@
     "isPicture": false
     },
     {
-    "option1": "Do you not  like him ?",
-    "option2": "Did you not  like him ?",
-    "option3": "Do you not  liking him ?",
-    "option4": "Are you not  like him ?",
+        "option1": "Do you not like him ?",
+        "option2": "Did you not like him ?",
+        "option3": "Do you not liking him ?",
+        "option4": "Are you not like him ?",
     "question": "তুমি কি তাকে পছন্দ করো না ?",
     "correct": 1,
     "isPicture": false
@@ -279,18 +279,18 @@
     "isPicture": false
     },
     {
-    "option1": "Should I meet up with this boy ?",
-    "option2": "Can I meet up with this boy ?",
-    "option3": "Shall I meeting up with this boy ?",
-    "option4": "Could I meeting up with this boy ?",
+        "option1": "Should I meet up with the boy ?",
+        "option2": "Can I meet up with the boy ?",
+        "option3": "Shall I meeting up with the boy ?",
+        "option4": "Could I meeting up with the boy ?",
     "question": "আমার কি ছেলেটির সঙ্গে দেখা করা ঠিক হবে ?",
     "correct": 1,
     "isPicture": false
     },
     {
-    "option1": "We will meet and talked at night.",
-    "option2": "We will meet and talk at night.",
-    "option3": "We  meet and talk at night.",
+        "option1": "We shall meet and talked at night.",
+        "option2": "We shall meet and talk at night.",
+        "option3": "We meet and talk at night.",
     "option4": "We meeting and talk at night.",
     "question": "রাতে আমরা দেখা করে কথা বলব",
     "correct": 2,
@@ -324,8 +324,8 @@
     "isPicture": false
     },
     {
-    "option1": "He sets out the journey.",
-    "option2": "He setting out the journey.",
+        "option1": "He had set out the journey.",
+        "option2": "He is setting out the journey.",
     "option3": "He sets in the journey.",
     "option4": "He can set out the journey.",
     "question": "সে যাত্রা শুরু করলো",
@@ -333,11 +333,11 @@
     "isPicture": false
     },
     {
-    "option1": "If you want I was setting your hair.",
-    "option2": "If you wanted I am setting your hair.",
-    "option3": "If you want I am setting your hair.",
-    "option4": "If you want I set your hair.",
-    "question": "যদি তুমি চাও , আমি তোমার চুল সেট করে দিচ্ছি",
+        "option1": "If you want, I was setting your hair.",
+        "option2": "If you wanted, I am setting your hair.",
+        "option3": "If you want, I am setting your hair.",
+        "option4": "If you want, I set your hair.",
+        "question": "যদি তুমি চাও, আমি তোমার চুল সেট করে দিচ্ছি",
     "correct": 3,
     "isPicture": false
     },

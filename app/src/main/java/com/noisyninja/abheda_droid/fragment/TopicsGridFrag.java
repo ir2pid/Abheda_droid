@@ -26,7 +26,6 @@ import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.DataStore;
 import com.noisyninja.abheda_droid.util.DownloadFileAsync;
 import com.noisyninja.abheda_droid.util.IDownloadFileAsyncCallback;
-import com.noisyninja.abheda_droid.util.TTSUtils;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
@@ -62,13 +61,13 @@ public class TopicsGridFrag extends Fragment implements View.OnClickListener, ID
         gridView.setAdapter(adapter);
 
 
-        final TextView textView = (TextView) windows.findViewById(R.id.textView6);
+        /*final TextView textView = (TextView) windows.findViewById(R.id.textView6);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TTSUtils.getInstance(getActivity()).initQueue(textView.getText().toString());
             }
-        });
+        });*/
         return windows;
     }
 

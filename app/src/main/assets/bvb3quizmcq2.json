@@ -63,10 +63,10 @@
     "isPicture": false
     },
     {
-    "option1": "It has  not easy to drive in crowded road.",
-    "option2": "It is not easy to driving in crowded road.",
-    "option3": "It is not easy to drive in crowded road.",
-    "option4": "It was not easy to drive in crowded road.",
+        "option1": "It has not easy to drive on crowded road.",
+        "option2": "It is not easy to driving on crowded road.",
+        "option3": "It is not easy to drive on crowded road.",
+        "option4": "It was not easy to drive on crowded road.",
     "question": "ভীড়ে গাড়ি চালানো সহজ নয়",
     "correct": 3,
     "isPicture": false
@@ -92,7 +92,7 @@
     {
     "option1": "Hussain paints wonderfully.",
     "option2": "Hussain painted wonderfully.",
-    "option3": "Hussain can  paint wonderfully.",
+        "option3": "Hussain can paint wonderfully.",
     "option4": "Hussain painting wonderfully.",
     "question": "হুসেন চমৎকার আঁকে",
     "correct": 1,
@@ -100,18 +100,18 @@
     },
     {
     "option1": "The wall has painted in blue.",
-    "option2": "The wall was painting  in blue.",
+        "option2": "The wall was painting in blue.",
     "option3": "The wall was painted in blue.",
-    "option4": "The wall had  painted in blue.",
+        "option4": "The wall had painted in blue.",
     "question": "দেওয়ালটায় নীল রঙ করা হয়েছিল",
     "correct": 3,
     "isPicture": false
     },
     {
-    "option1": "Titli has painted with brush very well.",
-    "option2": "Titli painting with brush very well.",
-    "option3": "Titli painted with brush very well.",
-    "option4": "Titli paints with brush very well.",
+        "option1": "Titli has painted with brush well.",
+        "option2": "Titli painting with brush well.",
+        "option3": "Titli painted with brush well.",
+        "option4": "Titli paints with brush well.",
     "question": "তিতলি তুলি দিয়ে ভালো আঁকে",
     "correct": 4,
     "isPicture": false
@@ -130,7 +130,7 @@
     "option2": "If you have drawn, why have you not painted ?",
     "option3": "If you have drawed, why have you not painted ?",
     "option4": "If you have drawd, why you have not painted ?",
-    "question": "যদি এঁকেছো তো রঙ করনি কেন ?",
+        "question": "যদি এঁকেছো তো রঙ করোনি কেন ?",
     "correct": 2,
     "isPicture": false
     },
@@ -157,7 +157,7 @@
     "option2": "Don't you want to dance ?",
     "option3": "Didn't you want to dance ?",
     "option4": "Don't you want to dancing ?",
-    "question": "তুমি নাচতে চাইছো না ?",
+        "question": "তুমি নাচতে চাও না ?",
     "correct": 2,
     "isPicture": false
     },
@@ -244,7 +244,7 @@
     },
     {
     "option1": "Can't touch the flower so hard.",
-    "option2": "Don't touched  the flower so hard.",
+        "option2": "Don't touched the flower so hard.",
     "option3": "Don't touching the flower so hard.",
     "option4": "Don't touch the flower so hard.",
     "question": "ফূলটা জোরে ছূঁয়ো না",
@@ -252,26 +252,26 @@
     "isPicture": false
     },
     {
-    "option1": "Can a doctor say,'I shall not touch a patient' ?",
-    "option2": "A doctor can not say,'I shall not touch a patient' ?",
+        "option1": "Can a doctor say, 'I shall not touch a patient' ?",
+        "option2": "A doctor can not say, 'I shall not touch a patient' ?",
     "option3": "Can a doctor say, 'I will not touch a patient' ?",
     "option4": "Should a doctor say, 'I shall not touch a patient' ?",
-    "question": "ডাক্তার কি বলতে পারে,'আমি রোগীকে ছোঁব না'?",
+        "question": "ডাক্তার কি বলতে পারে, 'আমি রোগীকে ছোঁব না'?",
     "correct": 1,
     "isPicture": false
     },
     {
-    "option1": "I touch by your music.",
-    "option2": "Your music goes to touch me.",
-    "option3": "I am touched by your music.",
-    "option4": "Your music has gone to touch me.",
-    "question": "তোমার গান আমায় ছুঁয়ে গিয়েছে",
+        "option1": "He touches the feet of Guru.",
+        "option2": "He touched the feet of Guru.",
+        "option3": "He was touching the feet of Guru.",
+        "option4": "He has touched the feet of Guru.",
+        "question": "সে গুরুর পা স্পর্শ করছিল",
     "correct": 3,
     "isPicture": false
     },
     {
     "option1": "Do I hold your hand ?",
-    "option2": "May I holding  your hand ?",
+        "option2": "May I holding your hand ?",
     "option3": "May I hold your hand ?",
     "option4": "May I held your hand ?",
     "question": "আমি কি তোমার হাত ধরতে পারি ?",
@@ -292,7 +292,7 @@
     "option2": "The old man said, 'Holding my hand.' ",
     "option3": "The old man said, 'Held my hand.' ",
     "option4": "The old man said, 'Hold my hand.' ",
-    "question": "বৃদ্ধ বললেন,'আমার হাত ধরো, ",
+        "question": "বৃদ্ধ বললেন, 'আমার হাত ধরো, ",
     "correct": 4,
     "isPicture": false
     },
@@ -324,10 +324,10 @@
     "isPicture": false
     },
     {
-    "option1": "If you have worn watch, tell me the time.",
-    "option2": "If you  worn watch, tell me the time.",
-    "option3": "If you have worn watch, told me the time.",
-    "option4": "If you are worn watch, tell me the time.",
+        "option1": "If you have worn watch tell me the time.",
+        "option2": "If you worn watch tell me the time.",
+        "option3": "If you have worn watch told me the time.",
+        "option4": "If you are worn watch tell me the time.",
     "question": "যদি ঘড়ি পরে থাকো তো সময়টা বলো",
     "correct": 1,
     "isPicture": false
@@ -355,7 +355,7 @@
     "option2": "Rich men wear fine dress.",
     "option3": "Rich men have worn fine dress.",
     "option4": "Rich men wore fine dress.",
-    "question": "ধনী লোকেরা শৌখিন পোশাক পড়ে",
+        "question": "ধনী লোকেরা শৌখিন পোশাক পরে",
     "correct": 2,
     "isPicture": false
     },
@@ -414,10 +414,10 @@
     "isPicture": false
     },
     {
-    "option1": "The hero teaches  a lesson to the villain.",
+        "option1": "The hero teaches a lesson to the villain.",
     "option2": "The hero will teaching a lesson to the villain.",
     "option3": "The hero will teach a lesson to the villain.",
-    "option4": "The hero will  be  taught a lesson to the villain.",
+        "option4": "The hero will be taught a lesson to the villain.",
     "question": "নায়ক খলনায়ককে বেশ শিক্ষা দেবে",
     "correct": 3,
     "isPicture": false

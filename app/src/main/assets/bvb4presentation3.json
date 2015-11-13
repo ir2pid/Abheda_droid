@@ -6,7 +6,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Leave</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ছেড়ে যাওয়া",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "Ten minus two <font color='#ED7745'>leaves</font> eight. <br>দশ থেকে দুই বাদ দিলে আট থাকে । <br> <br>Let us <font color='#ED7745'>leave</font> the place soon. <br>এখান থেকে তাড়াতাড়ি যাওয়া যাক । <br> <br>Someone has <font color='#ED7745'>left</font> the bag here. <br>কেউ এখানে ব্যাগটা ফেলে গেছে । <br> <br>Leave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left <br> <br>Translate: আমার বাড়ি ছেড়ে বেরোতে ভালো লাগে না",
+                        "text1": "Ten minus two <font color='#ED7745'>leaves</font> eight. <br>দশ থেকে দুই বাদ দিলে আট থাকে । <br> <br>Let us <font color='#ED7745'>leave</font> this place soon. <br>এখান থেকে তাড়াতাড়ি যাওয়া যাক । <br> <br>Someone has <font color='#ED7745'>left</font> a bag here. <br>কেউ এখানে একটা ব্যাগ ফেলে গেছে । <br> <br>Leave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left <br> <br>Translate: আমার বাড়ি ছেড়ে বেরোতে ভালো লাগে না",
                         "description": ""
                       },
                       {
@@ -16,7 +16,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Grow</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;বাড়া, বাড়ানো",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "A boy <font color='#ED7745'>grows</font> into a man. <br>ছেলেটা লোকে পরিণত হলো । <br> <br>The business <font color='#ED7745'>grew</font> under new owners. <br>ব্যবসাটা নতুন মালিকদের হাতে গড়ে উঠলো । <br> <br>The plant has <font color='#ED7745'>grown</font> up into a tree now. <br>গাছটা বৃক্ষে পরিণত হয়েছে । <br> <br>Grow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grown <br> <br>Translate: ওঃ, কত বড়ো হয়ে গেছো তুমি !",
+                        "text1": "The boy <font color='#ED7745'>grows</font> into a man. <br>ছেলেটা লোকে পরিণত হয় । <br> <br>The business <font color='#ED7745'>grew</font> under new owners. <br>ব্যবসাটা নতুন মালিকদের হাতে গড়ে উঠলো । <br> <br>The plant has <font color='#ED7745'>grown</font> up into a tree. <br>গাছটা বৃক্ষে পরিণত হয়েছে । <br> <br>Grow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grown <br> <br>Translate: ওঃ, কত বড়ো হয়ে গেছো তুমি !",
                         "description": ""
                       },
                       {
@@ -46,7 +46,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Need</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;প্রয়োজন বোধ করা",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "I <font color='#ED7745'>need</font> your help. <br>আমি তোমার সাহায্য চাই । <br> <br>Do you really <font color='#ED7745'>need</font> the pen ? <br>তোমার কি পেনটা দরকার ? <br> <br>Your advice is not <font color='#ED7745'>needed</font>. <br>তোমার উপদেশ দরকার নেই । <br> <br>Need&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Needed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Needed <br> <br>Translate: এসময়ে ওর তোমাকে দরকার",
+                        "text1": "I <font color='#ED7745'>need</font> your help. <br>আমি তোমার সাহায্য চাই । <br> <br>Do you really <font color='#ED7745'>need</font> the pen ? <br>তোমার কি সত্যিই পেনটা দরকার ? <br> <br>Your advice is not <font color='#ED7745'>needed</font>. <br>তোমার উপদেশ দরকার নেই । <br> <br>Need&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Needed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Needed <br> <br>Translate: এসময়ে ওর তোমাকে দরকার",
                         "description": ""
                       },
                       {
@@ -76,7 +76,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Kill</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;মেরে ফেলা",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "Too much garlic <font color='#ED7745'>kills</font> the taste of the food. <br>এতো রসুনে রান্নার স্বাদ নষ্ট হয় । <br> <br>My shoes are <font color='#ED7745'>killing</font> me. <br>আমার জুতো আমায় পাগল করছে । <br> <br>The soldier was <font color='#ED7745'>killed</font> in a war. <br>সৈন্যটি যুদ্ধে মারা গেলো । <br> <br>Kill&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Killed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Killed <br> <br>Translate: থামো ! আমায় হাসিয়ে মেরে ফেলবে তুমি",
+                        "text1": "Too much garlic <font color='#ED7745'>kills</font> the taste of the food. <br>এতো রসুনে রান্নার স্বাদ নষ্ট হয় । <br> <br>My shoe is <font color='#ED7745'>killing</font> me. <br>আমার জুতো আমায় পাগল করছে । <br> <br>The soldier was <font color='#ED7745'>killed</font> in a war. <br>সৈন্যটি যুদ্ধে মারা গেলো । <br> <br>Kill&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Killed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Killed <br> <br>Translate: থামো ! আমায় হাসিয়ে মেরে ফেলবে তুমি",
                         "description": ""
                       },
                       {
@@ -86,7 +86,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Die</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;মারা যাওয়া",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "Martyrs never <font color='#ED7745'>die</font>. <br>শহীদের মৃত্যু নেই । <br> <br>I am <font color='#ED7745'>dying</font> for a box of chocolates. <br>আমি এক বাক্স চকোলেটের জন্যে পাগল হয়ে যাচ্ছি । <br> <br>Cowards die many times before their <font color='#ED7745'>death</font>. <br>কাপুরুষরা মরার আগে অনেকবার মরে । <br> <br>Die&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Died&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Died <br> <br>Translate: উনি কী করে মারা গেলেন ?",
+                        "text1": "Martyrs never <font color='#ED7745'>die</font>. <br>শহীদের মৃত্যু নেই । <br> <br>I am <font color='#ED7745'>dying</font> for a box of chocolates. <br>আমি এক বাক্স চকোলেটের জন্যে পাগল হয়ে যাচ্ছি । <br> <br>Cowards <font color='#ED7745'>die</font> many times before their death. <br>কাপুরুষরা মরার আগে অনেকবার মরে । <br> <br>Die&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Died&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Died <br> <br>Translate: উনি কী করে মারা গেলেন ?",
                         "description": ""
                       },
                       {
@@ -96,7 +96,7 @@
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Finish</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;শেষ করা",
                         "utext1": "",
                         "dtext1": "",
-                        "text1": "<font color='#ED7745'>Finish</font> your job. <br>তোমার কাজ শেষ করো । <br> <br>Tapan is <font color='#ED7745'>finished</font> because of lying. <br>মিথ্যে বলার জন্য তপন শেষ হয়ে গেল ।<br> <br>Can you <font color='#ED7745'>finish</font> the writing ? <br>তুমি কি লেখাটা শেষ করতে পারো ? <br> <br>Finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finished&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finished <br> <br>Translate: খাওয়া শেষ করে দেখা করো",
+                        "text1": "<font color='#ED7745'>Finish</font> your job. <br>তোমার কাজ শেষ করো । <br> <br>Tapan was <font color='#ED7745'>finished</font> because of lying. <br>মিথ্যে বলার জন্য তপন শেষ হয়ে গেল ।<br> <br>Can you <font color='#ED7745'>finish</font> the writing ? <br>তুমি কি লেখাটা শেষ করতে পারো ? <br> <br>Finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finished&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finished <br> <br>Translate: খাওয়া শেষ করে দেখা করো",
                         "description": ""
                       }
 ]

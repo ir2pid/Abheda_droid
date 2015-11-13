@@ -3,80 +3,30 @@
         "question": "One should take care of old people",
         "words": {
           "4": "care",
-          "1": "by",
+          "1": "took",
           "3": "should",
           "2": "old",
-          "5": "be",
+          "5": "one",
           "6": "of",
           "7": "people",
-          "8": "taken"
+          "8": "taken",
+          "9": "by",
+          "10": "be",
+          "11": "cared",
+          "12": "being",
+          "13": "been"
         },
-        "answers":[[2,7,3,5,8,4,6]]
-    },
-    {
-        "question": "The policeman chased after the thief",
-        "words": {
-          "4": "policeman",
-          "1": "being",
-          "3": "thief",
-          "2": "after",
-          "5": "the",
-          "6": "was",
-          "7": "by",
-          "8": "been",
-          "9": "the",
-          "10": "chased"
-        },
-        "answers":[[9,3,6,10,2,7,5,4],[5,3,6,10,2,7,9,4]]
-    },
-    {
-        "question": "The guardians will speak to the teacher on this matter",
-        "words": {
-          "4": "teacher",
-          "1": "guardians",
-          "3": "matter",
-          "2": "be",
-          "5": "spoke",
-          "6": "the",
-          "7": "to",
-          "8": "this",
-          "9": "will",
-          "10": "by",
-          "11": "spoken",
-          "12": "the",
-          "13": "on"
-        },
-        "answers":[[12,4,9,2,11,7,10,6,1,13,8,3],[6,4,9,2,11,7,10,12,1,13,8,3]]
-    },
-    {
-        "question": "Bhagat Singh died for his country",
-        "words": {
-          "4": "Bhagat Singh",
-          "1": "for",
-          "3": "was",
-          "2": "the",
-          "5": "by",
-          "6": "died",
-          "7": "country"
-        },
-        "answers":[[]]
-    },
-    {
-        "question": "Rubaiya jumped onto the thief and caught it",
-        "words": {
-          "4": "thief",
-          "1": "Rubaiya",
-          "3": "and",
-          "2": "jumped",
-          "5": "the",
-          "6": "was",
-          "7": "by",
-          "8": "been",
-          "9": "caught",
-          "10": "onto",
-          "11": "was"
-        },
-        "answers":[[5,4,11,2,10,7,1,3,6,9],[5,4,6,2,10,7,1,3,11,9]]
+      "answers": [
+        [
+          2,
+          7,
+          3,
+          10,
+          8,
+          4,
+          6
+        ]
+      ]
     },
     {
         "question": "We know that you are a cheat",
@@ -87,51 +37,39 @@
           "2": "us",
           "5": "you",
           "6": "it",
-          "7": "a",
+          "7": "we",
           "8": "to",
           "9": "by",
           "10": "are",
-          "11": "is"
+          "11": "is",
+          "12": "a",
+          "13": "cheated"
         },
-        "answers":[[6,11,4,8,2,1,5,10,7,3],[1,5,10,7,3,11,4,8,2]]
-    },
-    {
-        "question": "All want money, but some get it",
-        "words": {
-          "4": "by some",
-          "1": "by all",
-          "3": "want",
-          "2": "got",
-          "5": "money",
-          "6": "but",
-          "7": "wanted",
-          "8": "is",
-          "9": "is"
-        },
-        "answers":[[5,9,7,1,6,8,2,4],[5,8,7,1,6,9,2,4]]
-    },
-    {
-        "question": "Jewel's boss was telling him that she did not like his work style",
-        "words": {
-          "4": "his boss",
-          "1": "by her",
-          "3": "his work",
-          "2": "Jewel",
-          "5": "being",
-          "6": "was",
-          "7": "not",
-          "8": "style",
-          "9": "been",
-          "10": "told",
-          "11": "liked",
-          "12": "was",
-          "13": "by",
-          "14": "that",
-          "15": "did",
-          "16": "she",
-          "17": "like"
-        },
-        "answers":[[2,6,5,10,13,4,14,3,8,12,7,11,1],[2,12,5,10,13,4,14,3,8,6,7,11,1],[2,6,5,10,13,4,14,16,15,7,17,3,8]]
+      "answers": [
+        [
+          6,
+          11,
+          4,
+          8,
+          2,
+          1,
+          5,
+          10,
+          12,
+          3
+        ],
+        [
+          1,
+          5,
+          10,
+          12,
+          3,
+          11,
+          4,
+          8,
+          2
+        ]
+      ]
     },
     {
         "question": "The teacher has told the students that cow eats grass",
@@ -140,33 +78,17 @@
           "1": "the teacher",
           "3": "cow",
           "2": "told",
-          "5": "the",
+          "5": "the students",
           "6": "been",
-          "7": "has",
+          "7": "be",
           "8": "have",
           "9": "by",
           "10": "that",
-          "11": "eats"
+          "11": "eats",
+          "12": "has",
+          "13": "being"
         },
         "answers":[[5,8,6,2,9,1,10,3,11,4]]
-    },
-    {
-        "question": "They had stolen all the gold before they set fire to the shop",
-        "words": {
-          "4": "the shop",
-          "1": "had",
-          "3": "set",
-          "2": "stolen",
-          "5": "fire",
-          "6": "all",
-          "7": "before",
-          "8": "was",
-          "9": "been",
-          "10": "to",
-          "11": "the gold",
-          "12": "setted"
-        },
-        "answers":[[6,11,1,9,2,7,5,8,3,10,4]]
     },
     {
         "question": "Nobody would have asked him any question if he knew what places he had to avoid",
@@ -190,24 +112,488 @@
           "17": "it",
           "18": "to",
           "19": "places",
-          "20": "being",
-          "21": "not",
-          "22": "avoid"
+          "20": "not"
         },
-        "answers":[[9,3,21,14,10,2,8,11,4,17,6,15,18,7,12,19,13,5,16,1],[9,3,21,14,10,2,8,11,4,17,6,15,5,7,12,19,13,18,16,1]]
+      "answers": [
+        [
+          9,
+          3,
+          20,
+          14,
+          10,
+          2,
+          8,
+          11,
+          4,
+          17,
+          6,
+          15,
+          18,
+          7,
+          12,
+          19,
+          13,
+          5,
+          16,
+          1
+        ],
+        [
+          9,
+          3,
+          20,
+          14,
+          10,
+          2,
+          8,
+          11,
+          4,
+          17,
+          6,
+          15,
+          5,
+          7,
+          12,
+          19,
+          13,
+          18,
+          16,
+          1
+        ]
+      ]
     },
     {
+      "question": "All want money, but some get it",
+      "words": {
+        "4": "by some",
+        "1": "by all",
+        "3": "been",
+        "2": "got",
+        "5": "money",
+        "6": "but",
+        "7": "wanted",
+        "8": "is",
+        "9": "be",
+        "10": "being",
+        "11": "get",
+        "12": "want",
+        "13": "is"
+      },
+      "answers": [
+        [
+          5,
+          13,
+          7,
+          1,
+          6,
+          8,
+          2,
+          4
+        ],
+        [
+          5,
+          8,
+          7,
+          1,
+          6,
+          13,
+          2,
+          4
+        ]
+      ]
+    },
+  {
+    "question": "The policeman chased after the thief",
+    "words": {
+      "4": "policeman",
+      "1": "being",
+      "3": "thief",
+      "2": "after",
+      "5": "is",
+      "6": "was",
+      "7": "by",
+      "8": "been",
+      "9": "the",
+      "10": "chased",
+      "11": "the",
+      "12": "be"
+    },
+    "answers": [
+      [
+        9,
+        3,
+        6,
+        10,
+        2,
+        7,
+        11,
+        4
+      ],
+      [
+        11,
+        3,
+        6,
+        10,
+        2,
+        7,
+        9,
+        4
+      ]
+    ]
+  },
+  {
+    "question": "They had stolen all the gold before they set fire to the shop",
+    "words": {
+      "4": "the shop",
+      "1": "had",
+      "3": "was set",
+      "2": "stolen",
+      "5": "be",
+      "6": "all",
+      "7": "before",
+      "8": "was",
+      "9": "been",
+      "10": "to",
+      "11": "the gold",
+      "12": "setted",
+      "13": "fire",
+      "14": "being"
+    },
+    "answers": [
+      [
+        6,
+        11,
+        1,
+        9,
+        2,
+        7,
+        13,
+        3,
+        10,
+        4
+      ],
+      [
+        7,
+        13,
+        3,
+        10,
+        4,
+        6,
+        11,
+        8,
+        2
+      ],
+      [
+        6,
+        11,
+        8,
+        2,
+        7,
+        4,
+        3,
+        13,
+        10
+      ],
+      [
+        7,
+        4,
+        3,
+        13,
+        10,
+        6,
+        11,
+        8,
+        2
+      ]
+    ]
+  },
+  {
+    "question": "Rubaiya jumped onto the thief and caught it",
+    "words": {
+      "4": "thief",
+      "1": "Rubaiya",
+      "3": "and",
+      "2": "catched",
+      "5": "the",
+      "6": "being",
+      "7": "by",
+      "8": "jumped",
+      "9": "caught",
+      "10": "onto",
+      "11": "was",
+      "12": "been",
+      "13": "was"
+    },
+    "answers": [
+      [
+        5,
+        4,
+        11,
+        8,
+        10,
+        7,
+        1,
+        3,
+        13,
+        9
+      ],
+      [
+        5,
+        4,
+        13,
+        8,
+        10,
+        7,
+        1,
+        3,
+        11,
+        9
+      ],
+      [
+        5,
+        4,
+        11,
+        8,
+        10,
+        3,
+        13,
+        9,
+        7,
+        1
+      ],
+      [
+        5,
+        4,
+        13,
+        8,
+        10,
+        3,
+        11,
+        9,
+        7,
+        1
+      ],
+      [
+        5,
+        4,
+        13,
+        8,
+        10,
+        3,
+        9,
+        7,
+        1
+      ],
+      [
+        5,
+        4,
+        11,
+        8,
+        10,
+        3,
+        9,
+        7,
+        1
+      ],
+      [
+        5,
+        4,
+        13,
+        8,
+        10,
+        7,
+        1,
+        3,
+        9
+      ],
+      [
+        5,
+        4,
+        11,
+        8,
+        10,
+        7,
+        1,
+        3,
+        9
+      ]
+    ]
+  },
+  {
+    "question": "Jewel's boss was telling him that she did not like his work style",
+    "words": {
+      "4": "his boss",
+      "1": "by her",
+      "3": "his work",
+      "2": "Jewel",
+      "5": "being",
+      "6": "was",
+      "7": "not",
+      "8": "style",
+      "9": "like",
+      "10": "told",
+      "11": "liked",
+      "12": "was",
+      "13": "by",
+      "14": "that",
+      "15": "did",
+      "16": "she"
+    },
+    "answers": [
+      [
+        2,
+        6,
+        5,
+        10,
+        13,
+        4,
+        14,
+        3,
+        8,
+        12,
+        7,
+        11,
+        1
+      ],
+      [
+        2,
+        12,
+        5,
+        10,
+        13,
+        4,
+        14,
+        3,
+        8,
+        6,
+        7,
+        11,
+        1
+      ],
+      [
+        2,
+        6,
+        5,
+        10,
+        13,
+        4,
+        14,
+        16,
+        15,
+        7,
+        9,
+        3,
+        8
+      ]
+    ]
+  },
+  {
         "question": "They saw the storm coming",
         "words": {
           "4": "was",
-          "1": "them",
-          "3": "coming",
-          "2": "the",
-          "5": "seen",
-          "6": "by",
-          "7": "being",
-          "8": "storm"
+          "1": "to",
+          "3": "them",
+          "2": "coming",
+          "5": "the",
+          "6": "been",
+          "7": "seen",
+          "8": "by",
+          "9": "come",
+          "10": "being",
+          "11": "storm",
+          "12": "be"
         },
-        "answers":[[2,8,4,5,3,6,1]]
+    "answers": [
+      [
+        5,
+        11,
+        4,
+        7,
+        2,
+        8,
+        3
+      ]
+    ]
+  },
+  {
+    "question": "The guardians will speak to the teacher on this matter",
+    "words": {
+      "4": "the teacher",
+      "1": "the guardians",
+      "3": "matter",
+      "2": "be",
+      "5": "been",
+      "6": "between",
+      "7": "to",
+      "8": "this",
+      "9": "will",
+      "10": "by",
+      "11": "spoken",
+      "12": "the",
+      "13": "on",
+      "14": "and",
+      "15": "spoke"
+    },
+    "answers": [
+      [
+        4,
+        9,
+        2,
+        11,
+        7,
+        10,
+        1,
+        13,
+        8,
+        3
+      ],
+      [
+        12,
+        3,
+        9,
+        2,
+        11,
+        13,
+        6,
+        4,
+        14,
+        1
+      ],
+      [
+        6,
+        4,
+        14,
+        1,
+        12,
+        3,
+        9,
+        2,
+        11,
+        13
+      ],
+      [
+        4,
+        9,
+        2,
+        11,
+        7,
+        13,
+        8,
+        3,
+        10,
+        1
+      ],
+      [
+        13,
+        8,
+        3,
+        4,
+        9,
+        2,
+        11,
+        7,
+        10,
+        1
+      ]
+    ]
     }
 ]

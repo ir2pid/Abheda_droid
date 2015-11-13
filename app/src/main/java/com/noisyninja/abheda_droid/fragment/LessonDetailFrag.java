@@ -72,7 +72,7 @@ public class LessonDetailFrag extends ListFragment {
                     page.getLtext1(), page.getRtext1(), page.getUtext1(), page.getDtext1(),page.getDescription()));
         }
 
-        ListLessonDetailAdapter adapter = new ListLessonDetailAdapter(getActivity().getBaseContext(), items);
+        ListLessonDetailAdapter adapter = new ListLessonDetailAdapter(getActivity(), items);
 
         setListAdapter(adapter);
 
