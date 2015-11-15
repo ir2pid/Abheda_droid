@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
@@ -37,16 +38,32 @@ public class ReviewAdapter extends ArrayAdapter {
             convertView = inflater.inflate(R.layout.item_review, parent, false);
 
             holder = new ViewHolder();
+            holder.imageView = (ImageView) convertView.findViewById(R.id.image);
             holder.question = (TextView) convertView.findViewById(R.id.question);
             holder.wrong = (TextView) convertView.findViewById(R.id.wrong);
             holder.correct = (TextView) convertView.findViewById(R.id.correct);
+            String question = reviewItemArrayList.get(position).getQuestion();
+            Utils.logD(question);
+            if (reviewItemArrayList.get(position).isImage()) {
+                Utils.logD("Image question detected");
+                holder.question.setText("");
+                holder.imageView.setVisibility(View.VISIBLE);
+                Utils.lazyload(getContext(), holder.imageView, question);
+            } else {
+                Utils.logD("text question detected");
+                holder.imageView.setVisibility(View.GONE);
+                holder.question.setText(question);
+            }
+            String wrong = reviewItemArrayList.get(position).getWrong();
+            String correct = reviewItemArrayList.get(position).getCorrect();
 
-            holder.question.setText(reviewItemArrayList.get(position).getQuestion());
-
-            holder.wrong.setText(reviewItemArrayList.get(position).getWrong());
-            Utils.addSpeechClickListener(context, holder.wrong, holder.wrong.getText().toString());
-
-            holder.correct.setText(reviewItemArrayList.get(position).getCorrect());
+            Utils.logD(correct);
+            if (wrong != null) {
+                Utils.logD(wrong);
+                holder.wrong.setText(wrong);
+                Utils.addSpeechClickListener(context, holder.wrong, holder.wrong.getText().toString());
+            }
+            holder.correct.setText(correct);
             Utils.addSpeechClickListener(context, holder.wrong, holder.correct.getText().toString());
 
             convertView.setTag(holder);
@@ -79,6 +96,7 @@ public class ReviewAdapter extends ArrayAdapter {
 
 
     public static class ViewHolder {
+        ImageView imageView;
         TextView question;
         TextView wrong;
         TextView correct;

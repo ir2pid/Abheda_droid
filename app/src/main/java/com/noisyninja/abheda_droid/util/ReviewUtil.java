@@ -12,6 +12,10 @@ public class ReviewUtil {
     static ArrayList<ReviewItem> reviewItemArrayList = new ArrayList<ReviewItem>();
     ReviewItem reviewItem;
 
+    private ReviewUtil() {
+
+    }
+
     public static ReviewUtil getInstance() {
 
 
@@ -19,10 +23,6 @@ public class ReviewUtil {
             instance = new ReviewUtil();
         }
         return instance;
-    }
-
-    private ReviewUtil(){
-
     }
 
     public static void init(){
@@ -38,11 +38,20 @@ public class ReviewUtil {
         reviewItemArrayList.add(reviewItem);
     }
 
+    public void addOptions(String question, String wrong, String correct, boolean isImage) {
+        reviewItem = new ReviewItem();
+        reviewItem.setQuestion(question);
+        reviewItem.setWrong(wrong);
+        reviewItem.setCorrect(correct);
+        reviewItem.setImage(isImage);
+        reviewItemArrayList.add(reviewItem);
+    }
+
     public ArrayList<ReviewItem> getReviewItemArrayList() {
         return reviewItemArrayList;
     }
 
     public void setReviewItemArrayList(ArrayList<ReviewItem> reviewItemArrayList) {
-        this.reviewItemArrayList = reviewItemArrayList;
+        ReviewUtil.reviewItemArrayList = reviewItemArrayList;
     }
 }

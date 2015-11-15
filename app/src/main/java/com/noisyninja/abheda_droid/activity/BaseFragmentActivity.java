@@ -25,6 +25,14 @@ public class BaseFragmentActivity extends FragmentActivity implements TextToSpee
         super.onCreate(savedInstanceState);
         EventBus.getDefault().register(this);
         engine = new TextToSpeech(this, this);
+        String speed = Utils.getPreference(this, Constants.SPEED_SPEECH_KEY);
+        String pitch = Utils.getPreference(this, Constants.PITCH_SPEECH_KEY);
+        if (speed != null) {
+            Constants.SPEED_SPEECH = Float.valueOf(speed);
+        }
+        if (pitch != null) {
+            Constants.PITCH_SPEECH = Float.valueOf(pitch);
+        }
     }
 
     @Override
@@ -52,8 +60,8 @@ public class BaseFragmentActivity extends FragmentActivity implements TextToSpee
     public void onEvent(OnSpeechEvent event) {
 
         Log.d(Utils.class.getSimpleName(), "Speak: " + event.getText());
-        engine.setPitch(Constants.PITCH);
-        engine.setSpeechRate(Constants.SPEED);
+        engine.setPitch(Constants.PITCH_SPEECH);
+        engine.setSpeechRate(Constants.SPEED_SPEECH);
         engine.speak(Utils.makeSpeechReady(event.getText()), TextToSpeech.QUEUE_FLUSH, null);
     }
 

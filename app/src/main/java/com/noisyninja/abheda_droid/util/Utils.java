@@ -81,6 +81,10 @@ public class Utils {
     private static String TAG = Utils.class.getSimpleName();
     private static ProgressDialog mProgressDialog;
 
+    public static void logD(String s) {
+        Log.d("LOG", s);
+    }
+
     public static void addSpeechClickListener(final Context context, final View view, final String text) {
 
 
@@ -102,6 +106,7 @@ public class Utils {
                 .replace("<u>", "")
                 .replace("</u>", "");
 
+        logD("speaking:" + speak);
         return speak;
 
     }
@@ -651,6 +656,7 @@ public class Utils {
     }
 
     public static void lazyload(Context context, ImageView view, String url) {
+        view.setTag(url);//set url as tag
         if (url == null || url.length() <= 1) {    // no image
             view.setVisibility(View.GONE);
         } else if (url.contains(Constants.HTTP_FLAG)) { // web url
@@ -864,6 +870,8 @@ public class Utils {
     public static void firstRun(Context context) {
         if (getPreference(context, Constants.FIRST_RUN_KEY) == null) {
             setPreference(context, Constants.FIRST_RUN_KEY, Constants.FIRST_RUN_KEY);
+            setPreference(context, Constants.SPEED_SPEECH_KEY, "0.3");
+            setPreference(context, Constants.PITCH_SPEECH_KEY, "0.95");
             Utils.handleInfo(context, "First run detected");
           /*  makeDirs(context, getTempString(Constants.SD_CARD, Constants.DATA_FOLDER));
             refreshFileSystem(context, getTempString(Constants.SD_CARD, Constants.DATA_FOLDER));*/

@@ -98,13 +98,33 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/imageView1"
-                            android:layout_width="@dimen/padding_128"
-                            android:layout_height="@dimen/padding_128"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/button_white"
-                            android:src="@drawable/imageholder" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imageView1"
+                                android:layout_width="@dimen/padding_128"
+                                android:layout_height="@dimen/padding_128"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/button_white"
+                                android:src="@drawable/imageholder" />
+
+
+                            <TextView
+                                android:id="@+id/imageViewText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/imageView1"
+                                android:layout_alignRight="@+id/imageView1"
+                                android:layout_alignTop="@+id/imageView1"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/bbuton_default_rounded"
+                                android:gravity="center"
+                                android:textColor="@color/button_green"
+                                android:textStyle="bold"
+                                android:visibility="invisible" />
+                        </RelativeLayout>
 
                         <at.markushi.ui.CircleButton
                             android:id="@+id/circleButton11"
@@ -144,13 +164,34 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="@dimen/padding_128"
-                            android:layout_height="@dimen/padding_128"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/button_white"
-                            android:src="@drawable/imageholder" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="@dimen/padding_128"
+                                android:layout_height="@dimen/padding_128"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/button_white"
+                                android:src="@drawable/imageholder" />
+
+
+                            <TextView
+                                android:id="@+id/imageViewText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/imageView2"
+                                android:layout_alignRight="@+id/imageView2"
+                                android:layout_alignTop="@+id/imageView2"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/bbuton_default_rounded"
+                                android:gravity="center"
+                                android:textColor="@color/button_green"
+                                android:textStyle="bold"
+                                android:visibility="invisible" />
+                        </RelativeLayout>
+
 
                         <at.markushi.ui.CircleButton
                             android:id="@+id/circleButton21"
@@ -188,13 +229,34 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/imageView3"
-                            android:layout_width="@dimen/padding_128"
-                            android:layout_height="@dimen/padding_128"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/button_white"
-                            android:src="@drawable/imageholder" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="@dimen/padding_128"
+                                android:layout_height="@dimen/padding_128"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/button_white"
+                                android:src="@drawable/imageholder" />
+
+
+                            <TextView
+                                android:id="@+id/imageViewText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/imageView3"
+                                android:layout_alignRight="@+id/imageView3"
+                                android:layout_alignTop="@+id/imageView3"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/bbuton_default_rounded"
+                                android:gravity="center"
+                                android:textColor="@color/button_green"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
 
                         <at.markushi.ui.CircleButton
                             android:id="@+id/circleButton31"
@@ -232,13 +294,33 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/imageView4"
-                            android:layout_width="@dimen/padding_128"
-                            android:layout_height="@dimen/padding_128"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/button_white"
-                            android:src="@drawable/imageholder" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="@dimen/padding_128"
+                                android:layout_height="@dimen/padding_128"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/button_white"
+                                android:src="@drawable/imageholder" />
+
+
+                            <TextView
+                                android:id="@+id/imageViewText4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/imageView4"
+                                android:layout_alignRight="@+id/imageView4"
+                                android:layout_alignTop="@+id/imageView4"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/bbuton_default_rounded"
+                                android:gravity="center"
+                                android:textColor="@color/button_green"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </RelativeLayout>
 
                         <at.markushi.ui.CircleButton
                             android:id="@+id/circleButton41"

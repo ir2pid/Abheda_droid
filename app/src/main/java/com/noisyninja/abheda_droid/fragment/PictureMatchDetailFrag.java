@@ -20,6 +20,7 @@ import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.pojo.misc.IntegerIntegerPair;
 import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.IDialogCallback;
+import com.noisyninja.abheda_droid.util.ReviewUtil;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
@@ -45,6 +46,10 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     ImageView imageView2;
     ImageView imageView3;
     ImageView imageView4;
+    TextView imageViewText1;
+    TextView imageViewText2;
+    TextView imageViewText3;
+    TextView imageViewText4;
     int progress;
     int correct;
     int wrong;
@@ -110,6 +115,11 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         imageView3 = ((ImageView) window.findViewById(R.id.imageView3));
         imageView4 = ((ImageView) window.findViewById(R.id.imageView4));
 
+        imageViewText1 = ((TextView) window.findViewById(R.id.imageViewText1));
+        imageViewText2 = ((TextView) window.findViewById(R.id.imageViewText2));
+        imageViewText3 = ((TextView) window.findViewById(R.id.imageViewText3));
+        imageViewText4 = ((TextView) window.findViewById(R.id.imageViewText4));
+
         imageViewArrayList = new ArrayList<ImageView>();
         imageViewArrayList.add(imageView1);
         imageViewArrayList.add(imageView2);
@@ -165,6 +175,11 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     void loadQuestions() {
         completedMatches = 0;
         answers = new HashMap<>();
+
+        imageViewText1.setText("");
+        imageViewText2.setText("");
+        imageViewText3.setText("");
+        imageViewText4.setText("");
 
         View correctIndicator11 = window.findViewById(R.id.circleButton11);
         View correctIndicator21 = window.findViewById(R.id.circleButton21);
@@ -257,6 +272,18 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         return true;
     }
 
+    private String answer(String imageKey) {
+        String s = null;
+        for (Map.Entry<String, String> entry : pictureMatchQuestions.get(progress).getWords().entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            if (value.compareTo(s) == 0) {
+
+            }
+        }
+        return s;
+    }
+
     private void onWrong(IntegerIntegerPair integerIntegerPair) {
         int buttonId = integerIntegerPair.getI2();
         View v = window.findViewById(integerIntegerPair.getI1());
@@ -265,9 +292,18 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         v.setBackgroundResource(R.drawable.button_green_enabled);
         wrong++;
         Utils.playSound(getActivity(), Constants.Sound.WRONG);
+
+        String sImage = (String) v.getTag(); //images have tags set as url
+        String sWrong = button.getText().toString();
+        String sCorrect = null;
+        if (progress < pictureMatchQuestions.size()) {
+            sCorrect = pictureMatchQuestions.get(progress - 1).getWords().get(sImage);
+            ReviewUtil.getInstance().addOptions(sImage, sWrong, sCorrect, true);
+        } else Utils.logD("out of index" + (progress - 1));
         switch (v.getId()) {
             case R.id.imageView1: {
                 completedMatches++;
+                imageViewText1.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout1);
                 View cardFace = window.findViewById(R.id.imageView1);
                 View cardBack = window.findViewById(R.id.circleButton12);
@@ -276,6 +312,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView2: {
                 completedMatches++;
+                imageViewText2.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout2);
                 View cardFace = window.findViewById(R.id.imageView2);
                 View cardBack = window.findViewById(R.id.circleButton22);
@@ -284,6 +321,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView3: {
                 completedMatches++;
+                imageViewText3.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout3);
                 View cardFace = window.findViewById(R.id.imageView3);
                 View cardBack = window.findViewById(R.id.circleButton32);
@@ -292,6 +330,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView4: {
                 completedMatches++;
+                imageViewText4.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout4);
                 View cardFace = window.findViewById(R.id.imageView4);
                 View cardBack = window.findViewById(R.id.circleButton42);
@@ -299,6 +338,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                 break;
             }
         }
+
     }
 
     private void onCorrect(IntegerIntegerPair integerIntegerPair) {
@@ -308,11 +348,16 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         button.setEnabled(false);
         v.setBackgroundResource(R.drawable.button_green_enabled);
         correct++;
-        //Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
         Utils.playSound(getActivity(), Constants.Sound.RIGHT);
+
+        String sImage = (String) v.getTag(); //images have tags set as url
+        String sCorrect = button.getText().toString();
+        ReviewUtil.getInstance().addOptions(sImage, null, sCorrect, true);
+
         switch (v.getId()) {
             case R.id.imageView1: {
                 completedMatches++;
+                imageViewText1.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout1);
                 View cardFace = window.findViewById(R.id.imageView1);
                 View cardBack = window.findViewById(R.id.circleButton11);
@@ -321,6 +366,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView2: {
                 completedMatches++;
+                imageViewText2.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout2);
                 View cardFace = window.findViewById(R.id.imageView2);
                 View cardBack = window.findViewById(R.id.circleButton21);
@@ -329,6 +375,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView3: {
                 completedMatches++;
+                imageViewText3.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout3);
                 View cardFace = window.findViewById(R.id.imageView3);
                 View cardBack = window.findViewById(R.id.circleButton31);
@@ -337,6 +384,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView4: {
                 completedMatches++;
+                imageViewText4.setText(sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout4);
                 View cardFace = window.findViewById(R.id.imageView4);
                 View cardBack = window.findViewById(R.id.circleButton41);
@@ -350,7 +398,9 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     @Override
     public void ok(DialogInterface dialog) {
         if (states.compareTo(STATES.LAST) == 0) {
-            Utils.backPress(getActivity());
+            //Utils.backPress(getActivity());
+            dialog.dismiss();
+            Utils.showReview(getActivity());
         }
     }
 
@@ -362,6 +412,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     enum STATES {
         NORMAL,
         RESULT,
+        REVIEW,
         LAST
     }
 }

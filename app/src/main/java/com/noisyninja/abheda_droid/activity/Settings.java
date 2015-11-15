@@ -1,5 +1,6 @@
 package com.noisyninja.abheda_droid.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.SeekBar;
@@ -16,19 +17,22 @@ public class Settings extends BaseActivity {
 
     SeekBar seekBarSp;
     SeekBar seekBarPi;
+    Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
-
+        context = this;
         seekBarSp = (SeekBar) findViewById(R.id.seekBar1);
         seekBarPi = (SeekBar) findViewById(R.id.seekBar2);
 
         seekBarPi.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                Constants.PITCH = (float) progress / 100.0f;
-                Log.d(Settings.class.getSimpleName(), "Pitch:" + Constants.PITCH);
+                Constants.PITCH_SPEECH = (float) progress / 100.0f;
+                Utils.setPreference(context, Constants.PITCH_SPEECH_KEY, String.valueOf(Constants.PITCH_SPEECH));
+                Log.d(Settings.class.getSimpleName(), "Pitch:" + Constants.PITCH_SPEECH);
             }
 
             @Override
@@ -38,15 +42,16 @@ public class Settings extends BaseActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Utils.makeToast(getBaseContext(), "Pitch:" + Constants.PITCH);
+                Utils.makeToast(getBaseContext(), "Pitch:" + Constants.PITCH_SPEECH);
             }
         });
 
         seekBarSp.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                Constants.SPEED = (float) progress / 100.0f;
-                Log.d(Settings.class.getSimpleName(), "Speed:" + Constants.SPEED);
+                Constants.SPEED_SPEECH = (float) progress / 100.0f;
+                Utils.setPreference(context, Constants.SPEED_SPEECH_KEY, String.valueOf(Constants.SPEED_SPEECH));
+                Log.d(Settings.class.getSimpleName(), "Speed:" + Constants.SPEED_SPEECH);
             }
 
             @Override
@@ -56,7 +61,7 @@ public class Settings extends BaseActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Utils.makeToast(getBaseContext(), "Speed:" + Constants.SPEED);
+                Utils.makeToast(getBaseContext(), "Speed:" + Constants.SPEED_SPEECH);
 
             }
         });

@@ -37,8 +37,10 @@ public class Constants {
 
     public static String EMAIL = "abhedafoundation@gmail.com";
 
-    public static float PITCH = 1.0f;
-    public static float SPEED = 1.0f;
+    public static float PITCH_SPEECH = 1.0f;
+    public static float SPEED_SPEECH = 1.0f;
+    public static String PITCH_SPEECH_KEY = "PITCH_SPEECH_KEY";
+    public static String SPEED_SPEECH_KEY = "SPEED_SPEECH_KEY";
 
     public static int TOPIC_ID = 0;//english
     public static int COURSE_ID = 0;//BCP
