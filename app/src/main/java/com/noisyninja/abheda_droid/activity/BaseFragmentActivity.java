@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.ViewGroup;
 
 import com.noisyninja.abheda_droid.util.Constants;
+import com.noisyninja.abheda_droid.util.PDFUtil;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import de.greenrobot.event.EventBus;
+import events.OnPrintEvent;
 import events.OnSpeechEvent;
 
 /**
@@ -65,6 +68,12 @@ public class BaseFragmentActivity extends FragmentActivity implements TextToSpee
         engine.speak(Utils.makeSpeechReady(event.getText()), TextToSpeech.QUEUE_FLUSH, null);
     }
 
+    public void onEvent(OnPrintEvent event) {
+        final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) this
+                .findViewById(android.R.id.content)).getChildAt(0);
+
+        PDFUtil.dump(this, viewGroup, event.getText());
+    }
     @Override
     public void onInit(int status) {
 

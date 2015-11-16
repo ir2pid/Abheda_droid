@@ -1,14 +1,13 @@
 package events;
 
 /**
- * Event to carry text to speech info
- * Created by ir2pid on 21/10/15.
+ * Created by ir2pid on 16/11/15.
  */
-public class OnSpeechEvent {
+public class OnPrintEvent {
 
     String text;
 
-    public OnSpeechEvent(String s) {
+    public OnPrintEvent(String s) {
         this.text = s;
     }
 

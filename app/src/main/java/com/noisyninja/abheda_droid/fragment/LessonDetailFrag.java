@@ -26,7 +26,6 @@ public class LessonDetailFrag extends ListFragment {
      * The fragment argument representing the item ID that this fragment
      * represents.
      */
-    //public static final String ARG_ITEM_ID = "item_id";
     Lesson lesson;
     List<Page> pageList;
 
@@ -59,12 +58,6 @@ public class LessonDetailFrag extends ListFragment {
                              Bundle savedInstanceState) {
 
         List<ListLessonDetailItem> items = new ArrayList<ListLessonDetailItem>();
-
-        // Instantiating an adapter to store each items
-        // R.layout.listview_layout defines the layout of each item
-
-        /*List<Page> pageList = Arrays.asList((Page[])  Utils.getObject(getActivity(),
-                lesson.getPages(), Page[].class));*/
 
         for(Page page : pageList)
         {

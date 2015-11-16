@@ -58,12 +58,7 @@ public class LessonsActivity extends BaseFragmentActivity implements
             // adding or replacing the detail fragment using a
             // fragment transaction.
             Utils.courseFacade(this, data, module_type);
-            /*Bundle arguments = new Bundle();
-            arguments.putString(Constants.FRAGMENT_DATA, data);
-            LessonDetailFrag fragment = new LessonDetailFrag();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.lesson_detail_container, fragment).commit();*/
+
 
         } else {
             // In single-pane mode, simply start the detail activity
@@ -72,20 +67,6 @@ public class LessonsActivity extends BaseFragmentActivity implements
             detailIntent.putExtra(Constants.FRAGMENT_DATA, data);
             detailIntent.putExtra(Constants.FRAGMENT_TYPE, module_type.toString());
             startActivity(detailIntent);
-           /* switch(module_type)
-            {
-                case LESSON:{
-
-                    break;
-                }
-                case MCQ_QUIZ:{
-                    Intent detailIntent = new Intent(this, LessonDetailActivity.class);
-                    detailIntent.putExtra(Constants.FRAGMENT_DATA, data);
-                    detailIntent.putExtra(Constants.FRAGMENT_TYPE, module_type);
-                    startActivity(detailIntent);
-                }
-                default:Utils.handleInfo(context, Constants.INFO_NO_LESSON);
-            }*/
 
         }
     }

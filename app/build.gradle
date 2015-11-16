@@ -42,6 +42,8 @@ dependencies {
     compile 'com.crittercism:crittercism-android-agent:5.0.6'
     compile 'com.beardedhen:androidbootstrap:1.2.2'
     compile 'com.lorentzos.swipecards:library:1.0.9@aar'
+    compile 'com.itextpdf:itextpdf:5.5.7'
+
     //compile 'net.lingala.zip4j:zip4j:1.2.4'
 
     //compile 'com.squareup.picasso:picasso:2.4.0'

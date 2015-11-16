@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -13,6 +14,9 @@ import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
+import events.OnSpeechEvent;
 
 /**
  * Created by ir2pi on 11/30/2014.
@@ -29,7 +33,7 @@ public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ListLessonDetailItem item = getItem(position);
+        final ListLessonDetailItem item = getItem(position);
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
         convertView = inflater.inflate(R.layout.list_lesson_detail_item, parent, false);
@@ -41,7 +45,13 @@ public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> 
         TextView utext = (TextView) convertView.findViewById(R.id.utext);
         TextView rtext = (TextView) convertView.findViewById(R.id.rtext);
         TextView description = (TextView) convertView.findViewById(R.id.description);
-
+        Button pdfCreate = (Button) convertView.findViewById(R.id.pdfcreate);
+        pdfCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventBus.getDefault().post(new OnSpeechEvent(item.name));
+            }
+        });
         //name.setMovementMethod(new ScrollingMovementMethod());
         //text.setMovementMethod(new ScrollingMovementMethod());
         //ltext.setMovementMethod(new ScrollingMovementMethod());

@@ -35,6 +35,8 @@
     <string name="b">"B"</string>
     <string name="c">"C"</string>
     <string name="d">"D"</string>
+    <string name="pdf_not_supported">"PDF creation not supported"</string>
+    <string name="get_pdf">"Get PDF"</string>
 
 
     <string name="VOICE_CONTROLS">"Voice controls"</string>
