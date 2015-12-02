@@ -54,10 +54,10 @@
     "isPicture": false
     },
     {
-    "option1": "You should not be blind in your own faults.",
-    "option2": "You should not be blind on your own faults.",
-    "option3": "You should not be blind at your own faults.",
-    "option4": "You should not be blind to your own faults.",
+        "option1": "You should not be blind in own faults.",
+        "option2": "You should not be blind on own faults.",
+        "option3": "You should not be blind at own faults.",
+        "option4": "You should not be blind to own faults.",
     "question": "নিজের দোষের প্রতি অন্ধ হওয়া তোমার উচিৎ নয়",
     "correct": 4,
     "isPicture": false

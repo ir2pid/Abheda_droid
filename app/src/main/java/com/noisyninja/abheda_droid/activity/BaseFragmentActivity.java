@@ -36,6 +36,9 @@ public class BaseFragmentActivity extends FragmentActivity implements TextToSpee
         if (pitch != null) {
             Constants.PITCH_SPEECH = Float.valueOf(pitch);
         }
+
+        engine.setPitch(Constants.PITCH_SPEECH);
+        engine.setSpeechRate(Constants.SPEED_SPEECH);
     }
 
     @Override
@@ -63,9 +66,8 @@ public class BaseFragmentActivity extends FragmentActivity implements TextToSpee
     public void onEvent(OnSpeechEvent event) {
 
         Log.d(Utils.class.getSimpleName(), "Speak: " + event.getText());
-        engine.setPitch(Constants.PITCH_SPEECH);
-        engine.setSpeechRate(Constants.SPEED_SPEECH);
-        engine.speak(Utils.makeSpeechReady(event.getText()), TextToSpeech.QUEUE_FLUSH, null);
+        if (!engine.isSpeaking())
+            engine.speak(Utils.makeSpeechReady(event.getText()), TextToSpeech.QUEUE_FLUSH, null);
     }
 
     public void onEvent(OnPrintEvent event) {

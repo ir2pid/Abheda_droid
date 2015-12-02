@@ -4,7 +4,7 @@
     "option2": "She do not have love for him.",
     "option3": "She does not have no love for him.",
     "option4": "She does not have love for him.",
-    "question": "তার (মেয়ে) তার (ছেলে) প্রতি কোন ভালোবাসা নেই",
+        "question": "তার (মেয়ে) তার (ছেলে) প্রতি কোনো ভালোবাসা নেই",
     "correct": 4,
     "isPicture": false
     },
@@ -175,7 +175,7 @@
     "option2": "Do poor people not have no money ?",
     "option3": "Do poor people not have any money ?",
     "option4": "Not poor people have no money ?",
-    "question": "গরীব লোকেদের কি কোন টাকা নেই ?",
+         "question": "গরীব লোকেদের কি কোনো টাকা নেই ?",
     "correct": 3,
     "isPicture": false
     },

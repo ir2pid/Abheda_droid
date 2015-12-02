@@ -60,7 +60,7 @@ public class PDFUtil {
         String pdfName = name + ".pdf";
 
 // all created files will be saved at path /sdcard/Abheda/
-        File outputFile = new File("/sdcard/Abheda/", pdfName);
+        File outputFile = new File("/sdcard/", pdfName);
 
         try {
             outputFile.createNewFile();

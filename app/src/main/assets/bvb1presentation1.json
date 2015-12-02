@@ -1,7 +1,7 @@
 [
-                      { 
-                        "image1": "do",             
-                        "name": "Bvb1-Lesson1 (1)", 
+                      {
+                        "image1": "do",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (1)", 
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Do</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;করা",
                         "utext1": "",
@@ -11,7 +11,7 @@
                       },
                       {
                         "image1": "go",
-                        "name": "Bvb1-Lesson1 (2)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (2)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Go</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;যাওয়া",
                         "utext1": "",
@@ -21,7 +21,7 @@
                       },
                       {
                         "image1": "come",
-                        "name": "Bvb1-Lesson1 (3)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (3)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Come</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;আসা",
                         "utext1": "",
@@ -31,7 +31,7 @@
                       },
                       {
                         "image1": "get",
-                        "name": "Bvb1-Lesson1 (4)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (4)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Get</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;আনা, পাওয়া",
                         "utext1": "",
@@ -41,7 +41,7 @@
                       },
                       {
                         "image1": "put",
-                        "name": "Bvb1-Lesson1 (5)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (5)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Put</font> <br> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;রাখা, স্থাপন করা",
                         "utext1": "",
@@ -51,7 +51,7 @@
                       },
                       {
                         "image1": "keep",
-                        "name": "Bvb1-Lesson1 (6)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (6)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Keep</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;রাখা",
                         "utext1": "",
@@ -61,7 +61,7 @@
                       },
                       {
                         "image1": "give",
-                        "name": "Bvb1-Lesson1 (7)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (7)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Give</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;দেওয়া",
                         "utext1": "",
@@ -71,7 +71,7 @@
                       },
                       {
                         "image1": "take",
-                        "name": "Bvb1-Lesson1 (8)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (8)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Take</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;নেওয়া",
                         "utext1": "",
@@ -81,7 +81,7 @@
                       },
                       {
                         "image1": "want",
-                        "name": "Bvb1-Lesson1 (9)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (9)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Want</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;চাওয়া",
                         "utext1": "",
@@ -91,7 +91,7 @@
                       },
                       {
                         "image1": "make",
-                        "name": "Bvb1-Lesson1 (10)",
+                        "name": "ক্রিয়াপদ - প্রথম ভাগ - প্রথম পাঠ (10)",
                         "ltext1": "",
                         "rtext1": "<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#ED7745'>Make</font> <br> <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;তৈরী করা",
                         "utext1": "",

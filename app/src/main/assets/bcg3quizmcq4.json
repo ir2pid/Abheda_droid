@@ -94,7 +94,7 @@
     "option2": "He would have gone.",
     "option3": "He should have gone.",
     "option4": "He would have went.",
-    "question": "সে  যেতো",
+        "question": "সে যেতে পারতো",
     "correct": 2,
     "isPicture": false
     },
@@ -103,7 +103,7 @@
     "option2": "Could he have gone ?",
     "option3": "Would he have gone ?",
     "option4": "Would he have go ?",
-    "question": "সে  কি যেতো ?",
+        "question": "সে কি যেতো ?",
     "correct": 3,
     "isPicture": false
     },

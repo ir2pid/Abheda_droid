@@ -139,7 +139,7 @@
     "option2": "He does not have time in hand.",
     "option3": "He does not has time in hand.",
     "option4": "His hand does not have any time.",
-    "question": "তার হাতে কোন সময় নেই",
+        "question": "তার হাতে কোনো সময় নেই",
     "correct": 2,
     "isPicture": false
     },
@@ -148,7 +148,7 @@
     "option2": "No money poor people have.",
     "option3": "No money has the poor people.",
     "option4": "Poor people have no money.",
-    "question": "গরীব লোকের কোন টাকা নেই",
+         "question": "গরীব লোকের কোনো টাকা নেই",
     "correct": 4,
     "isPicture": false
     },
@@ -157,7 +157,7 @@
     "option2": "Poor people does not have any money.",
     "option3": "Poor people do not have no money.",
     "option4": "The money do not have the poor people.",
-    "question": "গরীব লোকেদের কোন টাকা নেই",
+         "question": "গরীব লোকেদের কোনো টাকা নেই",
     "correct": 1,
     "isPicture": false
     },

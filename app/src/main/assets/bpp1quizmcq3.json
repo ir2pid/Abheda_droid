@@ -49,7 +49,7 @@
     "option2": "The story has no drama on the beginning.",
     "option3": "The story has no drama on the start.",
     "option4": "The story has no drama in the beginning.",
-    "question": "গল্পের শুরুতে কোন নাটকীয়তা নেই",
+        "question": "গল্পের শুরুতে কোনো নাটকীয়তা নেই",
     "correct": 4,
     "isPicture": false
     },

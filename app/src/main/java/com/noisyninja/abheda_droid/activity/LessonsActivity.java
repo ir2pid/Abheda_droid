@@ -3,6 +3,7 @@ package com.noisyninja.abheda_droid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.LessonListFrag;
@@ -14,7 +15,7 @@ import com.noisyninja.abheda_droid.util.Utils;
  * Lesson activity
  * Created by ir2pi on 12/3/2014.
  */
-public class LessonsActivity extends BaseFragmentActivity implements
+public class LessonsActivity extends FragmentActivity implements
         LessonListFrag.Callbacks {
 
     Context context;

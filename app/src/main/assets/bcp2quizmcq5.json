@@ -154,7 +154,7 @@
     },
     {
     "option1": "Is this not for they ?",
-    "option2": "Is not this for them ?",
+        "option2": "Is not this for they ?",
     "option3": "Is this not for them ?",
     "option4": "Not is this for them ?",
     "question": "এটা কি তাদের জন্য নয় ?",

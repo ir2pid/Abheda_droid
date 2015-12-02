@@ -40,7 +40,7 @@
     "option2": "He has no taste for music.",
     "option3": "He has no taste of music.",
     "option4": "He has no taste in music.",
-    "question": "তার সঙ্গীতে কোন রুচি নেই",
+        "question": "তার সঙ্গীতে কোনো রুচি নেই",
     "correct": 2,
     "isPicture": false
     },

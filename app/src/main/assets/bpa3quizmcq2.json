@@ -1,9 +1,9 @@
 [
     {
-    "option1": "This land  belongs with government.",
-    "option2": "This land  belongs in government.",
-    "option3": "This land  belongs to government.",
-    "option4": "This land  belongs of government.",
+        "option1": "This land belongs with government.",
+        "option2": "This land belongs in government.",
+        "option3": "This land belongs to government.",
+        "option4": "This land belongs of government.",
     "question": "এই জমিটি সরকারের অধীনে",
     "correct": 3,
     "isPicture": false
@@ -18,11 +18,11 @@
     "isPicture": false
     },
     {
-    "option1": "You should not be careless for your own safety.",
-    "option2": "You should not be careless to your own safety.",
-    "option3": "You should not be careless of your own safety.",
-    "option4": "You should not be careless about your own safety.",
-    "question": "নিজের নিরাপত্তার ব্যাপারে তোমার  উদাসীন হওয়া উচিৎ নয়",
+        "option1": "You should not be careless for own safety.",
+        "option2": "You should not be careless to own safety.",
+        "option3": "You should not be careless of own safety.",
+        "option4": "You should not be careless about own safety.",
+        "question": "নিজের নিরাপত্তার ব্যাপারে তোমার উদাসীন হওয়া উচিৎ নয়",
     "correct": 4,
     "isPicture": false
     },

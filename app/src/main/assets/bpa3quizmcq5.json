@@ -4,7 +4,7 @@
     "option2": "I really do not want to talk about it.",
     "option3": "I really do not want to talk with it.",
     "option4": "I really do not want to talk for it.",
-    "question": "আমি এই ব্যপারে কোন কথাই বলতে চাই না",
+        "question": "আমি এই ব্যপারে কোনো কথাই বলতে চাই না",
     "correct": 2,
     "isPicture": false
     },
@@ -31,7 +31,7 @@
     "option2": "These strong men possibly work for a political party.",
     "option3": "These strong men possibly work at a political party.",
     "option4": "These strong men possibly work in a political party.",
-    "question": "এই শক্তিশালী লোকগুলি সম্ভবত কোন রাজনৈতিক দলের হয়ে কাজ করে",
+        "question": "এই শক্তিশালী লোকগুলি সম্ভবত কোনো রাজনৈতিক দলের হয়ে কাজ করে",
     "correct": 2,
     "isPicture": false
     },
@@ -58,7 +58,7 @@
     "option2": "He is certainly worried for something.",
     "option3": "He is certainly worried about something.",
     "option4": "He is certainly worried on something.",
-    "question": "সে নিশ্চয় কোন ব্যাপারে চিন্তিত আছে",
+        "question": "সে নিশ্চয় কোনো ব্যাপারে চিন্তিত আছে",
     "correct": 3,
     "isPicture": false
     }

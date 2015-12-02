@@ -49,7 +49,7 @@
     "option2": "Some the clouds are on mountains.",
     "option3": "Some clouds are on the mountains.",
     "option4": "Some clouds are above the mountains.",
-    "question": "কিছু মেঘ পাহাড়গুলোর উর্দ্ধে",
+        "question": "কিছু মেঘ পাহাড়গুলোর উর্ধ্বে",
     "correct": 4,
     "isPicture": false
     },
@@ -166,7 +166,7 @@
     "option2": "There are three trains before 2 PM in the noon.",
     "option3": "Three trains are before 2 PM in the noon.",
     "option4": "Three trains are before noon the 2 PM.",
-    "question": "দুপুর ২ টার আগে তিনটি ট্রেন আছে",
+        "question": "দুপুর ২টোর আগে তিনটি ট্রেন আছে",
     "correct": 1,
     "isPicture": false
     },

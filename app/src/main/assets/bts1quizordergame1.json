@@ -262,7 +262,7 @@
       ]
     },
   {
-        "question": "Interrogative (প্রশ্ন-বাচক) to Affirmative (হ্যাঁ-বাচক): When can Shakespeare's glory fade ?",
+    "question": "Interrogative (প্রশ্ন-বাচক) to Negative (না-বাচক): When can Shakespeare's glory fade ?",
         "words": {
           "4": "Shakespeare's",
           "1": "not",
@@ -385,7 +385,7 @@
       ]
     },
   {
-        "question": "Interrogative (প্রশ্ন-বাচক) to Affirmative (হ্যাঁ-বাচক): Who is so cruel as to hate him ?",
+    "question": "Interrogative (প্রশ্ন-বাচক) to Negative (না-বাচক): Who is so cruel as to hate him ?",
         "words": {
           "4": "nobody",
           "1": "anybody",
@@ -509,7 +509,7 @@
       ]
     },
     {
-        "question": "Interrogative (প্রশ্ন-বাচক) to Affirmative (হ্যাঁ-বাচক): Where will you find such a beautiful country ?",
+      "question": "Interrogative (প্রশ্ন-বাচক) to Negative ( না-বাচক): Where will you find such a beautiful country ?",
         "words": {
           "4": "never",
           "1": "country",

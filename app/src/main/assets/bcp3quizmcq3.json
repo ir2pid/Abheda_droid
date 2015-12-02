@@ -85,7 +85,7 @@
     "option2": "The clouds were above mountain.",
     "option3": "The clouds were above the mountain.",
     "option4": "The mountain was under the clouds.",
-    "question": "মেঘগুলি পাহাড়ের উর্দ্ধে ছিল",
+         "question": "মেঘগুলি পাহাড়ের উর্ধ্বে ছিল",
     "correct": 3,
     "isPicture": false
     },
@@ -112,7 +112,7 @@
     "option2": "No train was before 6 AM and after 11 PM.",
     "option3": "There was not train before 6 AM and after 11 PM.",
     "option4": "Before 6 AM and after 11 PM no train there was.",
-    "question": "সকাল ৬ টার আগে এবং রাত ১১ টার পরে কোন ট্রেন ছিল না",
+         "question": "সকাল ৬ টার আগে এবং রাত ১১ টার পরে কোনো ট্রেন ছিল না",
     "correct": 2,
     "isPicture": false
     },

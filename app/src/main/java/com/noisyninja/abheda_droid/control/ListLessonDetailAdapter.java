@@ -16,7 +16,7 @@ import com.noisyninja.abheda_droid.util.Utils;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
-import events.OnSpeechEvent;
+import events.OnPrintEvent;
 
 /**
  * Created by ir2pi on 11/30/2014.
@@ -49,7 +49,7 @@ public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> 
         pdfCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new OnSpeechEvent(item.name));
+                EventBus.getDefault().post(new OnPrintEvent(item.name));
             }
         });
         //name.setMovementMethod(new ScrollingMovementMethod());
