@@ -44,15 +44,7 @@ public class OrderGameDetailFragNew extends BaseFragment implements View.OnClick
     int progress;
     int correct;
     int wrong;
-    enum STATE{
-        NORMAL,
-        RESULT,
-        LAST_RESULT,
-        END_QUIZ,
-        NO_SELECTION
-    };
     STATE state;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,8 +81,6 @@ public class OrderGameDetailFragNew extends BaseFragment implements View.OnClick
         return window;
     }
 
-
-
     @Override
     public void onClick(View view){
         if(wordsSelected.size()<1){
@@ -122,11 +112,11 @@ public class OrderGameDetailFragNew extends BaseFragment implements View.OnClick
         }
     }
 
-
     private ArrayList<IntegerStringPair> setupQuestion(int questionNo){
         Utils.buttonDeactivate(buttonSubmit);
         orderGameQuestion = orderGameQuestions.get(questionNo);
-        textViewQuestion.setText("("+(questionNo+1)+"/"+orderGameQuestions.size()+") "+orderGameQuestion.getQuestion());
+        Utils.setText(textViewQuestion, "(" + (questionNo + 1) + "/" + orderGameQuestions.size() + ") " + orderGameQuestion.getQuestion());
+
         Utils.makeToast(context, orderGameQuestion.getAnswers().toString());
         wordsList = Utils.map2IntegerStringPairList(orderGameQuestion.getWords());
         wordsSelected = new ArrayList<IntegerStringPair>();
@@ -209,7 +199,6 @@ public class OrderGameDetailFragNew extends BaseFragment implements View.OnClick
         gridViewAdapter2.notifyDataSetChanged();
     }
 
-
     @Override
     public void ok(DialogInterface dialog) {
         switch (state){
@@ -242,5 +231,13 @@ public class OrderGameDetailFragNew extends BaseFragment implements View.OnClick
     @Override
     public void cancel(DialogInterface dialog) {
 
+    }
+
+    enum STATE {
+        NORMAL,
+        RESULT,
+        LAST_RESULT,
+        END_QUIZ,
+        NO_SELECTION
     }
 }

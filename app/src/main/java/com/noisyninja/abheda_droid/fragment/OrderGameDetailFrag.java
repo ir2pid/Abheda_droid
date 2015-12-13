@@ -94,12 +94,13 @@ public class OrderGameDetailFrag extends Fragment {
     {
         linearLayout2.removeAllViews();
         linearLayout1.removeAllViews();
-        textViewQuestionNo.setText("Q: "+progress+"/"+orderGameQuestions.size() + " ) "+orderGameQuestions.get(progress).getQuestion());
+        Utils.setText(textViewQuestionNo, "Q: " + progress + "/" + orderGameQuestions.size() + " ) " + orderGameQuestions.get(progress).getQuestion());
 
         for(String word:words)
         {
             Button button = new Button(getActivity());
-            button.setText(word);
+            Utils.setText(button, word);
+
             button.setBackgroundResource(R.drawable.button_red);
 
             button.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +151,7 @@ public class OrderGameDetailFrag extends Fragment {
 
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         int maxWidth = display.getWidth() - 10;
-        int maxChildNum = (int) ( maxWidth / (110)) ;
+        int maxChildNum = maxWidth / (110);
         /*Toast.makeText(getActivity().getBaseContext(), "c" + v.getWidth(),
                 Toast.LENGTH_LONG).show();*/
         //loop through all child of the LinearLayout

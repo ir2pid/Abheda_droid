@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -716,6 +717,9 @@ public class Utils {
 
     public static void setText(TextView textView, String data) {
         if (data != null && data.length() > 1) {
+            logD("Using font: " + Constants.font.name());
+            Typeface type = Typeface.createFromAsset(textView.getContext().getAssets(), Constants.font.toString());
+            textView.setTypeface(type);
             textView.setText(Html.fromHtml(data));
         }
     }

@@ -43,4 +43,9 @@
     <string name="PITCH">"Pitch"</string>
     <string name="SPEED">"Speed"</string>
 
+    <string name="FONT">"Font controls"</string>
+    <string name="BENSENHANDWRITING">"BenSenHandwriting"</string>
+    <string name="KALPURUSH">"kalpurush"</string>
+    <string name="SIYAMRUPALI">"Siyamrupali"</string>
+
 </resources>

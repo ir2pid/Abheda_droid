@@ -36,24 +36,20 @@ public class Constants {
 
 
     public static String EMAIL = "abhedafoundation@gmail.com";
-
+    public static FONT font = FONT.FONT_BENSENHANDWRITING;
     public static float PITCH_SPEECH = 1.0f;
     public static float SPEED_SPEECH = 1.0f;
     public static String PITCH_SPEECH_KEY = "PITCH_SPEECH_KEY";
     public static String SPEED_SPEECH_KEY = "SPEED_SPEECH_KEY";
-
     public static int TOPIC_ID = 0;//english
     public static int COURSE_ID = 0;//BCP
     public static int MODULE_ID = 0;//BCP 1
     public static int LESSON_QUIZ_ID = 0; //Lesson 1
-
-
     public static String HTML_BREAK = "<BR>";
     public static String HTML_BOLD_PRE = "<B>";
     public static String HTML_BOLD_POST = "</B>";
     public static String HTML_ITALICS_PRE = "<I>";
     public static String HTML_ITALICS_POST = "</I>";
-
     public static String BLANK = "";
     public static String QUESTION = "Q:";
     public static String CORRECT = "✓";// ✓,✔, ☑,
@@ -73,7 +69,6 @@ public class Constants {
     public static String URL_STORE = "https://dl.dropbox.com/s/o2qh922feobk7sg/data.zip?dl=0";//"https://drive.google.com/uc?export=download&id=0B3-WqXENqs7dWEJtTURZNWtDTmc";
     public static String URL_STORE_KEY = "URL_STORE_KEY";
     public static String FIRST_RUN_KEY = "FIRST_RUN_KEY";
-
     /*public static String JSON = "data.json";
     public static String _DATA_FOLDER = "/abheda/";
     public static String _DATA_FILE = _DATA_FOLDER+JSON;
@@ -106,6 +101,31 @@ public class Constants {
     public static String INFO_NO_LESSON = "ERROR_NO_LESSON";
     public static String CRITTERCISM_APP_ID = "5500497db59ef2d535335cf3";
     public static String HTTP_FLAG = "http";
+
+    public enum FONT {
+
+        FONT_KALPURUSH("fonts/kalpurush.tff"),
+        FONT_BENSENHANDWRITING("fonts/BenSenHandwriting.ttf"),
+        FONT_SIYAMRUPALI("fonts/Siyamrupali.tff");
+
+
+        private final String text;
+
+        /**
+         * @param text
+         */
+        FONT(final String text) {
+            this.text = text;
+        }
+
+        /* (non-Javadoc)
+         * @see java.lang.Enum#toString()
+         */
+        @Override
+        public String toString() {
+            return text;
+        }
+    }
 
     public enum Sound {
         CLICK,

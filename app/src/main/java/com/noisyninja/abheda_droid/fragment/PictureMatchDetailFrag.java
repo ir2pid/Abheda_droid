@@ -140,7 +140,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                 if (states == STATES.NORMAL && progress < pictureMatchQuestions.size() && completedMatches == 4) {
                     progress++;
                     states = STATES.RESULT;
-                    buttonNext.setText(Utils.getStringResource(window.getContext(), R.string.next));
+                    Utils.setText(buttonNext, Utils.getStringResource(window.getContext(), R.string.next));
                     showResults();
                 } else if (states == STATES.RESULT) {
                     if (progress == pictureMatchQuestions.size()) {
@@ -201,8 +201,9 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
 
         buttonNext.setEnabled(false);
 
-        buttonNext.setText(Utils.getStringResource(window.getContext(), R.string.submit));
-        textViewQuestionNo.setText("Q: " + (progress + 1) + "/" + pictureMatchQuestions.size());
+        Utils.setText(buttonNext, Utils.getStringResource(window.getContext(), R.string.submit));
+
+        Utils.setText(textViewQuestionNo, "Q: " + (progress + 1) + "/" + pictureMatchQuestions.size());
         int i = 0;
         for (Map.Entry<String, String> entry : pictureMatchQuestions.get(progress).getWords().entrySet()) {
             String key = entry.getKey();
@@ -211,7 +212,8 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                 completedMatches++;
                 buttonArrayList.get(i).setVisibility(View.GONE);
             } else {
-                buttonArrayList.get(i).setText(value);
+
+                Utils.setText(buttonArrayList.get(i), value);
                 buttonArrayList.get(i).setVisibility(View.VISIBLE);
                 buttonArrayList.get(i).setEnabled(true);
             }
@@ -303,7 +305,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         switch (v.getId()) {
             case R.id.imageView1: {
                 completedMatches++;
-                imageViewText1.setText(sCorrect);
+                Utils.setText(imageViewText1, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout1);
                 View cardFace = window.findViewById(R.id.imageView1);
                 View cardBack = window.findViewById(R.id.circleButton12);
@@ -312,7 +314,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView2: {
                 completedMatches++;
-                imageViewText2.setText(sCorrect);
+                Utils.setText(imageViewText2, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout2);
                 View cardFace = window.findViewById(R.id.imageView2);
                 View cardBack = window.findViewById(R.id.circleButton22);
@@ -321,7 +323,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView3: {
                 completedMatches++;
-                imageViewText3.setText(sCorrect);
+                Utils.setText(imageViewText3, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout3);
                 View cardFace = window.findViewById(R.id.imageView3);
                 View cardBack = window.findViewById(R.id.circleButton32);
@@ -330,7 +332,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView4: {
                 completedMatches++;
-                imageViewText4.setText(sCorrect);
+                Utils.setText(imageViewText4, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout4);
                 View cardFace = window.findViewById(R.id.imageView4);
                 View cardBack = window.findViewById(R.id.circleButton42);
@@ -357,7 +359,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         switch (v.getId()) {
             case R.id.imageView1: {
                 completedMatches++;
-                imageViewText1.setText(sCorrect);
+                Utils.setText(imageViewText1, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout1);
                 View cardFace = window.findViewById(R.id.imageView1);
                 View cardBack = window.findViewById(R.id.circleButton11);
@@ -366,7 +368,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView2: {
                 completedMatches++;
-                imageViewText2.setText(sCorrect);
+                Utils.setText(imageViewText2, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout2);
                 View cardFace = window.findViewById(R.id.imageView2);
                 View cardBack = window.findViewById(R.id.circleButton21);
@@ -375,7 +377,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView3: {
                 completedMatches++;
-                imageViewText3.setText(sCorrect);
+                Utils.setText(imageViewText3, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout3);
                 View cardFace = window.findViewById(R.id.imageView3);
                 View cardBack = window.findViewById(R.id.circleButton31);
@@ -384,7 +386,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             }
             case R.id.imageView4: {
                 completedMatches++;
-                imageViewText4.setText(sCorrect);
+                Utils.setText(imageViewText4, sCorrect);
                 View rootLayout = window.findViewById(R.id.frameLayout4);
                 View cardFace = window.findViewById(R.id.imageView4);
                 View cardBack = window.findViewById(R.id.circleButton41);

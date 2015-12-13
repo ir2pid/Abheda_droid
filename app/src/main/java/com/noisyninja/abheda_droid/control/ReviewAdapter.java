@@ -46,13 +46,13 @@ public class ReviewAdapter extends ArrayAdapter {
             Utils.logD(question);
             if (reviewItemArrayList.get(position).isImage()) {
                 Utils.logD("Image question detected");
-                holder.question.setText("");
+                Utils.setText(holder.question, "");
                 holder.imageView.setVisibility(View.VISIBLE);
                 Utils.lazyload(getContext(), holder.imageView, question);
             } else {
                 Utils.logD("text question detected");
                 holder.imageView.setVisibility(View.GONE);
-                holder.question.setText(question);
+                Utils.setText(holder.question, question);
             }
             String wrong = reviewItemArrayList.get(position).getWrong();
             String correct = reviewItemArrayList.get(position).getCorrect();
@@ -60,10 +60,10 @@ public class ReviewAdapter extends ArrayAdapter {
             Utils.logD(correct);
             if (wrong != null) {
                 Utils.logD(wrong);
-                holder.wrong.setText(wrong);
+                Utils.setText(holder.wrong, wrong);
                 Utils.addSpeechClickListener(context, holder.wrong, holder.wrong.getText().toString());
             }
-            holder.correct.setText(correct);
+            Utils.setText(holder.correct, correct);
             Utils.addSpeechClickListener(context, holder.wrong, holder.correct.getText().toString());
 
             convertView.setTag(holder);

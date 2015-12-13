@@ -29,9 +29,9 @@ import java.util.List;
  */
 public class CourseTree extends Fragment {
 
+    Fragment fragment;
     private AnimatedExpandableListView animatedExpandableListView;
     private CustomAdapter adapter;
-    Fragment fragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -233,11 +233,9 @@ public class CourseTree extends Fragment {
             } else {
                 holder = (GroupHolder) convertView.getTag();
             }
-
-            holder.name.setText(item.name);
-            holder.description.setText(item.description);
-            //holder.completion.setText(item.completion);
-            holder.marks.setText(getString(R.string.marks)+item.marks);
+            Utils.setText(holder.name, item.name);
+            Utils.setText(holder.description, item.description);
+            Utils.setText(holder.marks, getString(R.string.marks) + item.marks);
             holder.arcProgress.setProgress(item.completion);
             Utils.styleArc(holder.arcProgress, getActivity());
             return convertView;

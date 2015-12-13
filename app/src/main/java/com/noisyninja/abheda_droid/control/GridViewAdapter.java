@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.pojo.misc.IntegerStringPair;
+import com.noisyninja.abheda_droid.util.Utils;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,8 @@ public class GridViewAdapter extends BaseAdapter {
 
             holder = new ViewHolder();
             holder.textView = (TextView) convertView.findViewById(R.id.textView1);
-            holder.textView.setText(wordsList.get(position).getS());
+            Utils.setText(holder.textView, wordsList.get(position).getS());
+
             convertView.setTag(holder);
         }
 

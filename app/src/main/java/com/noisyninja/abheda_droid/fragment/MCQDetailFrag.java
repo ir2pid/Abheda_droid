@@ -204,28 +204,32 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
         RadioButton radioButton4 = ((RadioButton) window.findViewById(R.id.radioButton4));
         Button submit = (Button) window.findViewById(R.id.button);
 
-        textViewQuestion.setText((no + 1) + "/" + mcqQuestions.size() + ") " + mcqQuestions.get(no).getQuestion());
-        radioButton1.setText(mcqQuestions.get(no).getOption1());
+        Utils.setText(textViewQuestion, (no + 1) + "/" + mcqQuestions.size() + ") " + mcqQuestions.get(no).getQuestion());
+        Utils.setText(radioButton1, mcqQuestions.get(no).getOption1());
+        Utils.setText(radioButton2, mcqQuestions.get(no).getOption2());
+        Utils.setText(radioButton3, mcqQuestions.get(no).getOption3());
+        Utils.setText(radioButton4, mcqQuestions.get(no).getOption4());
+        Utils.setText(submit, Utils.getStringResource(getActivity(), R.string.submit));
+
         radioButton1.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton1.setChecked(false);
         radioButton1.setEnabled(true);
         Utils.addSpeechClickListener(getActivity(), radioButton1, radioButton1.getText().toString());
-        radioButton2.setText(mcqQuestions.get(no).getOption2());
+
         radioButton2.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton2.setChecked(false);
         radioButton2.setEnabled(true);
         Utils.addSpeechClickListener(getActivity(), radioButton2, radioButton2.getText().toString());
-        radioButton3.setText(mcqQuestions.get(no).getOption3());
+
         radioButton3.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton3.setChecked(false);
         radioButton3.setEnabled(true);
         Utils.addSpeechClickListener(getActivity(), radioButton3, radioButton3.getText().toString());
-        radioButton4.setText(mcqQuestions.get(no).getOption4());
+
         radioButton4.setTextColor(Utils.getColorResource(getActivity(), R.color.black));
         radioButton4.setChecked(false);
         radioButton4.setEnabled(true);
         Utils.addSpeechClickListener(getActivity(), radioButton4, radioButton4.getText().toString());
-        submit.setText(Utils.getStringResource(getActivity(), R.string.submit));
 
     }
 
