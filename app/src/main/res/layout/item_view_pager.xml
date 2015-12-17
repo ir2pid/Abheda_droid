@@ -11,7 +11,7 @@
         android:id="@+id/front"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-        android:background="@drawable/background_shape_blue_translucent"
+        android:background="@drawable/background_shape_green"
         android:orientation="vertical">
 
             <LinearLayout

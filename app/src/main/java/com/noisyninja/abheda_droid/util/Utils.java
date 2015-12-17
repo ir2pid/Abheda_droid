@@ -585,6 +585,7 @@ public class Utils {
     }
 
     public static void setPreference(Context context, String key, String value) {
+        logD("saving key:" + key + " value:" + value);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(key, value);
@@ -598,6 +599,8 @@ public class Utils {
     public static String getPreference(Context context, String key, String defaultValue) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         String value = preferences.getString(key, defaultValue);
+
+        logD("got key:" + key + " value:" + value);
         return value;
     }
 
@@ -717,7 +720,7 @@ public class Utils {
 
     public static void setText(TextView textView, String data) {
         if (data != null && data.length() > 1) {
-            logD("Using font: " + Constants.font.name());
+            //logD("Using font: " + Constants.font.name());
             Typeface type = Typeface.createFromAsset(textView.getContext().getAssets(), Constants.font.toString());
             textView.setTypeface(type);
             textView.setText(Html.fromHtml(data));

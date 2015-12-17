@@ -86,7 +86,9 @@ public class SimpleQuizDetailFrag extends Fragment implements IDialogCallback{
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Utils.showResult(context,true,question.getText().toString(),correctAnswer,answer.getText().toString(),fragment);
+                String que = simpleQuestions.get(progress).getQuestion();
+                Utils.setPreference(context, String.valueOf(que.hashCode()), answer.getText().toString());
+                Utils.showResult(context, true, question.getText().toString(), correctAnswer, answer.getText().toString(), fragment);
             }
         });
         loadQuestions();
@@ -96,11 +98,13 @@ public class SimpleQuizDetailFrag extends Fragment implements IDialogCallback{
 
     void loadQuestions(){
         SimpleQuestion simpleQuestion = simpleQuestions.get(progress);
-        Utils.setText(question, "Q:" + (progress+1) + "/" + simpleQuestions.size() + ") " + simpleQuestion.getQuestion());
-
-        answer.setText("");
+        Utils.setText(question, "Q:" + (progress + 1) + "/" + simpleQuestions.size() + ") " + simpleQuestion.getQuestion());
+        String ans = simpleQuestions.get(progress).getQuestion();
+        answer.setText(Utils.getPreference(context, String.valueOf(ans.hashCode())));
         correctAnswer = simpleQuestion.getAnswer();
-        Utils.buttonDeactivate(next);
+        if (ans == null) {
+            Utils.buttonDeactivate(next);
+        }
     }
 
     @Override
