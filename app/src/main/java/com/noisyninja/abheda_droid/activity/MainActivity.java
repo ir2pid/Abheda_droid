@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.noisyninja.abheda_droid.R;
 import com.noisyninja.abheda_droid.fragment.TopicsGridFrag;
+import com.noisyninja.abheda_droid.util.Constants;
 import com.noisyninja.abheda_droid.util.Utils;
 
 
@@ -21,6 +22,12 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
+        String font = Utils.getPreference(context, Constants.FONT_KEY);
+        if (font != null) {
+            Constants.font = Constants.FONT.valueOf(font);
+        } else {
+            Constants.font = Constants.FONT.FONT_BENSENHANDWRITING;
+        }
         TopicsGridFrag fragment = new TopicsGridFrag();
 
         this.getFragmentManager().beginTransaction()

@@ -167,7 +167,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             if (entry.getValue()) {
                 onCorrect(integerIntegerPair);
             } else {
-                onWrong(integerIntegerPair);
+                onCorrect(integerIntegerPair);
             }
         }
     }

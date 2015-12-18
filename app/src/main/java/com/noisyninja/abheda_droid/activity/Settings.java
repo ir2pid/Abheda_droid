@@ -74,7 +74,6 @@ public class Settings extends BaseActivity implements AdapterView.OnItemSelected
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 Utils.makeToast(getBaseContext(), "Speed:" + Constants.SPEED_SPEECH);
-
             }
         });
     }
@@ -97,12 +96,18 @@ public class Settings extends BaseActivity implements AdapterView.OnItemSelected
 
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
+
+        int spinnerPosition = dataAdapter.getPosition(Constants.font.name());
+
+        //set the default according to value
+        spinner.setSelection(spinnerPosition);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String item = parent.getItemAtPosition(position).toString();
         Constants.font = FONT.valueOf(item);
+        Utils.setPreference(view.getContext(), Constants.FONT_KEY, Constants.font.name());
     }
 
     @Override

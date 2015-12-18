@@ -34,13 +34,13 @@ package com.noisyninja.abheda_droid.util;
  */
 public class Constants {
 
-
     public static String EMAIL = "abhedafoundation@gmail.com";
     public static FONT font = FONT.FONT_BENSENHANDWRITING;
     public static float PITCH_SPEECH = 1.0f;
     public static float SPEED_SPEECH = 1.0f;
     public static String PITCH_SPEECH_KEY = "PITCH_SPEECH_KEY";
     public static String SPEED_SPEECH_KEY = "SPEED_SPEECH_KEY";
+    public static String FONT_KEY = "FONT_KEY";
     public static int TOPIC_ID = 0;//english
     public static int COURSE_ID = 0;//BCP
     public static int MODULE_ID = 0;//BCP 1
@@ -104,9 +104,9 @@ public class Constants {
 
     public enum FONT {
 
-        FONT_KALPURUSH("fonts/kalpurush.tff"),
+        FONT_KALPURUSH("fonts/kalpurush.ttf"),
         FONT_BENSENHANDWRITING("fonts/BenSenHandwriting.ttf"),
-        FONT_SIYAMRUPALI("fonts/Siyamrupali.tff");
+        FONT_SIYAMRUPALI("fonts/Siyamrupali.ttf");
 
 
         private final String text;
