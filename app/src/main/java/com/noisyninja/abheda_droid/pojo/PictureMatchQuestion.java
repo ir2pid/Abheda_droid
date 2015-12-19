@@ -8,6 +8,7 @@ import java.util.Map;
 public class PictureMatchQuestion  extends BasePojo{
 
     Map<String,String> words;
+    String hint;
 
     public Map<String, String> getWords() {
         return words;
@@ -17,4 +18,11 @@ public class PictureMatchQuestion  extends BasePojo{
         this.words = words;
     }
 
+    public String getHint() {
+        return hint;
+    }
+
+    public void setHint(String hint) {
+        this.hint = hint;
+    }
 }

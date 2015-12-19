@@ -123,7 +123,7 @@
                                 android:gravity="center"
                                 android:textColor="@color/button_green"
                                 android:textStyle="bold"
-                                android:visibility="invisible" />
+                                android:visibility="visible" />
                         </RelativeLayout>
 
                         <at.markushi.ui.CircleButton
@@ -189,7 +189,7 @@
                                 android:gravity="center"
                                 android:textColor="@color/button_green"
                                 android:textStyle="bold"
-                                android:visibility="invisible" />
+                                android:visibility="visible" />
                         </RelativeLayout>
 
 

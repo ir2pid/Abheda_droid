@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.noisyninja.abheda_droid.R;
+import com.noisyninja.abheda_droid.control.quickaction.ActionItem;
+import com.noisyninja.abheda_droid.control.quickaction.QuickAction;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuestion;
 import com.noisyninja.abheda_droid.pojo.PictureMatchQuiz;
 import com.noisyninja.abheda_droid.pojo.misc.IntegerIntegerPair;
@@ -50,6 +52,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
     TextView imageViewText2;
     TextView imageViewText3;
     TextView imageViewText4;
+    QuickAction quickAction;
     int progress;
     int correct;
     int wrong;
@@ -164,6 +167,10 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
 
         for (Map.Entry<IntegerIntegerPair, Boolean> entry : answers.entrySet()) {
             IntegerIntegerPair integerIntegerPair = entry.getKey();
+
+            ActionItem actionItem = new ActionItem(1, "hello jkdajkdjkajkda", null);
+            quickAction = new QuickAction(context);
+            quickAction.addActionItem(actionItem);
             if (entry.getValue()) {
                 onCorrect(integerIntegerPair);
             } else {
@@ -180,6 +187,10 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         imageViewText2.setText("");
         imageViewText3.setText("");
         imageViewText4.setText("");
+        imageViewText1.setVisibility(View.INVISIBLE);
+        imageViewText2.setVisibility(View.INVISIBLE);
+        imageViewText3.setVisibility(View.INVISIBLE);
+        imageViewText4.setVisibility(View.INVISIBLE);
 
         View correctIndicator11 = window.findViewById(R.id.circleButton11);
         View correctIndicator21 = window.findViewById(R.id.circleButton21);
@@ -306,37 +317,49 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             case R.id.imageView1: {
                 completedMatches++;
                 Utils.setText(imageViewText1, sCorrect);
+                imageViewText1.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout1);
                 View cardFace = window.findViewById(R.id.imageView1);
                 View cardBack = window.findViewById(R.id.circleButton12);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
             case R.id.imageView2: {
                 completedMatches++;
                 Utils.setText(imageViewText2, sCorrect);
+                imageViewText2.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout2);
                 View cardFace = window.findViewById(R.id.imageView2);
                 View cardBack = window.findViewById(R.id.circleButton22);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
             case R.id.imageView3: {
                 completedMatches++;
                 Utils.setText(imageViewText3, sCorrect);
+                imageViewText3.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout3);
                 View cardFace = window.findViewById(R.id.imageView3);
                 View cardBack = window.findViewById(R.id.circleButton32);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
             case R.id.imageView4: {
                 completedMatches++;
                 Utils.setText(imageViewText4, sCorrect);
+                imageViewText4.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout4);
                 View cardFace = window.findViewById(R.id.imageView4);
                 View cardBack = window.findViewById(R.id.circleButton42);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
         }
@@ -360,37 +383,49 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             case R.id.imageView1: {
                 completedMatches++;
                 Utils.setText(imageViewText1, sCorrect);
+                imageViewText1.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout1);
                 View cardFace = window.findViewById(R.id.imageView1);
                 View cardBack = window.findViewById(R.id.circleButton11);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
             case R.id.imageView2: {
                 completedMatches++;
                 Utils.setText(imageViewText2, sCorrect);
+                imageViewText2.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout2);
                 View cardFace = window.findViewById(R.id.imageView2);
                 View cardBack = window.findViewById(R.id.circleButton21);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
             case R.id.imageView3: {
                 completedMatches++;
                 Utils.setText(imageViewText3, sCorrect);
+                imageViewText3.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout3);
                 View cardFace = window.findViewById(R.id.imageView3);
                 View cardBack = window.findViewById(R.id.circleButton31);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
             case R.id.imageView4: {
                 completedMatches++;
                 Utils.setText(imageViewText4, sCorrect);
+                imageViewText4.setVisibility(View.VISIBLE);
                 View rootLayout = window.findViewById(R.id.frameLayout4);
                 View cardFace = window.findViewById(R.id.imageView4);
                 View cardBack = window.findViewById(R.id.circleButton41);
                 Utils.animateFlip(rootLayout, cardFace, cardBack);
+
+                quickAction.show(rootLayout);
                 break;
             }
 
