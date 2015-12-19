@@ -167,10 +167,12 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
 
         for (Map.Entry<IntegerIntegerPair, Boolean> entry : answers.entrySet()) {
             IntegerIntegerPair integerIntegerPair = entry.getKey();
-
-            ActionItem actionItem = new ActionItem(1, "hello jkdajkdjkajkda", null);
+            String hint = pictureMatchQuestions.get(progress - 1).getHint();
+            ActionItem actionItem = new ActionItem(1, hint, null);
             quickAction = new QuickAction(context);
-            quickAction.addActionItem(actionItem);
+            if (hint != null) {
+                quickAction.addActionItem(actionItem);
+            }
             if (entry.getValue()) {
                 onCorrect(integerIntegerPair);
             } else {
