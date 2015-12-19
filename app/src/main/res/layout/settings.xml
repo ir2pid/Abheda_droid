@@ -10,7 +10,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_white"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/padding_20">
 
         <Spinner
             android:id="@+id/font"
@@ -25,7 +26,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_white"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/padding_20">
 
         <TextView
             android:layout_width="wrap_content"

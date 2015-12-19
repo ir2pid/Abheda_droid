@@ -37,6 +37,12 @@ public class Settings extends BaseActivity implements AdapterView.OnItemSelected
         seekBarPitch = (SeekBar) findViewById(R.id.seekBar2);
         spinner = (Spinner) findViewById(R.id.font);
 
+        Constants.SPEED_SPEECH = Float.valueOf(Utils.getPreference(this, Constants.SPEED_SPEECH_KEY));
+        Constants.PITCH_SPEECH = Float.valueOf(Utils.getPreference(this, Constants.PITCH_SPEECH_KEY));
+
+        seekBarPitch.setProgress((int) (Constants.PITCH_SPEECH * 100));
+        seekBarSpeed.setProgress((int) (Constants.SPEED_SPEECH * 100));
+
         setFontSpinner();
 
         seekBarPitch.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
