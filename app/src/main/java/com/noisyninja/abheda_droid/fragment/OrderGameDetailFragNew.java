@@ -207,13 +207,13 @@ public class OrderGameDetailFragNew extends BaseFragment implements View.OnClick
             }
             case END_QUIZ:{
                 dialog.dismiss();
-                Utils.showReview(getActivity());
                 break;
             }
             case RESULT:{
 
                 if(progress == orderGameQuestions.size()){//HANDLE END OF QUIZ
                     state = STATE.END_QUIZ;
+                    Utils.showReview(getActivity());
                     Utils.showDialog(this, Constants.QUIZ_COMPLETED_TEXT, correct+" correct of "+(correct+wrong), true);
 
                 }
