@@ -36,8 +36,8 @@ public class Constants {
 
     public static String EMAIL = "abhedafoundation@gmail.com";
     public static FONT font = FONT.FONT_BENSENHANDWRITING;
-    public static float PITCH_SPEECH = 1.0f;
-    public static float SPEED_SPEECH = 1.0f;
+    public static float PITCH_SPEECH = 0.95f;
+    public static float SPEED_SPEECH = 0.3f;
     public static String PITCH_SPEECH_KEY = "PITCH_SPEECH_KEY";
     public static String SPEED_SPEECH_KEY = "SPEED_SPEECH_KEY";
     public static String FONT_KEY = "FONT_KEY";

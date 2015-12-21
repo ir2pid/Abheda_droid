@@ -148,6 +148,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                 } else if (states == STATES.RESULT) {
                     if (progress == pictureMatchQuestions.size()) {
                         states = STATES.LAST;
+                        Utils.showReview(getActivity());
                         Utils.showDialog(fragment, Constants.QUIZ_COMPLETED_TEXT, correct + " correct of " + (correct + wrong), true);
                     } else {
                         loadQuestions();
@@ -259,7 +260,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
             case DragEvent.ACTION_DRAG_ENTERED:
                 break;
             case DragEvent.ACTION_DROP: {
-                v.setBackgroundResource(R.drawable.button_green_enabled);
+                v.setBackgroundResource(R.drawable.button_yellow_enabled);
                 String buttonStringId = data.getItemAt(0).getText().toString();
                 int imageId = Integer.valueOf(map.get(buttonStringId));
                 int buttonId = Integer.valueOf(buttonStringId);
@@ -439,7 +440,6 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         if (states.compareTo(STATES.LAST) == 0) {
             //Utils.backPress(getActivity());
             dialog.dismiss();
-            Utils.showReview(getActivity());
         }
     }
 

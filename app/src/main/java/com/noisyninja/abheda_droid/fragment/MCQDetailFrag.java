@@ -28,7 +28,7 @@ import at.markushi.ui.CircleButton;
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
+public class MCQDetailFrag extends BaseFragment implements IDialogCallback {
 
     View window;
     ScrollView scrollView;
@@ -76,7 +76,7 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         window = inflater.inflate(R.layout.frag_mcq_detail, container, false);
-        scrollView = (ScrollView)window.findViewById(R.id.scrollView);
+        scrollView = (ScrollView) window.findViewById(R.id.scrollView);
 
         Button buttonNext = ((Button) window.findViewById(R.id.button));
         buttonNext.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +108,7 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
                     Utils.animateFlip(root1, circleButton, circleButton);
 
                     TextView textViewCorrect = ((TextView) window.findViewById(R.id.correctno));
-                    textViewCorrect.setText(""+correct);
+                    textViewCorrect.setText("" + correct);
 
                     Utils.showResult(getActivity(), true, Utils.getTempString(Constants.QUESTION, mcqQuestions.get(progress).getQuestion()), Utils.getTempString(Constants.CORRECT, radioButton.getText().toString()), null, fragment);
 
@@ -175,29 +175,25 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
         return window;
     }
 
-    void loadQuestions(int no)
-    {
+    void loadQuestions(int no) {
         selectedId = -1;
-        if(mcqQuestions == null)
-        {
+        if (mcqQuestions == null) {
             Utils.makeToast(getActivity(), Constants.ERROR_INVALID_JSON);
             return;
         }
-        if(progress < mcqQuestions.size()-1)
-        {
+        if (progress < mcqQuestions.size() - 1) {
             progress++;
             no++;
-        }
-        else
-        {
-                states = STATES.LAST;
-               Utils.showDialog(this, Constants.QUIZ_COMPLETED_TEXT, correct+" correct of "+(correct+wrong), true);
+        } else {
+            states = STATES.LAST;
+            Utils.showReview(getActivity());
+            Utils.showDialog(this, Constants.QUIZ_COMPLETED_TEXT, correct + " correct of " + (correct + wrong), true);
         }
 
         //Utils.animateFlip(window,scrollView,scrollView);
         RadioGroup radioGroup = (RadioGroup) window.findViewById(R.id.radioGroup);
 
-        TextView textViewQuestion  = ((TextView) window.findViewById(R.id.question));
+        TextView textViewQuestion = ((TextView) window.findViewById(R.id.question));
         RadioButton radioButton1 = ((RadioButton) window.findViewById(R.id.radioButton1));
         RadioButton radioButton2 = ((RadioButton) window.findViewById(R.id.radioButton2));
         RadioButton radioButton3 = ((RadioButton) window.findViewById(R.id.radioButton3));
@@ -244,7 +240,6 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
             }
             case LAST: {
                 dialog.dismiss();
-                Utils.showReview(getActivity());
                 break;
             }
         }
@@ -252,7 +247,7 @@ public class MCQDetailFrag extends BaseFragment implements IDialogCallback{
     }
 
     @Override
-    public void cancel(DialogInterface dialog){
+    public void cancel(DialogInterface dialog) {
         // do nothing
     }
 
