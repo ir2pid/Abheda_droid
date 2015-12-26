@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * Created by ir2pi on 11/30/2014.
  */
-public class PictureMatchDetailFrag extends Fragment implements View.OnTouchListener, View.OnDragListener, IDialogCallback {
+public class PictureMatchDetailFrag extends BaseFragment implements View.OnTouchListener, View.OnDragListener, IDialogCallback {
 
     View window;
     Context context;
@@ -175,8 +175,10 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
                 quickAction.addActionItem(actionItem);
             }
             if (entry.getValue()) {
+                correct++;
                 onCorrect(integerIntegerPair);
             } else {
+                wrong++;
                 onCorrect(integerIntegerPair);
             }
         }
@@ -306,7 +308,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         Button button = (Button) window.findViewById(buttonId);
         button.setEnabled(false);
         v.setBackgroundResource(R.drawable.button_green_enabled);
-        wrong++;
+
         Utils.playSound(getActivity(), Constants.Sound.WRONG);
 
         String sImage = (String) v.getTag(); //images have tags set as url
@@ -375,7 +377,7 @@ public class PictureMatchDetailFrag extends Fragment implements View.OnTouchList
         Button button = (Button) window.findViewById(buttonId);
         button.setEnabled(false);
         v.setBackgroundResource(R.drawable.button_green_enabled);
-        correct++;
+
         Utils.playSound(getActivity(), Constants.Sound.RIGHT);
 
         String sImage = (String) v.getTag(); //images have tags set as url
