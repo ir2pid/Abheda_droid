@@ -108,7 +108,6 @@ public class Constants {
         FONT_BENSENHANDWRITING("fonts/BenSenHandwriting.ttf"),
         FONT_SIYAMRUPALI("fonts/Siyamrupali.ttf");
 
-
         private final String text;
 
         /**

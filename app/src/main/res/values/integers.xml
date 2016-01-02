@@ -18,6 +18,7 @@
     <integer name="card_flip_time_full">300</integer>
     <integer name="card_flip_time_half">150</integer>
     <integer name="text_lines">300</integer>
+    <integer name="watermark">50</integer>
     <integer name="text_lines_max">500</integer>
     <integer name="text_lines_min">5</integer>
 </resources>

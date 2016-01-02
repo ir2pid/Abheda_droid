@@ -23,10 +23,13 @@ import events.OnPrintEvent;
  */
 public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> {
 
+    String data;
     Context context;
-    public ListLessonDetailAdapter(Context context, List<ListLessonDetailItem> items) {
+
+    public ListLessonDetailAdapter(Context context, List<ListLessonDetailItem> items, String data) {
         super(context, R.layout.list_lesson_detail_item, items);
 
+        this.data = data;
         this.context = context;
     }
 
@@ -49,7 +52,7 @@ public class ListLessonDetailAdapter extends ArrayAdapter<ListLessonDetailItem> 
         pdfCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new OnPrintEvent(item.name));
+                EventBus.getDefault().post(new OnPrintEvent(data));
             }
         });
         //name.setMovementMethod(new ScrollingMovementMethod());

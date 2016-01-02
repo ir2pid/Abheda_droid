@@ -49,9 +49,9 @@
         </activity>
         <activity
             android:name=".activity.LessonDetailActivity"
-            android:label="@string/app_name"
+            android:configChanges="keyboardHidden|orientation|screenSize"
 
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.QuizDetailActivityDeprecated"
@@ -61,6 +61,9 @@
             android:name=".activity.CourseActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".activity.PDFContentActivity"
+            android:label="@string/app_name"></activity>
 
     </application>
 

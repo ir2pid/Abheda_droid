@@ -29,4 +29,6 @@
     <dimen name="font_desc">24sp</dimen>
     <dimen name="font_desc_short">18sp</dimen>
     <dimen name="font_instruction">14sp</dimen>
+    <item name="header_size" format="float" type="dimen">16.0</item>
+    <item name="regular_size" format="float" type="dimen">12.0</item>
 </resources>

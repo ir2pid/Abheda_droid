@@ -73,9 +73,10 @@ public class BaseFragmentActivity extends FragmentActivity implements TextToSpee
     public void onEvent(OnPrintEvent event) {
         final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) this
                 .findViewById(android.R.id.content)).getChildAt(0);
-
-        PDFUtil.dump(this, viewGroup, event.getText());
+        PDFUtil.makePDF(this, event);
+        //PDFUtil.dump(this, viewGroup, event.getText());
     }
+
     @Override
     public void onInit(int status) {
 

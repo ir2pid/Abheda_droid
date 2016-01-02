@@ -28,7 +28,7 @@ public class LessonDetailFrag extends ListFragment {
      */
     Lesson lesson;
     List<Page> pageList;
-
+    String data;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -42,7 +42,7 @@ public class LessonDetailFrag extends ListFragment {
 
         if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
 
-            String data = getArguments().getString(Constants.FRAGMENT_DATA);
+            data = getArguments().getString(Constants.FRAGMENT_DATA);
 
             lesson = new Lesson();
             lesson = (Lesson)Utils.getFromJson(data, Lesson.class);
@@ -65,7 +65,7 @@ public class LessonDetailFrag extends ListFragment {
                     page.getLtext1(), page.getRtext1(), page.getUtext1(), page.getDtext1(),page.getDescription()));
         }
 
-        ListLessonDetailAdapter adapter = new ListLessonDetailAdapter(getActivity(), items);
+        ListLessonDetailAdapter adapter = new ListLessonDetailAdapter(getActivity(), items, data);
 
         setListAdapter(adapter);
 

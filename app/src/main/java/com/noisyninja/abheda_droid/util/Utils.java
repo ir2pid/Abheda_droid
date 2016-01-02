@@ -20,11 +20,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.support.annotation.DimenRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -186,6 +188,40 @@ public class Utils {
         gd.setCornerRadius(0f);
 
         //layout.setBackgroundDrawable(gd);
+    }
+
+    public static void showDialog(final Activity activity, String title, String message, boolean isInfo) {
+        // custom dialog
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (activity instanceof IDialogCallback) {
+                            ((IDialogCallback) activity).ok(dialog);
+                        } else {
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+        if (!isInfo) {
+
+            dialogBuilder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    if (activity instanceof IDialogCallback) {
+                        ((IDialogCallback) activity).cancel(dialog);
+                    }
+                }
+            }).setIcon(android.R.drawable.ic_dialog_alert);
+        }
+        AlertDialog dialog = dialogBuilder.create();
+
+        //dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.dialogAnimation_down_up;
+        dialog.show();
     }
 
     public static void showDialog(final Fragment fragment, String title, String message, boolean isInfo) {
@@ -696,6 +732,20 @@ public class Utils {
 
     }
 
+    public static String getImageName(Context context, String url) {  // local image asset
+
+        if (Utils.getDrawableFromAssetWithOutFailsafe(context, url) != null) {   // asset image has no extension or is provided in url
+            return assetImagePath(url, "");
+        } else if (Utils.getDrawableFromAssetWithOutFailsafe(context, assetImagePath(url, Constants.IMAGE_EXTENSION_JPG)) != null) {   // asset jpeg image
+            return assetImagePath(url, Constants.IMAGE_EXTENSION_JPG);
+        } else if (Utils.getDrawableFromAssetWithFailsafe(context, assetImagePath(url, Constants.IMAGE_EXTENSION_PNG)) != null) {   // asset png image
+            return assetImagePath(url, Constants.IMAGE_EXTENSION_PNG);
+        } else {
+            return null;
+        }
+    }
+
+
 
     public static String downloadImagePath(String url, String extension) {
 
@@ -725,6 +775,12 @@ public class Utils {
             textView.setTypeface(type);
             textView.setText(Html.fromHtml(data));
         }
+    }
+
+    public static float getFloat(Context context, @DimenRes int dimen) {
+        TypedValue outValue = new TypedValue();
+        context.getResources().getValue(dimen, outValue, true);
+        return outValue.getFloat();
     }
 
     public static void courseFacade(FragmentActivity activity, String data, MODULE_TYPE module_type) {

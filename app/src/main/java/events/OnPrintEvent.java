@@ -5,17 +5,17 @@ package events;
  */
 public class OnPrintEvent {
 
-    String text;
+    String data;
 
-    public OnPrintEvent(String s) {
-        this.text = s;
+    public OnPrintEvent(String data) {
+        this.data = data;
     }
 
-    public String getText() {
-        return text;
+    public String getData() {
+        return data;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setData(String data) {
+        this.data = data;
     }
 }

@@ -2,11 +2,6 @@ package com.noisyninja.abheda_droid.fileio;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.util.Log;
-
-import com.noisyninja.abheda_droid.R;
-import com.noisyninja.abheda_droid.util.Utils;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -22,27 +17,27 @@ public class Store {
 
     public static void set(Context context, String key, String value)
     {
-        SharedPreferences.Editor editor = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putString(key, value);
         editor.commit();
     }
 
     public static void set(Context context, String key, int value)
     {
-        SharedPreferences.Editor editor = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putInt(key, value);
         editor.commit();
     }
 
     public static String get(Context context, String key)
     {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return prefs.getString(key, null);
     }
 
     public static int getInt(Context context, String key)
     {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return prefs.getInt(key, 0);
     }
 

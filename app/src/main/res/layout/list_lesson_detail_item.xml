@@ -96,6 +96,15 @@
                 android:minWidth="100dp"
                 android:padding="5dp"
                 android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/watermark"
+                android:layout_width="@dimen/padding_128"
+                android:layout_height="@dimen/padding_128"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/name"
+                android:background="@drawable/ic_launcher"
+                android:visibility="gone" />
             <!-- the description view -->
         </RelativeLayout>
 
