@@ -61,7 +61,7 @@ public class LessonDetailFrag extends ListFragment {
 
         for(Page page : pageList)
         {
-            items.add(new ListLessonDetailItem(page.getImage1(), page.getName(), page.getText1(),
+            items.add(new ListLessonDetailItem(page.getImage1(), page.getName(), page.getText1(), "",
                     page.getLtext1(), page.getRtext1(), page.getUtext1(), page.getDtext1(),page.getDescription()));
         }
 

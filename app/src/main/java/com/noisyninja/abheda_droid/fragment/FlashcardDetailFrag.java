@@ -7,6 +7,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -21,6 +22,9 @@ import com.noisyninja.abheda_droid.util.Utils;
 import java.util.Arrays;
 import java.util.List;
 
+import de.greenrobot.event.EventBus;
+import events.OnPrintEvent;
+
 /**
  * Created by ir2pi on 1/26/2015.
  */
@@ -28,6 +32,8 @@ public class FlashcardDetailFrag extends Fragment{
 
     View windows;
     List<Page> pageList;
+    String data;
+    Button pdf;
     //ViewPager viewPager;
     //PagerAdapter adapter;
     //the ViewSwitcher
@@ -44,7 +50,7 @@ public class FlashcardDetailFrag extends Fragment{
         isBackFace = false;
         if (getArguments().containsKey(Constants.FRAGMENT_DATA)) {
 
-            String data = getArguments().getString(Constants.FRAGMENT_DATA);
+            data = getArguments().getString(Constants.FRAGMENT_DATA);
 
             Lesson lesson = (Lesson) Utils.getFromJson(data, Lesson.class);
 
@@ -62,7 +68,14 @@ public class FlashcardDetailFrag extends Fragment{
 
         // Locate the ViewPager in viewpager_main.xml
         viewFlipper = (ViewFlipper) windows.findViewById(R.id.viewflipper);
+        pdf = (Button) windows.findViewById(R.id.pdf);
 
+        pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventBus.getDefault().post(new OnPrintEvent(data));
+            }
+        });
 
         for(int i=0;i<pageList.size();i++)
         {
