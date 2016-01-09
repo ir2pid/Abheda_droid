@@ -33,6 +33,7 @@ import java.util.List;
  */
 public class PDFContentActivity extends BaseActivity implements IDialogCallback {
 
+    static RelativeLayout relativeLayout;
     Context context;
     Activity activity;
     Lesson lesson;
@@ -41,12 +42,19 @@ public class PDFContentActivity extends BaseActivity implements IDialogCallback 
     private static View getPDFView(Context context, ListLessonDetailItem item) {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        RelativeLayout relativeLayout = (RelativeLayout) inflater.inflate(R.layout.list_lesson_detail_item, null);
+        relativeLayout = (RelativeLayout) inflater.inflate(R.layout.list_lesson_detail_item, null);
+
+        relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
 
-        relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(width, height));
+        ViewGroup.LayoutParams layoutParams = relativeLayout.getLayoutParams();
+        layoutParams.width = width;
+        relativeLayout.setLayoutParams(layoutParams);
+        relativeLayout.requestLayout();
+
         ImageView image = (ImageView) relativeLayout.findViewById(R.id.image);
         ImageView watermark = (ImageView) relativeLayout.findViewById(R.id.watermark);
         TextView name = (TextView) relativeLayout.findViewById(R.id.name);
@@ -134,6 +142,7 @@ public class PDFContentActivity extends BaseActivity implements IDialogCallback 
                 @Override
                 public void run() {
                     // Do something after n sec = nx1000ms
+
                     String pdfName = PDFUtil.dump(context, linearLayoutV, pageList.get(0).getName());
                     if (pdfName != null) {
                         Utils.showDialog(activity, lesson.getName(), pdfName + " created! ", true);
