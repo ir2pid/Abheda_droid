@@ -12,7 +12,7 @@ env:
     - ANDROID_TARGET=android-19  ANDROID_ABI=armeabi-v7a
     
 script:
-  - gradlew clean build
+  - gradle clean build
   #./gradlew assembleRelease
   
 before_install:
