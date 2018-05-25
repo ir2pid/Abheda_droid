@@ -18,7 +18,7 @@ script:
 before_install:
   - pwd
   - ls -la
-  - chmod +x /.gradlew
+  - chmod +x ./gradlew
 
 before_script:
     - wget http://services.gradle.org/distributions/gradle-2.2-all.zip
