@@ -16,3 +16,4 @@ script: ./gradlew assembleRelease
 before_install:
   - pwd
   - ls -la
+  - chmod +x /.gradlew
