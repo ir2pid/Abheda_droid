@@ -11,9 +11,11 @@ env:
   matrix:
     - ANDROID_TARGET=android-19  ANDROID_ABI=armeabi-v7a
     
-script: ./gradlew assembleRelease
-
+script:
+  - gradle clean build
+  #./gradlew assembleRelease
+  
 before_install:
   - pwd
   - ls -la
-  - chmod +x /.gradlew
+  #- chmod +x /.gradlew
